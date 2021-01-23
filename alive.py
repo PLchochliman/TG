@@ -51,11 +51,11 @@ class IstotaZywa:
         elif obrazenie == 2:
             self.lekkaRana =+ 1
         elif obrazenie == 3:
-            self.lekkaRana = + 1
+            self.drasniecia = + 1
         elif obrazenie == 4:
             self.lekkaRana = + 1
         elif obrazenie == 5:
-            self.lekkaRana = + 1
+            self.ranaKonczyn[system.rollDice(4)] = + 1
         elif obrazenie == 6:
             self.lekkaRana = + 1
 
