@@ -2,13 +2,43 @@
 it's all about alive objects, which could be destroyed (eg hero, enemy, elephant)
 """
 
+
+
+
 class IstotaZywa:
+
+    sila, zrecznasc, intelekt = 0
+    modSila, modZrecznosc, modInt = 0
     status = true
     drasniecia = 0
     lekkaRana = 0
     powaznaRana = 0
     krytycznaRana = 0
     ranaKonczyny[4] = 0
+
+    def mod(self, statystyka):
+        if statystyka < 3:
+            return -2
+        if statystyka < 5:
+            return -1
+        if statystyka < 8:
+            return 0
+        if statystyka < 10:
+            return 1
+        if statystyka < 12:
+            return 2
+        if statystyka == 13:
+            return 3
+        if statystyka > 13:
+            return false
+
+
+        return True
+
+    def __init__(self, Sila, Zrecznasc, Intelekt):
+        sila = Sila
+        zrecznasc = Zrecznasc
+        intelekt = Intelekt
 
 
     def kill(self):
