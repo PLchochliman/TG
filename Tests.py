@@ -1,6 +1,7 @@
-import alive
-import TGmath
-import system
+
+from . import alive
+from . import TGmath
+from . import system
 
 
 """

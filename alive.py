@@ -84,3 +84,15 @@ class IstotaZywa:
         elif rzutNaObrazenia >= 15:
             self.allokuj(15)
             return
+
+
+def testZycia():
+    wojtek = IstotaZywa(8, 8, 8, "Wojtek")
+    wojtek.rana(10)
+    assert wojtek.drasniecia == 1
+    assert wojtek.lekkaRana == 1
+    assert wojtek.powaznaRana == 1
+    wojtek.allokuj(15)
+
+
+testZycia()
