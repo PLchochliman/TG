@@ -1,7 +1,6 @@
-
-from . import alive
-from . import TGmath
-from . import system
+import alive as alive
+import constans as constants
+import system as system
 
 
 """
@@ -19,22 +18,32 @@ def testSystemu():
     system.Output("System działa bez zarzutów")
 
 
-def testTGmath():
-    assert TGmath.mod(10) == 2
-    assert TGmath.mod(5) == 0
-    assert TGmath.KoscUmiejetnosci[1] > 2
+def testStalych():
+    assert constants.mod(10) == 2
+    assert constants.mod(5) == 0
+    assert constants.KoscUmiejetnosci[1] > 2
     system.Output("matematyka TG dziala bez zarzutu")
 
 
 def testZycia():
     wojtek = alive.IstotaZywa(8, 8, 8, "Wojtek")
-    wojtek.rana(10)
+    assert wojtek.aktywacja(2) == True
+    wojtek.rana(10, 0)
     assert wojtek.drasniecia == 1
     assert wojtek.lekkaRana == 1
     assert wojtek.powaznaRana == 1
+    wojtek.redukcjaObrazen = 2
+    wojtek.rana(3, 0)
+    assert wojtek.drasniecia == 2
+    assert wojtek.lekkaRana == 1
+    wojtek.rana(3, 0)
+    wojtek.rana(3, 0)
+    assert wojtek.lekkaRana == 2
+    wojtek.allokuj(14)
+    assert wojtek.aktywacja(2) == False
     wojtek.allokuj(15)
 
 
 testSystemu()
-testTGmath()
+testStalych()
 testZycia()
