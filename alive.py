@@ -63,13 +63,13 @@ class IstotaZywa:
         elif obrazenie == 4:
             self.lekkaRana += 1
         elif obrazenie == 5:
-            self.ranaKonczyny[system.rollDice(4)] += 1
+            self.ranaKonczyny[system.rollDice(4)-1] += 1
         elif obrazenie == 6:
             self.powaznaRana += 1
         elif obrazenie == 7:
             self.drasniecia += 1
         elif obrazenie == 8:
-            self.ranaKonczyny[system.rollDice(4)] += 1
+            self.ranaKonczyny[system.rollDice(4)-1] += 1
         elif obrazenie == 9:
             self.lekkaRana += 1
         elif obrazenie == 10:
@@ -132,3 +132,10 @@ class IstotaZywa:
         if self.mozliwoscAktywacji[faza] == 1:
             return True
         return False
+
+    def kara(self):
+        minus = self.lekkaRana * 3 + self.powaznaRana * 5
+        for i in range(0, len(self.ranaKonczyny)):
+            if self.ranaKonczyny[i] == 1:
+                system.Output("Pamietaj ze ranna jest twoja " + constans.Konczyna[i] +"\n Domyslna dodatkowa kara z tego wynikajaca jest to -4")
+        return minus

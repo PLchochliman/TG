@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="Tests are outside libriaries still WiP">
-      <change afterPath="$PROJECT_DIR$/constans.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/TG.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TG.iml" afterDir="false" />
+    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="First test ready, all actual libriaries and  classes are tested, in test.py.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/alive.py" beforeDir="false" afterPath="$PROJECT_DIR$/alive.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constans.py" beforeDir="false" afterPath="$PROJECT_DIR$/constans.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/hero.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611459375803</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="First test ready, all actual libriaries and  classes are tested, in test.py.">
+      <created>1611519923651</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1611519923651</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -212,6 +219,7 @@
     <MESSAGE value="skill rolls prepared" />
     <MESSAGE value="Tests are outside libriaries" />
     <MESSAGE value="Tests are outside libriaries still WiP" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tests are outside libriaries still WiP" />
+    <MESSAGE value="First test ready, all actual libriaries and  classes are tested, in test.py." />
+    <option name="LAST_COMMIT_MESSAGE" value="First test ready, all actual libriaries and  classes are tested, in test.py." />
   </component>
 </project>

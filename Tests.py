@@ -32,6 +32,7 @@ def testZycia():
     assert wojtek.drasniecia == 1
     assert wojtek.lekkaRana == 1
     assert wojtek.powaznaRana == 1
+    system.Output("podstawowy test Ran zakonczony")
     wojtek.redukcjaObrazen = 2
     wojtek.rana(3, 0)
     assert wojtek.drasniecia == 2
@@ -39,9 +40,14 @@ def testZycia():
     wojtek.rana(3, 0)
     wojtek.rana(3, 0)
     assert wojtek.lekkaRana == 2
+    system.Output("system ran z redukcja obrazen zakonczony")
+    wojtek.allokuj(5)
+    assert wojtek.kara() == 11
     wojtek.allokuj(14)
     assert wojtek.aktywacja(2) == False
+    system.Output("zaawansowany system aktywacji zakonczony")
     wojtek.allokuj(15)
+
 
 
 testSystemu()

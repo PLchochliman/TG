@@ -1,5 +1,10 @@
 import system
 
+"""
+COnstans are not tested!!!!
+Only by the way of other tests
+"""
+
 
 """
 all about Hardness of body.
@@ -30,6 +35,20 @@ TypyAktywacji = {
     2: [0, 1, 1, 1, 1, 1],
     3: [1, 1, 1, 1, 1, 1],
 }
+
+""""
+for purposes of limb injury
+"""
+
+Konczyna = {
+    0: "prawa reka",
+    1: "lewa reka",
+    2: "prawa noga",
+    3: "lewa noga"
+}
+
+
+
 
 """
 when need to skill roll based on skill level.
