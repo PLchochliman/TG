@@ -10,20 +10,39 @@ seed()
 """
 rolls Dice. in Dice type you write maximum value of the dice. 
 Returns int
+TODO maybe do into generator????
 """
+
+
 def rollDice(diceType):
-    return int((random()* diceType)) + 1
+    return int((random() * diceType)) + 1
 
 
 """
 rolls multiple Dices. in Dice type you write maximum value of the dice. 
 Returns tab of records
 """
+
+
 def multiRollDice(diceType, countOfDices):
     result = []
     for i in range(0,countOfDices):
         result.append(rollDice(diceType))
     return result
+
+
+"""
+rolls multiple Dices. in Dice type you write maximum value of the dice. 
+Returns sum of roll
+"""
+
+
+def sumMultiRollDice(diceType, countOfDices):
+    result = 0
+    for i in range(0,countOfDices):
+        result = result + rollDice(diceType)
+    return result
+
 
 """
 basic Output command for the system. Awaits for being updated, when put into Discord BOT
@@ -35,11 +54,15 @@ def Output(text):
 """
 Test made of assertions, to not to loose the faith, in working code of this section
 """
+
+
 def test():
     assert rollDice(4) > 0
     assert rollDice(4) < 5
     assert len(multiRollDice(4, 5)) < 6
     assert len(multiRollDice(4, 5)) > 4
+    assert sumMultiRollDice(4, 5) > 4
+    assert sumMultiRollDice(4, 5) < 21
     Output("System działa bez zarzutów")
 
 
