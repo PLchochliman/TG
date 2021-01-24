@@ -37,17 +37,20 @@ class IstotaZywa:
     krytycznaRana = 0
     ranaKonczyny = [0, 0, 0, 0]
     redukcjaObrazen = 0
+    imie = ""
 
-    def __init__(self, Sila, Zrecznasc, Intelekt):
+    def __init__(self, Sila, Zrecznasc, Intelekt, imie):
         self.sila = Sila
         self.zrecznasc = Zrecznasc
         self.intelekt = Intelekt
         self.modSila = TGmath.mod(Sila)
         self.modZrecznasc = TGmath.mod(Zrecznasc)
         self.modintelekt = TGmath.mod(Intelekt)
+        self.imie = imie
 
     def umarl(self):
         self.status = False
+        system.Output(self.imie + " Umarl")
 
     def allokuj(self, obrazenie):
         if obrazenie == 1:
@@ -59,9 +62,23 @@ class IstotaZywa:
         elif obrazenie == 4:
             self.lekkaRana = + 1
         elif obrazenie == 5:
-            self.ranaKonczyn[system.rollDice(4)] = +1
+            self.ranaKonczyn[system.rollDice(4)] += 1
         elif obrazenie == 6:
+            self.powaznaRana = + 1
+        elif obrazenie == 7:
+            self.drasniecia = + 1
+        elif obrazenie == 8:
+            self.ranaKonczyny[system.rollDice(4)] += 1
+        elif obrazenie == 9:
             self.lekkaRana = + 1
+        elif obrazenie == 10:
+            self.allokuj(1)
+            self.lekkaRana = + 1
+        elif obrazenie < 15:
+            self.krytycznaRana = + 1
+        elif obrazenie == 15:
+            self.umarl()
+
         return True
 
     def rana(self, rzutNaObrazenia):
@@ -88,4 +105,5 @@ class IstotaZywa:
             return True
         elif rzutNaObrazenia >= 15:
             self.allokuj(15)
-            return True
+            return
+

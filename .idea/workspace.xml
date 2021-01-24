@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="base of system.py added Dice roll and tests. Alive need tests">
-      <change afterPath="$PROJECT_DIR$/TGmath.py" afterDir="false" />
+    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="skill rolls prepared">
+      <change afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/alive.py" beforeDir="false" afterPath="$PROJECT_DIR$/alive.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system.py" beforeDir="false" afterPath="$PROJECT_DIR$/system.py" afterDir="false" />
@@ -32,6 +32,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/alive.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1nRUOVBnL3Vcu7KX4JqKwWORNYV" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -110,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611442063600</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="skill rolls prepared">
+      <created>1611454410154</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1611454410154</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -128,6 +138,7 @@
     <MESSAGE value="little preparations. Alive still not finished. still no tests" />
     <MESSAGE value="some progress, allocate still not finished" />
     <MESSAGE value="base of system.py added Dice roll and tests. Alive need tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="base of system.py added Dice roll and tests. Alive need tests" />
+    <MESSAGE value="skill rolls prepared" />
+    <option name="LAST_COMMIT_MESSAGE" value="skill rolls prepared" />
   </component>
 </project>

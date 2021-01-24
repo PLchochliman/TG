@@ -56,18 +56,3 @@ Test made of assertions, to not to loose the faith, in working code of this sect
 """
 
 
-def test():
-    assert rollDice(4) > 0
-    assert rollDice(4) < 5
-    assert len(multiRollDice(4, 5)) < 6
-    assert len(multiRollDice(4, 5)) > 4
-    assert sumMultiRollDice(4, 5) > 4
-    assert sumMultiRollDice(4, 5) < 21
-    Output("System działa bez zarzutów")
-
-
-#test()
-
-"""
-I know that I should do another file for unit test, and there is place for that. Maybe in future I'll do that.
-"""
