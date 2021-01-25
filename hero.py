@@ -1,4 +1,4 @@
-import alive as alive
+import mortal as alive
 
 "starting creating real character"
 

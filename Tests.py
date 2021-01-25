@@ -1,4 +1,4 @@
-import alive as alive
+import mortal as alive
 import constans as constants
 import system as system
 

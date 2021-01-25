@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="First test ready, all actual libriaries and  classes are tested, in test.py.">
+    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="in alive there is all about getting injured, penalties, and checking if object is &quot;alive&quot;. Now all actions will be in hero section, in object named Postac. All alive features are tested in Test, and via test, were repaired (some bad signs). another proof, that you need testing everything and everytime.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alive.py" beforeDir="false" afterPath="$PROJECT_DIR$/alive.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constans.py" beforeDir="false" afterPath="$PROJECT_DIR$/constans.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alive.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortal.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/hero.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +34,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/alive.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/mortal.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1nRUOVBnL3Vcu7KX4JqKwWORNYV" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -77,7 +76,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="alive" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="mortal" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TG" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -89,7 +88,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/alive.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\choch\Documents\GitHub\TG\mortal.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -120,14 +119,14 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.alive" />
       <item itemvalue="Python.system" />
       <item itemvalue="Python.Tests" />
+      <item itemvalue="Python.mortal" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.Tests" />
-        <item itemvalue="Python.alive" />
+        <item itemvalue="Python.mortal" />
         <item itemvalue="Python.system" />
       </list>
     </recent_temporary>
@@ -197,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611519923651</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="in alive there is all about getting injured, penalties, and checking if object is &quot;alive&quot;. Now all actions will be in hero section, in object named Postac. All alive features are tested in Test, and via test, were repaired (some bad signs). another proof, that you need testing everything and everytime.">
+      <created>1611527255939</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1611527255939</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -220,6 +226,7 @@
     <MESSAGE value="Tests are outside libriaries" />
     <MESSAGE value="Tests are outside libriaries still WiP" />
     <MESSAGE value="First test ready, all actual libriaries and  classes are tested, in test.py." />
-    <option name="LAST_COMMIT_MESSAGE" value="First test ready, all actual libriaries and  classes are tested, in test.py." />
+    <MESSAGE value="in alive there is all about getting injured, penalties, and checking if object is &quot;alive&quot;. Now all actions will be in hero section, in object named Postac. All alive features are tested in Test, and via test, were repaired (some bad signs). another proof, that you need testing everything and everytime." />
+    <option name="LAST_COMMIT_MESSAGE" value="in alive there is all about getting injured, penalties, and checking if object is &quot;alive&quot;. Now all actions will be in hero section, in object named Postac. All alive features are tested in Test, and via test, were repaired (some bad signs). another proof, that you need testing everything and everytime." />
   </component>
 </project>
