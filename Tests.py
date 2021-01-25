@@ -1,4 +1,4 @@
-import mortal as alive
+import mortal as mortal
 import constans as constants
 import system as system
 
@@ -26,7 +26,7 @@ def testStalych():
 
 
 def testZycia():
-    wojtek = alive.IstotaZywa(8, 8, 8, "Wojtek")
+    wojtek = mortal.IstotaZywa(8, 8, 8, "Wojtek")
     assert wojtek.aktywacja(2) == True
     wojtek.rana(10, 0)
     assert wojtek.drasniecia == 1

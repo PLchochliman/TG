@@ -22,6 +22,34 @@ TypBudowy = {
     4: [5, 4, 2]
 }
 
+Umiejetnosci = {
+    1: "Obsluga broni",
+    2: "Refleks",
+    3: "Skupienie",
+    4: "Strzelectwo",
+    5: "Walka wrecz",
+    6: "Zmysl bitewny",
+    7: "Ciche poruszanie",
+    8: "Prowadzenie pojazdu",
+    9: "Spostrzeganie",
+    10: "Sprawnosc fizyczna",
+    11: "Survival",
+    12: "Ukrywanie",
+    13: "Zreczne palce",
+    14: "Dyscyplina Naukowa",
+    15: "Gadana",
+    16: "Jezyki",
+    17: "Zawod",
+    18: "Dyscyplina Naukowa Medycyna",
+    19: "Dyscyplina Naukowa Informatyka",
+    20: "Dyscyplina Naukowa Humanistyka",
+    21: "Zawod Rusznikarz",
+    22: "Zawod Kowal",
+    23: "Zawod Mechanik",
+    24: "Zawod Kucharz"
+}
+
+
 """
 It's providing table of activation
 """
