@@ -19,6 +19,7 @@ class IstotaZywa:
     unik = 10
     punktyWytrwalosci, przeznaczenie = 0, 0,
     udzwig = 0
+    Umiejetnasci = constans.Umiejetnasci
 
     def __init__(self, sila, zrecznasc, intelekt, imie="bot", unik=10, redukcjaObrazen=0, typOchrony=0):
         self.sila = sila
@@ -39,6 +40,8 @@ class IstotaZywa:
         self.redukcjaObrazen = redukcjaObrazen
         if self.modSila == 3:
             self.redukcjaObrazen += 1
+        self.nastawUmiejetnasci()
+
 
     """
     all about dying, but without destroing object.
@@ -139,3 +142,30 @@ class IstotaZywa:
             if self.ranaKonczyny[i] == 1:
                 system.Output("Pamietaj ze ranna jest twoja " + constans.Konczyna[i] +"\n Domyslna dodatkowa kara z tego wynikajaca jest to -4")
         return minus
+
+    def nastawUmiejetnasci(self):
+        # setting mods for skills.
+        for i in range(0, len(self.Umiejetnasci)):
+            if i == 0:
+                continue
+            if self.Umiejetnasci[i][4] == 1:
+                self.Umiejetnasci[i][3] = self.modSila
+            if self.Umiejetnasci[i][4] == 2:
+                self.Umiejetnasci[i][3] = self.modZrecznasc
+            if self.Umiejetnasci[i][4] == 3:
+                self.Umiejetnasci[i][3] = self.modIntelekt
+            if self.Umiejetnasci[i][4] == 4:
+                if self.modSila > self.modIntelekt:
+                    self.Umiejetnasci[i][3] = self.modSila
+                else:
+                    self.Umiejetnasci[i][3] = self.modIntelekt
+            if self.Umiejetnasci[i][4] == 5:
+                if self.modZrecznasc > self.modIntelekt:
+                    self.Umiejetnasci[i][3] = self.modZrecznasc
+                else:
+                    self.Umiejetnasci[i][3] = self.modIntelekt
+            if self.Umiejetnasci[i][4] == 6:
+                if self.modSila > self.modZrecznasc:
+                    self.Umiejetnasci[i][3] = self.modSila
+                else:
+                    self.Umiejetnasci[i][3] = self.modZrecznasc

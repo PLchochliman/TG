@@ -49,6 +49,41 @@ Umiejetnosci = {
     24: "Zawod Kucharz"
 }
 
+"""
+    umiejetnasci is table for skills. from constants you 
+    first states for skill level, second for Cost, 
+    3rd of specializations (Cost is dependingo for it), 
+    4th is for all modifiers from predispositions (skill in specialisations)and modifiers from stats
+    5th is all for modifier based on base stats modifier. 0 states for none, 1 is for Power, 2 is for Dexerity, 3 is
+    for Inteligence, 4 is for Power or Inteligence, 5 is for Dexerity or Inteligence, 6 is for Power or Dexerity.
+"""
+
+Umiejetnasci = [[0],
+               [0, 0, 0, 0, 2],
+               [0, 0, 0, 0, 2],
+               [0, 0, 0, 0, 3],
+               [0, 0, 0, 0, 0],
+               [0, 0, 0, 0, 2],
+               [0, 0, 0, 0, 0],
+               [0, 0, 0, 0, 5],
+               [0, 0, 0, 0, 2], #prowadzeinie pojazdu
+               [0, 0, 0, 0, 2],
+               [0, 0, 0, 0, 6],
+               [0, 0, 0, 0, 5],
+               [0, 0, 0, 0, 5],
+               [0, 0, 0, 0, 2],
+               [0, 0, 0, 0, 3],
+               [0, 0, 0, 0, 3],
+               [0, 0, 0, 0, 3],
+               [0, 0, 0, 0, 3], #nastepne sa juz odmianami dyscypliny naukowej itd.
+               [0, 0, 0, 0, 3],
+               [0, 0, 0, 0, 3],
+               [0, 0, 0, 0, 3],
+               [0, 0, 0, 0, 3],
+               [0, 0, 0, 0, 3],
+               [0, 0, 0, 0, 3],
+               [0, 0, 0, 0, 3],
+               ]
 
 """
 It's providing table of activation
@@ -112,3 +147,7 @@ def mod(statystyka):
     if statystyka > 13:
         system.Output("coś dużo tego. chyba to potwór \n  Jeśli nie jesteś mutantem, zmień to natychmiast")
         return 4
+
+"""
+wszelkie przeliczanie tego systemu, które jest potrzebne więcej niż 1 raz.
+"""
