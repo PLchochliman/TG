@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="did base for skills, and starting specialisations.">
-      <change afterPath="$PROJECT_DIR$/excelDigger.py" afterDir="false" />
+    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="Skills by default has been set (when we talk about the modifiers from base statistics)&#10;Also TGmath is history. all is in constants. Rather need of new reader from excel, to faster preparation from data.">
+      <change afterPath="$PROJECT_DIR$/.~lock.TabelaBroni.xlsx#" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TGmath.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/constans.py" beforeDir="false" afterPath="$PROJECT_DIR$/constans.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/excelDigger.py" beforeDir="false" afterPath="$PROJECT_DIR$/excelDigger.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/hero.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mortal.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/items.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,12 +66,36 @@
       <module name="TG" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tests.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="excelDigger" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TG" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/excelDigger.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -146,10 +172,12 @@
       <item itemvalue="Python.Tests" />
       <item itemvalue="Python.mortal" />
       <item itemvalue="Python.hero" />
+      <item itemvalue="Python.excelDigger" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.Tests" />
+        <item itemvalue="Python.excelDigger" />
         <item itemvalue="Python.hero" />
         <item itemvalue="Python.mortal" />
         <item itemvalue="Python.system" />
@@ -242,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611558922323</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Skills by default has been set (when we talk about the modifiers from base statistics)&#10;Also TGmath is history. all is in constants. Rather need of new reader from excel, to faster preparation from data.">
+      <created>1611629477321</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1611629477321</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -268,6 +303,7 @@
     <MESSAGE value="in alive there is all about getting injured, penalties, and checking if object is &quot;alive&quot;. Now all actions will be in hero section, in object named Postac. All alive features are tested in Test, and via test, were repaired (some bad signs). another proof, that you need testing everything and everytime." />
     <MESSAGE value="renamed alive into mortal. makes much more sence." />
     <MESSAGE value="did base for skills, and starting specialisations." />
-    <option name="LAST_COMMIT_MESSAGE" value="did base for skills, and starting specialisations." />
+    <MESSAGE value="Skills by default has been set (when we talk about the modifiers from base statistics)&#10;Also TGmath is history. all is in constants. Rather need of new reader from excel, to faster preparation from data." />
+    <option name="LAST_COMMIT_MESSAGE" value="Skills by default has been set (when we talk about the modifiers from base statistics)&#10;Also TGmath is history. all is in constants. Rather need of new reader from excel, to faster preparation from data." />
   </component>
 </project>

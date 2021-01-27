@@ -9,44 +9,45 @@ Only by the way of other tests
 """
 all about Hardness of body.
 1st column is slight wound (drasniecie) 2nd is for light wounds, 3rd states for serious injury 
+transformed into tuple, due to optimalisation.
 """
 
 TypBudowy = {
-    -3: [1, 1, 1],
-    -2: [2, 1, 1],
-    -1: [2, 2, 1],
-    0: [3, 2, 1],
-    1: [4, 3, 1],
-    2: [5, 4, 1],
-    3: [5, 4, 1],
-    4: [5, 4, 2]
+    -3: (1, 1, 1),
+    -2: (2, 1, 1),
+    -1: (2, 2, 1),
+    0: (3, 2, 1),
+    1: (4, 3, 1),
+    2: (5, 4, 1),
+    3: (5, 4, 1),
+    4: (5, 4, 2)
 }
 
 Umiejetnosci = {
-    1: "Obsluga broni",
-    2: "Refleks",
-    3: "Skupienie",
-    4: "Strzelectwo",
-    5: "Walka wrecz",
-    6: "Zmysl bitewny",
-    7: "Ciche poruszanie",
-    8: "Prowadzenie pojazdu",
-    9: "Spostrzeganie",
-    10: "Sprawnosc fizyczna",
-    11: "Survival",
-    12: "Ukrywanie",
-    13: "Zreczne palce",
-    14: "Dyscyplina Naukowa",
-    15: "Gadana",
-    16: "Jezyki",
-    17: "Zawod",
-    18: "Dyscyplina Naukowa Medycyna",
-    19: "Dyscyplina Naukowa Informatyka",
-    20: "Dyscyplina Naukowa Humanistyka",
-    21: "Zawod Rusznikarz",
-    22: "Zawod Kowal",
-    23: "Zawod Mechanik",
-    24: "Zawod Kucharz"
+    1: "obsluga broni",
+    2: "refleks",
+    3: "skupienie",
+    4: "strzelectwo",
+    5: "walka wrecz",
+    6: "zmysl bitewny",
+    7: "ciche poruszanie",
+    8: "prowadzenie pojazdu",
+    9: "spostrzeganie",
+    10: "sprawnosc fizyczna",
+    11: "survival",
+    12: "ukrywanie",
+    13: "zreczne palce",
+    14: "dyscyplina naukowa",
+    15: "gadana",
+    16: "jezyki",
+    17: "zawod",
+    18: "dyscyplina naukowa Medycyna",
+    19: "dyscyplina naukowa Informatyka",
+    20: "dyscyplina naukowa Humanistyka",
+    21: "zawod Rusznikarz",
+    22: "zawod Kowal",
+    23: "zawod Mechanik",
+    24: "zawod Kucharz"
 }
 
 """
@@ -86,17 +87,17 @@ Umiejetnasci = [[0],
                ]
 
 """
-It's providing table of activation
+It's providing table of activation. Made into tuple, for optimalisation cause.
 """
 
 TypyAktywacji = {
-    -3: [0, 0, 0, 0, 0, 1],
-    -2: [0, 1, 0, 0, 0, 0],
-    -1: [0, 1, 0, 0, 1, 0],
-    0: [0, 1, 0, 1, 0, 1],
-    1: [0, 1, 1, 0, 1, 1],
-    2: [0, 1, 1, 1, 1, 1],
-    3: [1, 1, 1, 1, 1, 1],
+    -3: (0, 0, 0, 0, 0, 1),
+    -2: (0, 1, 0, 0, 0, 0),
+    -1: (0, 1, 0, 0, 1, 0),
+    0: (0, 1, 0, 1, 0, 1),
+    1: (0, 1, 1, 0, 1, 1),
+    2: (0, 1, 1, 1, 1, 1),
+    3: (1, 1, 1, 1, 1, 1),
 }
 
 """"

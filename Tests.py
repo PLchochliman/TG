@@ -1,6 +1,7 @@
 import mortal as mortal
 import constans as constants
 import system as system
+import excelDigger as excelDigger
 
 
 """
@@ -48,8 +49,16 @@ def testZycia():
     system.Output("zaawansowany system aktywacji zakonczony")
     wojtek.allokuj(15)
 
+def TestLuskaniaDanychZExcela():
+    specki = excelDigger.loader("Specjalizacje.xlsx", ["umiejetnasci"], ["B26"])
+    specki = specki.zwroc()
+    specki = specki[0]
+    assert specki[0][0] == "Bron boczna"
+    system.Output("ladowanie z excela dziala")
+
 
 
 testSystemu()
 testStalych()
 testZycia()
+TestLuskaniaDanychZExcela()

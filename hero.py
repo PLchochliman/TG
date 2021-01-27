@@ -23,6 +23,4 @@ class Postac(mortal.IstotaZywa):
             if i == 0:
                 system.Output("wybierz specjalizacje")
 
-
-
 wojtek = Postac(8, 8, 8)
