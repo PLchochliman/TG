@@ -1,5 +1,5 @@
 import system
-
+import excelDigger
 """
 COnstans are not tested!!!!
 Only by the way of other tests
@@ -21,6 +21,51 @@ TypBudowy = {
     2: (5, 4, 1),
     3: (5, 4, 1),
     4: (5, 4, 2)
+}
+
+
+"""
+here is some code for specialisations. Replaces classes from casual RPGs.
+"""
+
+specjalizacje = excelDigger.loader("Specjalizacje.xlsx", ["umiejetnasci"], ["B26"])
+specjalizacje = specjalizacje.zwroc()
+specjalizacje = specjalizacje[0]
+
+"""
+returns specialisation if exists, or False if does not exists.
+"""
+def wyszukajSpecjalizacje(specjalizacja):
+    for i in specjalizacje:
+        if i[0] == specjalizacja:
+            return i
+    return False
+
+UmiejetnasciDoInt = {
+    "obsluga broni": 1,
+    "refleks": 2,
+    "skupienie": 3,
+    "strzelectwo": 4,
+    "walka wrecz": 5,
+    "zmysl bitewny": 6,
+    "ciche poruszanie": 7,
+    "prowadzenie pojazdu": 8,
+    "spostrzeganie": 9,
+    "sprawnosc fizyczna": 10,
+    "survival": 11,
+    "ukrywanie": 12,
+    "zreczne palce": 13,
+    "dyscyplina naukowa": 14,
+    "gadana": 15,
+    "jezyki": 16,
+    "zawod": 17,
+    "dyscyplina naukowa Medycyna": 18,
+    "dyscyplina naukowa Informatyka": 19,
+    "dyscyplina naukowa Humanistyka": 20,
+    "zawod Rusznikarz": 21,
+    "zawod Kowal": 22,
+    "zawod Mechanik": 23,
+    "zawod Kucharz": 24
 }
 
 Umiejetnosci = {

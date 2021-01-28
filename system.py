@@ -50,9 +50,5 @@ basic Output command for the system. Awaits for being updated, when put into Dis
 def Output(text):
     print(text)
 
-
-"""
-Test made of assertions, to not to loose the faith, in working code of this section
-"""
-
-
+def Input():
+    return input()

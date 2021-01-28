@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="Skills by default has been set (when we talk about the modifiers from base statistics)&#10;Also TGmath is history. all is in constants. Rather need of new reader from excel, to faster preparation from data.">
-      <change afterPath="$PROJECT_DIR$/.~lock.TabelaBroni.xlsx#" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Specjalizacje.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TabelaBroni.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/constans.py" beforeDir="false" afterPath="$PROJECT_DIR$/constans.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/excelDigger.py" beforeDir="false" afterPath="$PROJECT_DIR$/excelDigger.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/hero.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mortal.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system.py" beforeDir="false" afterPath="$PROJECT_DIR$/system.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +61,7 @@
       </console-settings>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Tests">
+  <component name="RunManager" selected="Python.hero">
     <configuration name="Tests" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TG" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -176,9 +176,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.hero" />
         <item itemvalue="Python.Tests" />
         <item itemvalue="Python.excelDigger" />
-        <item itemvalue="Python.hero" />
         <item itemvalue="Python.mortal" />
         <item itemvalue="Python.system" />
       </list>
@@ -277,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611629477321</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="excel reader works, and is tested. preparing for big test of hero, then test of skills.">
+      <created>1611788016811</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1611788016811</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -304,6 +311,7 @@
     <MESSAGE value="renamed alive into mortal. makes much more sence." />
     <MESSAGE value="did base for skills, and starting specialisations." />
     <MESSAGE value="Skills by default has been set (when we talk about the modifiers from base statistics)&#10;Also TGmath is history. all is in constants. Rather need of new reader from excel, to faster preparation from data." />
-    <option name="LAST_COMMIT_MESSAGE" value="Skills by default has been set (when we talk about the modifiers from base statistics)&#10;Also TGmath is history. all is in constants. Rather need of new reader from excel, to faster preparation from data." />
+    <MESSAGE value="excel reader works, and is tested. preparing for big test of hero, then test of skills." />
+    <option name="LAST_COMMIT_MESSAGE" value="excel reader works, and is tested. preparing for big test of hero, then test of skills." />
   </component>
 </project>

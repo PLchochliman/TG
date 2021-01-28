@@ -169,3 +169,16 @@ class IstotaZywa:
                     self.Umiejetnasci[i][3] = self.modSila
                 else:
                     self.Umiejetnasci[i][3] = self.modZrecznasc
+
+    def rzutNaUmiejetnasc(self, testowanaUmiejetnasc):
+        umiejka = constans.UmiejetnasciDoInt[testowanaUmiejetnasc]
+        doRzutu = self.Umiejetnasci[umiejka]
+        return constans.KoscUmiejetnosci[doRzutu[0]] + doRzutu[3]
+
+    """
+        umiejetnasci is table for skills. from constants you 
+    first states for skill level, second for Cost, 
+    3rd of specializations (Cost is depending on it), 
+    4th is for all modifiers from predispositions (skill in specialisations)and modifiers from stats
+    5th is all for modifier based on base stats modifier.
+    """

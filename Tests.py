@@ -29,6 +29,11 @@ def testStalych():
 def testZycia():
     wojtek = mortal.IstotaZywa(8, 8, 8, "Wojtek")
     assert wojtek.aktywacja(2) == True
+    assert wojtek.Umiejetnasci[3][3] == 1
+    assert wojtek.Umiejetnasci[4][3] == 0   #mod z umiejek dzialaja
+    assert wojtek.rzutNaUmiejetnasc("skupienie") >= 2
+    system.Output("Umiejetnasci dzialaja")
+    #dalej sa sprawdzane rany i reakcje
     wojtek.rana(10, 0)
     assert wojtek.drasniecia == 1
     assert wojtek.lekkaRana == 1
@@ -49,7 +54,7 @@ def testZycia():
     system.Output("zaawansowany system aktywacji zakonczony")
     wojtek.allokuj(15)
 
-def TestLuskaniaDanychZExcela():
+def testLuskaniaDanychZExcela():
     specki = excelDigger.loader("Specjalizacje.xlsx", ["umiejetnasci"], ["B26"])
     specki = specki.zwroc()
     specki = specki[0]
@@ -57,8 +62,7 @@ def TestLuskaniaDanychZExcela():
     system.Output("ladowanie z excela dziala")
 
 
-
+testLuskaniaDanychZExcela()
 testSystemu()
 testStalych()
 testZycia()
-TestLuskaniaDanychZExcela()
