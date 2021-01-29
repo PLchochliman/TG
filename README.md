@@ -1,2 +1,2 @@
 # TG
- Try of implement mechanix of TG into simple program
+ Try of implement mechanics of TG into simple program
