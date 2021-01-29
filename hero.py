@@ -18,7 +18,7 @@ class Postac(mortal.IstotaZywa):
         self.punktyUmiejetnasci = pu + pu / 10 * self.modIntelekt
         self.pieniadze = kasa
         self.wybierzSpecjalizacje()
-        self.nastawKosztUmiejetnasci()
+        self.nastawKosztUmiejetnasciRecznie()
 
     def __init__(self, sila, zrecznasc, intelekt, specjalizacje, imie="bob", pu=150, kasa=9000, ):
         super().__init__(sila, zrecznasc, intelekt, imie)
@@ -27,7 +27,7 @@ class Postac(mortal.IstotaZywa):
         self.przypiszSpecjalizacje(specjalizacje[0])
         self.przypiszSpecjalizacje(specjalizacje[1])
         self.przypiszSpecjalizacje(specjalizacje[2])
-        self.nastawKosztUmiejetnasci()
+        self.nastawKosztUmiejetnasciRecznie()
 
     #przypisuje 1 specjalizacje
     def przypiszSpecjalizacje(self, specjalizacja):
@@ -37,17 +37,20 @@ class Postac(mortal.IstotaZywa):
     #TODO dalej mozna wybrac kilka razy te same specjalizacje!!! a nie powinno tak byc
     def wybierzSpecjalizacje(self):
         i = 0
-        while(i < 3):
+        while i < 3:
             system.Output("wybierz specjalizacje")
             y = constans.wyszukajSpecjalizacje(system.Input())
-            if y != False:
-                self.specjalizacje.append(y)
-                i += 1
+            if y:
+                for i in self.specjalizacje:
+                    if y == i:
+                        system.Output("Ta specjalizacja zostala juz wybrana")
+                    else:
+                        self.specjalizacje.append(y)
+                        i += 1
             else:
                 system.Output("Zle wprowadzona specjalizacja. Sproboj jescze raz")
 
-    #TODO zablokowac wiecej niz 3 razy wziecie tego samego (dyscypliny naukowe i zawodu
-    def nastawKosztUmiejetnasci(self):
+    def nastawKosztUmiejetnasciRecznie(self):
         for i in self.specjalizacje:
             i = i[1]
             umiejetnasciSpecjalizacji = i.split(',')
@@ -58,14 +61,17 @@ class Postac(mortal.IstotaZywa):
                 if z == "dyscyplina naukowa lub zawod":
                     hamulec:int = 0
                     while hamulec == 0:
-                        system.Output("Doprecyzuj: wybierz sposrod: \n1 dyscyplina naukowa Medycyna  "
-                                      "  \n2: dyscyplina naukowa Informatyka \n3: dyscyplina naukowa Humanistyka,"
-                                      "\n4: zawod Rusznikarz  \n5: zawod Kowal \n6: zawod Mechanik \n7: zawod Kucharz")
+                        system.Output("Doprecyzuj: wybierz sposrod: \ndyscyplina naukowa Medycyna  "
+                                      "  \ndyscyplina naukowa Informatyka \ndyscyplina naukowa Humanistyka,"
+                                      "\nzawod Rusznikarz  \nzawod Kowal \nzawod Mechanik \nzawod Kucharz")
                         wejscie = system.Input()
                         if wejscie in constans.UmiejetnasciDoInt:
-                            self.Umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] = \
-                            self.Umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] + 1
-                            hamulec += 1
+                            if self.Umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] != 3:
+                                self.Umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] = \
+                                self.Umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] + 1
+                                hamulec += 1
+                            else:
+                                system.Output("juz 3 raz wybrales te umiejetnasc. wybierz inna.")
                         else:
                             system.Output("zle wprowadzona dana. sproboj jeszcze raz")
                 else:

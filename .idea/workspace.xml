@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="Did something about specialisation.&#10;Skills are working and tested.&#10;attached excels are working">
+    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="mowed forward with skills, but still not advancing them itd....">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/hero.py" afterDir="false" />
     </list>
@@ -285,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611798800318</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="mowed forward with skills, but still not advancing them itd....">
+      <created>1611886076699</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1611886076699</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -314,6 +321,7 @@
     <MESSAGE value="Skills by default has been set (when we talk about the modifiers from base statistics)&#10;Also TGmath is history. all is in constants. Rather need of new reader from excel, to faster preparation from data." />
     <MESSAGE value="excel reader works, and is tested. preparing for big test of hero, then test of skills." />
     <MESSAGE value="Did something about specialisation.&#10;Skills are working and tested.&#10;attached excels are working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Did something about specialisation.&#10;Skills are working and tested.&#10;attached excels are working" />
+    <MESSAGE value="mowed forward with skills, but still not advancing them itd...." />
+    <option name="LAST_COMMIT_MESSAGE" value="mowed forward with skills, but still not advancing them itd...." />
   </component>
 </project>
