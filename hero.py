@@ -46,7 +46,7 @@ class Postac(mortal.IstotaZywa):
             else:
                 system.Output("Zle wprowadzona specjalizacja. Sproboj jescze raz")
 
-    #TODO Nastawic Dyscypliny naukowe, oraz Dyscyplina naukowa albo zawod
+    #TODO zablokowac wiecej niz 3 razy wziecie tego samego (dyscypliny naukowe i zawodu
     def nastawKosztUmiejetnasci(self):
         for i in self.specjalizacje:
             i = i[1]
@@ -54,9 +54,22 @@ class Postac(mortal.IstotaZywa):
             ostateczne = []
             for y in umiejetnasciSpecjalizacji:
                 ostateczne.append(y.strip())
-            print(ostateczne)
             for z in ostateczne:
-                self.Umiejetnasci[constans.UmiejetnasciDoInt[z]][2] = self.Umiejetnasci[constans.UmiejetnasciDoInt[z]][2] + 1
+                if z == "dyscyplina naukowa lub zawod":
+                    hamulec:int = 0
+                    while hamulec == 0:
+                        system.Output("Doprecyzuj: wybierz sposrod: \n1 dyscyplina naukowa Medycyna  "
+                                      "  \n2: dyscyplina naukowa Informatyka \n3: dyscyplina naukowa Humanistyka,"
+                                      "\n4: zawod Rusznikarz  \n5: zawod Kowal \n6: zawod Mechanik \n7: zawod Kucharz")
+                        wejscie = system.Input()
+                        if wejscie in constans.UmiejetnasciDoInt:
+                            self.Umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] = \
+                            self.Umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] + 1
+                            hamulec += 1
+                        else:
+                            system.Output("zle wprowadzona dana. sproboj jeszcze raz")
+                else:
+                    self.Umiejetnasci[constans.UmiejetnasciDoInt[z]][2] = self.Umiejetnasci[constans.UmiejetnasciDoInt[z]][2] + 1
 
 
 wojtek = Postac(8, 8, 8, ["Bron boczna", "Karabiny", "Nauka"])
