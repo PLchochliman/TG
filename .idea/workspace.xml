@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="mowed forward with skills, but still not advancing them itd....">
+    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="finished manual skills setting.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Specjalizacje.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Specjalizacje.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/hero.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -292,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611886076699</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="finished manual skills setting.">
+      <created>1611964212205</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1611964212207</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -322,6 +330,7 @@
     <MESSAGE value="excel reader works, and is tested. preparing for big test of hero, then test of skills." />
     <MESSAGE value="Did something about specialisation.&#10;Skills are working and tested.&#10;attached excels are working" />
     <MESSAGE value="mowed forward with skills, but still not advancing them itd...." />
-    <option name="LAST_COMMIT_MESSAGE" value="mowed forward with skills, but still not advancing them itd...." />
+    <MESSAGE value="finished manual skills setting." />
+    <option name="LAST_COMMIT_MESSAGE" value="finished manual skills setting." />
   </component>
 </project>
