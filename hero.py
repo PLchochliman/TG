@@ -42,12 +42,11 @@ class Postac(mortal.IstotaZywa):
                     self.specjalizacje.append(specjalizacja)
                     wyjscie = wyjscie + 1
                 else:
-                    for juzwybrane in self.specjalizacje:
-                        if specjalizacja == juzwybrane:
-                            system.Output("Ta specjalizacja zostala juz wybrana")
-                        else:
-                            self.specjalizacje.append(specjalizacja)
-                            wyjscie = wyjscie + 1
+                    if specjalizacja in self.specjalizacje:
+                        system.Output("Ta specjalizacja zostala juz wybrana")
+                    else:
+                        self.specjalizacje.append(specjalizacja)
+                        wyjscie = wyjscie + 1
             else:
                 system.Output("Zle wprowadzona specjalizacja. Sproboj jescze raz")
 
@@ -60,13 +59,22 @@ class Postac(mortal.IstotaZywa):
             for umiejetnasciWyluskane in umiejetnasciSpecjalizacji:
                 ostateczne.append(umiejetnasciWyluskane.strip())
             for umiejetnascWyciagnieta in ostateczne:
-                if umiejetnascWyciagnieta == "dyscyplina naukowa lub zawod":
-                    hamulec: int = 0
-                    while hamulec == 0:
-                        system.Output("Doprecyzuj: wybierz sposrod: \ndyscyplina naukowa Medycyna  "
-                                      "  \ndyscyplina naukowa Informatyka \ndyscyplina naukowa Humanistyka,"
-                                      "\nzawod Rusznikarz  \nzawod Kowal \nzawod Mechanik \nzawod Kucharz")
-                        wejscie = system.Input()
+                if umiejetnascWyciagnieta in ["dyscyplina naukowa lub zawod", "dyscyplina naukowa", "zawod"]:
+                    self.dobierzZawod(umiejetnascWyciagnieta)
+                else:
+                    self.Umiejetnasci[constans.UmiejetnasciDoInt[umiejetnascWyciagnieta]][2] = \
+                    self.Umiejetnasci[constans.UmiejetnasciDoInt[umiejetnascWyciagnieta]][2] + 1
+
+    def dobierzZawod(self, typDoprecyzowania):
+        try:
+            if typDoprecyzowania == "dyscyplina naukowa lub zawod":
+                hamulec: int = 0
+                while hamulec == 0:
+                    system.Output("Doprecyzuj: wybierz sposrod: \ndyscyplina naukowa Medycyna  "
+                                  "  \ndyscyplina naukowa Informatyka \ndyscyplina naukowa Humanistyka,"
+                                  "\nzawod Rusznikarz  \nzawod Kowal \nzawod Mechanik \nzawod Kucharz")
+                    wejscie = system.Input()
+                    if 17 < constans.UmiejetnasciDoInt[wejscie] < 25:
                         if wejscie in constans.UmiejetnasciDoInt:
                             if self.Umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] != 3:
                                 self.Umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] = \
@@ -76,9 +84,47 @@ class Postac(mortal.IstotaZywa):
                                 system.Output("juz 3 raz wybrales te umiejetnasc. wybierz inna.")
                         else:
                             system.Output("zle wprowadzona dana. sproboj jeszcze raz")
-                else:
-                    self.Umiejetnasci[constans.UmiejetnasciDoInt[umiejetnascWyciagnieta]][2] = \
-                    self.Umiejetnasci[constans.UmiejetnasciDoInt[umiejetnascWyciagnieta]][2] + 1
+                    else:
+                        system.Output("wybrano umiejetnosc spoza spektrum! \n sprobuj ponownie")
+            elif typDoprecyzowania == "dyscyplina naukowa":
+                hamulec: int = 0
+                while hamulec == 0:
+                    system.Output("Doprecyzuj: wybierz sposrod: \ndyscyplina naukowa Medycyna  "
+                                  "  \ndyscyplina naukowa Informatyka \ndyscyplina naukowa Humanistyka,")
+                    wejscie = system.Input()
+                    if 17 < constans.UmiejetnasciDoInt[wejscie] < 21:
+                        if wejscie in constans.UmiejetnasciDoInt:
+                            if self.Umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] != 3:
+                                self.Umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] = \
+                                    self.Umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] + 1
+                                hamulec += 1
+                            else:
+                                system.Output("juz 3 raz wybrales te umiejetnasc. wybierz inna.")
+                        else:
+                            system.Output("zle wprowadzona dana. sproboj jeszcze raz")
+                    else:
+                        system.Output("wybrano umiejetnosc spoza spektrum! \n sprobuj ponownie")
+            elif typDoprecyzowania == "zawod":
+                hamulec: int = 0
+                while hamulec == 0:
+                    system.Output("Doprecyzuj: wybierz sposrod: \nzawod Rusznikarz \nzawod Kowal"
+                                  "\nzawod Mechanik \nzawod Kucharz")
+                    wejscie = system.Input()
+                    if 20 < constans.UmiejetnasciDoInt[wejscie] < 25:
+                        if wejscie in constans.UmiejetnasciDoInt:
+                            if self.Umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] != 3:
+                                self.Umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] = \
+                                    self.Umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] + 1
+                                hamulec += 1
+                            else:
+                                system.Output("juz 3 raz wybrales te umiejetnasc. wybierz inna.")
+                        else:
+                            system.Output("zle wprowadzona dana. sproboj jeszcze raz")
+                    else:
+                        system.Output("wybrano umiejetnosc spoza spektrum! \n sprobuj ponownie")
+        except KeyError:
+            system.Output("Zle podales nazwe umiejetnasci, sproboj jeszcze raz")
+            self.dobierzZawod(typDoprecyzowania)
 
     def nastawKosztUmiejetnasciAutomatycznie(self):
         for specjalizacja in self.specjalizacje:
@@ -103,5 +149,5 @@ class Postac(mortal.IstotaZywa):
 
 
 #wojtek = Postac(8, 8, 8, ["Bron boczna", "Karabiny", "Nauka"])
-wojtek = Postac(8, 8, 8)
+wojtek = Postac(8, 8, 8) #tests almost done. need other specs to test just dyscyplina naukowa or zawod
 print(wojtek.Umiejetnasci)

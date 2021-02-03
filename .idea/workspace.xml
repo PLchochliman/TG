@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="finished manual skills setting.">
+    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="manual specialisations finished, but still has a bug, because always printing &quot;Ta specjalizacja została już wybrana&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Specjalizacje.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Specjalizacje.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/hero.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -163,11 +162,11 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.system" />
       <item itemvalue="Python.Tests" />
-      <item itemvalue="Python.mortal" />
-      <item itemvalue="Python.hero" />
       <item itemvalue="Python.excelDigger" />
+      <item itemvalue="Python.hero" />
+      <item itemvalue="Python.mortal" />
+      <item itemvalue="Python.system" />
     </list>
     <recent_temporary>
       <list>
@@ -300,7 +299,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611964212207</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="manual specialisations finished, but still has a bug, because always printing &quot;Ta specjalizacja została już wybrana&quot;">
+      <created>1612116749310</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1612116749310</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -331,6 +337,7 @@
     <MESSAGE value="Did something about specialisation.&#10;Skills are working and tested.&#10;attached excels are working" />
     <MESSAGE value="mowed forward with skills, but still not advancing them itd...." />
     <MESSAGE value="finished manual skills setting." />
-    <option name="LAST_COMMIT_MESSAGE" value="finished manual skills setting." />
+    <MESSAGE value="manual specialisations finished, but still has a bug, because always printing &quot;Ta specjalizacja została już wybrana&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="manual specialisations finished, but still has a bug, because always printing &quot;Ta specjalizacja została już wybrana&quot;" />
   </component>
 </project>
