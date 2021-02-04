@@ -31,7 +31,6 @@ class Postac(mortal.IstotaZywa):
         self.specjalizacje.append(constans.wyszukajSpecjalizacje(specjalizacja))
 
     #Pozwala uzytkownikowi wybrac sobie 3 specjalizacje
-    #TODO nie wiem na chuj pojawia sie komunikat.
     def wybierzSpecjalizacje(self):
         wyjscie = 0
         while wyjscie < 3:
@@ -50,7 +49,7 @@ class Postac(mortal.IstotaZywa):
             else:
                 system.Output("Zle wprowadzona specjalizacja. Sproboj jescze raz")
 
-    #TODO zrobic zawody i dyscypliny naukowe
+    #nastawia koszty umiejętności
     def nastawKosztUmiejetnasciRecznie(self):
         for specjalizacja in self.specjalizacje:
             specjalizacja = specjalizacja[1]
@@ -65,6 +64,7 @@ class Postac(mortal.IstotaZywa):
                     self.Umiejetnasci[constans.UmiejetnasciDoInt[umiejetnascWyciagnieta]][2] = \
                     self.Umiejetnasci[constans.UmiejetnasciDoInt[umiejetnascWyciagnieta]][2] + 1
 
+    #rozwiązuje problem zawodu, dyscypliny naukowej.
     def dobierzZawod(self, typDoprecyzowania):
         try:
             if typDoprecyzowania == "dyscyplina naukowa lub zawod":
@@ -146,6 +146,36 @@ class Postac(mortal.IstotaZywa):
                         hamulec = 1
                 else:
                     self.Umiejetnasci[constans.UmiejetnasciDoInt[umiejetnasc]][2] = self.Umiejetnasci[constans.UmiejetnasciDoInt[umiejetnasc]][2] + 1
+
+    """
+        umiejetnasci is table for skills. from constants you 
+        first states for skill level, second for Cost, 
+        3rd of specializations (Cost is dependingo for it), 
+        4th is for all modifiers from predispositions (skill in specialisations)and modifiers from stats
+        5th is all for modifier based on base stats modifier. 0 states for none, 1 is for Power, 2 is for Dexerity, 3 is
+        for Inteligence, 4 is for Power or Inteligence, 5 is for Dexerity or Inteligence, 6 is for Power or Dexerity.
+    """
+    def wykupRange(self, nazwaUmiejetnasci):
+        if nazwaUmiejetnasci in constans.UmiejetnasciDoInt:
+            umiejetnasc = constans.UmiejetnasciDoInt[nazwaUmiejetnasci]
+            if self.Umiejetnasci[umiejetnasc][2] == 3:
+                if self.Umiejetnasci[umiejetnasc][0] == 0:
+                    self.Umiejetnasci[umiejetnasc][0] = 1
+                else:
+                    if self.punktyUmiejetnasci >= ((self.Umiejetnasci[umiejetnasc][0]*1) - 1):
+                        self.punktyUmiejetnasci = self.punktyUmiejetnasci - (self.Umiejetnasci[umiejetnasc][0] * 1) - 1
+                        self.Umiejetnasci[umiejetnasc][0] = self.Umiejetnasci[umiejetnasc][0] +1
+                        self.Umiejetnasci[umiejetnasc][1] = self.Umiejetnasci[umiejetnasc][0] + \
+                                                            (self.Umiejetnasci[umiejetnasc][0] * 1)
+            else:
+                if self.punktyUmiejetnasci >= (self.Umiejetnasci[umiejetnasc][1]+1)*(3-self.Umiejetnasci[umiejetnasc][3]):
+                    self.punktyUmiejetnasci = self.punktyUmiejetnasci - \
+                                    ((self.Umiejetnasci[umiejetnasc][1]+1) * (3 - self.Umiejetnasci[umiejetnasc][3]))
+                    self.Umiejetnasci[umiejetnasc][0] = self.Umiejetnasci[umiejetnasc][0] + 1
+                    self.Umiejetnasci[umiejetnasc][1] = self.Umiejetnasci[umiejetnasc][1] +\
+                                    ((self.Umiejetnasci[umiejetnasc][1]+1) * (3 - self.Umiejetnasci[umiejetnasc][3]))
+        else:
+            system.Output("nie ma takiej umiejetnasci")
 
 
 #wojtek = Postac(8, 8, 8, ["Bron boczna", "Karabiny", "Nauka"])
