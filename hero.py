@@ -183,9 +183,20 @@ class Postac(mortal.IstotaZywa):
         else:
             system.Output("nie ma takiej umiejetnasci")
 
-
+"""
 wojtek = Postac(8, 8, 8, ["Bron boczna", "Karabiny", "Karabiny maszynowe"])
-#wojtek = Postac(8, 8, 8)
 wojtek.wykupRange("obsluga broni")
-assert wojtek.punktyUmiejetnasci == 150
+assert wojtek.punktyUmiejetnasci == 165
+assert wojtek.Umiejetnasci[1][0] == 1
+wojtek.wykupRange("obsluga broni")
+assert wojtek.punktyUmiejetnasci == 164
+assert wojtek.Umiejetnasci[1][0] == 2
+wojtek.wykupRange("ciche poruszanie")
+assert wojtek.punktyUmiejetnasci == 161
+assert wojtek.Umiejetnasci[7][0] == 1
+wojtek.wykupRange("refleks")
+assert wojtek.punktyUmiejetnasci == 159
+assert wojtek.Umiejetnasci[2][0] == 1
+
 print(wojtek.Umiejetnasci)
+"""

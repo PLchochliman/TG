@@ -2,7 +2,7 @@ import mortal as mortal
 import constans as constants
 import system as system
 import excelDigger as excelDigger
-
+import hero as hero
 
 """
 it all should be made by another 
@@ -26,14 +26,16 @@ def testStalych():
     system.Output("matematyka TG dziala bez zarzutu")
 
 
-def testZycia():
+def testLuskaniaDanychZExcela():
+    specki = excelDigger.loader("Specjalizacje.xlsx", ["umiejetnasci"], ["B26"])
+    specki = specki.zwroc()
+    specki = specki[0]
+    assert specki[0][0] == "Bron boczna"
+    system.Output("ladowanie z excela dziala")
+
+
+def testRanKarSmierci(): #testy mortal.py
     wojtek = mortal.IstotaZywa(8, 8, 8, "Wojtek")
-    assert wojtek.aktywacja(2) == True
-    assert wojtek.Umiejetnasci[3][3] == 1
-    assert wojtek.Umiejetnasci[4][3] == 0   #mod z umiejek dzialaja
-    assert wojtek.rzutNaUmiejetnasc("skupienie") >= 2
-    system.Output("Umiejetnasci dzialaja")
-    #dalej sa sprawdzane rany i reakcje
     wojtek.rana(10, 0)
     assert wojtek.drasniecia == 1
     assert wojtek.lekkaRana == 1
@@ -54,15 +56,36 @@ def testZycia():
     system.Output("zaawansowany system aktywacji zakonczony")
     wojtek.allokuj(15)
 
-def testLuskaniaDanychZExcela():
-    specki = excelDigger.loader("Specjalizacje.xlsx", ["umiejetnasci"], ["B26"])
-    specki = specki.zwroc()
-    specki = specki[0]
-    assert specki[0][0] == "Bron boczna"
-    system.Output("ladowanie z excela dziala")
+
+def testUmiejetnosciIAktywacji(): # test mortal.py
+    wojtek = mortal.IstotaZywa(8, 8, 8, "Wojtek")
+    assert wojtek.aktywacja(2)
+    assert wojtek.Umiejetnasci[3][3] == 1
+    assert wojtek.Umiejetnasci[4][3] == 0
+    assert wojtek.rzutNaUmiejetnasc("skupienie") >= 2
+    system.Output("Umiejetnasci dzialaja")
+
+
+def testWykupowaniaUmiejetnosci():
+    #moze dopisac jeszcze po przypadku dla x2 i x3 (ciche poruszanie i refleks)
+    wojtek = hero.Postac(8, 8, 8, ["Bron boczna", "Karabiny", "Karabiny maszynowe"])
+    wojtek.wykupRange("obsluga broni")
+    assert wojtek.punktyUmiejetnasci == 165
+    assert wojtek.Umiejetnasci[1][0] == 1
+    wojtek.wykupRange("obsluga broni")
+    assert wojtek.punktyUmiejetnasci == 164
+    assert wojtek.Umiejetnasci[1][0] == 2
+    wojtek.wykupRange("ciche poruszanie")
+    assert wojtek.punktyUmiejetnasci == 161
+    assert wojtek.Umiejetnasci[7][0] == 1
+    wojtek.wykupRange("refleks")
+    assert wojtek.punktyUmiejetnasci == 159
+    assert wojtek.Umiejetnasci[2][0] == 1
+    system.Output("wykupowanie umiejetnasci dziala")
 
 
 testLuskaniaDanychZExcela()
 testSystemu()
 testStalych()
-testZycia()
+testRanKarSmierci()
+testUmiejetnosciIAktywacji()

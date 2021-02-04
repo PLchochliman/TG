@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="buying ranks in progress">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="buying ranks maybe finished, but there is no test. we need more tests to hero.">
+      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/hero.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +55,7 @@
       </console-settings>
     </option>
   </component>
-  <component name="RunManager" selected="Python.hero">
+  <component name="RunManager" selected="Python.Tests">
     <configuration name="Tests" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TG" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -170,8 +170,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.hero" />
         <item itemvalue="Python.Tests" />
+        <item itemvalue="Python.hero" />
         <item itemvalue="Python.excelDigger" />
         <item itemvalue="Python.mortal" />
         <item itemvalue="Python.system" />
@@ -320,7 +320,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612397755083</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="buying ranks maybe finished, but there is no test. we need more tests to hero.">
+      <created>1612400089420</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1612400089420</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -354,6 +361,7 @@
     <MESSAGE value="manual specialisations finished, but still has a bug, because always printing &quot;Ta specjalizacja została już wybrana&quot;" />
     <MESSAGE value="ok, skills finally done, when it comes to apply secialisations." />
     <MESSAGE value="buying ranks in progress" />
-    <option name="LAST_COMMIT_MESSAGE" value="buying ranks in progress" />
+    <MESSAGE value="buying ranks maybe finished, but there is no test. we need more tests to hero." />
+    <option name="LAST_COMMIT_MESSAGE" value="buying ranks maybe finished, but there is no test. we need more tests to hero." />
   </component>
 </project>

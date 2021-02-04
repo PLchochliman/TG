@@ -130,7 +130,7 @@ class IstotaZywa:
     """
 
     def aktywacja(self, faza):
-        if self.status == False:
+        if not self.status:
             return False
         if self.mozliwoscAktywacji[faza] == 1:
             return True
