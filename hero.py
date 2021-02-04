@@ -158,15 +158,19 @@ class Postac(mortal.IstotaZywa):
     def wykupRange(self, nazwaUmiejetnasci):
         if nazwaUmiejetnasci in constans.UmiejetnasciDoInt:
             umiejetnasc = constans.UmiejetnasciDoInt[nazwaUmiejetnasci]
+            # jeżeli w 3 speckach jest dana umiejka to wtedy jest specjalne wykupowanie
             if self.Umiejetnasci[umiejetnasc][2] == 3:
                 if self.Umiejetnasci[umiejetnasc][0] == 0:
                     self.Umiejetnasci[umiejetnasc][0] = 1
                 else:
                     if self.punktyUmiejetnasci >= ((self.Umiejetnasci[umiejetnasc][0]*1) - 1):
                         self.punktyUmiejetnasci = self.punktyUmiejetnasci - (self.Umiejetnasci[umiejetnasc][0] * 1) - 1
-                        self.Umiejetnasci[umiejetnasc][0] = self.Umiejetnasci[umiejetnasc][0] +1
+                        self.Umiejetnasci[umiejetnasc][0] = self.Umiejetnasci[umiejetnasc][0] + 1
                         self.Umiejetnasci[umiejetnasc][1] = self.Umiejetnasci[umiejetnasc][0] + \
                                                             (self.Umiejetnasci[umiejetnasc][0] * 1)
+                    else:
+                        system.Output("nie stać Cię. Podexp")
+            #dla reszty
             else:
                 if self.punktyUmiejetnasci >= (self.Umiejetnasci[umiejetnasc][1]+1)*(3-self.Umiejetnasci[umiejetnasc][3]):
                     self.punktyUmiejetnasci = self.punktyUmiejetnasci - \
@@ -174,10 +178,14 @@ class Postac(mortal.IstotaZywa):
                     self.Umiejetnasci[umiejetnasc][0] = self.Umiejetnasci[umiejetnasc][0] + 1
                     self.Umiejetnasci[umiejetnasc][1] = self.Umiejetnasci[umiejetnasc][1] +\
                                     ((self.Umiejetnasci[umiejetnasc][1]+1) * (3 - self.Umiejetnasci[umiejetnasc][3]))
+                else:
+                    system.Output("nie stać Cię. Podexp")
         else:
             system.Output("nie ma takiej umiejetnasci")
 
 
-#wojtek = Postac(8, 8, 8, ["Bron boczna", "Karabiny", "Nauka"])
-wojtek = Postac(8, 8, 8) #tests almost done. need other specs to test just dyscyplina naukowa or zawod
+wojtek = Postac(8, 8, 8, ["Bron boczna", "Karabiny", "Karabiny maszynowe"])
+#wojtek = Postac(8, 8, 8)
+wojtek.wykupRange("obsluga broni")
+assert wojtek.punktyUmiejetnasci == 150
 print(wojtek.Umiejetnasci)

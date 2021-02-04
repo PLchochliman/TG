@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="ok, skills finally done, when it comes to apply secialisations.">
+    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="buying ranks in progress">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/hero.py" afterDir="false" />
     </list>
@@ -313,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612331720265</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="buying ranks in progress">
+      <created>1612397755083</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1612397755083</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -346,6 +353,7 @@
     <MESSAGE value="finished manual skills setting." />
     <MESSAGE value="manual specialisations finished, but still has a bug, because always printing &quot;Ta specjalizacja została już wybrana&quot;" />
     <MESSAGE value="ok, skills finally done, when it comes to apply secialisations." />
-    <option name="LAST_COMMIT_MESSAGE" value="ok, skills finally done, when it comes to apply secialisations." />
+    <MESSAGE value="buying ranks in progress" />
+    <option name="LAST_COMMIT_MESSAGE" value="buying ranks in progress" />
   </component>
 </project>
