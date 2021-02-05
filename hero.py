@@ -183,20 +183,16 @@ class Postac(mortal.IstotaZywa):
         else:
             system.Output("nie ma takiej umiejetnasci")
 
-"""
-wojtek = Postac(8, 8, 8, ["Bron boczna", "Karabiny", "Karabiny maszynowe"])
-wojtek.wykupRange("obsluga broni")
-assert wojtek.punktyUmiejetnasci == 165
-assert wojtek.Umiejetnasci[1][0] == 1
-wojtek.wykupRange("obsluga broni")
-assert wojtek.punktyUmiejetnasci == 164
-assert wojtek.Umiejetnasci[1][0] == 2
-wojtek.wykupRange("ciche poruszanie")
-assert wojtek.punktyUmiejetnasci == 161
-assert wojtek.Umiejetnasci[7][0] == 1
-wojtek.wykupRange("refleks")
-assert wojtek.punktyUmiejetnasci == 159
-assert wojtek.Umiejetnasci[2][0] == 1
+    def podniesPredyspozycje(self, specjalizacja):
+        for i in self.specjalizacje:
+            if specjalizacja == i[0]:
+                i = i[1].split(", ")
+                i[5] = i[5].strip()
+                for umiejetnasc in i:
+                    umiejetnasc = constans.UmiejetnasciDoInt[umiejetnasc]
+                    self.Umiejetnasci[umiejetnasc][3] = self.Umiejetnasci[umiejetnasc][3] + 1
 
-print(wojtek.Umiejetnasci)
+"""
+do testów
+wojtek = Postac(8, 8, 8, ["Bron boczna", "Karabiny", "Karabiny maszynowe"])
 """

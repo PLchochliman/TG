@@ -87,6 +87,8 @@ def testWykupowaniaUmiejetnosciZObnizeniemPrzezSpecjalizacje():
     assert wojtek.punktyUmiejetnasci == 149
     assert wojtek.Umiejetnasci[8][0] == 2
     assert wojtek.rzutNaUmiejetnasc("prowadzenie pojazdu") > 3
+    wojtek.podniesPredyspozycje("Bron boczna")
+    assert wojtek.Umiejetnasci[8][3] == 2
     system.Output("wykupowanie umiejetnasci dziala")
 
 
