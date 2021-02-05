@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="buying ranks maybe finished, but there is no test. we need more tests to hero.">
+    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Specjalizacje.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Specjalizacje.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/hero.py" afterDir="false" />
     </list>
@@ -327,7 +329,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612400089420</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="some tests done, but still not enough.">
+      <created>1612415415367</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1612415415367</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -362,6 +371,7 @@
     <MESSAGE value="ok, skills finally done, when it comes to apply secialisations." />
     <MESSAGE value="buying ranks in progress" />
     <MESSAGE value="buying ranks maybe finished, but there is no test. we need more tests to hero." />
-    <option name="LAST_COMMIT_MESSAGE" value="buying ranks maybe finished, but there is no test. we need more tests to hero." />
+    <MESSAGE value="some tests done, but still not enough." />
+    <option name="LAST_COMMIT_MESSAGE" value="some tests done, but still not enough." />
   </component>
 </project>

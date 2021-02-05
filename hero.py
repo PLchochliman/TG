@@ -163,21 +163,21 @@ class Postac(mortal.IstotaZywa):
                 if self.Umiejetnasci[umiejetnasc][0] == 0:
                     self.Umiejetnasci[umiejetnasc][0] = 1
                 else:
-                    if self.punktyUmiejetnasci >= ((self.Umiejetnasci[umiejetnasc][0]*1) - 1):
-                        self.punktyUmiejetnasci = self.punktyUmiejetnasci - (self.Umiejetnasci[umiejetnasc][0] * 1) - 1
+                    if self.punktyUmiejetnasci >= (self.Umiejetnasci[umiejetnasc][0]):
+                        self.punktyUmiejetnasci = self.punktyUmiejetnasci - (self.Umiejetnasci[umiejetnasc][0])
                         self.Umiejetnasci[umiejetnasc][0] = self.Umiejetnasci[umiejetnasc][0] + 1
                         self.Umiejetnasci[umiejetnasc][1] = self.Umiejetnasci[umiejetnasc][0] + \
-                                                            (self.Umiejetnasci[umiejetnasc][0] * 1)
+                                                            (self.Umiejetnasci[umiejetnasc][0])
                     else:
                         system.Output("nie stać Cię. Podexp")
             #dla reszty
             else:
-                if self.punktyUmiejetnasci >= (self.Umiejetnasci[umiejetnasc][1]+1)*(3-self.Umiejetnasci[umiejetnasc][3]):
+                if self.punktyUmiejetnasci >= (self.Umiejetnasci[umiejetnasc][0]+1)*(3-self.Umiejetnasci[umiejetnasc][2]):
                     self.punktyUmiejetnasci = self.punktyUmiejetnasci - \
-                                    ((self.Umiejetnasci[umiejetnasc][1]+1) * (3 - self.Umiejetnasci[umiejetnasc][3]))
+                                    ((self.Umiejetnasci[umiejetnasc][0]+1) * (3 - self.Umiejetnasci[umiejetnasc][2]))
                     self.Umiejetnasci[umiejetnasc][0] = self.Umiejetnasci[umiejetnasc][0] + 1
                     self.Umiejetnasci[umiejetnasc][1] = self.Umiejetnasci[umiejetnasc][1] +\
-                                    ((self.Umiejetnasci[umiejetnasc][1]+1) * (3 - self.Umiejetnasci[umiejetnasc][3]))
+                                    ((self.Umiejetnasci[umiejetnasc][0]) * (3 - self.Umiejetnasci[umiejetnasc][2]))
                 else:
                     system.Output("nie stać Cię. Podexp")
         else:

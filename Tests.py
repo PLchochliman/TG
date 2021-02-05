@@ -52,7 +52,7 @@ def testRanKarSmierci(): #testy mortal.py
     wojtek.allokuj(5)
     assert wojtek.kara() == 11
     wojtek.allokuj(14)
-    assert wojtek.aktywacja(2) == False
+    assert not wojtek.aktywacja(2)
     system.Output("zaawansowany system aktywacji zakonczony")
     wojtek.allokuj(15)
 
@@ -66,21 +66,27 @@ def testUmiejetnosciIAktywacji(): # test mortal.py
     system.Output("Umiejetnasci dzialaja")
 
 
-def testWykupowaniaUmiejetnosci():
-    #moze dopisac jeszcze po przypadku dla x2 i x3 (ciche poruszanie i refleks)
-    wojtek = hero.Postac(8, 8, 8, ["Bron boczna", "Karabiny", "Karabiny maszynowe"])
+def testWykupowaniaUmiejetnosciZObnizeniemPrzezSpecjalizacje():
+    wojtek = hero.Postac(8, 8, 8, ["Bron boczna", "Karabiny", "Bron krotka"])
     wojtek.wykupRange("obsluga broni")
     assert wojtek.punktyUmiejetnasci == 165
     assert wojtek.Umiejetnasci[1][0] == 1
     wojtek.wykupRange("obsluga broni")
     assert wojtek.punktyUmiejetnasci == 164
     assert wojtek.Umiejetnasci[1][0] == 2
-    wojtek.wykupRange("ciche poruszanie")
+    wojtek.wykupRange("gadana")
     assert wojtek.punktyUmiejetnasci == 161
-    assert wojtek.Umiejetnasci[7][0] == 1
-    wojtek.wykupRange("refleks")
+    assert wojtek.Umiejetnasci[15][0] == 1
+    wojtek.wykupRange("prowadzenie pojazdu")    #przerobic na prowadzenie pojazdu
     assert wojtek.punktyUmiejetnasci == 159
-    assert wojtek.Umiejetnasci[2][0] == 1
+    assert wojtek.Umiejetnasci[8][0] == 1
+    wojtek.wykupRange("gadana")
+    assert wojtek.punktyUmiejetnasci == 153
+    assert wojtek.Umiejetnasci[15][0] == 2
+    wojtek.wykupRange("prowadzenie pojazdu")
+    assert wojtek.punktyUmiejetnasci == 149
+    assert wojtek.Umiejetnasci[8][0] == 2
+    assert wojtek.rzutNaUmiejetnasc("prowadzenie pojazdu") > 3
     system.Output("wykupowanie umiejetnasci dziala")
 
 
@@ -89,3 +95,4 @@ testSystemu()
 testStalych()
 testRanKarSmierci()
 testUmiejetnosciIAktywacji()
+testWykupowaniaUmiejetnosciZObnizeniemPrzezSpecjalizacje()
