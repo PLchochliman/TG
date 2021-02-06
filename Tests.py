@@ -90,7 +90,7 @@ def testWykupowaniaUmiejetnosciZObnizeniemPrzezSpecjalizacje():
     wojtek.podniesPredyspozycje("Bron boczna")
     assert wojtek.Umiejetnasci[8][3] == 2
     wojtek.wykupRange("zmysl bitewny")
-    print(wojtek.unik)
+    assert wojtek.unik == 13
     system.Output("wykupowanie umiejetnasci dziala")
 
 
