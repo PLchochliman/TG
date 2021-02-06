@@ -30,7 +30,7 @@ def testLuskaniaDanychZExcela():
     specki = excelDigger.loader("Specjalizacje.xlsx", ["umiejetnasci"], ["B26"])
     specki = specki.zwroc()
     specki = specki[0]
-    assert specki[0][0] == "Bron boczna"
+    assert specki[1][0] == "Bron boczna"
     system.Output("ladowanie z excela dziala")
 
 
@@ -89,6 +89,8 @@ def testWykupowaniaUmiejetnosciZObnizeniemPrzezSpecjalizacje():
     assert wojtek.rzutNaUmiejetnasc("prowadzenie pojazdu") > 3
     wojtek.podniesPredyspozycje("Bron boczna")
     assert wojtek.Umiejetnasci[8][3] == 2
+    wojtek.wykupRange("zmysl bitewny")
+    print(wojtek.unik)
     system.Output("wykupowanie umiejetnasci dziala")
 
 

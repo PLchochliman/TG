@@ -42,6 +42,9 @@ class IstotaZywa:
             self.redukcjaObrazen += 1
         self.nastawUmiejetnasci()
 
+    def nastawUnik(self):   #todo because of lack of equipment in code implemented.
+        self.unik = (self.bazowyUnik + self.Umiejetnasci[6][0])
+
 
     """
     all about dying, but without destroing object.

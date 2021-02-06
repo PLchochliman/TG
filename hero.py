@@ -64,6 +64,7 @@ class Postac(mortal.IstotaZywa):
                     self.Umiejetnasci[constans.UmiejetnasciDoInt[umiejetnascWyciagnieta]][2] = \
                     self.Umiejetnasci[constans.UmiejetnasciDoInt[umiejetnascWyciagnieta]][2] + 1
 
+
     #rozwiązuje problem zawodu, dyscypliny naukowej.
     def dobierzZawod(self, typDoprecyzowania):
         try:
@@ -170,6 +171,7 @@ class Postac(mortal.IstotaZywa):
                                                             (self.Umiejetnasci[umiejetnasc][0])
                     else:
                         system.Output("nie stać Cię. Podexp")
+
             #dla reszty
             else:
                 if self.punktyUmiejetnasci >= (self.Umiejetnasci[umiejetnasc][0]+1)*(3-self.Umiejetnasci[umiejetnasc][2]):
@@ -177,9 +179,11 @@ class Postac(mortal.IstotaZywa):
                                     ((self.Umiejetnasci[umiejetnasc][0]+1) * (3 - self.Umiejetnasci[umiejetnasc][2]))
                     self.Umiejetnasci[umiejetnasc][0] = self.Umiejetnasci[umiejetnasc][0] + 1
                     self.Umiejetnasci[umiejetnasc][1] = self.Umiejetnasci[umiejetnasc][1] +\
-                                    ((self.Umiejetnasci[umiejetnasc][0]) * (3 - self.Umiejetnasci[umiejetnasc][2]))
+                                    (self.Umiejetnasci[umiejetnasc][0] * (3 - self.Umiejetnasci[umiejetnasc][2]))
                 else:
                     system.Output("nie stać Cię. Podexp")
+            if umiejetnasc == constans.UmiejetnasciDoInt["zmysl bitewny"]:
+                self.nastawUnik()
         else:
             system.Output("nie ma takiej umiejetnasci")
 
