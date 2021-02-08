@@ -61,8 +61,8 @@ class Postac(mortal.IstotaZywa):
                 if umiejetnascWyciagnieta in ["dyscyplina naukowa lub zawod", "dyscyplina naukowa", "zawod"]:
                     self.dobierzZawod(umiejetnascWyciagnieta)
                 else:
-                    self.Umiejetnasci[constans.UmiejetnasciDoInt[umiejetnascWyciagnieta]][2] = \
-                    self.Umiejetnasci[constans.UmiejetnasciDoInt[umiejetnascWyciagnieta]][2] + 1
+                    self.umiejetnasci[constans.UmiejetnasciDoInt[umiejetnascWyciagnieta]][2] = \
+                        self.umiejetnasci[constans.UmiejetnasciDoInt[umiejetnascWyciagnieta]][2] + 1
 
 
     #rozwiązuje problem zawodu, dyscypliny naukowej.
@@ -77,9 +77,9 @@ class Postac(mortal.IstotaZywa):
                     wejscie = system.Input()
                     if 17 < constans.UmiejetnasciDoInt[wejscie] < 25:
                         if wejscie in constans.UmiejetnasciDoInt:
-                            if self.Umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] != 3:
-                                self.Umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] = \
-                                    self.Umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] + 1
+                            if self.umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] != 3:
+                                self.umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] = \
+                                    self.umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] + 1
                                 hamulec += 1
                             else:
                                 system.Output("juz 3 raz wybrales te umiejetnasc. wybierz inna.")
@@ -95,9 +95,9 @@ class Postac(mortal.IstotaZywa):
                     wejscie = system.Input()
                     if 17 < constans.UmiejetnasciDoInt[wejscie] < 21:
                         if wejscie in constans.UmiejetnasciDoInt:
-                            if self.Umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] != 3:
-                                self.Umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] = \
-                                    self.Umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] + 1
+                            if self.umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] != 3:
+                                self.umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] = \
+                                    self.umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] + 1
                                 hamulec += 1
                             else:
                                 system.Output("juz 3 raz wybrales te umiejetnasc. wybierz inna.")
@@ -113,9 +113,9 @@ class Postac(mortal.IstotaZywa):
                     wejscie = system.Input()
                     if 20 < constans.UmiejetnasciDoInt[wejscie] < 25:
                         if wejscie in constans.UmiejetnasciDoInt:
-                            if self.Umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] != 3:
-                                self.Umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] = \
-                                    self.Umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] + 1
+                            if self.umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] != 3:
+                                self.umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] = \
+                                    self.umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] + 1
                                 hamulec += 1
                             else:
                                 system.Output("juz 3 raz wybrales te umiejetnasc. wybierz inna.")
@@ -138,15 +138,15 @@ class Postac(mortal.IstotaZywa):
                 if umiejetnasc == "dyscyplina naukowa lub zawod":
                     hamulec: int = 0
                     while hamulec == 0:
-                        if self.Umiejetnasci[constans.UmiejetnasciDoInt["dyscyplina naukowa Medycyna"]][2] < 3:
-                            self.Umiejetnasci[constans.UmiejetnasciDoInt["dyscyplina naukowa Medycyna"]][2] += 1
-                        elif self.Umiejetnasci[constans.UmiejetnasciDoInt["zawod Rusznikarz"]][2] < 3:
-                            self.Umiejetnasci[constans.UmiejetnasciDoInt["zawod Rusznikarz"]][2] += 1
-                        elif self.Umiejetnasci[constans.UmiejetnasciDoInt["dyscyplina naukowa Informatyka"]][2] < 3:
-                            self.Umiejetnasci[constans.UmiejetnasciDoInt["dyscyplina naukowa Informatyka"]][2] += 1
+                        if self.umiejetnasci[constans.UmiejetnasciDoInt["dyscyplina naukowa Medycyna"]][2] < 3:
+                            self.umiejetnasci[constans.UmiejetnasciDoInt["dyscyplina naukowa Medycyna"]][2] += 1
+                        elif self.umiejetnasci[constans.UmiejetnasciDoInt["zawod Rusznikarz"]][2] < 3:
+                            self.umiejetnasci[constans.UmiejetnasciDoInt["zawod Rusznikarz"]][2] += 1
+                        elif self.umiejetnasci[constans.UmiejetnasciDoInt["dyscyplina naukowa Informatyka"]][2] < 3:
+                            self.umiejetnasci[constans.UmiejetnasciDoInt["dyscyplina naukowa Informatyka"]][2] += 1
                         hamulec = 1
                 else:
-                    self.Umiejetnasci[constans.UmiejetnasciDoInt[umiejetnasc]][2] = self.Umiejetnasci[constans.UmiejetnasciDoInt[umiejetnasc]][2] + 1
+                    self.umiejetnasci[constans.UmiejetnasciDoInt[umiejetnasc]][2] = self.umiejetnasci[constans.UmiejetnasciDoInt[umiejetnasc]][2] + 1
 
     """
         umiejetnasci is table for skills. from constants you 
@@ -160,28 +160,30 @@ class Postac(mortal.IstotaZywa):
         if nazwaUmiejetnasci in constans.UmiejetnasciDoInt:
             umiejetnasc = constans.UmiejetnasciDoInt[nazwaUmiejetnasci]
             # jeżeli w 3 speckach jest dana umiejka to wtedy jest specjalne wykupowanie
-            if self.Umiejetnasci[umiejetnasc][2] == 3:
-                if self.Umiejetnasci[umiejetnasc][0] == 0:
-                    self.Umiejetnasci[umiejetnasc][0] = 1
+            if self.umiejetnasci[umiejetnasc][2] == 3:
+                if self.umiejetnasci[umiejetnasc][0] == 0:
+                    self.umiejetnasci[umiejetnasc][0] = 1
                 else:
-                    if self.punktyUmiejetnasci >= (self.Umiejetnasci[umiejetnasc][0]):
-                        self.punktyUmiejetnasci = self.punktyUmiejetnasci - (self.Umiejetnasci[umiejetnasc][0])
-                        self.Umiejetnasci[umiejetnasc][0] = self.Umiejetnasci[umiejetnasc][0] + 1
-                        self.Umiejetnasci[umiejetnasc][1] = self.Umiejetnasci[umiejetnasc][0] + \
-                                                            (self.Umiejetnasci[umiejetnasc][0])
+                    if self.punktyUmiejetnasci >= (self.umiejetnasci[umiejetnasc][0]):
+                        self.punktyUmiejetnasci = self.punktyUmiejetnasci - (self.umiejetnasci[umiejetnasc][0])
+                        self.umiejetnasci[umiejetnasc][0] = self.umiejetnasci[umiejetnasc][0] + 1
+                        self.umiejetnasci[umiejetnasc][1] = self.umiejetnasci[umiejetnasc][0] + \
+                                                            (self.umiejetnasci[umiejetnasc][0])
                     else:
                         system.Output("nie stać Cię. Podexp")
 
             #dla reszty
             else:
-                if self.punktyUmiejetnasci >= (self.Umiejetnasci[umiejetnasc][0]+1)*(3-self.Umiejetnasci[umiejetnasc][2]):
+                if self.punktyUmiejetnasci >= (self.umiejetnasci[umiejetnasc][0] + 1)*(3 - self.umiejetnasci[umiejetnasc][2]):
                     self.punktyUmiejetnasci = self.punktyUmiejetnasci - \
-                                    ((self.Umiejetnasci[umiejetnasc][0]+1) * (3 - self.Umiejetnasci[umiejetnasc][2]))
-                    self.Umiejetnasci[umiejetnasc][0] = self.Umiejetnasci[umiejetnasc][0] + 1
-                    self.Umiejetnasci[umiejetnasc][1] = self.Umiejetnasci[umiejetnasc][1] +\
-                                    (self.Umiejetnasci[umiejetnasc][0] * (3 - self.Umiejetnasci[umiejetnasc][2]))
+                                    ((self.umiejetnasci[umiejetnasc][0] + 1) * (3 - self.umiejetnasci[umiejetnasc][2]))
+                    self.umiejetnasci[umiejetnasc][0] = self.umiejetnasci[umiejetnasc][0] + 1
+                    self.umiejetnasci[umiejetnasc][1] = self.umiejetnasci[umiejetnasc][1] + \
+                                                        (self.umiejetnasci[umiejetnasc][0] * (3 - self.umiejetnasci[umiejetnasc][2]))
                 else:
                     system.Output("nie stać Cię. Podexp")
+            if umiejetnasc == constans.UmiejetnasciDoInt["jezyki"]:
+                self.podniesJezyki("angielski")    #PAMIĘTAJ ŻE TRZYBA TO ROZWIĄZA INACZEJ W KLASIE WYBORU DOCELOWEJ!!!!!
             if umiejetnasc == constans.UmiejetnasciDoInt["zmysl bitewny"]:
                 self.nastawUnik()
         else:
@@ -194,8 +196,27 @@ class Postac(mortal.IstotaZywa):
                 i[5] = i[5].strip()
                 for umiejetnasc in i:
                     umiejetnasc = constans.UmiejetnasciDoInt[umiejetnasc]
-                    self.Umiejetnasci[umiejetnasc][3] = self.Umiejetnasci[umiejetnasc][3] + 1
+                    self.umiejetnasci[umiejetnasc][3] = self.umiejetnasci[umiejetnasc][3] + 1
 
+    def podniesJezyki(self, jezyk=""):
+        if jezyk:
+            switch = 0
+            for i in range(0, len(self.jezyki)):
+                if jezyk == self.jezyki[i][0]:
+                    self.jezyki[i][1] = self.jezyki[i][1] + 1
+                    switch = 1
+            if switch == 0:
+                self.jezyki.append([jezyk, 1])
+        else:
+            system.Output("Jaki jezyk chcesz sie nauczyc/doszkolic")
+            wejcie = system.Input()
+            switch = 0
+            for i in range(0, len(self.jezyki)):
+                if wejcie == self.jezyki[i][0]:
+                    self.jezyki[i][1] = self.jezyki[i][1] + 1
+                    switch = 1
+            if switch == 0:
+                self.jezyki.append([wejcie, 1])
 """
 do testów
 wojtek = Postac(8, 8, 8, ["Bron boczna", "Karabiny", "Karabiny maszynowe"])

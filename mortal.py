@@ -19,7 +19,8 @@ class IstotaZywa:
     unik = 10
     punktyWytrwalosci, przeznaczenie = 0, 0,
     udzwig = 0
-    Umiejetnasci = constans.Umiejetnasci
+    umiejetnasci = constans.Umiejetnasci
+    jezyki = [["angielski", 2], ["polski", 0]]
 
     def __init__(self, sila, zrecznasc, intelekt, imie="bot", unik=10, redukcjaObrazen=0, typOchrony=0):
         self.sila = sila
@@ -43,7 +44,7 @@ class IstotaZywa:
         self.nastawUmiejetnasci()
 
     def nastawUnik(self):   #todo because of lack of equipment in code implemented.
-        self.unik = (self.bazowyUnik + self.Umiejetnasci[6][0])
+        self.unik = (self.bazowyUnik + self.umiejetnasci[6][0])
 
 
     """
@@ -148,34 +149,34 @@ class IstotaZywa:
 
     def nastawUmiejetnasci(self):
         # setting mods for skills.
-        for i in range(0, len(self.Umiejetnasci)):
+        for i in range(0, len(self.umiejetnasci)):
             if i == 0:
                 continue
-            if self.Umiejetnasci[i][4] == 1:
-                self.Umiejetnasci[i][3] = self.modSila
-            if self.Umiejetnasci[i][4] == 2:
-                self.Umiejetnasci[i][3] = self.modZrecznasc
-            if self.Umiejetnasci[i][4] == 3:
-                self.Umiejetnasci[i][3] = self.modIntelekt
-            if self.Umiejetnasci[i][4] == 4:
+            if self.umiejetnasci[i][4] == 1:
+                self.umiejetnasci[i][3] = self.modSila
+            if self.umiejetnasci[i][4] == 2:
+                self.umiejetnasci[i][3] = self.modZrecznasc
+            if self.umiejetnasci[i][4] == 3:
+                self.umiejetnasci[i][3] = self.modIntelekt
+            if self.umiejetnasci[i][4] == 4:
                 if self.modSila > self.modIntelekt:
-                    self.Umiejetnasci[i][3] = self.modSila
+                    self.umiejetnasci[i][3] = self.modSila
                 else:
-                    self.Umiejetnasci[i][3] = self.modIntelekt
-            if self.Umiejetnasci[i][4] == 5:
+                    self.umiejetnasci[i][3] = self.modIntelekt
+            if self.umiejetnasci[i][4] == 5:
                 if self.modZrecznasc > self.modIntelekt:
-                    self.Umiejetnasci[i][3] = self.modZrecznasc
+                    self.umiejetnasci[i][3] = self.modZrecznasc
                 else:
-                    self.Umiejetnasci[i][3] = self.modIntelekt
-            if self.Umiejetnasci[i][4] == 6:
+                    self.umiejetnasci[i][3] = self.modIntelekt
+            if self.umiejetnasci[i][4] == 6:
                 if self.modSila > self.modZrecznasc:
-                    self.Umiejetnasci[i][3] = self.modSila
+                    self.umiejetnasci[i][3] = self.modSila
                 else:
-                    self.Umiejetnasci[i][3] = self.modZrecznasc
+                    self.umiejetnasci[i][3] = self.modZrecznasc
 
     def rzutNaUmiejetnasc(self, testowanaUmiejetnasc):
         umiejka = constans.UmiejetnasciDoInt[testowanaUmiejetnasc]
-        doRzutu = self.Umiejetnasci[umiejka]
+        doRzutu = self.umiejetnasci[umiejka]
         return constans.KoscUmiejetnosci[doRzutu[0]] + doRzutu[3]
 
     """

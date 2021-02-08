@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough." />
+    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Specjalizacje.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Specjalizacje.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/hero.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mortal.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortal.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -352,7 +358,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612632198036</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Battle sence finally propered used. redone test (was print instead of assert.  next Languages.">
+      <created>1612635542805</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1612635542805</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -391,6 +404,7 @@
     <MESSAGE value="tests are suplemented, now all the scope is ready." />
     <MESSAGE value="added predisposition, with tests." />
     <MESSAGE value="Battle sence finally propered used.  next Languages." />
-    <option name="LAST_COMMIT_MESSAGE" value="Battle sence finally propered used.  next Languages." />
+    <MESSAGE value="Battle sence finally propered used. redone test (was print instead of assert.  next Languages." />
+    <option name="LAST_COMMIT_MESSAGE" value="Battle sence finally propered used. redone test (was print instead of assert.  next Languages." />
   </component>
 </project>

@@ -60,38 +60,46 @@ def testRanKarSmierci(): #testy mortal.py
 def testUmiejetnosciIAktywacji(): # test mortal.py
     wojtek = mortal.IstotaZywa(8, 8, 8, "Wojtek")
     assert wojtek.aktywacja(2)
-    assert wojtek.Umiejetnasci[3][3] == 1
-    assert wojtek.Umiejetnasci[4][3] == 0
+    assert wojtek.umiejetnasci[3][3] == 1
+    assert wojtek.umiejetnasci[4][3] == 0
     assert wojtek.rzutNaUmiejetnasc("skupienie") >= 2
-    system.Output("Umiejetnasci dzialaja")
+    system.Output("umiejetnasci dzialaja")
 
 
 def testWykupowaniaUmiejetnosciZObnizeniemPrzezSpecjalizacje():
     wojtek = hero.Postac(8, 8, 8, ["Bron boczna", "Karabiny", "Bron krotka"])
     wojtek.wykupRange("obsluga broni")
     assert wojtek.punktyUmiejetnasci == 165
-    assert wojtek.Umiejetnasci[1][0] == 1
+    assert wojtek.umiejetnasci[1][0] == 1
     wojtek.wykupRange("obsluga broni")
     assert wojtek.punktyUmiejetnasci == 164
-    assert wojtek.Umiejetnasci[1][0] == 2
+    assert wojtek.umiejetnasci[1][0] == 2
     wojtek.wykupRange("gadana")
     assert wojtek.punktyUmiejetnasci == 161
-    assert wojtek.Umiejetnasci[15][0] == 1
-    wojtek.wykupRange("prowadzenie pojazdu")    #przerobic na prowadzenie pojazdu
+    assert wojtek.umiejetnasci[15][0] == 1
+    wojtek.wykupRange("prowadzenie pojazdu")
     assert wojtek.punktyUmiejetnasci == 159
-    assert wojtek.Umiejetnasci[8][0] == 1
+    assert wojtek.umiejetnasci[8][0] == 1
     wojtek.wykupRange("gadana")
     assert wojtek.punktyUmiejetnasci == 153
-    assert wojtek.Umiejetnasci[15][0] == 2
+    assert wojtek.umiejetnasci[15][0] == 2
     wojtek.wykupRange("prowadzenie pojazdu")
     assert wojtek.punktyUmiejetnasci == 149
-    assert wojtek.Umiejetnasci[8][0] == 2
+    assert wojtek.umiejetnasci[8][0] == 2
     assert wojtek.rzutNaUmiejetnasc("prowadzenie pojazdu") > 3
     wojtek.podniesPredyspozycje("Bron boczna")
-    assert wojtek.Umiejetnasci[8][3] == 2
+    assert wojtek.umiejetnasci[8][3] == 2
     wojtek.wykupRange("zmysl bitewny")
     assert wojtek.unik == 13
     system.Output("wykupowanie umiejetnasci dziala")
+
+def testJezykow():
+    wojtek = hero.Postac(8, 8, 8, ["Bron boczna", "Karabiny", "Bron krotka"])
+    wojtek.wykupRange("jezyki")
+    print(wojtek.jezyki[0][1])
+    assert wojtek.jezyki[0][1] == 3
+
+
 
 
 testLuskaniaDanychZExcela()
@@ -100,3 +108,4 @@ testStalych()
 testRanKarSmierci()
 testUmiejetnosciIAktywacji()
 testWykupowaniaUmiejetnosciZObnizeniemPrzezSpecjalizacje()
+testJezykow()
