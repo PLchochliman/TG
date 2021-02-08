@@ -96,8 +96,8 @@ def testWykupowaniaUmiejetnosciZObnizeniemPrzezSpecjalizacje():
 def testJezykow():
     wojtek = hero.Postac(8, 8, 8, ["Bron boczna", "Karabiny", "Bron krotka"])
     wojtek.wykupRange("jezyki")
-    print(wojtek.jezyki[0][1])
     assert wojtek.jezyki[0][1] == 3
+    system.Output("Jezyki dzialaja")
 
 
 

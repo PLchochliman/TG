@@ -50,5 +50,7 @@ basic Output command for the system. Awaits for being updated, when put into Dis
 def Output(text):
     print(text)
 
+
 def Input():
-    return input()
+    nowy = input()
+    return nowy.lower()
