@@ -1,5 +1,5 @@
 import mortal as mortal
-import system as system
+import Bot as Bot
 import excelDigger as excelDigger
 import constans as constans
 
@@ -34,20 +34,20 @@ class Postac(mortal.IstotaZywa):
     def wybierzSpecjalizacje(self):
         wyjscie = 0
         while wyjscie < 3:
-            system.Output("wybierz specjalizacje")
-            specjalizacja = constans.wyszukajSpecjalizacje(system.Input())
+            Bot.Output("wybierz specjalizacje")
+            specjalizacja = constans.wyszukajSpecjalizacje(Bot.Input())
             if specjalizacja:
                 if wyjscie < 1:
                     self.specjalizacje.append(specjalizacja)
                     wyjscie = wyjscie + 1
                 else:
                     if specjalizacja in self.specjalizacje:
-                        system.Output("Ta specjalizacja zostala juz wybrana")
+                        Bot.Output("Ta specjalizacja zostala juz wybrana")
                     else:
                         self.specjalizacje.append(specjalizacja)
                         wyjscie = wyjscie + 1
             else:
-                system.Output("Zle wprowadzona specjalizacja. Sproboj jescze raz")
+                Bot.Output("Zle wprowadzona specjalizacja. Sproboj jescze raz")
 
     #nastawia koszty umiejętności
     def nastawKosztUmiejetnasciRecznie(self):
@@ -71,10 +71,10 @@ class Postac(mortal.IstotaZywa):
             if typDoprecyzowania == "dyscyplina naukowa lub zawod":
                 hamulec: int = 0
                 while hamulec == 0:
-                    system.Output("Doprecyzuj: wybierz sposrod: \ndyscyplina naukowa Medycyna  "
+                    Bot.Output("Doprecyzuj: wybierz sposrod: \ndyscyplina naukowa Medycyna  "
                                   "  \ndyscyplina naukowa Informatyka \ndyscyplina naukowa Humanistyka,"
                                   "\nzawod Rusznikarz  \nzawod Kowal \nzawod Mechanik \nzawod Kucharz")
-                    wejscie = system.Input()
+                    wejscie = Bot.Input()
                     if 17 < constans.UmiejetnasciDoInt[wejscie] < 25:
                         if wejscie in constans.UmiejetnasciDoInt:
                             if self.umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] != 3:
@@ -82,17 +82,17 @@ class Postac(mortal.IstotaZywa):
                                     self.umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] + 1
                                 hamulec += 1
                             else:
-                                system.Output("juz 3 raz wybrales te umiejetnasc. wybierz inna.")
+                                Bot.Output("juz 3 raz wybrales te umiejetnasc. wybierz inna.")
                         else:
-                            system.Output("zle wprowadzona dana. sproboj jeszcze raz")
+                            Bot.Output("zle wprowadzona dana. sproboj jeszcze raz")
                     else:
-                        system.Output("wybrano umiejetnosc spoza spektrum! \n sprobuj ponownie")
+                        Bot.Output("wybrano umiejetnosc spoza spektrum! \n sprobuj ponownie")
             elif typDoprecyzowania == "dyscyplina naukowa":
                 hamulec: int = 0
                 while hamulec == 0:
-                    system.Output("Doprecyzuj: wybierz sposrod: \ndyscyplina naukowa Medycyna  "
+                    Bot.Output("Doprecyzuj: wybierz sposrod: \ndyscyplina naukowa Medycyna  "
                                   "  \ndyscyplina naukowa Informatyka \ndyscyplina naukowa Humanistyka,")
-                    wejscie = system.Input()
+                    wejscie = Bot.Input()
                     if 17 < constans.UmiejetnasciDoInt[wejscie] < 21:
                         if wejscie in constans.UmiejetnasciDoInt:
                             if self.umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] != 3:
@@ -100,17 +100,17 @@ class Postac(mortal.IstotaZywa):
                                     self.umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] + 1
                                 hamulec += 1
                             else:
-                                system.Output("juz 3 raz wybrales te umiejetnasc. wybierz inna.")
+                                Bot.Output("juz 3 raz wybrales te umiejetnasc. wybierz inna.")
                         else:
-                            system.Output("zle wprowadzona dana. sproboj jeszcze raz")
+                            Bot.Output("zle wprowadzona dana. sproboj jeszcze raz")
                     else:
-                        system.Output("wybrano umiejetnosc spoza spektrum! \n sprobuj ponownie")
+                        Bot.Output("wybrano umiejetnosc spoza spektrum! \n sprobuj ponownie")
             elif typDoprecyzowania == "zawod":
                 hamulec: int = 0
                 while hamulec == 0:
-                    system.Output("Doprecyzuj: wybierz sposrod: \nzawod Rusznikarz \nzawod Kowal"
+                    Bot.Output("Doprecyzuj: wybierz sposrod: \nzawod Rusznikarz \nzawod Kowal"
                                   "\nzawod Mechanik \nzawod Kucharz")
-                    wejscie = system.Input()
+                    wejscie = Bot.Input()
                     if 20 < constans.UmiejetnasciDoInt[wejscie] < 25:
                         if wejscie in constans.UmiejetnasciDoInt:
                             if self.umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] != 3:
@@ -118,13 +118,13 @@ class Postac(mortal.IstotaZywa):
                                     self.umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] + 1
                                 hamulec += 1
                             else:
-                                system.Output("juz 3 raz wybrales te umiejetnasc. wybierz inna.")
+                                Bot.Output("juz 3 raz wybrales te umiejetnasc. wybierz inna.")
                         else:
-                            system.Output("zle wprowadzona dana. sproboj jeszcze raz")
+                            Bot.Output("zle wprowadzona dana. sproboj jeszcze raz")
                     else:
-                        system.Output("wybrano umiejetnosc spoza spektrum! \n sprobuj ponownie")
+                        Bot.Output("wybrano umiejetnosc spoza spektrum! \n sprobuj ponownie")
         except KeyError:
-            system.Output("Zle podales nazwe umiejetnasci, sproboj jeszcze raz")
+            Bot.Output("Zle podales nazwe umiejetnasci, sproboj jeszcze raz")
             self.dobierzZawod(typDoprecyzowania)
 
     def nastawKosztUmiejetnasciAutomatycznie(self):
@@ -170,7 +170,7 @@ class Postac(mortal.IstotaZywa):
                         self.umiejetnasci[umiejetnasc][1] = self.umiejetnasci[umiejetnasc][0] + \
                                                             (self.umiejetnasci[umiejetnasc][0])
                     else:
-                        system.Output("nie stać Cię. Podexp")
+                        Bot.Output("nie stać Cię. Podexp")
 
             #dla reszty
             else:
@@ -181,13 +181,13 @@ class Postac(mortal.IstotaZywa):
                     self.umiejetnasci[umiejetnasc][1] = self.umiejetnasci[umiejetnasc][1] + \
                                                         (self.umiejetnasci[umiejetnasc][0] * (3 - self.umiejetnasci[umiejetnasc][2]))
                 else:
-                    system.Output("nie stać Cię. Podexp")
+                    Bot.Output("nie stać Cię. Podexp")
             if umiejetnasc == constans.UmiejetnasciDoInt["jezyki"]:
                 self.podniesJezyki("angielski")    #PAMIĘTAJ ŻE TRZYBA TO ROZWIĄZA INACZEJ W KLASIE WYBORU DOCELOWEJ!!!!!
             if umiejetnasc == constans.UmiejetnasciDoInt["zmysl bitewny"]:
                 self.nastawUnik()
         else:
-            system.Output("nie ma takiej umiejetnasci")
+            Bot.Output("nie ma takiej umiejetnasci")
 
     def podniesPredyspozycje(self, specjalizacja):
         for i in self.specjalizacje:
@@ -198,7 +198,7 @@ class Postac(mortal.IstotaZywa):
                     umiejetnasc = constans.UmiejetnasciDoInt[umiejetnasc]
                     self.umiejetnasci[umiejetnasc][3] = self.umiejetnasci[umiejetnasc][3] + 1
 
-    def podniesJezyki(self, jezyk=""):
+    def podniesJezyki(self, jezyk=""): # do obejrzenia ANIOŁ LUDZIEJ EWOLUCJI
         if jezyk:
             switch = 0
             for i in range(0, len(self.jezyki)):
@@ -208,8 +208,8 @@ class Postac(mortal.IstotaZywa):
             if switch == 0:
                 self.jezyki.append([jezyk, 1])
         else:
-            system.Output("Jaki jezyk chcesz sie nauczyc/doszkolic")
-            wejcie = system.Input()
+            Bot.Output("Jaki jezyk chcesz sie nauczyc/doszkolic")
+            wejcie = Bot.Input()
             switch = 0
             for i in range(0, len(self.jezyki)):
                 if wejcie == self.jezyki[i][0]:

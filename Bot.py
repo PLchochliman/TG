@@ -26,7 +26,7 @@ Returns tab of records
 
 def multiRollDice(diceType, countOfDices):
     result = []
-    for i in range(0,countOfDices):
+    for i in range(0, countOfDices):
         result.append(rollDice(diceType))
     return result
 
@@ -39,13 +39,13 @@ Returns sum of roll
 
 def sumMultiRollDice(diceType, countOfDices):
     result = 0
-    for i in range(0,countOfDices):
+    for i in range(0, countOfDices):
         result = result + rollDice(diceType)
     return result
 
 
 """
-basic Output command for the system. Awaits for being updated, when put into Discord BOT
+basic Output command for the Bot. Awaits for being updated, when put into Discord BOT
 """
 def Output(text):
     print(text)

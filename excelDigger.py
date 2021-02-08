@@ -1,4 +1,4 @@
-import system
+import Bot
 import pylightxl as xl
 
 

@@ -1,7 +1,7 @@
 """
 it's all about alive objects, which could be destroyed (eg hero, enemy, elephant)
 """
-import system
+import Bot
 import constans
 
 
@@ -53,7 +53,7 @@ class IstotaZywa:
 
     def umarl(self):
         self.status = False
-        system.Output(self.imie + " Umarl")
+        Bot.Output(self.imie + " Umarl")
 
     """
     it's all about allocating wounds. when you have to take a wound, unstoppable in any way (eg from being sick), 
@@ -70,13 +70,13 @@ class IstotaZywa:
         elif obrazenie == 4:
             self.lekkaRana += 1
         elif obrazenie == 5:
-            self.ranaKonczyny[system.rollDice(4)-1] += 1
+            self.ranaKonczyny[Bot.rollDice(4) - 1] += 1
         elif obrazenie == 6:
             self.powaznaRana += 1
         elif obrazenie == 7:
             self.drasniecia += 1
         elif obrazenie == 8:
-            self.ranaKonczyny[system.rollDice(4)-1] += 1
+            self.ranaKonczyny[Bot.rollDice(4) - 1] += 1
         elif obrazenie == 9:
             self.lekkaRana += 1
         elif obrazenie == 10:
@@ -144,7 +144,7 @@ class IstotaZywa:
         minus = self.lekkaRana * 3 + self.powaznaRana * 5
         for i in range(0, len(self.ranaKonczyny)):
             if self.ranaKonczyny[i] == 1:
-                system.Output("Pamietaj ze ranna jest twoja " + constans.Konczyna[i] +"\n Domyslna dodatkowa kara z tego wynikajaca jest to -4")
+                Bot.Output("Pamietaj ze ranna jest twoja " + constans.Konczyna[i] + "\n Domyslna dodatkowa kara z tego wynikajaca jest to -4")
         return minus
 
     def nastawUmiejetnasci(self):

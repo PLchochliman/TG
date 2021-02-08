@@ -1,4 +1,4 @@
-import system
+import Bot
 import excelDigger
 """
 COnstans are not tested!!!!
@@ -164,13 +164,13 @@ when need to skill roll based on skill level.
 """
 
 KoscUmiejetnosci = {
-    0: system.rollDice(6),
-    1: system.rollDice(6) + 2,
-    2: system.sumMultiRollDice(6, 2) + 2,
-    3: system.sumMultiRollDice(6, 2) + 4,
-    4: system.sumMultiRollDice(6, 3) + 4,
-    5: system.sumMultiRollDice(6, 3) + 6,
-    6: system.sumMultiRollDice(6, 4) + 6,
+    0: Bot.rollDice(6),
+    1: Bot.rollDice(6) + 2,
+    2: Bot.sumMultiRollDice(6, 2) + 2,
+    3: Bot.sumMultiRollDice(6, 2) + 4,
+    4: Bot.sumMultiRollDice(6, 3) + 4,
+    5: Bot.sumMultiRollDice(6, 3) + 6,
+    6: Bot.sumMultiRollDice(6, 4) + 6,
 }
 
 """
@@ -191,7 +191,7 @@ def mod(statystyka):
     if statystyka == 13:
         return 3
     if statystyka > 13:
-        system.Output("coś dużo tego. chyba to potwór \n  Jeśli nie jesteś mutantem, zmień to natychmiast")
+        Bot.Output("coś dużo tego. chyba to potwór \n  Jeśli nie jesteś mutantem, zmień to natychmiast")
         return 4
 
 """

@@ -1,6 +1,6 @@
 import mortal as mortal
 import constans as constants
-import system as system
+import Bot as system
 import excelDigger as excelDigger
 import hero as hero
 
@@ -48,12 +48,12 @@ def testRanKarSmierci(): #testy mortal.py
     wojtek.rana(3, 0)
     wojtek.rana(3, 0)
     assert wojtek.lekkaRana == 2
-    system.Output("system ran z redukcja obrazen zakonczony")
+    system.Output("Bot ran z redukcja obrazen zakonczony")
     wojtek.allokuj(5)
     assert wojtek.kara() == 11
     wojtek.allokuj(14)
     assert not wojtek.aktywacja(2)
-    system.Output("zaawansowany system aktywacji zakonczony")
+    system.Output("zaawansowany Bot aktywacji zakonczony")
     wojtek.allokuj(15)
 
 
