@@ -3,6 +3,7 @@ import constans as constants
 import Bot as system
 import excelDigger as excelDigger
 import hero as hero
+import items as items
 
 """
 it all should be made by another 
@@ -93,6 +94,7 @@ def testWykupowaniaUmiejetnosciZObnizeniemPrzezSpecjalizacje():
     assert wojtek.unik == 13
     system.Output("wykupowanie umiejetnasci dziala")
 
+
 def testJezykow():
     wojtek = hero.Postac(8, 8, 8, ["Bron boczna", "Karabiny", "Bron krotka"])
     wojtek.wykupRange("jezyki")
@@ -100,7 +102,10 @@ def testJezykow():
     system.Output("Jezyki dzialaja")
 
 
-
+def testPrzedmiotow():
+    itemki = items.Przedmioty('kurwa')
+    m4ka = itemki.luskaczBroni("M4A1")
+    assert m4ka[6] == 'Ś'
 
 testLuskaniaDanychZExcela()
 testSystemu()
@@ -109,3 +114,4 @@ testRanKarSmierci()
 testUmiejetnosciIAktywacji()
 testWykupowaniaUmiejetnosciZObnizeniemPrzezSpecjalizacje()
 testJezykow()
+testPrzedmiotow()

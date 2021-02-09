@@ -6,7 +6,7 @@ class loader():
     sorowka = []
     zaladowane = []
 
-    def __init__(self, nazwa, arkusz, zasieg ):
+    def __init__(self, nazwa, arkusz, zasieg):
         self.sorowka = xl.readxl(fn=nazwa)
         for i in range(0, len(arkusz)):
             self.zaladowane.append(self.zaladujArkusz(arkusz[i], zasieg[i]))
