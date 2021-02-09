@@ -14,7 +14,7 @@ TODO maybe do into generator????
 """
 
 
-def rollDice(diceType):
+def roll_dice(diceType):
     return int((random() * diceType)) + 1
 
 
@@ -24,10 +24,10 @@ Returns tab of records
 """
 
 
-def multiRollDice(diceType, countOfDices):
+def multi_roll_dice(diceType, countOfDices):
     result = []
     for i in range(0, countOfDices):
-        result.append(rollDice(diceType))
+        result.append(roll_dice(diceType))
     return result
 
 
@@ -37,20 +37,20 @@ Returns sum of roll
 """
 
 
-def sumMultiRollDice(diceType, countOfDices):
+def sum_multi_roll_dice(diceType, countOfDices):
     result = 0
     for i in range(0, countOfDices):
-        result = result + rollDice(diceType)
+        result = result + roll_dice(diceType)
     return result
 
 
 """
 basic Output command for the Bot. Awaits for being updated, when put into Discord BOT
 """
-def Output(text):
+def output(text):
     print(text)
 
 
-def Input():
+def input_for_bot():
     nowy = input()
     return nowy.lower()

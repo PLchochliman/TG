@@ -10,7 +10,7 @@ class Przedmioty():
                                                                                 ['O300', 'I19', 'I10', 'F13', 'G14'])
         self.dane = self.przetwornik.zwroc()
 
-    def luskaczBroni(self, nazwaBroni):
+    def luskacz_broni(self, nazwaBroni):
         for i in self.dane[2]:
             if i[0] == nazwaBroni:
                 return i

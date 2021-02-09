@@ -9,9 +9,9 @@ class loader():
     def __init__(self, nazwa, arkusz, zasieg):
         self.sorowka = xl.readxl(fn=nazwa)
         for i in range(0, len(arkusz)):
-            self.zaladowane.append(self.zaladujArkusz(arkusz[i], zasieg[i]))
+            self.zaladowane.append(self.zaladuj_arkusz(arkusz[i], zasieg[i]))
 
-    def zaladujArkusz(self, arkusz, zasieg):
+    def zaladuj_arkusz(self, arkusz, zasieg):
         return self.sorowka.ws(ws=arkusz).range(address='A1:'+zasieg, formula=False)
 
     def zwroc(self):
