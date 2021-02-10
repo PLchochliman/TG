@@ -174,8 +174,8 @@ class IstotaZywa:
                 else:
                     self.umiejetnasci[i][3] = self.modZrecznasc
 
-    def rzut_na_umiejetnasc(self, testowanaUmiejetnasc):
-        umiejka = constans.UmiejetnasciDoInt[testowanaUmiejetnasc]
+    def rzut_na_umiejetnasc(self, testowana_umiejetnasc):
+        umiejka = constans.UmiejetnasciDoInt[testowana_umiejetnasc]
         doRzutu = self.umiejetnasci[umiejka]
         return constans.KoscUmiejetnosci[doRzutu[0]] + doRzutu[3]
 

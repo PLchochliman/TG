@@ -103,9 +103,19 @@ def test_jezykow():
 
 
 def test_przedmiotow():
-    itemki = items.Przedmioty('kurwa')
+    itemki = items.Przedmioty('')
     m4ka = itemki.luskacz_broni("M4A1")
     assert m4ka[6] == 'Ś'
+    nozyk = itemki.luskacz_broni_bialej("Nóż")
+    assert nozyk[3] == 3
+    hek = itemki.luskacz_granatow("Granat ofensywny")
+    assert hek[2] == "2D6"
+    acog = itemki.luskacz_lunet("ACOGx4")
+    assert acog[3] == 10
+    trijcon = itemki.luskacz_celownikow("Trijcon")
+    assert trijcon[4] == "Strzelby"
+    system.output("przedmoity dzialaja")
+
 
 
 test_luskania_danych_z_excela()

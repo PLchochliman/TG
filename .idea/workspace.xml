@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constans.py" beforeDir="false" afterPath="$PROJECT_DIR$/constans.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/excelDigger.py" beforeDir="false" afterPath="$PROJECT_DIR$/excelDigger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/hero.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/items.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mortal.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortal.py" afterDir="false" />
     </list>
@@ -396,7 +392,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612830792897</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="refactor due to PIP8.&#10;Finally understood, for what it is.">
+      <created>1612890881668</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1612890881669</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -412,7 +415,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="skill rolls prepared" />
     <MESSAGE value="Tests are outside libriaries" />
     <MESSAGE value="Tests are outside libriaries still WiP" />
     <MESSAGE value="First test ready, all actual libriaries and  classes are tested, in test.py." />
@@ -437,6 +439,7 @@
     <MESSAGE value="now reader is case unsesitive. all is down." />
     <MESSAGE value="renamed system to bot, due to idiotism of first naming." />
     <MESSAGE value="added basic load of guns." />
-    <option name="LAST_COMMIT_MESSAGE" value="added basic load of guns." />
+    <MESSAGE value="refactor due to PIP8.&#10;Finally understood, for what it is." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor due to PIP8.&#10;Finally understood, for what it is." />
   </component>
 </project>

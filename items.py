@@ -16,6 +16,30 @@ class Przedmioty():
                 return i
         return False
 
+    def luskacz_broni_bialej(self, nazwaBroni):
+        for i in self.dane[3]:
+            if i[0] == nazwaBroni:
+                return i
+        return False
+
+    def luskacz_granatow(self, nazwaBroni):
+        for i in self.dane[4]:
+            if i[0] == nazwaBroni:
+                return i
+        return False
+
+    def luskacz_lunet(self, nazwaBroni):
+        for i in self.dane[5]:
+            if i[0] == nazwaBroni:
+                return i
+        return False
+
+    def luskacz_celownikow(self, nazwaBroni):
+        for i in self.dane[6]:
+            if i[0] == nazwaBroni:
+                return i
+        return False
+
 
 '''
 itemki = Przedmioty()
