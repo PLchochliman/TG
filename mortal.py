@@ -22,7 +22,7 @@ class IstotaZywa:
     umiejetnasci = constans.Umiejetnasci
     jezyki = [["angielski", 2], ["polski", 0]]
 
-    def __init__(self, sila, zrecznasc, intelekt, imie="bot", unik=10, redukcjaObrazen=0, typOchrony=0):
+    def __init__(self, sila, zrecznasc, intelekt, imie="Bot", unik=10, redukcjaObrazen=0, typOchrony=0):
         self.sila = sila
         self.zrecznasc = zrecznasc
         self.intelekt = intelekt

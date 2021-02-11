@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/excelDigger.py" beforeDir="false" afterPath="$PROJECT_DIR$/excelDigger.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mortal.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortal.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -407,7 +406,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613000254389</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="done proper loading, all in lowercase- making it case unsesitive. default input is case unsesitive.&#10;did beggining for guns, and shooting from them.">
+      <created>1613008434999</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1613008434999</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -423,7 +429,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Tests are outside libriaries still WiP" />
     <MESSAGE value="First test ready, all actual libriaries and  classes are tested, in test.py." />
     <MESSAGE value="in alive there is all about getting injured, penalties, and checking if object is &quot;alive&quot;. Now all actions will be in hero section, in object named Postac. All alive features are tested in Test, and via test, were repaired (some bad signs). another proof, that you need testing everything and everytime." />
     <MESSAGE value="renamed alive into mortal. makes much more sence." />
@@ -448,6 +453,7 @@
     <MESSAGE value="added basic load of guns." />
     <MESSAGE value="refactor due to PIP8.&#10;Finally understood, for what it is." />
     <MESSAGE value="items implementation partly done. no ammo done, or non table equipment." />
-    <option name="LAST_COMMIT_MESSAGE" value="items implementation partly done. no ammo done, or non table equipment." />
+    <MESSAGE value="done proper loading, all in lowercase- making it case unsesitive. default input is case unsesitive.&#10;did beggining for guns, and shooting from them." />
+    <option name="LAST_COMMIT_MESSAGE" value="done proper loading, all in lowercase- making it case unsesitive. default input is case unsesitive.&#10;did beggining for guns, and shooting from them." />
   </component>
 </project>

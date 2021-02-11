@@ -118,8 +118,19 @@ def test_przedmiotow():
     assert acog[3] == 10
     trijcon = itemki.luskacz_celownikow("trijcon")
     assert trijcon[4] == "strzelby"
-    system.output("przedmoity dzialaja")
+    system.output("przedmioty dzialaja")
 
+
+def test_dzialania_broni():
+    wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
+    cel = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
+    giwera = items.Bron("strzelectwo", "2D2", 11, 1)
+    giwera.atakuj(wojtek, cel)
+    assert cel.lekkaRana > 0
+    giwera2 = items.Bron("strzelectwo", "2D2", -5, 1)
+    giwera2.atakuj(cel, wojtek)
+    assert wojtek.lekkaRana == 0
+    system.output("podstawowa Bron dziala")
 
 
 test_luskania_danych_z_excela()
@@ -130,3 +141,4 @@ test_umiejetnosci_i_aktywacji()
 test_wykupowania_umiejetnosci_z_obnizeniem_przez_specjalizacje()
 test_jezykow()
 test_przedmiotow()
+test_dzialania_broni()
