@@ -17,6 +17,10 @@ def test_systemu():
     assert len(system.multi_roll_dice(4, 5)) > 4
     assert system.sum_multi_roll_dice(4, 5) > 4
     assert system.sum_multi_roll_dice(4, 5) < 21
+    assert system.roll_dice_from_text("4D6") > 3
+    assert system.roll_dice_from_text("4D6") < 25
+    assert system.roll_dice_from_text("D6") < 7
+    assert system.roll_dice_from_text("D6") > 0
     system.output("System działa bez zarzutów")
 
 
@@ -31,7 +35,7 @@ def test_luskania_danych_z_excela():
     specki = excelDigger.loader("Specjalizacje.xlsx", ["umiejetnasci"], ["B26"])
     specki = specki.zwroc()
     specki = specki[0]
-    assert specki[1][0] == "Bron boczna"
+    assert specki[1][0] == "bron boczna"
     system.output("ladowanie z excela dziala")
 
 
@@ -68,7 +72,7 @@ def test_umiejetnosci_i_aktywacji(): # test mortal.py
 
 
 def test_wykupowania_umiejetnosci_z_obnizeniem_przez_specjalizacje():
-    wojtek = hero.Postac(8, 8, 8, ["Bron boczna", "Karabiny", "Bron krotka"])
+    wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     wojtek.wykup_range("obsluga broni")
     assert wojtek.punktyUmiejetnasci == 165
     assert wojtek.umiejetnasci[1][0] == 1
@@ -88,7 +92,7 @@ def test_wykupowania_umiejetnosci_z_obnizeniem_przez_specjalizacje():
     assert wojtek.punktyUmiejetnasci == 149
     assert wojtek.umiejetnasci[8][0] == 2
     assert wojtek.rzut_na_umiejetnasc("prowadzenie pojazdu") > 3
-    wojtek.podnies_predyspozycje("Bron boczna")
+    wojtek.podnies_predyspozycje("bron boczna")
     assert wojtek.umiejetnasci[8][3] == 2
     wojtek.wykup_range("zmysl bitewny")
     assert wojtek.unik == 13
@@ -96,7 +100,7 @@ def test_wykupowania_umiejetnosci_z_obnizeniem_przez_specjalizacje():
 
 
 def test_jezykow():
-    wojtek = hero.Postac(8, 8, 8, ["Bron boczna", "Karabiny", "Bron krotka"])
+    wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     wojtek.wykup_range("jezyki")
     assert wojtek.jezyki[0][1] == 3
     system.output("Jezyki dzialaja")
@@ -104,16 +108,16 @@ def test_jezykow():
 
 def test_przedmiotow():
     itemki = items.Przedmioty('')
-    m4ka = itemki.luskacz_broni("M4A1")
-    assert m4ka[6] == 'Ś'
-    nozyk = itemki.luskacz_broni_bialej("Nóż")
+    m4ka = itemki.luskacz_broni("m4a1")
+    assert m4ka[6] == 'ś'
+    nozyk = itemki.luskacz_broni_bialej("nóż")
     assert nozyk[3] == 3
-    hek = itemki.luskacz_granatow("Granat ofensywny")
-    assert hek[2] == "2D6"
-    acog = itemki.luskacz_lunet("ACOGx4")
+    hek = itemki.luskacz_granatow("granat ofensywny")
+    assert hek[2] == "2d6"
+    acog = itemki.luskacz_lunet("acogx4")
     assert acog[3] == 10
-    trijcon = itemki.luskacz_celownikow("Trijcon")
-    assert trijcon[4] == "Strzelby"
+    trijcon = itemki.luskacz_celownikow("trijcon")
+    assert trijcon[4] == "strzelby"
     system.output("przedmoity dzialaja")
 
 

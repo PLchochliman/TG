@@ -43,6 +43,17 @@ def sum_multi_roll_dice(diceType, countOfDices):
         result = result + roll_dice(diceType)
     return result
 
+"""
+"""
+
+def roll_dice_from_text(text):
+    result = 0
+    text = text.lower()
+    if text.startswith("d"):
+        return roll_dice(int(text[1:]))
+    else:
+        text = text.split("d")
+        return sum_multi_roll_dice(int(text[0]), int(text[1]))
 
 """
 basic Output command for the Bot. Awaits for being updated, when put into Discord BOT

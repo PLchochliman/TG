@@ -15,6 +15,11 @@ class loader():
         return self.sorowka.ws(ws=arkusz).range(address='A1:'+zasieg, formula=False)
 
     def zwroc(self):
+        for i in range(0, len(self.zaladowane)):
+            for y in range(0, len(self.zaladowane[i])):
+                for z in range(0, len(self.zaladowane[i][y])):
+                    if isinstance(self.zaladowane[i][y][z], str):
+                        self.zaladowane[i][y][z] = self.zaladowane[i][y][z].lower()
         return self.zaladowane
 
 

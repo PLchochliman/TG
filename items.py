@@ -1,4 +1,5 @@
 import excelDigger as excel
+import hero as hero
 #kurwa mamy to
 
 
@@ -39,6 +40,23 @@ class Przedmioty():
             if i[0] == nazwaBroni:
                 return i
         return False
+
+
+class Bron():
+    rodzaj_testu = ""
+    kosc_obrazen = ""
+    premia = 0
+
+    def zadaj_obrazenia(self, cel):
+        return False
+
+    def test_trafenia(self, operator, cel):
+        if operator.rzut_na_umiejetnasc(rodzaj_testu) >= cel.unik:
+            self.zadaj_obrazenia(cel)
+            return True
+        else:
+            return False
+
 
 
 '''
