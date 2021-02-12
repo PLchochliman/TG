@@ -156,7 +156,21 @@ Konczyna = {
     3: "lewa noga"
 }
 
+"""
+for purposes of penetration
+"""
 
+penetracja = {
+    "x": 0,
+    "-": 0,
+    "m": 1,
+    "l": 2,
+    "ś": 3,
+    "c": 4,
+    "a": 5,
+    "lp": 6,
+    "cp": 7
+}
 
 
 """
