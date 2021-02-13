@@ -52,6 +52,7 @@ class Bron:
         self.penetracja = self.penetracja_to_int(penetracja)
 
     def rzut_na_obrazenia(self):
+        print(Bot.roll_dice_from_text(self.kosc_obrazen))
         return Bot.roll_dice_from_text(self.kosc_obrazen)
 
     def zadaj_obrazenia(self, cel):
@@ -65,6 +66,7 @@ class Bron:
             return False
 
     def aktualna_premia(self, operator, zasieg):
+        print(zasieg)
         return self.premia - zasieg
 
     def atakuj(self, operator, cel, zasieg):
@@ -105,8 +107,9 @@ class BronStrzelecka(Bron):
         premia = self.premia + self.odrzut(operator) - int(kara_za_zasieg)
         return premia
 
-    def atakuj(self, operator, cel):
-        super(BronStrzelecka, self).atakuj(operator, cel)
+ #   def atakuj(self, operator, cel, zasieg):
+ #       super(BronStrzelecka, self).atakuj(operator, cel, zasieg)
+ #relict maybe shit to throw out
 
     def zmien_celownik(self, celownik):
         self.premia = self.premia - self.statystyki_celownika[1]

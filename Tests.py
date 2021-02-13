@@ -124,8 +124,8 @@ def test_przedmiotow():
 def test_dzialania_broni():
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     cel = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
-    giwera = items.Bron("strzelectwo", "2D2", 11, "m")
-    giwera.atakuj(wojtek, cel, 5)
+    giwera = items.Bron("strzelectwo", "2D2", 14, "m")
+    print(giwera.atakuj(wojtek, cel, 5))
     assert cel.lekkaRana > 0
     giwera2 = items.Bron("strzelectwo", "2D2", -5, "ś")
     giwera2.atakuj(cel, wojtek, 2)
@@ -138,7 +138,7 @@ def test_dzialania_broni_strzeleckiej():
     M4KA = items.BronStrzelecka(m4ka)
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     beben = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
-    M4KA.atakuj(wojtek, beben)
+    M4KA.atakuj(wojtek, beben, 0)
     Bot.output("TEN TEST BRONI STRZELECKIEJ JEST NEDOROBIONY!")
 
 

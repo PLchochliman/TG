@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TabelaBroni.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/items.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -427,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613093850891</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="did something about sights and the gun. Did not finished.">
+      <created>1613182955083</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1613182955083</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -443,7 +448,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="renamed alive into mortal. makes much more sence." />
     <MESSAGE value="did base for skills, and starting specialisations." />
     <MESSAGE value="Skills by default has been set (when we talk about the modifiers from base statistics)&#10;Also TGmath is history. all is in constants. Rather need of new reader from excel, to faster preparation from data." />
     <MESSAGE value="excel reader works, and is tested. preparing for big test of hero, then test of skills." />
@@ -468,6 +472,7 @@
     <MESSAGE value="done proper loading, all in lowercase- making it case unsesitive. default input is case unsesitive.&#10;did beggining for guns, and shooting from them." />
     <MESSAGE value="base generic weapon added. With test of course." />
     <MESSAGE value="shooting from gan (basic) almoust done, but not proper tested." />
-    <option name="LAST_COMMIT_MESSAGE" value="shooting from gan (basic) almoust done, but not proper tested." />
+    <MESSAGE value="did something about sights and the gun. Did not finished." />
+    <option name="LAST_COMMIT_MESSAGE" value="did something about sights and the gun. Did not finished." />
   </component>
 </project>
