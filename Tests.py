@@ -114,7 +114,7 @@ def test_przedmiotow():
     assert nozyk[3] == 3
     hek = itemki.luskacz_granatow("granat ofensywny")
     assert hek[2] == "2d6"
-    acog = itemki.luskacz_lunet("acogx4")
+    acog = itemki.luskacz_celownikow("acogx4")
     assert acog[3] == 10
     trijcon = itemki.luskacz_celownikow("trijcon")
     assert trijcon[4] == "strzelby"
@@ -125,10 +125,10 @@ def test_dzialania_broni():
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     cel = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     giwera = items.Bron("strzelectwo", "2D2", 11, "m")
-    giwera.atakuj(wojtek, cel)
+    giwera.atakuj(wojtek, cel, 5)
     assert cel.lekkaRana > 0
     giwera2 = items.Bron("strzelectwo", "2D2", -5, "ś")
-    giwera2.atakuj(cel, wojtek)
+    giwera2.atakuj(cel, wojtek, 2)
     assert wojtek.lekkaRana == 0
     Bot.output("podstawowa Bron dziala")
 
