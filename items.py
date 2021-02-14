@@ -44,12 +44,14 @@ class Bron:
     kosc_obrazen = ""
     premia = 0
     penetracja = 0
+    zasieg_maksymalny = 0
 
-    def __init__(self, rodzaj_testu, kosc_obrazen, premia, penetracja):
+    def __init__(self, rodzaj_testu, kosc_obrazen, premia, penetracja, zasieg_maksymalny):
         self.rodzaj_testu = rodzaj_testu
         self.kosc_obrazen = kosc_obrazen
         self.premia = premia
         self.penetracja = self.penetracja_to_int(penetracja)
+        self.zasieg_maksymalny = zasieg_maksymalny
 
     def rzut_na_obrazenia(self):
         return Bot.roll_dice_from_text(self.kosc_obrazen)
@@ -62,13 +64,21 @@ class Bron:
             self.zadaj_obrazenia(cel)
             return True
         else:
-            return False
+            raise Exception('chybiles!')
 
     def aktualna_premia(self, operator, zasieg):
-        return self.premia - zasieg
+        if zasieg <= self.zasieg_maksymalny:
+            return self.premia - zasieg
+        raise Exception('cel jest po za zasiegiem.')
 
     def atakuj(self, operator, cel, zasieg):
-        return self.test_trafenia(operator, cel, zasieg)
+        try:
+            return self.test_trafenia(operator, cel, zasieg)
+        except Exception as inst:
+            powod = inst.args[0]
+            Bot.output('Na celu nie zrobilo to zadnego wrazenia bo ' + powod)
+
+
 
     def penetracja_to_int(self, penetracja):
         return constants.penetracja[penetracja]
@@ -83,9 +93,8 @@ class BronStrzelecka(Bron):
 
 # if is smaller than 5 then it makes work for increased penalty for range, because of shit instead of sights
 
-
     def __init__(self, bron, celownik=['zwykłe', 0, 25, '', 'w nocy kara -4,', 0, '-']):
-        super(BronStrzelecka, self).__init__("strzelectwo", bron[5], bron[3], bron[6])
+        super(BronStrzelecka, self).__init__("strzelectwo", bron[5], bron[3], bron[6], bron[1])
         self.statystyki_podstawowe = bron
         self.nastaw_celownik(celownik)
 
@@ -105,10 +114,6 @@ class BronStrzelecka(Bron):
             kara_za_zasieg = kara_za_zasieg * self.zasieg_minimalny
         premia = self.premia + self.odrzut(operator) - int(kara_za_zasieg)
         return premia
-
- #   def atakuj(self, operator, cel, zasieg):
- #       super(BronStrzelecka, self).atakuj(operator, cel, zasieg)
- #relict maybe shit to throw out
 
     def zmien_celownik(self, celownik):
         self.premia = self.premia - self.statystyki_celownika[1]

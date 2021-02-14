@@ -124,10 +124,10 @@ def test_przedmiotow():
 def test_dzialania_broni():
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     cel = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
-    giwera = items.Bron("strzelectwo", "2D2", 14, "m")
-    print(giwera.atakuj(wojtek, cel, 5))
+    giwera = items.Bron("strzelectwo", "2D2", 14, "m", 500)
+    giwera.atakuj(wojtek, cel, 1)
     assert cel.lekkaRana > 0
-    giwera2 = items.Bron("strzelectwo", "2D2", -5, "ś")
+    giwera2 = items.Bron("strzelectwo", "2D2", -5, "ś", 0)
     assert giwera2.kosc_obrazen == "2D2"
     giwera2.atakuj(cel, wojtek, 2)
     assert wojtek.lekkaRana == 0
