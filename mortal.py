@@ -46,7 +46,6 @@ class IstotaZywa:
     def nastaw_unik(self):   #todo because of lack of equipment in code implemented.
         self.unik = (self.bazowyUnik + self.umiejetnasci[6][0])
 
-
     """
     all about dying, but without destroing object.
     """

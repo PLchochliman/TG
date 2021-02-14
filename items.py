@@ -131,6 +131,6 @@ itemki = Przedmioty("")
 m4ka = itemki.luskaczBroni("m4a1")
 M4KA = BronStrzelecka(m4ka)
 wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
-beben = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
-M4KA.atakuj(wojtek, beben) ec
+cel = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
+M4KA.atakuj(wojtek, cel) ec
 """

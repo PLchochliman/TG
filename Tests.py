@@ -9,6 +9,17 @@ import items as items
 it all should be made by another 
 """
 
+def sprawdz_jak_cel_oberwal(cel):
+    if cel.lekkaRana == 0:
+        if cel.drasniecia == 0:
+            if cel.powaznaRana == 0:
+                assert cel.powaznaRana == 0
+            else:
+                assert cel.powaznaRana == 1
+        else:
+            assert cel.drasniecia > 0
+    else:
+        assert cel.lekkaRana > 0
 
 def test_systemu():
     assert Bot.roll_dice(4) > 0
@@ -141,16 +152,7 @@ def test_dzialania_broni_strzeleckiej():
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     beben = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     if M4KA.atakuj(wojtek, beben, 0):
-        if beben.lekkaRana == 0:
-            if beben.drasniecia == 0:
-                if beben.powaznaRana == 0:
-                    assert beben.powaznaRana == 0
-                else:
-                    assert beben.powaznaRana == 1
-            else:
-                assert beben.drasniecia > 0
-        else:
-            assert beben.lekkaRana > 0
+        sprawdz_jak_cel_oberwal(beben)
     assert M4KA.zasieg_minimalny == 0
     assert M4KA.zasieg_przyrost == 25
 
