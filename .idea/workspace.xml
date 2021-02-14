@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/items.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -432,7 +433,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613182955083</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="tests repaired, need more tests">
+      <created>1613234536353</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1613234536353</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -448,7 +456,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="did base for skills, and starting specialisations." />
     <MESSAGE value="Skills by default has been set (when we talk about the modifiers from base statistics)&#10;Also TGmath is history. all is in constants. Rather need of new reader from excel, to faster preparation from data." />
     <MESSAGE value="excel reader works, and is tested. preparing for big test of hero, then test of skills." />
     <MESSAGE value="Did something about specialisation.&#10;Skills are working and tested.&#10;attached excels are working" />
@@ -473,6 +480,7 @@
     <MESSAGE value="base generic weapon added. With test of course." />
     <MESSAGE value="shooting from gan (basic) almoust done, but not proper tested." />
     <MESSAGE value="did something about sights and the gun. Did not finished." />
-    <option name="LAST_COMMIT_MESSAGE" value="did something about sights and the gun. Did not finished." />
+    <MESSAGE value="tests repaired, need more tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="tests repaired, need more tests" />
   </component>
 </project>

@@ -52,7 +52,6 @@ class Bron:
         self.penetracja = self.penetracja_to_int(penetracja)
 
     def rzut_na_obrazenia(self):
-        print(Bot.roll_dice_from_text(self.kosc_obrazen))
         return Bot.roll_dice_from_text(self.kosc_obrazen)
 
     def zadaj_obrazenia(self, cel):
@@ -66,7 +65,6 @@ class Bron:
             return False
 
     def aktualna_premia(self, operator, zasieg):
-        print(zasieg)
         return self.premia - zasieg
 
     def atakuj(self, operator, cel, zasieg):
@@ -82,6 +80,7 @@ class BronStrzelecka(Bron):
     statystyki_celownika: list = []
     zasieg_przyrost = 0
     zasieg_minimalny = 0
+
 # if is smaller than 5 then it makes work for increased penalty for range, because of shit instead of sights
 
 
@@ -128,5 +127,5 @@ m4ka = itemki.luskaczBroni("m4a1")
 M4KA = BronStrzelecka(m4ka)
 wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
 beben = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
-M4KA.atakuj(wojtek, beben)
+M4KA.atakuj(wojtek, beben) ec
 """
