@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bot.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -475,7 +474,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613740590534</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="zejabny test walki wręcz trzeba będzie coś przerobić przy losowaniu. Coś jest ostro z tym zjebane.">
+      <created>1613742277739</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1613742277739</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -491,7 +497,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="manual specialisations finished, but still has a bug, because always printing &quot;Ta specjalizacja została już wybrana&quot;" />
     <MESSAGE value="ok, skills finally done, when it comes to apply secialisations." />
     <MESSAGE value="buying ranks in progress" />
     <MESSAGE value="buying ranks maybe finished, but there is no test. we need more tests to hero." />
@@ -516,6 +521,7 @@
     <MESSAGE value="did counting range, and communicates if missed." />
     <MESSAGE value="wprowadzenie broni białej bez testu" />
     <MESSAGE value="dorobienie broni białej bez zasad specjalnych i testu + mały refaktor" />
-    <option name="LAST_COMMIT_MESSAGE" value="dorobienie broni białej bez zasad specjalnych i testu + mały refaktor" />
+    <MESSAGE value="zejabny test walki wręcz trzeba będzie coś przerobić przy losowaniu. Coś jest ostro z tym zjebane." />
+    <option name="LAST_COMMIT_MESSAGE" value="zejabny test walki wręcz trzeba będzie coś przerobić przy losowaniu. Coś jest ostro z tym zjebane." />
   </component>
 </project>

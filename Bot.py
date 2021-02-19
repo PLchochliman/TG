@@ -2,10 +2,10 @@
 here some utils for future - rebuilding for Discord server.
 Preparations for rebuilding it in the future - now piece of sh*t
 """
-from random import seed
-from random import random
+import random as random
+from time import sleep
 
-seed()
+random.seed(a=5, version=2)
 
 """
 rolls Dice. in Dice type you write maximum value of the dice. 
@@ -15,8 +15,9 @@ TODO maybe do into generator????
 
 
 def roll_dice(diceType):
-    random()
-    return int((random() * diceType)) + 1
+    los = random.random()
+    random.seed(los)
+    return int((random.randint(1, diceType)))
 
 
 """

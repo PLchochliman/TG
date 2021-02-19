@@ -7,15 +7,15 @@ import constans
 
 class IstotaZywa: #pełne pokrycie
     sila, zrecznasc, intelekt = 0, 0, 0,
-    modSila, modZrecznosc, modIntelekt = 0, 0, 0,
+    mod_sila, mod_zrecznosc, mod_intelekt = 0, 0, 0,
     status = True
-    drasniecia, lekkaRana, powaznaRana, krytycznaRana = 0, 0, 0, 0,
-    ranaKonczyny = [0, 0, 0, 0]
+    drasniecia, lekka_rana, powazna_rana, krytyczna_rana = 0, 0, 0, 0,
+    rana_konczyny = [0, 0, 0, 0]
     redukcjaObrazen, typOchrony = 0, 0
     imie = ""
     typBudowy = []
     mozliwoscAktywacji = []
-    bazowyUnik = 10
+    bazowy_unik = 10
     unik = 10
     punktyWytrwalosci, przeznaczenie = 0, 0,
     udzwig = 0
@@ -26,25 +26,25 @@ class IstotaZywa: #pełne pokrycie
         self.sila = sila
         self.zrecznasc = zrecznasc
         self.intelekt = intelekt
-        self.modSila = constans.mod(sila)
+        self.mod_sila = constans.mod(sila)
         self.modZrecznasc = constans.mod(zrecznasc)
-        self.modIntelekt = constans.mod(intelekt)
+        self.mod_intelekt = constans.mod(intelekt)
         self.imie = imie
-        self.typBudowy = constans.TypBudowy[self.modSila]
+        self.typBudowy = constans.TypBudowy[self.mod_sila]
         self.mozliwoscAktywacji = constans.TypyAktywacji[self.modZrecznasc]
-        self.bazowyUnik = unik + self.modZrecznasc + self.modIntelekt
-        self.unik = self.bazowyUnik         #na razie jest bez sensu, ale w późniejszych rozrachunkach bedzie potrzebne
+        self.bazowy_unik = unik + self.modZrecznasc + self.mod_intelekt
+        self.unik = self.bazowy_unik         #na razie jest bez sensu, ale w późniejszych rozrachunkach bedzie potrzebne
         self.punktyWytrwalosci = self.intelekt * 2
-        self.przeznaczenie = self.modIntelekt + 1
+        self.przeznaczenie = self.mod_intelekt + 1
         self.typOchrony = typOchrony
         self.udzwig = self.sila * 5
         self.redukcjaObrazen = redukcjaObrazen
-        if self.modSila == 3:
+        if self.mod_sila == 3:
             self.redukcjaObrazen += 1
         self.nastaw_umiejetnasci()
 
     def nastaw_unik(self):   #todo because of lack of equipment in code implemented.
-        self.unik = (self.bazowyUnik + self.umiejetnasci[6][0])
+        self.unik = (self.bazowy_unik + self.umiejetnasci[6][0])
 
     """
     all about dying, but without destroing object.
@@ -63,37 +63,37 @@ class IstotaZywa: #pełne pokrycie
         if obrazenie == 1:
             self.drasniecia += 1
         elif obrazenie == 2:
-            self.lekkaRana += 1
+            self.lekka_rana += 1
         elif obrazenie == 3:
             self.drasniecia += 1
         elif obrazenie == 4:
-            self.lekkaRana += 1
+            self.lekka_rana += 1
         elif obrazenie == 5:
-            self.ranaKonczyny[Bot.roll_dice(4) - 1] += 1
+            self.rana_konczyny[Bot.roll_dice(4) - 1] += 1
         elif obrazenie == 6:
-            self.powaznaRana += 1
+            self.powazna_rana += 1
         elif obrazenie == 7:
             self.drasniecia += 1
         elif obrazenie == 8:
-            self.ranaKonczyny[Bot.roll_dice(4) - 1] += 1
+            self.rana_konczyny[Bot.roll_dice(4) - 1] += 1
         elif obrazenie == 9:
-            self.lekkaRana += 1
+            self.lekka_rana += 1
         elif obrazenie == 10:
             self.allokuj(1)
-            self.lekkaRana += 1
+            self.lekka_rana += 1
         elif obrazenie < 15:
-            self.krytycznaRana += 1
+            self.krytyczna_rana += 1
             self.status = False
         elif obrazenie == 15:
             self.umarl()
         if self.drasniecia == self.typBudowy[0]:
             self.drasniecia = 0
-            self.lekkaRana += 1
-        if self.lekkaRana == self.typBudowy[1]:
-            self.lekkaRana = 0
-            self.powaznaRana += 1
-        if self.powaznaRana == self.typBudowy[2] + 1:
-            self.powaznaRana = 0
+            self.lekka_rana += 1
+        if self.lekka_rana == self.typBudowy[1]:
+            self.lekka_rana = 0
+            self.powazna_rana += 1
+        if self.powazna_rana == self.typBudowy[2] + 1:
+            self.powazna_rana = 0
             self.allokuj(11)
 
     """
@@ -140,9 +140,9 @@ class IstotaZywa: #pełne pokrycie
         return False
 
     def kara(self):
-        minus = self.lekkaRana * 3 + self.powaznaRana * 5
-        for i in range(0, len(self.ranaKonczyny)):
-            if self.ranaKonczyny[i] == 1:
+        minus = self.lekka_rana * 3 + self.powazna_rana * 5
+        for i in range(0, len(self.rana_konczyny)):
+            if self.rana_konczyny[i] == 1:
                 Bot.output("Pamietaj ze ranna jest twoja " + constans.Konczyna[i] + "\n Domyslna dodatkowa kara z tego wynikajaca jest to -4")
         return minus
 
@@ -152,24 +152,24 @@ class IstotaZywa: #pełne pokrycie
             if i == 0:
                 continue
             if self.umiejetnasci[i][4] == 1:
-                self.umiejetnasci[i][3] = self.modSila
+                self.umiejetnasci[i][3] = self.mod_sila
             if self.umiejetnasci[i][4] == 2:
                 self.umiejetnasci[i][3] = self.modZrecznasc
             if self.umiejetnasci[i][4] == 3:
-                self.umiejetnasci[i][3] = self.modIntelekt
+                self.umiejetnasci[i][3] = self.mod_intelekt
             if self.umiejetnasci[i][4] == 4:
-                if self.modSila > self.modIntelekt:
-                    self.umiejetnasci[i][3] = self.modSila
+                if self.mod_sila > self.mod_intelekt:
+                    self.umiejetnasci[i][3] = self.mod_sila
                 else:
-                    self.umiejetnasci[i][3] = self.modIntelekt
+                    self.umiejetnasci[i][3] = self.mod_intelekt
             if self.umiejetnasci[i][4] == 5:
-                if self.modZrecznasc > self.modIntelekt:
+                if self.modZrecznasc > self.mod_intelekt:
                     self.umiejetnasci[i][3] = self.modZrecznasc
                 else:
-                    self.umiejetnasci[i][3] = self.modIntelekt
+                    self.umiejetnasci[i][3] = self.mod_intelekt
             if self.umiejetnasci[i][4] == 6:
-                if self.modSila > self.modZrecznasc:
-                    self.umiejetnasci[i][3] = self.modSila
+                if self.mod_sila > self.modZrecznasc:
+                    self.umiejetnasci[i][3] = self.mod_sila
                 else:
                     self.umiejetnasci[i][3] = self.modZrecznasc
 

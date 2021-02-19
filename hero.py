@@ -15,7 +15,7 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
 
     def __init__(self, sila, zrecznasc, intelekt, specjalizacje=None, imie="bob", pu=150, kasa=9000, ):
         super().__init__(sila, zrecznasc, intelekt, imie)
-        self.punktyUmiejetnasci = pu + pu / 10 * self.modIntelekt
+        self.punktyUmiejetnasci = pu + pu / 10 * self.mod_intelekt
         self.pieniadze = kasa
         if specjalizacje:
             self.przypisz_specjalizacje(specjalizacje[0])

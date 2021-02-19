@@ -10,16 +10,16 @@ it all should be made by another
 """
 
 def sprawdz_jak_cel_oberwal(cel):
-    if cel.lekkaRana == 0:
+    if cel.lekka_rana == 0:
         if cel.drasniecia == 0:
-            if cel.powaznaRana == 0:
-                assert cel.powaznaRana == 0
+            if cel.powazna_rana == 0:
+                assert cel.powazna_rana == 0
             else:
-                assert cel.powaznaRana == 1
+                assert cel.powazna_rana == 1
         else:
             assert cel.drasniecia > 0
     else:
-        assert cel.lekkaRana > 0
+        assert cel.lekka_rana > 0
 
 def test_systemu():
     assert Bot.roll_dice(4) > 0
@@ -54,16 +54,16 @@ def test_ran_kar_smierci(): #testy mortal.py
     wojtek = mortal.IstotaZywa(8, 8, 8, "Wojtek")
     wojtek.rana(10, 0)
     assert wojtek.drasniecia == 1
-    assert wojtek.lekkaRana == 1
-    assert wojtek.powaznaRana == 1
+    assert wojtek.lekka_rana == 1
+    assert wojtek.powazna_rana == 1
     Bot.output("podstawowy test Ran zakonczony")
     wojtek.redukcjaObrazen = 2
     wojtek.rana(3, 0)
     assert wojtek.drasniecia == 2
-    assert wojtek.lekkaRana == 1
+    assert wojtek.lekka_rana == 1
     wojtek.rana(3, 0)
     wojtek.rana(3, 0)
-    assert wojtek.lekkaRana == 2
+    assert wojtek.lekka_rana == 2
     Bot.output("Bot ran z redukcja obrazen zakonczony")
     wojtek.allokuj(5)
     assert wojtek.kara() == 11
@@ -137,11 +137,11 @@ def test_dzialania_broni():
     cel = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     giwera = items.Bron("strzelectwo", "2D2", 14, "m", 500)
     giwera.atakuj(wojtek, cel, 1)
-    assert cel.lekkaRana > 0
+    assert cel.lekka_rana > 0
     giwera2 = items.Bron("strzelectwo", "2D2", -5, "ś", 0)
     assert giwera2.kosc_obrazen == "2D2"
     giwera2.atakuj(cel, wojtek, 2)
-    assert wojtek.lekkaRana == 0
+    assert wojtek.lekka_rana == 0
     Bot.output("podstawowa Bron dziala")
 
 
