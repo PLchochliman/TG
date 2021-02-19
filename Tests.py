@@ -57,7 +57,7 @@ def test_ran_kar_smierci(): #testy mortal.py
     assert wojtek.lekka_rana == 1
     assert wojtek.powazna_rana == 1
     Bot.output("podstawowy test Ran zakonczony")
-    wojtek.redukcjaObrazen = 2
+    wojtek.redukcja_obrazen = 2
     wojtek.rana(3, 0)
     assert wojtek.drasniecia == 2
     assert wojtek.lekka_rana == 1

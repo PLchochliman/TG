@@ -11,10 +11,10 @@ class IstotaZywa: #pełne pokrycie
     status = True
     drasniecia, lekka_rana, powazna_rana, krytyczna_rana = 0, 0, 0, 0,
     rana_konczyny = [0, 0, 0, 0]
-    redukcjaObrazen, typOchrony = 0, 0
+    redukcja_obrazen, typ_ochrony = 0, 0
     imie = ""
-    typBudowy = []
-    mozliwoscAktywacji = []
+    typ_budowy = []
+    mozliwosc_aktywacji = []
     bazowy_unik = 10
     unik = 10
     punktyWytrwalosci, przeznaczenie = 0, 0,
@@ -30,17 +30,17 @@ class IstotaZywa: #pełne pokrycie
         self.modZrecznasc = constans.mod(zrecznasc)
         self.mod_intelekt = constans.mod(intelekt)
         self.imie = imie
-        self.typBudowy = constans.TypBudowy[self.mod_sila]
-        self.mozliwoscAktywacji = constans.TypyAktywacji[self.modZrecznasc]
+        self.typ_budowy = constans.TypBudowy[self.mod_sila]
+        self.mozliwosc_aktywacji = constans.TypyAktywacji[self.modZrecznasc]
         self.bazowy_unik = unik + self.modZrecznasc + self.mod_intelekt
         self.unik = self.bazowy_unik         #na razie jest bez sensu, ale w późniejszych rozrachunkach bedzie potrzebne
         self.punktyWytrwalosci = self.intelekt * 2
         self.przeznaczenie = self.mod_intelekt + 1
-        self.typOchrony = typOchrony
+        self.typ_ochrony = typOchrony
         self.udzwig = self.sila * 5
-        self.redukcjaObrazen = redukcjaObrazen
+        self.redukcja_obrazen = redukcjaObrazen
         if self.mod_sila == 3:
-            self.redukcjaObrazen += 1
+            self.redukcja_obrazen += 1
         self.nastaw_umiejetnasci()
 
     def nastaw_unik(self):   #todo because of lack of equipment in code implemented.
@@ -86,13 +86,13 @@ class IstotaZywa: #pełne pokrycie
             self.status = False
         elif obrazenie == 15:
             self.umarl()
-        if self.drasniecia == self.typBudowy[0]:
+        if self.drasniecia == self.typ_budowy[0]:
             self.drasniecia = 0
             self.lekka_rana += 1
-        if self.lekka_rana == self.typBudowy[1]:
+        if self.lekka_rana == self.typ_budowy[1]:
             self.lekka_rana = 0
             self.powazna_rana += 1
-        if self.powazna_rana == self.typBudowy[2] + 1:
+        if self.powazna_rana == self.typ_budowy[2] + 1:
             self.powazna_rana = 0
             self.allokuj(11)
 
@@ -102,8 +102,8 @@ class IstotaZywa: #pełne pokrycie
     then it will resolve damage by you taken.
     """
     def rana(self, rzutNaObrazenia, penetracja):
-        if penetracja <= self.typOchrony:
-            rzutNaObrazenia = rzutNaObrazenia - self.redukcjaObrazen
+        if penetracja <= self.typ_ochrony:
+            rzutNaObrazenia = rzutNaObrazenia - self.redukcja_obrazen
         if rzutNaObrazenia <= 1:
             self.allokuj(1)
             return True
@@ -135,7 +135,7 @@ class IstotaZywa: #pełne pokrycie
     def aktywacja(self, faza):
         if not self.status:
             return False
-        if self.mozliwoscAktywacji[faza] == 1:
+        if self.mozliwosc_aktywacji[faza] == 1:
             return True
         return False
 
