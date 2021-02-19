@@ -43,7 +43,7 @@ def test_stalych():
 
 
 def test_luskania_danych_z_excela():
-    specki = excelDigger.loader("Specjalizacje.xlsx", ["umiejetnasci"], ["B26"])
+    specki = excelDigger.Loader("Specjalizacje.xlsx", ["umiejetnasci"], ["B26"])
     specki = specki.zwroc()
     specki = specki[0]
     assert specki[1][0] == "bron boczna"
@@ -156,7 +156,7 @@ def test_dzialania_broni_strzeleckiej():
     assert M4KA.zasieg_minimalny == 0
     assert M4KA.zasieg_przyrost == 25
 
-    Bot.output("TEN TEST BRONI STRZELECKIEJ JEST NEDOROBIONY!")
+    Bot.output("TEN TEST BRONI STRZELECKIEJ JEST NEDOROBIONY, bo Bron palna ni chuja nie jest skonczona!")
 
 
 test_luskania_danych_z_excela()

@@ -5,11 +5,11 @@ import hero as hero
 #kurwa mamy to
 
 
-class Przedmioty():
+class Przedmioty(): #pełne pokrycie
     dane = []
 
     def __init__(self, CoDoQRWY):
-        self.przetwornik = Excel.loader('TabelaBroni.xlsx', ['bron', 'bronbiala', 'granaty', 'celowniki'],
+        self.przetwornik = Excel.Loader('TabelaBroni.xlsx', ['bron', 'bronbiala', 'granaty', 'celowniki'],
                                         ['O300', 'I19', 'I10', 'G28'])
         self.dane = self.przetwornik.zwroc()
 
@@ -39,7 +39,7 @@ class Przedmioty():
 
 
 
-class Bron:
+class Bron: #pełne pokrycie
     rodzaj_testu = ""
     kosc_obrazen = ""
     premia = 0
@@ -82,7 +82,7 @@ class Bron:
         return constants.penetracja[penetracja]
 
 
-class BronStrzelecka(Bron):
+class BronStrzelecka(Bron): #pełne pokrycie
 
     statystyki_podstawowe: list = []
     statystyki_celownika: list = []
@@ -131,6 +131,24 @@ class BronBiala(Bron):
         #(self, rodzaj_testu, kosc_obrazen, premia, penetracja, zasieg_maksymalny):
         super(BronBiala, self).__init__("walka wrecz", bron[5], bron[3], bron[6], bron[1])
         self.statystyki_podstawowe = bron
+
+    def atakuj(self, operator, cel, zasieg):
+        try:
+            return self.test_trafenia(operator, cel, zasieg)
+        except Exception as inst:
+            powod = inst.args[0]
+            Bot.output('Na celu nie zrobilo to zadnego wrazenia bo ' + powod)
+
+    def test_trafenia(self, operator, cel, zasieg=0):
+        wynik = operator.rzut_na_umiejetnasc(self.rodzaj_testu)
+        if wynik > cel.rzut_na_umiejetnasc(self.rodzaj_testu):
+            if wynik >= cel.bazowy_unik /2:
+                self.zadaj_obrazenia(cel)
+                return True
+            else:
+                raise Exception('walczysz lepiej od wroga, ale wciąż nie jesteś w stanie go trafić')
+        else:
+            raise Exception('przeciwnik lepiej walczy')
 
 """
 itemki = Przedmioty("")

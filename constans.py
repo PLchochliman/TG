@@ -1,8 +1,8 @@
 import Bot
 import excelDigger
 """
-COnstans are not tested!!!!
-Only by the way of other tests
+COnstans are not tested directly!!!!
+Only by the way of other tests, so we got full coverage.
 """
 
 
@@ -28,7 +28,7 @@ TypBudowy = {
 here is some code for specialisations. Replaces classes from casual RPGs.
 """
 
-specjalizacje = excelDigger.loader("Specjalizacje.xlsx", ["umiejetnasci"], ["B26"])
+specjalizacje = excelDigger.Loader("Specjalizacje.xlsx", ["umiejetnasci"], ["B26"])
 specjalizacje = specjalizacje.zwroc()
 specjalizacje = specjalizacje[0]
 

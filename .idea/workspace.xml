@@ -460,7 +460,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613331115690</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="wprowadzenie broni białej bez testu">
+      <created>1613709060386</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1613709060386</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -476,7 +483,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="mowed forward with skills, but still not advancing them itd...." />
     <MESSAGE value="finished manual skills setting." />
     <MESSAGE value="manual specialisations finished, but still has a bug, because always printing &quot;Ta specjalizacja została już wybrana&quot;" />
     <MESSAGE value="ok, skills finally done, when it comes to apply secialisations." />
@@ -501,6 +507,7 @@
     <MESSAGE value="did some testing." />
     <MESSAGE value="did counting range, and communications if missed." />
     <MESSAGE value="did counting range, and communicates if missed." />
-    <option name="LAST_COMMIT_MESSAGE" value="did counting range, and communicates if missed." />
+    <MESSAGE value="wprowadzenie broni białej bez testu" />
+    <option name="LAST_COMMIT_MESSAGE" value="wprowadzenie broni białej bez testu" />
   </component>
 </project>

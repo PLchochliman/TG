@@ -2,7 +2,7 @@ import Bot
 import pylightxl as xl
 
 
-class loader():
+class Loader(): #pelne pokrycie
     sorowka = []
     zaladowane = []
 
@@ -23,5 +23,5 @@ class loader():
         return self.zaladowane
 
 
-#giweryICelowniki = loader('TabelaBroni.xlsx', ['bron', 'bronbiala', 'granaty', 'lunety', 'celowniki',], ['O300', 'I19','I10', 'F13', 'G14'])
+#giweryICelowniki = Loader('TabelaBroni.xlsx', ['bron', 'bronbiala', 'granaty', 'lunety', 'celowniki',], ['O300', 'I19','I10', 'F13', 'G14'])
 #print(giweryICelowniki.zwroc())

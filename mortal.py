@@ -5,7 +5,7 @@ import Bot
 import constans
 
 
-class IstotaZywa:
+class IstotaZywa: #pełne pokrycie
     sila, zrecznasc, intelekt = 0, 0, 0,
     modSila, modZrecznosc, modIntelekt = 0, 0, 0,
     status = True

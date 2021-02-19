@@ -6,7 +6,7 @@ import constans as constans
 "starting creating real character"
 
 
-class Postac(mortal.IstotaZywa):
+class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
     punktyUmiejetnasci = 0
     pieniadze = 0
     wyposazenie_zalozone = ["", "", "", "", "", "", "", ""]     #  states for Head, torso (tactical vest), belt, leg panel1, legpanel2, backpack, backpackslot1, backpackslot2
