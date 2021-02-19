@@ -78,8 +78,6 @@ class Bron:
             powod = inst.args[0]
             Bot.output('Na celu nie zrobilo to zadnego wrazenia bo ' + powod)
 
-
-
     def penetracja_to_int(self, penetracja):
         return constants.penetracja[penetracja]
 
@@ -125,6 +123,14 @@ class BronStrzelecka(Bron):
         self.statystyki_celownika = celownik
         self.zasieg_przyrost = self.statystyki_celownika[2]
         self.premia = self.premia + self.statystyki_celownika[1]
+
+
+class BronBiala(Bron):
+
+    def __init__(self, bron):
+        #(self, rodzaj_testu, kosc_obrazen, premia, penetracja, zasieg_maksymalny):
+        super(BronBiala, self).__init__("walka wrecz", bron[5], bron[3], bron[6], bron[1])
+        self.statystyki_podstawowe = bron
 
 """
 itemki = Przedmioty("")
