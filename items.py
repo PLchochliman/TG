@@ -138,11 +138,11 @@ class BronBiala(Bron):
         except Exception as inst:
             powod = inst.args[0]
             Bot.output('Na celu nie zrobilo to zadnego wrazenia bo ' + powod)
+            return False
 
     def test_trafenia(self, operator, cel, zasieg=0):
         wynik = operator.rzut_na_umiejetnasc(self.rodzaj_testu)
         wynik = wynik + self.premia
-        print("oto wynik na walke wrecz " + str(wynik))
         if wynik > cel.rzut_na_umiejetnasc(self.rodzaj_testu):
             if wynik >= cel.bazowy_unik /2:
                 self.zadaj_obrazenia(cel)

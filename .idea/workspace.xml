@@ -7,6 +7,8 @@
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/items.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -481,7 +483,21 @@
       <option name="project" value="LOCAL" />
       <updated>1613742277739</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="naprawione. warto pamiętać że nie wolno, ale nie wolno zbyt szybko po sobie losować zmiennych bez przypisania, bo wyjdzie nic.">
+      <created>1613744871069</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1613744871069</updated>
+    </task>
+    <task id="LOCAL-00044" summary="refaktor, tak aby trzymać wszędzie tę samą konwencję.">
+      <created>1613744967087</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1613744967088</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -497,8 +513,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ok, skills finally done, when it comes to apply secialisations." />
-    <MESSAGE value="buying ranks in progress" />
     <MESSAGE value="buying ranks maybe finished, but there is no test. we need more tests to hero." />
     <MESSAGE value="some tests done, but still not enough." />
     <MESSAGE value="tests are suplemented, now all the scope is ready." />
@@ -522,6 +536,8 @@
     <MESSAGE value="wprowadzenie broni białej bez testu" />
     <MESSAGE value="dorobienie broni białej bez zasad specjalnych i testu + mały refaktor" />
     <MESSAGE value="zejabny test walki wręcz trzeba będzie coś przerobić przy losowaniu. Coś jest ostro z tym zjebane." />
-    <option name="LAST_COMMIT_MESSAGE" value="zejabny test walki wręcz trzeba będzie coś przerobić przy losowaniu. Coś jest ostro z tym zjebane." />
+    <MESSAGE value="naprawione. warto pamiętać że nie wolno, ale nie wolno zbyt szybko po sobie losować zmiennych bez przypisania, bo wyjdzie nic." />
+    <MESSAGE value="refaktor, tak aby trzymać wszędzie tę samą konwencję." />
+    <option name="LAST_COMMIT_MESSAGE" value="refaktor, tak aby trzymać wszędzie tę samą konwencję." />
   </component>
 </project>

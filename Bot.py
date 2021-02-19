@@ -45,8 +45,11 @@ def sum_multi_roll_dice(diceType, countOfDices):
         result = result + roll_dice(diceType)
     return result
 
+
 """
+rolling dice based on text. you can provide eg 4d6 and returns 4 results of D6. it's case insensitive.
 """
+
 
 def roll_dice_from_text(text):
     result = 0
@@ -57,9 +60,12 @@ def roll_dice_from_text(text):
         text = text.split("d")
         return sum_multi_roll_dice(int(text[0]), int(text[1]))
 
+
 """
 basic Output command for the Bot. Awaits for being updated, when put into Discord BOT
 """
+
+
 def output(text):
     print(text)
 

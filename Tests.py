@@ -164,15 +164,15 @@ def test_broni_bialej():
     NOZ = items.BronBiala(noz)
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     beben = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
-    if NOZ.atakuj(wojtek, beben, 0):
-        sprawdz_jak_cel_oberwal(beben)
+    assert NOZ.atakuj(wojtek, beben, 0) == False
     wojtek.wykup_range("walka wrecz")
     wojtek.wykup_range("walka wrecz")
     wojtek.wykup_range("walka wrecz")
     wojtek.wykup_range("walka wrecz")
     wojtek.wykup_range("walka wrecz")
-    if NOZ.atakuj(wojtek, beben, 0):
-        sprawdz_jak_cel_oberwal(beben)
+    wojtek.wykup_range("walka wrecz")
+    assert NOZ.atakuj(wojtek, beben, 0)
+
 
 
 test_luskania_danych_z_excela()
