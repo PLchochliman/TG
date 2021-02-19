@@ -141,7 +141,10 @@ class BronBiala(Bron):
 
     def test_trafenia(self, operator, cel, zasieg=0):
         wynik = operator.rzut_na_umiejetnasc(self.rodzaj_testu)
-        if wynik > cel.rzut_na_umiejetnasc(self.rodzaj_testu):
+        print("oto wynik na walke wrecz " + str(wynik))
+        rzut_obronny = cel.rzut_na_umiejetnasc(self.rodzaj_testu)
+        print("oto wynik na rzut obronny " + str(rzut_obronny))
+        if wynik > rzut_obronny:
             if wynik >= cel.bazowy_unik /2:
                 self.zadaj_obrazenia(cel)
                 return True

@@ -15,6 +15,7 @@ TODO maybe do into generator????
 
 
 def roll_dice(diceType):
+    random()
     return int((random() * diceType)) + 1
 
 

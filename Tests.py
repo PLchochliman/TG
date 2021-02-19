@@ -158,6 +158,22 @@ def test_dzialania_broni_strzeleckiej():
 
     Bot.output("TEN TEST BRONI STRZELECKIEJ JEST NEDOROBIONY, bo Bron palna ni chuja nie jest skonczona!")
 
+def test_broni_bialej():
+    itemki = items.Przedmioty('')
+    noz = itemki.luskacz_broni_bialej("nóż")
+    NOZ = items.BronBiala(noz)
+    wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
+    beben = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
+    if NOZ.atakuj(wojtek, beben, 0):
+        sprawdz_jak_cel_oberwal(beben)
+    wojtek.wykup_range("walka wrecz")
+    wojtek.wykup_range("walka wrecz")
+    wojtek.wykup_range("walka wrecz")
+    wojtek.wykup_range("walka wrecz")
+    wojtek.wykup_range("walka wrecz")
+    if NOZ.atakuj(wojtek, beben, 0):
+        sprawdz_jak_cel_oberwal(beben)
+
 
 test_luskania_danych_z_excela()
 test_systemu()
@@ -169,3 +185,4 @@ test_jezykow()
 test_przedmiotow()
 test_dzialania_broni()
 test_dzialania_broni_strzeleckiej()
+test_broni_bialej()
