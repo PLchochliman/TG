@@ -45,7 +45,7 @@ class Shooting():
                 operator.aktywna_bron.test_obrazen_z_egzekucja(cel)
         except Exception as inst:
             powod = inst.args[0]
-            Bot.output('Na celu nie zrobilo to zadnego wrazenia bo ' + powod)
+            Bot.output(cel.imie + " nie oberwal bo " + powod)
             return False
 
 """
