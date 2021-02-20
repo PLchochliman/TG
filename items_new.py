@@ -58,7 +58,7 @@ class Bron: #pełne pokrycie
     def test_obrazen_z_egzekucja(self, cel, premia=0):
         cel.rana(self.rzut_na_obrazenia() + premia, self.penetracja)
 
-    def test_trafenia(self, operator, cel, dodatkowe, zasieg=0):
+    def test_trafienia(self, operator, cel, dodatkowe, zasieg=0):
         wynik = operator.rzut_na_umiejetnasc(self.rodzaj_testu) + self.aktualna_premia(operator, zasieg) + dodatkowe - cel.unik
         if wynik >= 0:
             return wynik
@@ -97,8 +97,8 @@ class BronStrzelecka(Bron): #pełne pokrycie
         else:
             return 0
 
-    def test_trafenia(self, operator, cel, zasieg):
-        super(BronStrzelecka, self).test_trafenia(operator, cel, zasieg)
+    def test_trafienia(self, operator, cel, dodatkowe, zasieg):
+        super(BronStrzelecka, self).test_trafenia(operator, cel, dodatkowe, zasieg)
 
     def aktualna_premia(self, operator, odległosc):
         kara_za_zasieg = odległosc / self.zasieg_przyrost
@@ -135,7 +135,7 @@ class BronBiala(Bron):
             Bot.output('Na celu nie zrobilo to zadnego wrazenia bo ' + powod)
             return False
 
-    def test_trafenia(self, operator, cel, zasieg=0):
+    def test_trafienia(self, operator, cel, zasieg=0):
         wynik = operator.rzut_na_umiejetnasc(self.rodzaj_testu)
         wynik = wynik + self.premia
         if wynik > cel.rzut_na_umiejetnasc(self.rodzaj_testu):

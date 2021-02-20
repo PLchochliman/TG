@@ -4,6 +4,7 @@ import Bot as Bot
 import excelDigger as excelDigger
 import hero as hero
 import items as items
+import mechanics as mechanics
 
 """
 it all should be made by another 
@@ -174,6 +175,16 @@ def test_broni_bialej():
     wojtek.wykup_range("walka wrecz")
     assert NOZ.atakuj(wojtek, beben, 0)
 
+def test_mechanik_walki():
+    strzelanie = mechanics.Shooting()
+    itemki = items.Przedmioty('')
+    m4ka = itemki.luskacz_broni("m4a1")
+    M4KA = items.BronStrzelecka(m4ka)
+    wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
+    wojtek.aktywna_bron = M4KA
+    beben = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
+    strzelanie.atakuj(wojtek, beben, "pojedynczy", 50)
+
 
 
 test_luskania_danych_z_excela()
@@ -187,3 +198,4 @@ test_przedmiotow()
 test_dzialania_broni()
 test_dzialania_broni_strzeleckiej()
 test_broni_bialej()
+test_mechanik_walki()

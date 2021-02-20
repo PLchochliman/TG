@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough.">
-      <change afterPath="$PROJECT_DIR$/items_new.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mechanics.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/hero.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/items.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mortal.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/items_new.py" beforeDir="false" afterPath="$PROJECT_DIR$/items_new.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mechanics.py" beforeDir="false" afterPath="$PROJECT_DIR$/mechanics.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -513,7 +510,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613745400335</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="calkowity rework strzelania">
+      <created>1613837219501</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1613837219501</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -529,7 +533,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="some tests done, but still not enough." />
     <MESSAGE value="tests are suplemented, now all the scope is ready." />
     <MESSAGE value="added predisposition, with tests." />
     <MESSAGE value="Battle sence finally propered used.  next Languages." />
@@ -554,6 +557,7 @@
     <MESSAGE value="naprawione. warto pamiętać że nie wolno, ale nie wolno zbyt szybko po sobie losować zmiennych bez przypisania, bo wyjdzie nic." />
     <MESSAGE value="refaktor, tak aby trzymać wszędzie tę samą konwencję." />
     <MESSAGE value="poprawione testy, i usunięto artefakty." />
-    <option name="LAST_COMMIT_MESSAGE" value="poprawione testy, i usunięto artefakty." />
+    <MESSAGE value="calkowity rework strzelania" />
+    <option name="LAST_COMMIT_MESSAGE" value="calkowity rework strzelania" />
   </component>
 </project>
