@@ -106,33 +106,33 @@ class IstotaZywa: #pełne pokrycie
             rzutNaObrazenia = rzutNaObrazenia - self.redukcja_obrazen
         if rzutNaObrazenia <= 1:
             self.allokuj(1)
-            Bot.output("ledwo cel drasnales")
+            Bot.output("Ledwo " + self.imie + " drasnales")
             return True
         elif rzutNaObrazenia == 2:
             self.allokuj(2)
-            Bot.output("Cel odczul")
+            Bot.output(self.imie + " odczul")
             return True
         elif rzutNaObrazenia < 6:
             self.allokuj(2)
             self.allokuj(rzutNaObrazenia)
-            Bot.output("Cel odczul")
+            Bot.output(self.imie + " odczul")
             return True
         elif rzutNaObrazenia == 6:
             self.allokuj(6)
-            Bot.output("Cel wyraznie odczul")
+            Bot.output(self.imie + " wyraznie odczul")
             return True
         elif rzutNaObrazenia < 11:
             self.allokuj(6)
-            Bot.output("Cel wyraznie odczul")
+            Bot.output(self.imie + " wyraznie odczul")
             self.allokuj(rzutNaObrazenia)
             return True
         elif rzutNaObrazenia < 15:
             self.allokuj(11)
-            Bot.output("Cel padl na ziemie")
+            Bot.output(self.imie + " padl na ziemie")
             return True
         elif rzutNaObrazenia >= 15:
             self.allokuj(15)
-            Bot.output("Cel ulegl dezintegracji")
+            Bot.output(self.imie + " ulegl dezintegracji")
             return
 
     """
