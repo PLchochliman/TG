@@ -89,9 +89,11 @@ class IstotaZywa: #pełne pokrycie
         if self.drasniecia == self.typ_budowy[0]:
             self.drasniecia = 0
             self.lekka_rana += 1
+            Bot.output(self.imie + " te drasniecia zabolaly")
         if self.lekka_rana == self.typ_budowy[1]:
             self.lekka_rana = 0
             self.powazna_rana += 1
+            Bot.output(self.imie + " to powazna kumulacja")
         if self.powazna_rana == self.typ_budowy[2] + 1:
             self.powazna_rana = 0
             self.allokuj(11)
@@ -106,7 +108,7 @@ class IstotaZywa: #pełne pokrycie
             rzutNaObrazenia = rzutNaObrazenia - self.redukcja_obrazen
         if rzutNaObrazenia <= 1:
             self.allokuj(1)
-            Bot.output("Ledwo " + self.imie + " drasnales")
+            Bot.output(self.imie + " ledwo zostal drasniety")
             return True
         elif rzutNaObrazenia == 2:
             self.allokuj(2)

@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough." />
+    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mortal.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortal.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -189,13 +192,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00001" summary="little preparations. Alive still not finished. still no tests">
-      <created>1611433084880</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1611433084880</updated>
     </task>
     <task id="LOCAL-00002" summary="some progress, allocate still not finished">
       <created>1611433817883</created>
@@ -526,7 +522,21 @@
       <option name="project" value="LOCAL" />
       <updated>1613853756551</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="zmiana komunikatów obrażeń">
+      <created>1613861113173</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1613861113173</updated>
+    </task>
+    <task id="LOCAL-00050" summary="zmiana komunikatów obrażeń">
+      <created>1613861219610</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1613861219611</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -542,7 +552,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Battle sence finally propered used.  next Languages." />
     <MESSAGE value="Battle sence finally propered used. redone test (was print instead of assert.  next Languages." />
     <MESSAGE value="jezyki zrobione, wraz z testem" />
     <MESSAGE value="now reader is case unsesitive. all is down." />
@@ -567,6 +576,7 @@
     <MESSAGE value="calkowity rework strzelania" />
     <MESSAGE value="Dalej próbuję ale jeszcze jest parę błędów do zaszpachlowania w samej konstrukcji - jak zwykle unit testy prawdę powiedziały." />
     <MESSAGE value="naprawione podstawowe atakuj strzelania, implementując wszystkie tryby strzelania." />
-    <option name="LAST_COMMIT_MESSAGE" value="naprawione podstawowe atakuj strzelania, implementując wszystkie tryby strzelania." />
+    <MESSAGE value="zmiana komunikatów obrażeń" />
+    <option name="LAST_COMMIT_MESSAGE" value="zmiana komunikatów obrażeń" />
   </component>
 </project>

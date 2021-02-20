@@ -190,6 +190,8 @@ def test_mechanik_walki():
     wojtek.wykup_range("strzelectwo")
     wojtek.wykup_range("strzelectwo")
     wojtek.wykup_range("strzelectwo")
+    strzelanie.atakuj(wojtek, beben, "serie", 50)
+    strzelanie.atakuj(wojtek, beben, "samoczynny", 50)
     strzelanie.atakuj(wojtek, beben, "pojedynczy", 50)
 
 

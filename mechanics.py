@@ -26,12 +26,12 @@ class Shooting():
             wynik = self.test_trafienia(operator, cel, dodatkowe, zasieg) #failuje juz z wyjatku testu trafienia
             if wynik > 0:
                 if tryb == "samoczynny":
-                    for i in range(0, wynik):
+                    for i in range(0, int(wynik)):
                         operator.aktywna_bron.test_obrazen_z_egzekucja(cel)
                 if tryb == 'serie':
                     if wynik > 3:
                         wynik = 3
-                    for i in range(0, wynik):
+                    for i in range(0, int(wynik)):
                         operator.aktywna_bron.test_obrazen_z_egzekucja(cel)
                 if tryb in ("pojedynczy", "pelne skupienie"):
                     premia = wynik / 3
