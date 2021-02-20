@@ -98,7 +98,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
             return 0
 
     def test_trafienia(self, operator, cel, dodatkowe, zasieg):
-        super(BronStrzelecka, self).test_trafenia(operator, cel, dodatkowe, zasieg)
+        return super(BronStrzelecka, self).test_trafienia(operator, cel, dodatkowe, zasieg)
 
     def aktualna_premia(self, operator, odległosc):
         kara_za_zasieg = odległosc / self.zasieg_przyrost

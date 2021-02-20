@@ -16,13 +16,14 @@ class Shooting():
 
    # @staticmethod
 # wciaz nie sprawdza broni czy mozne napierdalac danym trybem, oraz nie daje możliwości do strzelania 2 wrogów naRaz.
+# nie sprawdza równierz kar za różne zasięgi.
     def atakuj(self, operator, cel, tryb, zasieg):
         try:
             dodatkowe = 0
             if tryb == "pelne skupienie":
                 dodatkowe = Bot.roll_dice_from_text("3d6")
                 zasieg = zasieg/2
-            wynik = self.test_trafienia(operator, cel, dodatkowe, zasieg) #failuje juz z wyjatku testu trafienia, wiec minimalnie mamy 0, czyli trafienie
+            wynik = self.test_trafienia(operator, cel, dodatkowe, zasieg) #failuje juz z wyjatku testu trafienia
             if wynik > 0:
                 if tryb == "samoczynny":
                     for i in range(0, wynik):
@@ -32,12 +33,13 @@ class Shooting():
                         wynik = 3
                     for i in range(0, wynik):
                         operator.aktywna_bron.test_obrazen_z_egzekucja(cel)
-                if tryb == "pojedyncze" | "pelne skupienie":
+                if tryb in ("pojedynczy", "pelne skupienie"):
                     premia = wynik / 3
                     if wynik > 10:
                         cel.rana(11)
                     else:
                         operator.aktywna_bron.test_obrazen_z_egzekucja(cel, premia)
+
                 return wynik
             else:
                 operator.aktywna_bron.test_obrazen_z_egzekucja(cel)

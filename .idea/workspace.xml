@@ -517,7 +517,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613837219501</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Dalej próbuję ale jeszcze jest parę błędów do zaszpachlowania w samej konstrukcji - jak zwykle unit testy prawdę powiedziały.">
+      <created>1613849326528</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1613849326528</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -533,7 +540,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="tests are suplemented, now all the scope is ready." />
     <MESSAGE value="added predisposition, with tests." />
     <MESSAGE value="Battle sence finally propered used.  next Languages." />
     <MESSAGE value="Battle sence finally propered used. redone test (was print instead of assert.  next Languages." />
@@ -558,6 +564,7 @@
     <MESSAGE value="refaktor, tak aby trzymać wszędzie tę samą konwencję." />
     <MESSAGE value="poprawione testy, i usunięto artefakty." />
     <MESSAGE value="calkowity rework strzelania" />
-    <option name="LAST_COMMIT_MESSAGE" value="calkowity rework strzelania" />
+    <MESSAGE value="Dalej próbuję ale jeszcze jest parę błędów do zaszpachlowania w samej konstrukcji - jak zwykle unit testy prawdę powiedziały." />
+    <option name="LAST_COMMIT_MESSAGE" value="Dalej próbuję ale jeszcze jest parę błędów do zaszpachlowania w samej konstrukcji - jak zwykle unit testy prawdę powiedziały." />
   </component>
 </project>

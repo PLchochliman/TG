@@ -4,6 +4,7 @@ import Bot as Bot
 import excelDigger as excelDigger
 import hero as hero
 import items as items
+import items_new as itemsn
 import mechanics as mechanics
 
 """
@@ -177,14 +178,19 @@ def test_broni_bialej():
 
 def test_mechanik_walki():
     strzelanie = mechanics.Shooting()
-    itemki = items.Przedmioty('')
+    itemki = itemsn.Przedmioty('')
     m4ka = itemki.luskacz_broni("m4a1")
-    M4KA = items.BronStrzelecka(m4ka)
+    M4KA = itemsn.BronStrzelecka(m4ka)
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     wojtek.aktywna_bron = M4KA
     beben = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     strzelanie.atakuj(wojtek, beben, "pojedynczy", 50)
-
+    wojtek.wykup_range("strzelectwo")
+    wojtek.wykup_range("strzelectwo")
+    wojtek.wykup_range("strzelectwo")
+    wojtek.wykup_range("strzelectwo")
+    wojtek.wykup_range("strzelectwo")
+    strzelanie.atakuj(wojtek, beben, "pojedynczy", 50)
 
 
 test_luskania_danych_z_excela()
