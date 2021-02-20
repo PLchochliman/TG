@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough.">
+      <change afterPath="$PROJECT_DIR$/items_new.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mechanics.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/hero.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mortal.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortal.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +50,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -56,6 +60,11 @@
         <option name="myModuleName" value="TG" />
       </console-settings>
     </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\choch\Documents\GitHub\TG" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.Tests">
     <configuration name="Tests" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -497,7 +506,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613744967088</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="poprawione testy, i usunięto artefakty.">
+      <created>1613745400335</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1613745400335</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -513,7 +529,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="buying ranks maybe finished, but there is no test. we need more tests to hero." />
     <MESSAGE value="some tests done, but still not enough." />
     <MESSAGE value="tests are suplemented, now all the scope is ready." />
     <MESSAGE value="added predisposition, with tests." />
@@ -538,6 +553,7 @@
     <MESSAGE value="zejabny test walki wręcz trzeba będzie coś przerobić przy losowaniu. Coś jest ostro z tym zjebane." />
     <MESSAGE value="naprawione. warto pamiętać że nie wolno, ale nie wolno zbyt szybko po sobie losować zmiennych bez przypisania, bo wyjdzie nic." />
     <MESSAGE value="refaktor, tak aby trzymać wszędzie tę samą konwencję." />
-    <option name="LAST_COMMIT_MESSAGE" value="refaktor, tak aby trzymać wszędzie tę samą konwencję." />
+    <MESSAGE value="poprawione testy, i usunięto artefakty." />
+    <option name="LAST_COMMIT_MESSAGE" value="poprawione testy, i usunięto artefakty." />
   </component>
 </project>

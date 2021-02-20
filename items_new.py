@@ -2,7 +2,6 @@ import excelDigger as Excel
 import Bot as Bot
 import constans as constants
 import hero as hero
-#kurwa mamy to
 
 
 class Przedmioty(): #pełne pokrycie
@@ -56,13 +55,13 @@ class Bron: #pełne pokrycie
     def rzut_na_obrazenia(self):
         return Bot.roll_dice_from_text(self.kosc_obrazen)
 
-    def zadaj_obrazenia(self, cel):
-        cel.rana(self.rzut_na_obrazenia(), self.penetracja)
+    def test_obrazen_z_egzekucja(self, cel, premia=0):
+        cel.rana(self.rzut_na_obrazenia() + premia, self.penetracja)
 
-    def test_trafenia(self, operator, cel, zasieg=0):
-        if (operator.rzut_na_umiejetnasc(self.rodzaj_testu) + self.aktualna_premia(operator, zasieg)) >= cel.unik:
-            self.zadaj_obrazenia(cel)
-            return True
+    def test_trafenia(self, operator, cel, dodatkowe, zasieg=0):
+        wynik = operator.rzut_na_umiejetnasc(self.rodzaj_testu) + self.aktualna_premia(operator, zasieg) + dodatkowe - cel.unik
+        if wynik >= 0:
+            return wynik
         else:
             raise Exception('chybiles!')
 
@@ -70,13 +69,6 @@ class Bron: #pełne pokrycie
         if zasieg <= self.zasieg_maksymalny:
             return self.premia - zasieg
         raise Exception('cel jest po za zasiegiem.')
-
-    def atakuj(self, operator, cel, zasieg):
-        try:
-            return self.test_trafenia(operator, cel, zasieg)
-        except Exception as inst:
-            powod = inst.args[0]
-            Bot.output('Na celu nie zrobilo to zadnego wrazenia bo ' + powod)
 
     def penetracja_to_int(self, penetracja):
         return constants.penetracja[penetracja]
@@ -148,7 +140,7 @@ class BronBiala(Bron):
         wynik = wynik + self.premia
         if wynik > cel.rzut_na_umiejetnasc(self.rodzaj_testu):
             if wynik >= cel.bazowy_unik /2:
-                self.zadaj_obrazenia(cel)
+                self.test_obrazen_z_egzekucja(cel)
                 return True
             else:
                 raise Exception('walczysz lepiej od wroga, ale wciąż nie jesteś w stanie go trafić')

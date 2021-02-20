@@ -12,6 +12,7 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
     wyposazenie_zalozone = ["", "", "", "", "", "", "", ""]     #  states for Head, torso (tactical vest), belt, leg panel1, legpanel2, backpack, backpackslot1, backpackslot2
     zalozony_mundur = None
     specjalizacje = []
+    aktywna_bron = []
 
     def __init__(self, sila, zrecznasc, intelekt, specjalizacje=None, imie="bob", pu=150, kasa=9000, ):
         super().__init__(sila, zrecznasc, intelekt, imie)

@@ -150,8 +150,9 @@ def test_dzialania_broni_strzeleckiej():
     m4ka = itemki.luskacz_broni("m4a1")
     M4KA = items.BronStrzelecka(m4ka)
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
+    wojtek.aktywna_bron = M4KA
     beben = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
-    if M4KA.atakuj(wojtek, beben, 0):
+    if wojtek.aktywna_bron.atakuj(wojtek, beben, 0):
         sprawdz_jak_cel_oberwal(beben)
     assert M4KA.zasieg_minimalny == 0
     assert M4KA.zasieg_przyrost == 25
