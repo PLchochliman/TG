@@ -177,6 +177,7 @@ def test_broni_bialej():
     assert NOZ.atakuj(wojtek, beben, 0)
 
 def test_mechanik_walki():
+    Bot.output("test samej walki")
     strzelanie = mechanics.Shooting()
     itemki = itemsn.Przedmioty('')
     m4ka = itemki.luskacz_broni("m4a1")
@@ -184,15 +185,15 @@ def test_mechanik_walki():
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     wojtek.aktywna_bron = M4KA
     beben = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
-    strzelanie.atakuj(wojtek, beben, "pojedynczy", 50)
+    strzelanie.atakuj(wojtek, beben, 50, "pojedynczy")
     wojtek.wykup_range("strzelectwo")
     wojtek.wykup_range("strzelectwo")
     wojtek.wykup_range("strzelectwo")
     wojtek.wykup_range("strzelectwo")
     wojtek.wykup_range("strzelectwo")
-    strzelanie.atakuj(wojtek, beben, "serie", 50)
-    strzelanie.atakuj(wojtek, beben, "samoczynny", 50)
-    strzelanie.atakuj(wojtek, beben, "pojedynczy", 50)
+    strzelanie.atakuj(wojtek, beben, 50, "serie")
+    strzelanie.atakuj(wojtek, beben, 50, "samoczynny")
+    strzelanie.atakuj(wojtek, beben, 50, "pojedynczy")
 
 
 test_luskania_danych_z_excela()
