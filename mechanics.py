@@ -3,7 +3,32 @@ import items_new as items
 import Bot as Bot
 
 
-class Shooting():
+class akcje():
+    costam = 0
+
+
+class WalkaWrecz(akcje):
+    def uderz(self, operator, cel, zasieg=0): # TODO bez testow!!!!!
+        try:
+            wynik = operator.rzut_na_umiejetnasc("walka wrecz")
+            if operator.aktywna_bron.zasieg_maksymalny < 2:
+                wynik = wynik + operator.aktywna_bron.premia
+            odpowiedz = cel.rzut_na_umiejetnasc("walka wrecz")
+            if cel.aktywna_bron.zasieg_maksymalny < 2:
+                odpowiedz = odpowiedz + cel.aktywna_bron.premia
+            if wynik > odpowiedz:
+                if wynik >= cel.bazowy_unik / 2:
+                    self.test_obrazen_z_egzekucja(cel)
+                    return True
+                else:
+                    raise Exception('walczysz lepiej od wroga, ale wciąż nie jesteś w stanie go trafić')
+            else:
+                raise Exception('przeciwnik lepiej walczy')
+        except Exception as inst:
+            powod = inst.args[0]
+            Bot.output('Na celu nie zrobilo to zadnego wrazenia bo ' + powod)
+
+class Shooting(akcje):
     @staticmethod
     def strzal(operator, cel, odleglosc):
         return 0
@@ -11,13 +36,14 @@ class Shooting():
     """
     failuje w momencie kiedy operator nie moze trafic celu.
     """
+
     def test_trafienia(self, operator, cel, dodatkowe, zasieg):
         return operator.aktywna_bron.test_trafienia(operator, cel, dodatkowe, zasieg)
 
    # @staticmethod
 # wciaz nie sprawdza broni czy mozne napierdalac danym trybem, oraz nie daje możliwości do strzelania 2 wrogów naRaz.
 # nie sprawdza równierz kar za różne zasięgi.
-    def atakuj(self, operator, cel, zasieg, tryb="pojedynczy"):
+    def strzelaj(self, operator, cel, zasieg, tryb="pojedynczy"):
         try:
             if tryb in ("samoczynny", "serie"):
                 if operator.aktywna_bron.statystyki_podstawowe[2] in ("sa", "ba", "bu"):

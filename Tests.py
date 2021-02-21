@@ -167,7 +167,7 @@ def test_broni_bialej():
     NOZ = items.BronBiala(noz)
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     beben = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
-    assert NOZ.atakuj(wojtek, beben, 0) == False
+    assert not NOZ.atakuj(wojtek, beben, 0)
     wojtek.wykup_range("walka wrecz")
     wojtek.wykup_range("walka wrecz")
     wojtek.wykup_range("walka wrecz")
@@ -185,15 +185,15 @@ def test_mechanik_walki():
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     wojtek.aktywna_bron = M4KA
     beben = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
-    strzelanie.atakuj(wojtek, beben, 50, "pojedynczy")
+    strzelanie.strzelaj(wojtek, beben, 50, "pojedynczy")
     wojtek.wykup_range("strzelectwo")
     wojtek.wykup_range("strzelectwo")
     wojtek.wykup_range("strzelectwo")
     wojtek.wykup_range("strzelectwo")
     wojtek.wykup_range("strzelectwo")
-    strzelanie.atakuj(wojtek, beben, 50, "serie")
-    strzelanie.atakuj(wojtek, beben, 50, "samoczynny")
-    strzelanie.atakuj(wojtek, beben, 50, "pojedynczy")
+    strzelanie.strzelaj(wojtek, beben, 50, "serie")
+    strzelanie.strzelaj(wojtek, beben, 50, "samoczynny")
+    strzelanie.strzelaj(wojtek, beben, 50, "pojedynczy")
 
 
 test_luskania_danych_z_excela()

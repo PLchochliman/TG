@@ -139,7 +139,7 @@ class BronBiala(Bron):
         wynik = operator.rzut_na_umiejetnasc(self.rodzaj_testu)
         wynik = wynik + self.premia
         if wynik > cel.rzut_na_umiejetnasc(self.rodzaj_testu):
-            if wynik >= cel.bazowy_unik /2:
+            if wynik >= cel.bazowy_unik / 2:
                 self.test_obrazen_z_egzekucja(cel)
                 return True
             else:
