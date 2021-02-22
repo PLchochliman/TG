@@ -84,6 +84,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
     zasieg_przyrost = 0
     zasieg_minimalny = 0
     aktualny_magazynek = []
+    naboj_w_komorze = False
 
 # if is smaller than 5 then it makes work for increased penalty for range, because of shit instead of sights
 
@@ -142,14 +143,23 @@ class Amunicja():
         self.penetracja = penetracja
         self.typ_amunicji = typ_amunicji
 
-class PaczkaAminicji(Amunicja):
+class PaczkaAminicji():
+    amunicja = []
     ilosc = 0
+
+    def __init__(self, amunicja, ilosc):
+        self.amunicja = amunicja
 
 
 class Magazynek():
     stan_nabojow = 0
     maksymalna_pojemnosc = 0
-    amunicja = 0
+    amunicja = []
+
+    def zaladuj_magazynek(self, paczka_amunicji):
+        if paczka_amunicji.ilosc > (self.maksymalna_pojemnosc - self.stan_nabojow):
+            paczka_amunicji.ilosc = paczka_amunicji.ilosc - (self.maksymalna_pojemnosc - self.stan_nabojow)
+            self.amunicja = paczka_amunicji
 
 
 
