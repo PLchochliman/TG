@@ -28,6 +28,7 @@ class WalkaWrecz(akcje):
             powod = inst.args[0]
             Bot.output('Na celu nie zrobilo to zadnego wrazenia bo ' + powod)
 
+
 class Shooting(akcje):
     @staticmethod
     def strzal(operator, cel, odleglosc):
@@ -41,13 +42,15 @@ class Shooting(akcje):
         return operator.aktywna_bron.test_trafienia(operator, cel, dodatkowe, zasieg)
 
    # @staticmethod
-# wciaz nie sprawdza broni czy mozne napierdalac danym trybem, oraz nie daje możliwości do strzelania 2 wrogów naRaz.
+# oraz nie daje możliwości do strzelania 2 wrogów naRaz.
 # nie sprawdza równierz kar za różne zasięgi.
     def strzelaj(self, operator, cel, zasieg, tryb="pojedynczy"):
         try:
             if tryb in ("samoczynny", "serie"):
                 if operator.aktywna_bron.statystyki_podstawowe[2] in ("sa", "ba", "bu"):
                     tryb = "pojedynczy"
+                    Bot.output("Po nacisnieciu spustu, lufę opóścił tylko 1 nabój. "
+                               "Następnym razem sprawdź z czego strzelasz")
             dodatkowe = 0
             if tryb == "pelne skupienie":
                 dodatkowe = Bot.roll_dice_from_text("3d6")

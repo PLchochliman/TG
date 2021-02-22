@@ -3,6 +3,8 @@ import Bot as Bot
 import constans as constants
 import hero as hero
 
+#kurwa bieda, może i lepiej bybyło przedmioty zadeklarować wcześniej ale robiłem to na prosto.
+muszka_i_szczerbinka = ('zwykłe', 0, 25, '', 'w nocy kara -4,', 0, '-')
 
 class Przedmioty(): #pełne pokrycie
     dane = []
@@ -81,14 +83,16 @@ class BronStrzelecka(Bron): #pełne pokrycie
     statystyki_celownika: list = []
     zasieg_przyrost = 0
     zasieg_minimalny = 0
+    aktualny_magazynek = []
 
 # if is smaller than 5 then it makes work for increased penalty for range, because of shit instead of sights
 
-    def __init__(self, bron, celownik=['zwykłe', 0, 25, '', 'w nocy kara -4,', 0, '-'], amunicja=["podstawowa"]):
+    def __init__(self, bron, celownik=muszka_i_szczerbinka, amunicja=("podstawowa"), magazynek=""):
         super(BronStrzelecka, self).__init__("strzelectwo", bron[5], bron[3], bron[6], bron[1])
         self.statystyki_podstawowe = bron
         self.nastaw_celownik(celownik)
         self.amunicja = amunicja
+        self.aktualny_magazynek = [amunicja]
 
     def odrzut(self, opetator):
         redukcja = self.statystyki_podstawowe[4] + opetator.mod_sila
@@ -117,6 +121,36 @@ class BronStrzelecka(Bron): #pełne pokrycie
         self.statystyki_celownika = celownik
         self.zasieg_przyrost = self.statystyki_celownika[2]
         self.premia = self.premia + self.statystyki_celownika[1]
+
+    def zmien_magazynek(self, magazynek):
+        odloz = self.aktualny_magazynek
+        self.aktualny_magazynek = magazynek
+        return odloz
+
+
+class Amunicja():
+    nazwa_naboju = ""
+    kosc_obrazen = ""
+    typ_amunicji = ""
+    penetracja = 0
+    odrzut = 0
+
+    def __init__(self, nazwa_naboju, kosc_obrazen, penetracja, odrzut, typ_amunicji="podstawowa"):
+        self.odrzut = odrzut
+        self.nazwa_naboju = nazwa_naboju
+        self.kosc_obrazen = kosc_obrazen
+        self.penetracja = penetracja
+        self.typ_amunicji = typ_amunicji
+
+class PaczkaAminicji(Amunicja):
+    ilosc = 0
+
+
+class Magazynek():
+    stan_nabojow = 0
+    maksymalna_pojemnosc = 0
+    amunicja = 0
+
 
 
 # TODo zasady specjalne broni, możliwość wpływu specjalizacji.
