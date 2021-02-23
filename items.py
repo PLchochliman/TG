@@ -161,6 +161,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
     zasieg_minimalny = 0
     aktualny_magazynek = []
     naboj_w_komorze = False
+    szybkostrzelnosc = 0
 
 # if is smaller than 5 then it makes work for increased penalty for range, because of shit instead of sights
 
@@ -172,6 +173,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
         self.aktualny_magazynek = [amunicja]
         self.zasady_specjalne = bron[7].split(",")
         self.oczysc_zasady_specjalne()
+        self.szybkostrzelnosc = bron[2]
 
     def odrzut(self, opetator):
         redukcja = self.statystyki_podstawowe[4] + opetator.mod_sila

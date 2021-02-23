@@ -77,8 +77,10 @@ class Shooting(akcje):
                         self.__zadaj_obrazenia(cel, operator.aktywna_bron, int(premia))
                         return True
                 self.__zadaj_obrazenia(cel, operator.aktywna_bron, 0, ilosc_trafien)
+                return wynik
             else:
                 operator.aktywna_bron.test_obrazen_z_egzekucja(cel)
+                return True
         except Exception as inst:
             powod = inst.args[0]
             Bot.output(cel.imie + " nie oberwal bo " + powod)
@@ -86,8 +88,8 @@ class Shooting(akcje):
 
     def __zuzycie(self, bron, tryb, proponowana_libcza_naboi=1):
         realnie_wystrzelone_naboje = 0
-        if proponowana_libcza_naboi > bron.statystyki_podstawowe[2]:
-            proponowana_libcza_naboi = bron.statystyki_podstawowe[2]
+        if proponowana_libcza_naboi > bron.szybkostrzelnosc:
+            proponowana_libcza_naboi = bron.szybkostrzelnosc
         if tryb == "serie":
             if proponowana_libcza_naboi > 3:
                proponowana_libcza_naboi = 3

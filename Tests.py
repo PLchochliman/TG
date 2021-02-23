@@ -213,10 +213,14 @@ def test_mechanik_walki():
     wojtek.wykup_range("strzelectwo")
     wojtek.wykup_range("strzelectwo")
     wojtek.wykup_range("strzelectwo")
-    strzelanie.strzelaj(wojtek, beben, 50, "serie")
-    strzelanie.strzelaj(wojtek, beben, 50, "samoczynny")
-    strzelanie.strzelaj(wojtek, beben, 50, "pojedynczy")
+    x = strzelanie.strzelaj(wojtek, beben, 50, "serie")
+    print(x)
+    x = x + strzelanie.strzelaj(wojtek, beben, 50, "samoczynny")
+    print(x)
+    x = x + strzelanie.strzelaj(wojtek, beben, 50, "pojedynczy")
+    print(wojtek.aktywna_bron.szybkostrzelnosc)
     print(wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow)
+    print(x)
 
 
 test_luskania_danych_z_excela()

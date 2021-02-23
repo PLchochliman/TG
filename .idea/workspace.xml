@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/items.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mechanics.py" beforeDir="false" afterPath="$PROJECT_DIR$/mechanics.py" afterDir="false" />
     </list>
@@ -193,13 +194,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00013" summary="excel reader works, and is tested. preparing for big test of hero, then test of skills.">
-      <created>1611788016811</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1611788016811</updated>
     </task>
     <task id="LOCAL-00014" summary="Did something about specialisation.&#10;Skills are working and tested.&#10;attached excels are working">
       <created>1611798800318</created>
@@ -537,7 +531,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614088640933</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="BRAK TESTOW - ale strzelanie z powrotem dziala.&#10;wyrzucono wiele logiki do zewnetrznych funkcji.">
+      <created>1614093025779</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1614093025779</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -553,7 +554,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="tests repaired, need more tests" />
     <MESSAGE value="did some testing." />
     <MESSAGE value="did counting range, and communications if missed." />
     <MESSAGE value="did counting range, and communicates if missed." />
@@ -578,52 +578,7 @@
     <MESSAGE value="spore zmiany, magazynki zaczynaja działać, ale wciąż da się wystrzelić bez naboju w komorze." />
     <MESSAGE value="te magi sa nieskonczone, ale naprawiono excela, plus z pustego juz nie strzela." />
     <MESSAGE value="blokada na magazynkach - działają tylko na broni do niej, lub w rodzinie - tak jak być powinno.&#10;można załadować złą amunicję - ale nie strzeli." />
-    <option name="LAST_COMMIT_MESSAGE" value="blokada na magazynkach - działają tylko na broni do niej, lub w rodzinie - tak jak być powinno.&#10;można załadować złą amunicję - ale nie strzeli." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/mechanics.py</url>
-          <line>72</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/mechanics.py</url>
-          <line>73</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/mechanics.py</url>
-          <line>74</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/mechanics.py</url>
-          <line>75</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/mechanics.py</url>
-          <line>76</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/mechanics.py</url>
-          <line>77</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/mechanics.py</url>
-          <line>78</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/mechanics.py</url>
-          <line>70</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="BRAK TESTOW - ale strzelanie z powrotem dziala.&#10;wyrzucono wiele logiki do zewnetrznych funkcji." />
+    <option name="LAST_COMMIT_MESSAGE" value="BRAK TESTOW - ale strzelanie z powrotem dziala.&#10;wyrzucono wiele logiki do zewnetrznych funkcji." />
   </component>
 </project>
