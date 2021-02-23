@@ -77,7 +77,23 @@ class Magazynek():
 
     def __init__(self, bron, typ="podstawowy", naboje_z_paczki_amunicji=""):
         self.maksymalna_pojemnosc = bron.statystyki_podstawowe[9]
+        self.__zaladuj_rodzine(bron)
 
+    def __zaladuj_rodzine(self, bron):
+        for i in bron.zasady_specjalne:
+            if i in ("ar", "sr25", "g36", "glock", "g3", "as", "akm", "ak74"):
+                self.rodzina = i
+        if self.rodzina == "":
+            self.rodzina = bron[0]
+
+    def sprawdz_rodzine(self, bron):
+        for i in bron.zasady_specjalne:
+            if i in ("ar", "sr25", "g36", "glock", "g3", "as", "akm", "ak74"):
+                if self.rodzina == i:
+                    return True
+        if self.rodzina == bron[0]:
+            return True
+        return False
 
     def zaladuj_magazynek(self, paczka_amunicji):
         if paczka_amunicji.ilosc_amunicji > (self.maksymalna_pojemnosc - self.stan_nabojow):
@@ -186,6 +202,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
         self.premia = self.premia + self.statystyki_celownika[1]
 
     def zmien_magazynek(self, magazynek):
+
         odloz = self.aktualny_magazynek
         self.aktualny_magazynek = magazynek
         return odloz
