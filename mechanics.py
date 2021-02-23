@@ -60,6 +60,8 @@ class Shooting(akcje):
 # nie sprawdza równierz kar za różne zasięgi.
     def strzelaj(self, operator, cel, zasieg, tryb="pojedynczy"):
         try:
+            if tryb not in ("pojedynczy", "pelne skupienie", "samoczynny", "serie"):
+                raise Exception("nie ma takiego trybu. Dostępne tryby to: pojedynczy, pelne skupienie, samoczynny, serie")
             self.__sprawdzenie_czy_mozna_strzelac(operator, tryb)
             dodatkowe = 0
             if tryb == "pelne skupienie":
@@ -105,7 +107,7 @@ class Shooting(akcje):
             realnie_wystrzelone_naboje = bron.aktualny_magazynek.stan_nabojow + 1
             bron.aktualny_magazynek.stan_nabojow = 0
             bron.naboj_w_komorze = 0
-            if tryb in ("samoczynne", "serie"):
+            if tryb in ("samoczynny", "serie"):
                 Bot.output("podczas prowadzenia ognia, karabin przestał strzelać")
         return realnie_wystrzelone_naboje
 

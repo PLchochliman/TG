@@ -168,7 +168,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
     def __init__(self, bron, celownik=muszka_i_szczerbinka, amunicja=("podstawowa"), magazynek=""):
         super(BronStrzelecka, self).__init__("strzelectwo", bron[5], bron[3], bron[6], bron[1])
         self.statystyki_podstawowe = bron
-        self.nastaw_celownik(celownik)
+        self.__nastaw_celownik(celownik)
         self.amunicja = amunicja
         self.aktualny_magazynek = [amunicja]
         self.zasady_specjalne = bron[7].split(",")
@@ -194,17 +194,14 @@ class BronStrzelecka(Bron): #pełne pokrycie
 
     def zmien_celownik(self, celownik):
         self.premia = self.premia - self.statystyki_celownika[1]
-        self.statystyki_celownika = celownik
-        self.premia = self.premia + self.statystyki_celownika[1]
-        self.zasieg_przyrost = self.statystyki_celownika[2]
+        self.__nastaw_celownik(celownik)
 
-    def nastaw_celownik(self, celownik):
+    def __nastaw_celownik(self, celownik):
         self.statystyki_celownika = celownik
         self.zasieg_przyrost = self.statystyki_celownika[2]
         self.premia = self.premia + self.statystyki_celownika[1]
 
     def zmien_magazynek(self, magazynek):
-
         odloz = self.aktualny_magazynek
         self.aktualny_magazynek = magazynek
         return odloz
@@ -214,11 +211,13 @@ class BronStrzelecka(Bron): #pełne pokrycie
             if self.aktualny_magazynek.stan_nabojow > 0:
                 self.aktualny_magazynek.stan_nabojow = self.aktualny_magazynek.stan_nabojow -1
                 self.naboj_w_komorze = True
+                return True
             else:
                 Bot.output("nie masz dosc nabojow w magazynku!")
+                return False
         else:
             Bot.output("Naboje nie pasuja do broni!")
-
+            return False
 
 
 # TODo zasady specjalne broni, możliwość wpływu specjalizacji.
