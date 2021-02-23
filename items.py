@@ -54,7 +54,7 @@ class Amunicja:
     odrzut = 0
     nazwa_amunicji = ""
     ilosc_paczek = 0
-    ilosc_amunicji = 0
+    ilosc_amunicji: int = 0
 
     def __init__(self, amunicja, ilosc_paczek=1, typ_amunicji="podstawowa"):
         self.odrzut = amunicja[4]
@@ -70,8 +70,8 @@ class Amunicja:
 
 # na razie da się wyłądować amunicje do dowolnej paczki. i dowolną amunicję do dowolnego magazynka.
 class Magazynek():
-    stan_nabojow = 0
-    maksymalna_pojemnosc = 0
+    stan_nabojow: int = 0
+    maksymalna_pojemnosc: int = 0
     amunicja = []
     rodzina = ""
 
@@ -84,7 +84,7 @@ class Magazynek():
             if i in ("ar", "sr25", "g36", "glock", "g3", "as", "akm", "ak74"):
                 self.rodzina = i
         if self.rodzina == "":
-            self.rodzina = bron[0]
+            self.rodzina = bron.statystyki_podstawowe[0]
 
     def sprawdz_rodzine(self, bron):
         for i in bron.zasady_specjalne:
