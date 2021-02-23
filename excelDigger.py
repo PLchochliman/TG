@@ -2,9 +2,13 @@ import Bot
 import pylightxl as xl
 
 
-class Loader(): #pelne pokrycie
+class Loader: #pelne pokrycie
     sorowka = []
     zaladowane = []
+
+    """
+    makes basic load xlsx file from system.
+    """
 
     def __init__(self, nazwa, arkusz, zasieg):
         self.sorowka = xl.readxl(fn=nazwa)
@@ -13,8 +17,16 @@ class Loader(): #pelne pokrycie
             self.zaladowane.append(self.zaladuj_arkusz(arkusz[i], zasieg[i]))
         self.sorowka = []
 
+    """
+    loads the sheet from document (you provide name, and end cel
+    """
+
     def zaladuj_arkusz(self, arkusz, zasieg):
         return self.sorowka.ws(ws=arkusz).range(address='A1:'+zasieg, formula=False)
+
+    """
+    returns to user table, as table, where alll words are made to lower.
+    """
 
     def zwroc(self):
         for i in range(0, len(self.zaladowane)):
@@ -23,6 +35,10 @@ class Loader(): #pelne pokrycie
                     if isinstance(self.zaladowane[i][y][z], str):
                         self.zaladowane[i][y][z] = self.zaladowane[i][y][z].lower()
         return self.zaladowane
+
+    """
+    clears the loading - it did some bugs previously.
+    """
 
     def wyczysc(self):
         self.zaladowane = []

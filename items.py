@@ -9,11 +9,19 @@ muszka_i_szczerbinka = ('zwykłe', 0, 25, '', 'w nocy kara -4,', 0, '-')
 class Przedmioty(): #pełne pokrycie
     dane = []
 
+    """
+    loads the guns, and accesories to TG from file
+    """
+
     def __init__(self, CoDoQRWY):
         self.przetwornik = Excel.Loader('TabelaBroni.xlsx', ['bron', 'bronbiala', 'granaty', 'celowniki', 'amunicja'],
                                         ['O300', 'I19', 'I10', 'G28', 'H40'])
         self.dane = self.przetwornik.zwroc()
         self.przetwornik.wyczysc()
+
+    """
+    Enable to select single gun
+    """
 
     def luskacz_broni(self, nazwaBroni):
         for i in self.dane[0]:
@@ -21,11 +29,19 @@ class Przedmioty(): #pełne pokrycie
                 return i
         return False
 
+    """
+    enable to select single melee weapon
+    """
+
     def luskacz_broni_bialej(self, nazwaBroni):
         for i in self.dane[1]:
             if i[0] == nazwaBroni:
                 return i
         return False
+
+    """
+    enable to select single granade
+    """
 
     def luskacz_granatow(self, nazwaBroni):
         for i in self.dane[2]:
@@ -33,11 +49,19 @@ class Przedmioty(): #pełne pokrycie
                 return i
         return False
 
+    """
+    enables to select single scope
+    """
+
     def luskacz_celownikow(self, nazwaBroni):
         for i in self.dane[3]:
             if i[0] == nazwaBroni:
                 return i
         return False
+
+    """
+    enable to select ammunition
+    """
 
     def luskacz_amunicji(self, nazwa_amunicji):
         for i in self.dane[4]:

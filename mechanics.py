@@ -8,6 +8,9 @@ class akcje():
 
 
 class WalkaWrecz(akcje):
+    """
+    did without tests, and execution is not ready.
+    """
     def uderz(self, operator, cel, zasieg=0): # TODO bez testow!!!!!
         try:
             wynik = operator.rzut_na_umiejetnasc("walka wrecz")
@@ -35,7 +38,7 @@ class Shooting(akcje):
         return 0
 
     """
-    failuje w momencie kiedy operator nie moze trafic celu.
+    failuje w momencie kiedy operator nie moze trafic celu. Przekierowuje wszystko do broni na ten moment.
     """
 
     def test_trafienia(self, operator, cel, dodatkowe, zasieg):
@@ -50,12 +53,16 @@ class Shooting(akcje):
                 Bot.output("Po nacisnieciu spustu, lufę opóścił tylko 1 nabój. "
                            "Następnym razem sprawdź z czego strzelasz")
 
-
+        """
+        deals damage to "cel", by gun, and additional modifier (if apply), and many times if nessesary.
+        """
     def __zadaj_obrazenia(self, cel, bron, premia=0, ilosc_trafien=1):
         for i in range(0, ilosc_trafien):
             bron.test_obrazen_z_egzekucja(cel, int(premia))
 
-
+        """
+        implements shooting procedure from TG.
+        """
 # oraz nie daje możliwości do strzelania 2 wrogów naRaz.
 # nie sprawdza równierz kar za różne zasięgi.
     def strzelaj(self, operator, cel, zasieg, tryb="pojedynczy"):

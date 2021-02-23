@@ -148,12 +148,20 @@ class IstotaZywa: #pełne pokrycie
             return True
         return False
 
+    """
+    counts the penalty to every roll
+    """
+
     def kara(self):
         minus = self.lekka_rana * 3 + self.powazna_rana * 5
         for i in range(0, len(self.rana_konczyny)):
             if self.rana_konczyny[i] == 1:
                 Bot.output("Pamietaj ze ranna jest twoja " + constans.Konczyna[i] + "\n Domyslna dodatkowa kara z tego wynikajaca jest to -4")
         return minus
+
+    """
+    stets the modifiers for skills.
+    """
 
     def nastaw_umiejetnasci(self):
         # setting mods for skills.
@@ -181,6 +189,10 @@ class IstotaZywa: #pełne pokrycie
                     self.umiejetnasci[i][3] = self.mod_sila
                 else:
                     self.umiejetnasci[i][3] = self.modZrecznasc
+
+    """
+    it's about testing the skill.
+    """
 
     def rzut_na_umiejetnasc(self, testowana_umiejetnasc):
         umiejka = constans.UmiejetnasciDoInt[testowana_umiejetnasc]

@@ -128,6 +128,10 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
             Bot.output("Zle podales nazwe umiejetnasci, sproboj jeszcze raz")
             self.dobierz_zawod(typDoprecyzowania)
 
+    """
+    sets skills from predispositions autmaticly, without any question - which is impoertant when you wonna take anything 
+    else than medicine, gunner, or IT specialists.
+    """
     def nastaw_koszt_umiejetnasci_automatycznie(self):
         for specjalizacja in self.specjalizacje:
             specjalizacja = specjalizacja[1]

@@ -4,6 +4,9 @@ import constans as constants
 import hero as hero
 #kurwa mamy to
 
+"""
+zaraz do wyrzucenia
+"""
 
 class Przedmioty(): #pełne pokrycie
     dane = []
