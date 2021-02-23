@@ -1,5 +1,5 @@
 import hero
-import items_new as items
+import items as items
 import Bot as Bot
 
 
@@ -83,8 +83,8 @@ class Shooting(akcje):
             return False
 
 """
-itemki = items.Przedmioty('')
+itemki = items_old.Przedmioty('')
 m4ka = itemki.luskacz_broni("m4a1")
-M4KA = items.BronStrzelecka(m4ka)
+M4KA = items_old.BronStrzelecka(m4ka)
 wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
 """

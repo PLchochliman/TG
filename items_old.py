@@ -2,9 +2,8 @@ import excelDigger as Excel
 import Bot as Bot
 import constans as constants
 import hero as hero
+#kurwa mamy to
 
-#kurwa bieda, może i lepiej bybyło przedmioty zadeklarować wcześniej ale robiłem to na prosto.
-muszka_i_szczerbinka = ('zwykłe', 0, 25, '', 'w nocy kara -4,', 0, '-')
 
 class Przedmioty(): #pełne pokrycie
     dane = []
@@ -38,56 +37,6 @@ class Przedmioty(): #pełne pokrycie
                 return i
         return False
 
-    def luskacz_amunicji(self, nazwa_amunicji):
-        for i in self.dane[6]:
-            if i[0] == nazwa_amunicji:
-                return i
-        return False
-
-
-class Amunicja():
-    nazwa_naboju = ""
-    kosc_obrazen = ""
-    typ_amunicji = ""
-    penetracja = 0
-    odrzut = 0
-    nazwa_amunicji = ""
-    ilosc_paczek = 0
-    ilosc_amunicji = 0
-
-    def __int__(self, amunicja, ilosc_paczek=1, typ_amunicji="podstawowa"):
-        self.odrzut = amunicja[4]
-        self.nazwa_naboju = amunicja[0]
-        self.kosc_obrazen = amunicja[6]
-        self.penetracja = amunicja[7]
-        self.typ_amunicji = typ_amunicji
-        self.nazwa_amunicji = self.nazwa_naboju + " " + self.typ_amunicji
-        self.ilosc_amunicji = ilosc_paczek * amunicja[3]
-        self.ilosc_paczek = ilosc_paczek
-
-#na razie da się wyłądować amunicje do dowolnej paczki.
-class Magazynek():
-    stan_nabojow = 0
-    maksymalna_pojemnosc = 0
-    amunicja = []
-    rodzina = ""
-
-    def __init__(self, bron, typ="podstawowy", naboje_z_paczki_amunicji=""):
-        self.maksymalna_pojemnosc = bron[9]
-
-
-    def zaladuj_magazynek(self, paczka_amunicji):
-        if paczka_amunicji.ilosc > (self.maksymalna_pojemnosc - self.stan_nabojow):
-            paczka_amunicji.ilosc = paczka_amunicji.ilosc_amunicji - (self.maksymalna_pojemnosc - self.stan_nabojow)
-            self.amunicja = paczka_amunicji
-            self.stan_nabojow = self.maksymalna_pojemnosc
-        else:
-            self.stan_nabojow = self.stan_nabojow + paczka_amunicji.ilosc_amunicji
-            paczka_amunicji.ilosc = 0
-
-    def wyladuj_amunicje(self, paczka_amunicji):
-        paczka_amunicji.ilosc_amunicji = paczka_amunicji.ilosc + self.stan_nabojow
-        self.stan_nabojow = 0
 
 
 class Bron: #pełne pokrycie
@@ -96,7 +45,6 @@ class Bron: #pełne pokrycie
     premia = 0
     penetracja = 0
     zasieg_maksymalny = 0
-    zasady_specjalne = []
 
     def __init__(self, rodzaj_testu, kosc_obrazen, premia, penetracja, zasieg_maksymalny):
         self.rodzaj_testu = rodzaj_testu
@@ -108,13 +56,13 @@ class Bron: #pełne pokrycie
     def rzut_na_obrazenia(self):
         return Bot.roll_dice_from_text(self.kosc_obrazen)
 
-    def test_obrazen_z_egzekucja(self, cel, premia=0):
-        cel.rana(self.rzut_na_obrazenia() + premia, self.penetracja)
+    def zadaj_obrazenia(self, cel):
+        cel.rana(self.rzut_na_obrazenia(), self.penetracja)
 
-    def test_trafienia(self, operator, cel, dodatkowe, zasieg=0):
-        wynik = operator.rzut_na_umiejetnasc(self.rodzaj_testu) + self.aktualna_premia(operator, zasieg) + dodatkowe - cel.unik
-        if wynik >= 0:
-            return wynik
+    def test_trafenia(self, operator, cel, zasieg=0):
+        if (operator.rzut_na_umiejetnasc(self.rodzaj_testu) + self.aktualna_premia(operator, zasieg)) >= cel.unik:
+            self.zadaj_obrazenia(cel)
+            return True
         else:
             raise Exception('chybiles!')
 
@@ -123,14 +71,15 @@ class Bron: #pełne pokrycie
             return self.premia - zasieg
         raise Exception('cel jest po za zasiegiem.')
 
+    def atakuj(self, operator, cel, zasieg):
+        try:
+            return self.test_trafenia(operator, cel, zasieg)
+        except Exception as inst:
+            powod = inst.args[0]
+            Bot.output('Na celu nie zrobilo to zadnego wrazenia bo ' + powod)
+
     def penetracja_to_int(self, penetracja):
         return constants.penetracja[penetracja]
-
-    def oczysc_zasady_specjalne(self):
-        for i in range(0, self.zasady_specjalne):
-            self.zasady_specjalne[i] = self.zasady_specjalne[i].strip
-
-
 
 
 # TODO specjalna amunicja, zasady specjalne broni, możliwość wpływu specjalizacji.
@@ -140,19 +89,14 @@ class BronStrzelecka(Bron): #pełne pokrycie
     statystyki_celownika: list = []
     zasieg_przyrost = 0
     zasieg_minimalny = 0
-    aktualny_magazynek = []
-    naboj_w_komorze = False
 
 # if is smaller than 5 then it makes work for increased penalty for range, because of shit instead of sights
 
-    def __init__(self, bron, celownik=muszka_i_szczerbinka, amunicja=("podstawowa"), magazynek=""):
+    def __init__(self, bron, celownik=['zwykłe', 0, 25, '', 'w nocy kara -4,', 0, '-'], amunicja=["podstawowa"]):
         super(BronStrzelecka, self).__init__("strzelectwo", bron[5], bron[3], bron[6], bron[1])
         self.statystyki_podstawowe = bron
         self.nastaw_celownik(celownik)
         self.amunicja = amunicja
-        self.aktualny_magazynek = [amunicja]
-        self.zasady_specjalne = bron[7].split(",")
-        self.oczysc_zasady_specjalne()
 
     def odrzut(self, opetator):
         redukcja = self.statystyki_podstawowe[4] + opetator.mod_sila
@@ -161,8 +105,8 @@ class BronStrzelecka(Bron): #pełne pokrycie
         else:
             return 0
 
-    def test_trafienia(self, operator, cel, dodatkowe, zasieg):
-        return super(BronStrzelecka, self).test_trafienia(operator, cel, dodatkowe, zasieg)
+    def test_trafenia(self, operator, cel, zasieg):
+        super(BronStrzelecka, self).test_trafenia(operator, cel, zasieg)
 
     def aktualna_premia(self, operator, odległosc):
         kara_za_zasieg = odległosc / self.zasieg_przyrost
@@ -182,22 +126,6 @@ class BronStrzelecka(Bron): #pełne pokrycie
         self.zasieg_przyrost = self.statystyki_celownika[2]
         self.premia = self.premia + self.statystyki_celownika[1]
 
-    def zmien_magazynek(self, magazynek):
-        odloz = self.aktualny_magazynek
-        self.aktualny_magazynek = magazynek
-        return odloz
-
-    def zaciagnij_naboj(self):
-        if self.aktualny_magazynek.amunicja.nazwa_naboju == self.statystyki_podstawowe[8]:
-            if self.aktualny_magazynek > 0:
-                self.aktualny_magazynek = self.aktualny_magazynek -1
-                self.naboj_w_komorze = True
-            else:
-                Bot.output("nie masz dosc nabojow w magazynku!")
-        else:
-            Bot.output("Naboje nie pasuja do broni!")
-
-
 
 # TODo zasady specjalne broni, możliwość wpływu specjalizacji.
 class BronBiala(Bron):
@@ -215,12 +143,12 @@ class BronBiala(Bron):
             Bot.output('Na celu nie zrobilo to zadnego wrazenia bo ' + powod)
             return False
 
-    def test_trafienia(self, operator, cel, zasieg=0):
+    def test_trafenia(self, operator, cel, zasieg=0):
         wynik = operator.rzut_na_umiejetnasc(self.rodzaj_testu)
         wynik = wynik + self.premia
         if wynik > cel.rzut_na_umiejetnasc(self.rodzaj_testu):
-            if wynik >= cel.bazowy_unik / 2:
-                self.test_obrazen_z_egzekucja(cel)
+            if wynik >= cel.bazowy_unik /2:
+                self.zadaj_obrazenia(cel)
                 return True
             else:
                 raise Exception('walczysz lepiej od wroga, ale wciąż nie jesteś w stanie go trafić')

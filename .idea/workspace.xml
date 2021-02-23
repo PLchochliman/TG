@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough.">
-      <change beforePath="$PROJECT_DIR$/items_new.py" beforeDir="false" afterPath="$PROJECT_DIR$/items_new.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TabelaBroni.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/excelDigger.py" beforeDir="false" afterPath="$PROJECT_DIR$/excelDigger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/items_new.py" beforeDir="false" afterPath="$PROJECT_DIR$/items_old.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mechanics.py" beforeDir="false" afterPath="$PROJECT_DIR$/mechanics.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +130,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="items" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="items_old" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TG" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -136,7 +142,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/items.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\choch\Documents\GitHub\TG\items_old.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -170,13 +176,13 @@
       <item itemvalue="Python.Tests" />
       <item itemvalue="Python.excelDigger" />
       <item itemvalue="Python.hero" />
-      <item itemvalue="Python.items" />
       <item itemvalue="Python.mortal" />
+      <item itemvalue="Python.items_old" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.Tests" />
-        <item itemvalue="Python.items" />
+        <item itemvalue="Python.items_old" />
         <item itemvalue="Python.hero" />
         <item itemvalue="Python.excelDigger" />
         <item itemvalue="Python.mortal" />
@@ -191,13 +197,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00009" summary="in alive there is all about getting injured, penalties, and checking if object is &quot;alive&quot;. Now all actions will be in hero section, in object named Postac. All alive features are tested in Test, and via test, were repaired (some bad signs). another proof, that you need testing everything and everytime.">
-      <created>1611527255939</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1611527255939</updated>
     </task>
     <task id="LOCAL-00010" summary="renamed alive into mortal. makes much more sence.">
       <created>1611546017536</created>
@@ -535,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614047859374</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="same istnienie nabojow jest, ale jeszcze niejest wykorzystywane!&#10;testy w drodze">
+      <created>1614048628633</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1614048628633</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -551,7 +557,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="done proper loading, all in lowercase- making it case unsesitive. default input is case unsesitive.&#10;did beggining for guns, and shooting from them." />
     <MESSAGE value="base generic weapon added. With test of course." />
     <MESSAGE value="shooting from gan (basic) almoust done, but not proper tested." />
     <MESSAGE value="did something about sights and the gun. Did not finished." />
@@ -576,6 +581,7 @@
     <MESSAGE value="zalążek magazynków i amunicji, chyba do zaorania???" />
     <MESSAGE value="powoli przymierzam się do zrobienia magów i amunicja" />
     <MESSAGE value="skrócenie działania tego, bo było źle." />
-    <option name="LAST_COMMIT_MESSAGE" value="skrócenie działania tego, bo było źle." />
+    <MESSAGE value="same istnienie nabojow jest, ale jeszcze niejest wykorzystywane!&#10;testy w drodze" />
+    <option name="LAST_COMMIT_MESSAGE" value="same istnienie nabojow jest, ale jeszcze niejest wykorzystywane!&#10;testy w drodze" />
   </component>
 </project>

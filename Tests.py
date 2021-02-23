@@ -3,8 +3,8 @@ import constans as constants
 import Bot as Bot
 import excelDigger as excelDigger
 import hero as hero
+import items_old as items_old
 import items as items
-import items_new as itemsn
 import mechanics as mechanics
 
 """
@@ -120,7 +120,7 @@ def test_jezykow():
 
 
 def test_przedmiotow():
-    itemki = items.Przedmioty('')
+    itemki = items_old.Przedmioty('')
     m4ka = itemki.luskacz_broni("m4a1")
     assert m4ka[6] == 'ś'
     nozyk = itemki.luskacz_broni_bialej("nóż")
@@ -137,10 +137,10 @@ def test_przedmiotow():
 def test_dzialania_broni():
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     cel = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
-    giwera = items.Bron("strzelectwo", "2D2", 14, "m", 500)
+    giwera = items_old.Bron("strzelectwo", "2D2", 14, "m", 500)
     giwera.atakuj(wojtek, cel, 1)
     assert cel.lekka_rana > 0
-    giwera2 = items.Bron("strzelectwo", "2D2", -5, "ś", 0)
+    giwera2 = items_old.Bron("strzelectwo", "2D2", -5, "ś", 0)
     assert giwera2.kosc_obrazen == "2D2"
     giwera2.atakuj(cel, wojtek, 2)
     assert wojtek.lekka_rana == 0
@@ -148,9 +148,9 @@ def test_dzialania_broni():
 
 
 def test_dzialania_broni_strzeleckiej():
-    itemki = items.Przedmioty('')
+    itemki = items_old.Przedmioty('')
     m4ka = itemki.luskacz_broni("m4a1")
-    M4KA = items.BronStrzelecka(m4ka)
+    M4KA = items_old.BronStrzelecka(m4ka)
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     wojtek.aktywna_bron = M4KA
     beben = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
@@ -162,9 +162,9 @@ def test_dzialania_broni_strzeleckiej():
     Bot.output("TEN TEST BRONI STRZELECKIEJ JEST NEDOROBIONY, bo Bron palna ni chuja nie jest skonczona!")
 
 def test_broni_bialej():
-    itemki = items.Przedmioty('')
+    itemki = items_old.Przedmioty('')
     noz = itemki.luskacz_broni_bialej("nóż")
-    NOZ = items.BronBiala(noz)
+    NOZ = items_old.BronBiala(noz)
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     beben = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     assert not NOZ.atakuj(wojtek, beben, 0)
@@ -176,12 +176,28 @@ def test_broni_bialej():
     wojtek.wykup_range("walka wrecz")
     assert NOZ.atakuj(wojtek, beben, 0)
 
+def test_amunicji_i_magazynkow():
+    itemki = items.Przedmioty('')
+    natowska = itemki.luskacz_amunicji("5,56 nato")
+    NATO = items.Amunicja(natowska)
+    m4ka = itemki.luskacz_broni("m4a1")
+    M4KA = items.BronStrzelecka(m4ka)
+    mag = items.Magazynek(M4KA)
+    mag.zaladuj_magazynek(NATO)
+    assert NATO.ilosc_amunicji == 45
+    assert mag.stan_nabojow == 30
+    M4KA.zmien_magazynek(mag)
+    assert not M4KA.naboj_w_komorze
+    M4KA.zaciagnij_naboj()
+    assert M4KA.aktualny_magazynek.stan_nabojow == 29
+    assert M4KA.naboj_w_komorze
+
 def test_mechanik_walki():
     Bot.output("test samej walki")
     strzelanie = mechanics.Shooting()
-    itemki = itemsn.Przedmioty('')
+    itemki = items.Przedmioty('')
     m4ka = itemki.luskacz_broni("m4a1")
-    M4KA = itemsn.BronStrzelecka(m4ka)
+    M4KA = items.BronStrzelecka(m4ka)
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     wojtek.aktywna_bron = M4KA
     beben = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
@@ -208,3 +224,4 @@ test_dzialania_broni()
 test_dzialania_broni_strzeleckiej()
 test_broni_bialej()
 test_mechanik_walki()
+test_amunicji_i_magazynkow()

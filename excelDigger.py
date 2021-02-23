@@ -10,6 +10,7 @@ class Loader(): #pelne pokrycie
         self.sorowka = xl.readxl(fn=nazwa)
         for i in range(0, len(arkusz)):
             self.zaladowane.append(self.zaladuj_arkusz(arkusz[i], zasieg[i]))
+        self.sorowka = []
 
     def zaladuj_arkusz(self, arkusz, zasieg):
         return self.sorowka.ws(ws=arkusz).range(address='A1:'+zasieg, formula=False)
@@ -21,6 +22,9 @@ class Loader(): #pelne pokrycie
                     if isinstance(self.zaladowane[i][y][z], str):
                         self.zaladowane[i][y][z] = self.zaladowane[i][y][z].lower()
         return self.zaladowane
+
+    def wyczysc(self):
+        self.zaladowane = []
 
 
 #giweryICelowniki = Loader('TabelaBroni.xlsx', ['bron', 'bronbiala', 'granaty', 'lunety', 'celowniki',], ['O300', 'I19','I10', 'F13', 'G14'])
