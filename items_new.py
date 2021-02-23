@@ -39,6 +39,51 @@ class Przedmioty(): #pełne pokrycie
         return False
 
 
+class Amunicja():
+    nazwa_naboju = ""
+    kosc_obrazen = ""
+    typ_amunicji = ""
+    penetracja = 0
+    odrzut = 0
+
+    def __init__(self, nazwa_naboju, kosc_obrazen, penetracja, odrzut, typ_amunicji="podstawowa"):
+        self.odrzut = odrzut
+        self.nazwa_naboju = nazwa_naboju
+        self.kosc_obrazen = kosc_obrazen
+        self.penetracja = penetracja
+        self.typ_amunicji = typ_amunicji
+
+class PaczkaAminicji():
+    amunicja = []
+    ilosc = 0
+
+    def __init__(self, amunicja, ilosc):
+        self.amunicja = amunicja
+        ilosc = ilosc
+
+
+class Magazynek():
+    stan_nabojow = 0
+    maksymalna_pojemnosc = 0
+    amunicja = []
+    rodzina = ""
+
+    def __init__(self, bron, typ="podstawowy", naboje_z_paczki_amunicji=""):
+        self.maksymalna_pojemnosc = bron[9]
+
+    def zaladuj_magazynek(self, paczka_amunicji):
+        if paczka_amunicji.ilosc > (self.maksymalna_pojemnosc - self.stan_nabojow):
+            paczka_amunicji.ilosc = paczka_amunicji.ilosc - (self.maksymalna_pojemnosc - self.stan_nabojow)
+            self.amunicja = paczka_amunicji
+            self.stan_nabojow = self.maksymalna_pojemnosc
+        else:
+            self.stan_nabojow = self.stan_nabojow + paczka_amunicji.ilosc
+            paczka_amunicji.ilosc = 0
+
+    def wyladuj_amunicje(self, paczka_amunicji):
+        paczka_amunicji.ilosc = paczka_amunicji.ilosc + self.stan_nabojow
+        self.stan_nabojow = 0
+
 
 class Bron: #pełne pokrycie
     rodzaj_testu = ""
@@ -46,6 +91,7 @@ class Bron: #pełne pokrycie
     premia = 0
     penetracja = 0
     zasieg_maksymalny = 0
+    zasady_specjalne = []
 
     def __init__(self, rodzaj_testu, kosc_obrazen, premia, penetracja, zasieg_maksymalny):
         self.rodzaj_testu = rodzaj_testu
@@ -75,6 +121,12 @@ class Bron: #pełne pokrycie
     def penetracja_to_int(self, penetracja):
         return constants.penetracja[penetracja]
 
+    def oczysc_zasady_specjalne(self):
+        for i in range(0, self.zasady_specjalne):
+            self.zasady_specjalne[i] = self.zasady_specjalne[i].strip
+
+
+
 
 # TODO specjalna amunicja, zasady specjalne broni, możliwość wpływu specjalizacji.
 class BronStrzelecka(Bron): #pełne pokrycie
@@ -94,6 +146,8 @@ class BronStrzelecka(Bron): #pełne pokrycie
         self.nastaw_celownik(celownik)
         self.amunicja = amunicja
         self.aktualny_magazynek = [amunicja]
+        self.zasady_specjalne = bron[7].split(",")
+        self.oczysc_zasady_specjalne()
 
     def odrzut(self, opetator):
         redukcja = self.statystyki_podstawowe[4] + opetator.mod_sila
@@ -127,40 +181,6 @@ class BronStrzelecka(Bron): #pełne pokrycie
         odloz = self.aktualny_magazynek
         self.aktualny_magazynek = magazynek
         return odloz
-
-
-class Amunicja():
-    nazwa_naboju = ""
-    kosc_obrazen = ""
-    typ_amunicji = ""
-    penetracja = 0
-    odrzut = 0
-
-    def __init__(self, nazwa_naboju, kosc_obrazen, penetracja, odrzut, typ_amunicji="podstawowa"):
-        self.odrzut = odrzut
-        self.nazwa_naboju = nazwa_naboju
-        self.kosc_obrazen = kosc_obrazen
-        self.penetracja = penetracja
-        self.typ_amunicji = typ_amunicji
-
-class PaczkaAminicji():
-    amunicja = []
-    ilosc = 0
-
-    def __init__(self, amunicja, ilosc):
-        self.amunicja = amunicja
-
-
-class Magazynek():
-    stan_nabojow = 0
-    maksymalna_pojemnosc = 0
-    amunicja = []
-
-    def zaladuj_magazynek(self, paczka_amunicji):
-        if paczka_amunicji.ilosc > (self.maksymalna_pojemnosc - self.stan_nabojow):
-            paczka_amunicji.ilosc = paczka_amunicji.ilosc - (self.maksymalna_pojemnosc - self.stan_nabojow)
-            self.amunicja = paczka_amunicji
-
 
 
 # TODo zasady specjalne broni, możliwość wpływu specjalizacji.
