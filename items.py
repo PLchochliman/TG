@@ -16,32 +16,31 @@ class Przedmioty(): #pełne pokrycie
         self.przetwornik.wyczysc()
 
     def luskacz_broni(self, nazwaBroni):
-        for i in self.dane[2]:
+        for i in self.dane[0]:
             if i[0] == nazwaBroni:
                 return i
         return False
 
     def luskacz_broni_bialej(self, nazwaBroni):
-        for i in self.dane[3]:
+        for i in self.dane[1]:
             if i[0] == nazwaBroni:
                 return i
         return False
 
     def luskacz_granatow(self, nazwaBroni):
-        for i in self.dane[4]:
+        for i in self.dane[2]:
             if i[0] == nazwaBroni:
                 return i
         return False
 
     def luskacz_celownikow(self, nazwaBroni):
-        for i in self.dane[5]:
+        for i in self.dane[3]:
             if i[0] == nazwaBroni:
                 return i
         return False
 
-    #CZY KTOŚ MI KURWA WYTłUMACZY CO TU SIĘ ODJANIEPAWLA
     def luskacz_amunicji(self, nazwa_amunicji):
-        for i in self.dane[23]:
+        for i in self.dane[4]:
             if i[0] == nazwa_amunicji:
                 return i
         return False
@@ -69,7 +68,7 @@ class Amunicja:
 
 
 
-#na razie da się wyłądować amunicje do dowolnej paczki.
+# na razie da się wyłądować amunicje do dowolnej paczki. i dowolną amunicję do dowolnego magazynka.
 class Magazynek():
     stan_nabojow = 0
     maksymalna_pojemnosc = 0

@@ -14,25 +14,25 @@ class Przedmioty(): #pełne pokrycie
         self.dane = self.przetwornik.zwroc()
 
     def luskacz_broni(self, nazwaBroni):
-        for i in self.dane[2]:
+        for i in self.dane[0]:
             if i[0] == nazwaBroni:
                 return i
         return False
 
     def luskacz_broni_bialej(self, nazwaBroni):
-        for i in self.dane[3]:
+        for i in self.dane[1]:
             if i[0] == nazwaBroni:
                 return i
         return False
 
     def luskacz_granatow(self, nazwaBroni):
-        for i in self.dane[4]:
+        for i in self.dane[2]:
             if i[0] == nazwaBroni:
                 return i
         return False
 
     def luskacz_celownikow(self, nazwaBroni):
-        for i in self.dane[5]:
+        for i in self.dane[3]:
             if i[0] == nazwaBroni:
                 return i
         return False

@@ -6,11 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TabelaBroni.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/excelDigger.py" beforeDir="false" afterPath="$PROJECT_DIR$/excelDigger.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/items.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/items_new.py" beforeDir="false" afterPath="$PROJECT_DIR$/items_old.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/items_old.py" beforeDir="false" afterPath="$PROJECT_DIR$/items_old.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mechanics.py" beforeDir="false" afterPath="$PROJECT_DIR$/mechanics.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -197,13 +196,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00010" summary="renamed alive into mortal. makes much more sence.">
-      <created>1611546017536</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1611546017537</updated>
     </task>
     <task id="LOCAL-00011" summary="did base for skills, and starting specialisations.">
       <created>1611558922323</created>
@@ -541,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614048628633</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="spore zmiany, magazynki zaczynaja działać, ale wciąż da się wystrzelić bez naboju w komorze.">
+      <created>1614053800794</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1614053800794</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -557,7 +556,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="base generic weapon added. With test of course." />
     <MESSAGE value="shooting from gan (basic) almoust done, but not proper tested." />
     <MESSAGE value="did something about sights and the gun. Did not finished." />
     <MESSAGE value="tests repaired, need more tests" />
@@ -582,6 +580,7 @@
     <MESSAGE value="powoli przymierzam się do zrobienia magów i amunicja" />
     <MESSAGE value="skrócenie działania tego, bo było źle." />
     <MESSAGE value="same istnienie nabojow jest, ale jeszcze niejest wykorzystywane!&#10;testy w drodze" />
-    <option name="LAST_COMMIT_MESSAGE" value="same istnienie nabojow jest, ale jeszcze niejest wykorzystywane!&#10;testy w drodze" />
+    <MESSAGE value="spore zmiany, magazynki zaczynaja działać, ale wciąż da się wystrzelić bez naboju w komorze." />
+    <option name="LAST_COMMIT_MESSAGE" value="spore zmiany, magazynki zaczynaja działać, ale wciąż da się wystrzelić bez naboju w komorze." />
   </component>
 </project>

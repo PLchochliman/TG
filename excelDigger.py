@@ -8,6 +8,7 @@ class Loader(): #pelne pokrycie
 
     def __init__(self, nazwa, arkusz, zasieg):
         self.sorowka = xl.readxl(fn=nazwa)
+        self.zaladowane = []
         for i in range(0, len(arkusz)):
             self.zaladowane.append(self.zaladuj_arkusz(arkusz[i], zasieg[i]))
         self.sorowka = []

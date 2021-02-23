@@ -194,10 +194,16 @@ def test_amunicji_i_magazynkow():
 
 def test_mechanik_walki():
     Bot.output("test samej walki")
-    strzelanie = mechanics.Shooting()
     itemki = items.Przedmioty('')
+    natowska = itemki.luskacz_amunicji("5,56 nato")
+    NATO = items.Amunicja(natowska)
     m4ka = itemki.luskacz_broni("m4a1")
     M4KA = items.BronStrzelecka(m4ka)
+    mag = items.Magazynek(M4KA)
+    mag.zaladuj_magazynek(NATO)
+    M4KA.zmien_magazynek(mag)
+    M4KA.zaciagnij_naboj()
+    strzelanie = mechanics.Shooting()
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     wojtek.aktywna_bron = M4KA
     beben = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
@@ -210,6 +216,7 @@ def test_mechanik_walki():
     strzelanie.strzelaj(wojtek, beben, 50, "serie")
     strzelanie.strzelaj(wojtek, beben, 50, "samoczynny")
     strzelanie.strzelaj(wojtek, beben, 50, "pojedynczy")
+    print(wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow)
 
 
 test_luskania_danych_z_excela()

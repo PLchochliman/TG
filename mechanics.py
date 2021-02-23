@@ -46,11 +46,15 @@ class Shooting(akcje):
 # nie sprawdza równierz kar za różne zasięgi.
     def strzelaj(self, operator, cel, zasieg, tryb="pojedynczy"):
         try:
+            if not operator.aktywna_bron.naboj_w_komorze:
+                raise Exception("brak naboju w komorze.\nPo nacisnieciu spustu nic sie nie stalo.")
             if tryb in ("samoczynny", "serie"):
                 if operator.aktywna_bron.statystyki_podstawowe[2] in ("sa", "ba", "bu"):
                     tryb = "pojedynczy"
                     Bot.output("Po nacisnieciu spustu, lufę opóścił tylko 1 nabój. "
                                "Następnym razem sprawdź z czego strzelasz")
+            if operator.aktywna_bron.statystyki_podstawowe[2] in ("ba", "bu"):
+                operator.aktywna_bron.naboj_w_komorze = False
             dodatkowe = 0
             if tryb == "pelne skupienie":
                 dodatkowe = Bot.roll_dice_from_text("3d6")
@@ -60,14 +64,30 @@ class Shooting(akcje):
                 if tryb == "samoczynny":
                     if wynik > operator.aktywna_bron.statystyki_podstawowe[2]:
                         wynik = operator.aktywna_bron.statystyki_podstawowe[2]
+                    if wynik > operator.aktywna_bron.aktualny_magazynek.stan_nabojow:
+                        wynik = operator.aktywna_bron.aktualny_magazynek.stan_nabojow + 1
+                        operator.aktywna_bron.aktualny_magazynek.stan_nabojow = 0
+                        operator.aktywna_bron.naboj_w_komorze = False
+                    else:
+                        operator.aktywna_bron.aktualny_magazynek.stan_nabojow = operator.aktywna_bron.aktualny_magazynek.stan_nabojow - wynik
                     for i in range(0, int(wynik)):
                         operator.aktywna_bron.test_obrazen_z_egzekucja(cel)
                 if tryb == 'serie':
                     if wynik > 3:
                         wynik = 3
+                    if wynik > operator.aktywna_bron.aktualny_magazynek.stan_nabojow:
+                        wynik = operator.aktywna_bron.aktualny_magazynek.stan_nabojow + 1
+                        operator.aktywna_bron.aktualny_magazynek.stan_nabojow = 0
+                        operator.aktywna_bron.naboj_w_komorze = False
+                    else:
+                        operator.aktywna_bron.aktualny_magazynek.stan_nabojow =\
+                            operator.aktywna_bron.aktualny_magazynek.stan_nabojow - wynik
                     for i in range(0, int(wynik)):
                         operator.aktywna_bron.test_obrazen_z_egzekucja(cel)
                 if tryb in ("pojedynczy", "pelne skupienie"):
+                    if operator.aktywna_bron.naboj_w_komorze:
+                        operator.aktywna_bron.aktualny_magazynek.stan_nabojow =\
+                            operator.aktywna_bron.aktualny_magazynek.stan_nabojow - 1
                     premia = wynik / 3
                     if wynik > 10:
                         cel.rana(11)
