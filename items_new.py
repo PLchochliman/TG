@@ -38,6 +38,12 @@ class Przedmioty(): #pełne pokrycie
                 return i
         return False
 
+    def luskacz_amunicji(self, nazwa_amunicji):
+        for i in self.dane[6]:
+            if i[0] == nazwa_amunicji:
+                return i
+        return False
+
 
 class Amunicja():
     nazwa_naboju = ""
@@ -45,21 +51,19 @@ class Amunicja():
     typ_amunicji = ""
     penetracja = 0
     odrzut = 0
+    nazwa_amunicji = ""
+    ilosc_paczek = 0
+    ilosc_amunicji = 0
 
-    def __init__(self, nazwa_naboju, kosc_obrazen, penetracja, odrzut, typ_amunicji="podstawowa"):
-        self.odrzut = odrzut
-        self.nazwa_naboju = nazwa_naboju
-        self.kosc_obrazen = kosc_obrazen
-        self.penetracja = penetracja
+    def __int__(self, amunicja, ilosc_paczek=1, typ_amunicji="podstawowa"):
+        self.odrzut = amunicja[4]
+        self.nazwa_naboju = amunicja[0]
+        self.kosc_obrazen = amunicja[6]
+        self.penetracja = amunicja[7]
         self.typ_amunicji = typ_amunicji
-
-class PaczkaAminicji():
-    amunicja = []
-    ilosc = 0
-
-    def __init__(self, amunicja, ilosc):
-        self.amunicja = amunicja
-        ilosc = ilosc
+        self.nazwa_amunicji = self.nazwa_naboju + " " + self.typ_amunicji
+        self.ilosc_amunicji = ilosc_paczek * amunicja[3]
+        self.ilosc_paczek = ilosc_paczek
 
 
 class Magazynek():
@@ -70,6 +74,7 @@ class Magazynek():
 
     def __init__(self, bron, typ="podstawowy", naboje_z_paczki_amunicji=""):
         self.maksymalna_pojemnosc = bron[9]
+
 
     def zaladuj_magazynek(self, paczka_amunicji):
         if paczka_amunicji.ilosc > (self.maksymalna_pojemnosc - self.stan_nabojow):
