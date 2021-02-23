@@ -65,7 +65,7 @@ class Amunicja():
         self.ilosc_amunicji = ilosc_paczek * amunicja[3]
         self.ilosc_paczek = ilosc_paczek
 
-
+#na razie da się wyłądować amunicje do dowolnej paczki.
 class Magazynek():
     stan_nabojow = 0
     maksymalna_pojemnosc = 0
@@ -78,15 +78,15 @@ class Magazynek():
 
     def zaladuj_magazynek(self, paczka_amunicji):
         if paczka_amunicji.ilosc > (self.maksymalna_pojemnosc - self.stan_nabojow):
-            paczka_amunicji.ilosc = paczka_amunicji.ilosc - (self.maksymalna_pojemnosc - self.stan_nabojow)
+            paczka_amunicji.ilosc = paczka_amunicji.ilosc_amunicji - (self.maksymalna_pojemnosc - self.stan_nabojow)
             self.amunicja = paczka_amunicji
             self.stan_nabojow = self.maksymalna_pojemnosc
         else:
-            self.stan_nabojow = self.stan_nabojow + paczka_amunicji.ilosc
+            self.stan_nabojow = self.stan_nabojow + paczka_amunicji.ilosc_amunicji
             paczka_amunicji.ilosc = 0
 
     def wyladuj_amunicje(self, paczka_amunicji):
-        paczka_amunicji.ilosc = paczka_amunicji.ilosc + self.stan_nabojow
+        paczka_amunicji.ilosc_amunicji = paczka_amunicji.ilosc + self.stan_nabojow
         self.stan_nabojow = 0
 
 
@@ -186,6 +186,17 @@ class BronStrzelecka(Bron): #pełne pokrycie
         odloz = self.aktualny_magazynek
         self.aktualny_magazynek = magazynek
         return odloz
+
+    def zaciagnij_naboj(self):
+        if self.aktualny_magazynek.amunicja.nazwa_naboju == self.statystyki_podstawowe[8]:
+            if self.aktualny_magazynek > 0:
+                self.aktualny_magazynek = self.aktualny_magazynek -1
+                self.naboj_w_komorze = True
+            else:
+                Bot.output("nie masz dosc nabojow w magazynku!")
+        else:
+            Bot.output("Naboje nie pasuja do broni!")
+
 
 
 # TODo zasady specjalne broni, możliwość wpływu specjalizacji.

@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TabelaBroni.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/items_new.py" beforeDir="false" afterPath="$PROJECT_DIR$/items_new.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -193,13 +191,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00008" summary="First test ready, all actual libriaries and  classes are tested, in test.py.">
-      <created>1611519923651</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1611519923651</updated>
     </task>
     <task id="LOCAL-00009" summary="in alive there is all about getting injured, penalties, and checking if object is &quot;alive&quot;. Now all actions will be in hero section, in object named Postac. All alive features are tested in Test, and via test, were repaired (some bad signs). another proof, that you need testing everything and everytime.">
       <created>1611527255939</created>
@@ -537,7 +528,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614040326403</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="skrócenie działania tego, bo było źle.">
+      <created>1614047859374</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1614047859374</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -553,7 +551,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="items implementation partly done. no ammo done, or non table equipment." />
     <MESSAGE value="done proper loading, all in lowercase- making it case unsesitive. default input is case unsesitive.&#10;did beggining for guns, and shooting from them." />
     <MESSAGE value="base generic weapon added. With test of course." />
     <MESSAGE value="shooting from gan (basic) almoust done, but not proper tested." />
@@ -578,6 +575,7 @@
     <MESSAGE value="zalążek magazynków i amunicji" />
     <MESSAGE value="zalążek magazynków i amunicji, chyba do zaorania???" />
     <MESSAGE value="powoli przymierzam się do zrobienia magów i amunicja" />
-    <option name="LAST_COMMIT_MESSAGE" value="powoli przymierzam się do zrobienia magów i amunicja" />
+    <MESSAGE value="skrócenie działania tego, bo było źle." />
+    <option name="LAST_COMMIT_MESSAGE" value="skrócenie działania tego, bo było źle." />
   </component>
 </project>
