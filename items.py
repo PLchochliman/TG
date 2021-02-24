@@ -69,6 +69,9 @@ class Przedmioty(): #pełne pokrycie
                 return i
         return False
 
+"""
+it's all about the ammunition for the gun.
+"""
 
 class Amunicja:
     nazwa_naboju = ""
@@ -79,6 +82,7 @@ class Amunicja:
     nazwa_amunicji = ""
     ilosc_paczek = 0
     ilosc_amunicji: int = 0
+    precyzyjna_dla:str = ""
 
     def __init__(self, amunicja, ilosc_paczek=1, typ_amunicji="podstawowa"):
         self.odrzut = amunicja[4]
@@ -186,21 +190,22 @@ class BronStrzelecka(Bron): #pełne pokrycie
     aktualny_magazynek = []
     naboj_w_komorze = False
     szybkostrzelnosc = 0
+    odrzut = 0
 
 # if is smaller than 5 then it makes work for increased penalty for range, because of shit instead of sights
-
+    # TODO do przeróbki
     def __init__(self, bron, celownik=muszka_i_szczerbinka, amunicja=("podstawowa"), magazynek=""):
         super(BronStrzelecka, self).__init__("strzelectwo", bron[5], bron[3], bron[6], bron[1])
         self.statystyki_podstawowe = bron
         self.__nastaw_celownik(celownik)
         self.amunicja = amunicja
-        self.aktualny_magazynek = [amunicja]
+        self.aktualny_magazynek = magazynek
         self.zasady_specjalne = bron[7].split(",")
         self.oczysc_zasady_specjalne()
         self.szybkostrzelnosc = bron[2]
 
     def odrzut(self, opetator):
-        redukcja = self.statystyki_podstawowe[4] + opetator.mod_sila
+        redukcja = self.odrzut + opetator.mod_sila
         if redukcja < 0:
             return redukcja
         else:
@@ -228,6 +233,9 @@ class BronStrzelecka(Bron): #pełne pokrycie
     def zmien_magazynek(self, magazynek):
         odloz = self.aktualny_magazynek
         self.aktualny_magazynek = magazynek
+        self.kosc_obrazen = magazynek.amunicja.kosc_obrazen
+        self.penetracja = magazynek.amunicja.penetracja
+        self.odrzut = magazynek.amunicja.odrzut
         return odloz
 
     def zaciagnij_naboj(self):
