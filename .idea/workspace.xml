@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TabelaBroni.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constans.py" beforeDir="false" afterPath="$PROJECT_DIR$/constans.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mechanics.py" beforeDir="false" afterPath="$PROJECT_DIR$/mechanics.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -195,13 +193,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00018" summary="ok, skills finally done, when it comes to apply secialisations.">
-      <created>1612331720265</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1612331720265</updated>
     </task>
     <task id="LOCAL-00019" summary="buying ranks in progress">
       <created>1612397755083</created>
@@ -539,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614279560018</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="przerobione zuzycie - w końcu na prawdziwe.&#10;plus poprawa testów.">
+      <created>1614295138786</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1614295138786</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -555,7 +553,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="dorobienie broni białej bez zasad specjalnych i testu + mały refaktor" />
     <MESSAGE value="zejabny test walki wręcz trzeba będzie coś przerobić przy losowaniu. Coś jest ostro z tym zjebane." />
     <MESSAGE value="naprawione. warto pamiętać że nie wolno, ale nie wolno zbyt szybko po sobie losować zmiennych bez przypisania, bo wyjdzie nic." />
     <MESSAGE value="refaktor, tak aby trzymać wszędzie tę samą konwencję." />
@@ -580,7 +577,8 @@
     <MESSAGE value="już konsupcja jest ok" />
     <MESSAGE value="naprawiono parę istotnych rzeczy. python nie radzi sobie najlepiej z przeciążeniami zmiennej i funkcji.&#10;Dodatkowo więcej komentarzy" />
     <MESSAGE value="dopracowywanie testów.&#10;przerobienie ran." />
-    <option name="LAST_COMMIT_MESSAGE" value="dopracowywanie testów.&#10;przerobienie ran." />
+    <MESSAGE value="przerobione zuzycie - w końcu na prawdziwe.&#10;plus poprawa testów." />
+    <option name="LAST_COMMIT_MESSAGE" value="przerobione zuzycie - w końcu na prawdziwe.&#10;plus poprawa testów." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

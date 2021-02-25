@@ -105,23 +105,25 @@ class Shooting(akcje):
     def __zuzycie(self, bron, tryb):
         wystrzelone_naboje = 0
         if tryb == "samoczynny":
-            if bron.szybkostrzelnosc > bron.aktualny_magazynek.stan_nabojow:
-                wystrzelone_naboje = bron.aktualny_magazynek.stan_nabojow + 1
-                bron.aktualny_magazynek.stan_nabojow = 0
-                bron.naboj_w_komorze = False
-            else:
-                wystrzelone_naboje = bron.szybkostrzelnosc
-                bron.aktualny_magazynek.stan_nabojow = bron.aktualny_magazynek.stan_nabojow - bron.szybkostrzelnosc
+            self.__zuzyj_naboje(bron, bron.szybkostrzelnosc)
         if tryb == "serie":
-               wystrzelone_naboje = 3
+            self.__zuzyj_naboje(bron, 3)
         if tryb in ("pelne skupienie", "pojedynczy"):
             wystrzelone_naboje = 1
             if bron.statystyki_podstawowe[2] in ("ba", "bu"):
                 bron.naboj_w_komorze = False
                 return 1
+            self.__zuzyj_naboje(bron, 1)
         return wystrzelone_naboje
 
-
+    def __zuzyj_naboje(self, bron, maksymalne):
+        if maksymalne > bron.aktualny_magazynek.stan_nabojow:
+            maksymalne = bron.aktualny_magazynek.stan_nabojow + 1
+            bron.aktualny_magazynek.stan_nabojow = 0
+            bron.naboj_w_komorze = False
+        else:
+            bron.aktualny_magazynek.stan_nabojow = bron.aktualny_magazynek.stan_nabojow - maksymalne
+        return maksymalne
 
 """
 dzialajacy blok samoczynnech i serii

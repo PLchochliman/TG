@@ -239,12 +239,11 @@ def test_mechanik_walki():
     wojtek.wykup_range("strzelectwo")
     wojtek.wykup_range("strzelectwo")
     x = x + strzelanie.strzelaj(wojtek, beben, 50, "serie")
-    print(x)
     x = x + strzelanie.strzelaj(wojtek, beben, 50, "samoczynny")
-    print(x)
     x = x + strzelanie.strzelaj(wojtek, beben, 50, "pojedynczy")
     print(wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow)
-    print(x)
+    assert wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow == 12
+
     return 3
 
 ilosc_testow_pass = 0
