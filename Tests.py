@@ -7,9 +7,6 @@ import items_old as items_old
 import items as items
 import mechanics as mechanics
 
-"""
-it all should be made by another 
-"""
 
 def sprawdz_jak_cel_oberwal(cel):
     if cel.lekka_rana == 0:
@@ -23,6 +20,7 @@ def sprawdz_jak_cel_oberwal(cel):
     else:
         assert cel.lekka_rana > 0
 
+
 def test_systemu():
     assert Bot.roll_dice(4) > 0
     assert Bot.roll_dice(4) < 5
@@ -35,6 +33,7 @@ def test_systemu():
     assert Bot.roll_dice_from_text("D6") < 7
     assert Bot.roll_dice_from_text("D6") > 0
     Bot.output("System działa bez zarzutów")
+    return 10
 
 
 def test_stalych():
@@ -42,6 +41,7 @@ def test_stalych():
     assert constants.mod(5) == 0
     assert constants.KoscUmiejetnosci[1] > 2
     Bot.output("matematyka TG dziala bez zarzutu")
+    return 3
 
 
 def test_luskania_danych_z_excela():
@@ -50,29 +50,33 @@ def test_luskania_danych_z_excela():
     specki = specki[0]
     assert specki[1][0] == "bron boczna"
     Bot.output("ladowanie z excela dziala")
+    return 2
 
 
 def test_ran_kar_smierci(): #testy mortal.py
     wojtek = mortal.IstotaZywa(8, 8, 8, "Wojtek")
     wojtek.rana(10, 0)
-    assert wojtek.drasniecia == 1
-    assert wojtek.lekka_rana == 1
-    assert wojtek.powazna_rana == 1
+    wojtek.rana(1)
+    assert wojtek.rany[0] == 2
+    assert wojtek.rany[1] == 1
+    assert wojtek.rany[2] == 1
     Bot.output("podstawowy test Ran zakonczony")
     wojtek.redukcja_obrazen = 2
     wojtek.rana(3, 0)
-    assert wojtek.drasniecia == 2
-    assert wojtek.lekka_rana == 1
+    assert wojtek.rany[0] == 3
+    assert wojtek.rany[1] == 1
     wojtek.rana(3, 0)
     wojtek.rana(3, 0)
-    assert wojtek.lekka_rana == 2
-    Bot.output("Bot ran z redukcja obrazen zakonczony")
+    assert wojtek.rany[1] == 2
+    Bot.output("test ran z redukcja obrazen zakonczony")
     wojtek.allokuj(5)
     assert wojtek.kara() == 11
     wojtek.allokuj(14)
     assert not wojtek.aktywacja(2)
     Bot.output("zaawansowany Bot aktywacji zakonczony")
     wojtek.allokuj(15)
+    assert not wojtek.status
+    return 9
 
 
 def test_umiejetnosci_i_aktywacji(): # test mortal.py
@@ -110,6 +114,7 @@ def test_wykupowania_umiejetnosci_z_obnizeniem_przez_specjalizacje():
     wojtek.wykup_range("zmysl bitewny")
     assert wojtek.unik == 13
     Bot.output("wykupowanie umiejetnasci dziala")
+    return 15
 
 
 def test_jezykow():
@@ -117,10 +122,11 @@ def test_jezykow():
     wojtek.wykup_range("jezyki")
     assert wojtek.jezyki[0][1] == 3
     Bot.output("Jezyki dzialaja")
+    return 1
 
 
 def test_przedmiotow():
-    itemki = items_old.Przedmioty('')
+    itemki = items.Przedmioty('')
     m4ka = itemki.luskacz_broni("m4a1")
     assert m4ka[6] == 'ś'
     nozyk = itemki.luskacz_broni_bialej("nóż")
@@ -131,26 +137,30 @@ def test_przedmiotow():
     assert acog[3] == 10
     trijcon = itemki.luskacz_celownikow("trijcon")
     assert trijcon[4] == "strzelby"
+    pisiontka = itemki.luskacz_amunicji("‘50 bmg")
+    assert pisiontka[5] == "4d6"
     Bot.output("przedmioty dzialaja")
+    return 6
 
-
+"""
 def test_dzialania_broni():
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     cel = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     giwera = items_old.Bron("strzelectwo", "2D2", 14, "m", 500)
     giwera.atakuj(wojtek, cel, 1)
-    assert cel.lekka_rana > 0
+    assert cel.rany[1] > 0
     giwera2 = items_old.Bron("strzelectwo", "2D2", -5, "ś", 0)
     assert giwera2.kosc_obrazen == "2D2"
     giwera2.atakuj(cel, wojtek, 2)
-    assert wojtek.lekka_rana == 0
+    assert wojtek.rany[1] == 0
     Bot.output("podstawowa Bron dziala")
+"""
 
 
 def test_dzialania_broni_strzeleckiej():
-    itemki = items_old.Przedmioty('')
+    itemki = items.Przedmioty('')
     m4ka = itemki.luskacz_broni("m4a1")
-    M4KA = items_old.BronStrzelecka(m4ka)
+    M4KA = items.BronStrzelecka(m4ka)
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     wojtek.aktywna_bron = M4KA
     beben = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
@@ -160,6 +170,7 @@ def test_dzialania_broni_strzeleckiej():
     assert M4KA.zasieg_przyrost == 25
 
     Bot.output("TEN TEST BRONI STRZELECKIEJ JEST NEDOROBIONY, bo Bron palna ni chuja nie jest skonczona!")
+
 
 def test_broni_bialej():
     itemki = items_old.Przedmioty('')
@@ -230,8 +241,9 @@ test_umiejetnosci_i_aktywacji()
 test_wykupowania_umiejetnosci_z_obnizeniem_przez_specjalizacje()
 test_jezykow()
 test_przedmiotow()
-test_dzialania_broni()
+#test_dzialania_broni()
 test_dzialania_broni_strzeleckiej()
 test_broni_bialej()
 test_mechanik_walki()
 test_amunicji_i_magazynkow()
+#unittest.main()

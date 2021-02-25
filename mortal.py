@@ -11,6 +11,7 @@ class IstotaZywa: #pełne pokrycie
     status = True
     drasniecia, lekka_rana, powazna_rana, krytyczna_rana = 0, 0, 0, 0,
     rana_konczyny = [0, 0, 0, 0]
+    rany = [0, 0, 0, 0, [0, 0, 0, 0]]
     redukcja_obrazen, typ_ochrony = 0, 0
     imie = ""
     typ_budowy = []
@@ -61,41 +62,41 @@ class IstotaZywa: #pełne pokrycie
 
     def allokuj(self, obrazenie):
         if obrazenie == 1:
-            self.drasniecia += 1
+            self.rany[0] += 1
         elif obrazenie == 2:
-            self.lekka_rana += 1
+            self.rany[1] += 1
         elif obrazenie == 3:
-            self.drasniecia += 1
+            self.rany[0] += 1
         elif obrazenie == 4:
-            self.lekka_rana += 1
+            self.rany[1] += 1
         elif obrazenie == 5:
-            self.rana_konczyny[Bot.roll_dice(4) - 1] += 1
+            self.rany[4][Bot.roll_dice(4) - 1] += 1
         elif obrazenie == 6:
-            self.powazna_rana += 1
+            self.rany[2] += 1
         elif obrazenie == 7:
-            self.drasniecia += 1
+            self.rany[0] += 1
         elif obrazenie == 8:
-            self.rana_konczyny[Bot.roll_dice(4) - 1] += 1
+            self.rany[4][Bot.roll_dice(4) - 1] += 1
         elif obrazenie == 9:
-            self.lekka_rana += 1
+            self.rany[1] += 1
         elif obrazenie == 10:
+            self.rany[1] += 1
             self.allokuj(1)
-            self.lekka_rana += 1
-        elif obrazenie < 15:
-            self.krytyczna_rana += 1
+        elif 10 < obrazenie < 15:
+            self.rany[3] += 1
             self.status = False
         elif obrazenie == 15:
             self.umarl()
-        if self.drasniecia == self.typ_budowy[0]:
-            self.drasniecia = 0
-            self.lekka_rana += 1
+        if self.rany[0] == self.typ_budowy[0]:
+            self.rany[0] = 0
+            self.rany[1] += 1
             Bot.output(self.imie + " te drasniecia zabolaly")
-        if self.lekka_rana == self.typ_budowy[1]:
-            self.lekka_rana = 0
-            self.powazna_rana += 1
+        if self.rany[1] == self.typ_budowy[1]:
+            self.rany[1] = 0
+            self.rany[2] += 1
             Bot.output(self.imie + " to powazna kumulacja")
-        if self.powazna_rana == self.typ_budowy[2] + 1:
-            self.powazna_rana = 0
+        if self.rany[2] == self.typ_budowy[2] + 1:
+            self.rany[2] = 0
             self.allokuj(11)
 
     """
@@ -103,7 +104,7 @@ class IstotaZywa: #pełne pokrycie
     when it comes to take a wound, but in normal way. You've just been hit, by enemy. 
     then it will resolve damage by you taken.
     """
-    def rana(self, rzutNaObrazenia, penetracja):
+    def rana(self, rzutNaObrazenia, penetracja=0):
         if penetracja <= self.typ_ochrony:
             rzutNaObrazenia = rzutNaObrazenia - self.redukcja_obrazen
         if rzutNaObrazenia <= 1:
@@ -153,7 +154,7 @@ class IstotaZywa: #pełne pokrycie
     """
 
     def kara(self):
-        minus = self.lekka_rana * 3 + self.powazna_rana * 5
+        minus = self.rany[1] * 3 + self.rany[2] * 5
         for i in range(0, len(self.rana_konczyny)):
             if self.rana_konczyny[i] == 1:
                 Bot.output("Pamietaj ze ranna jest twoja " + constans.Konczyna[i] + "\n Domyslna dodatkowa kara z tego wynikajaca jest to -4")
@@ -206,3 +207,10 @@ class IstotaZywa: #pełne pokrycie
     4th is for all modifiers from predispositions (skill in specialisations)and modifiers from stats
     5th is all for modifier based on base stats modifier.
     """
+    def wylecz(self, typ_rany):
+
+        if typ_rany in ("drasniecie", "lekka rana", "powazna rana", "krytyczna rana", "rana konczyny"):
+            return 0
+        else:
+            Bot.output("nie ma takiej rany!")
+
