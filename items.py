@@ -87,8 +87,8 @@ class Amunicja:
     def __init__(self, amunicja, ilosc_paczek=1, typ_amunicji="podstawowa"):
         self.odrzut = amunicja[4]
         self.nazwa_naboju = amunicja[0]
-        self.kosc_obrazen = amunicja[6]
-        self.penetracja = amunicja[7]
+        self.kosc_obrazen = amunicja[5]
+        self.penetracja = amunicja[6]
         self.typ_amunicji = typ_amunicji
         self.nazwa_amunicji = self.nazwa_naboju + " " + self.typ_amunicji
         self.ilosc_amunicji = ilosc_paczek * amunicja[2]
@@ -107,6 +107,9 @@ class Magazynek():
         self.maksymalna_pojemnosc = bron.statystyki_podstawowe[9]
         self.__zaladuj_rodzine(bron)
 
+    """
+    cheks if magazine WHICH YOU BUY is special for purposes of avaibility of feeding another gun
+    """
     def __zaladuj_rodzine(self, bron):
         for i in bron.zasady_specjalne:
             if i in ("ar", "sr25", "g36", "glock", "g3", "as", "akm", "ak74"):
@@ -114,6 +117,9 @@ class Magazynek():
         if self.rodzina == "":
             self.rodzina = bron.statystyki_podstawowe[0]
 
+    """
+    cheks if magazine is special for purposes of avaibility of feeding another gun, to be checked after reload
+    """
     def sprawdz_rodzine(self, bron):
         for i in bron.zasady_specjalne:
             if i in ("ar", "sr25", "g36", "glock", "g3", "as", "akm", "ak74"):
@@ -123,15 +129,53 @@ class Magazynek():
             return True
         return False
 
+    """
+    it's all about loading magazine with ammo.
+    """
     def zaladuj_magazynek(self, paczka_amunicji):
+        if self.amunicja == []:
+            if paczka_amunicji.ilosc_amunicji > self.maksymalna_pojemnosc:
+                paczka_amunicji.ilosc_amunicji = paczka_amunicji.ilosc_amunicji - \
+                                                 (self.maksymalna_pojemnosc - self.stan_nabojow)
+                self.stan_nabojow = self.maksymalna_pojemnosc
+                self.amunicja = paczka_amunicji
+                return True
+            else:
+                self.amunicja = paczka_amunicji
+                self.stan_nabojow = paczka_amunicji.ilosc_amunicji
+                paczka_amunicji.ilosc_amunicji = 0
+                self.amunicja = paczka_amunicji
+                return True
         if paczka_amunicji.ilosc_amunicji > (self.maksymalna_pojemnosc - self.stan_nabojow):
-            paczka_amunicji.ilosc_amunicji = paczka_amunicji.ilosc_amunicji - (self.maksymalna_pojemnosc - self.stan_nabojow)
-            self.amunicja = paczka_amunicji
-            self.stan_nabojow = self.maksymalna_pojemnosc
+            if self.amunicja.nazwa_amunicji == paczka_amunicji.nazwa_amunicji:
+                paczka_amunicji.ilosc_amunicji = paczka_amunicji.ilosc_amunicji - (self.maksymalna_pojemnosc - self.stan_nabojow)
+                self.stan_nabojow = self.maksymalna_pojemnosc
+                return True
+            else:
+                if self.stan_nabojow == 0:
+                    self.amunicja = paczka_amunicji
+                    paczka_amunicji.ilosc_amunicji = paczka_amunicji.ilosc_amunicji - (
+                                self.maksymalna_pojemnosc - self.stan_nabojow)
+                    self.stan_nabojow = self.maksymalna_pojemnosc
+                    return True
+                else:
+                    Bot.output("Proba zaladowania inna amunicja niz dotychczas! \n"
+                               " rozladuj magazynek nim zaladujesz nowa amunicja!")
+                    return False
         else:
+            if self.stan_nabojow != 0:
+                if self.amunicja.nazwa_amunicji == paczka_amunicji.nazwa_amunicji:
+                    Bot.output("wlasnie skonczyla sie paczka amunicji")
+                else:
+                    Bot.output("Proba zaladowania inna amunicja niz dotychczas! \n"
+                               " rozladuj magazynek nim zaladujesz nowa amunicja!")
+                    return False
             self.stan_nabojow = self.stan_nabojow + paczka_amunicji.ilosc_amunicji
+            self.amunicja = paczka_amunicji
             paczka_amunicji.ilosc_amunicji = 0
 
+    """
+    unloads the ammo to the selected ammunition"""
     def wyladuj_amunicje(self, paczka_amunicji):
         paczka_amunicji.ilosc_amunicji = paczka_amunicji.ilosc_amunicji + self.stan_nabojow
         self.stan_nabojow = 0
@@ -190,7 +234,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
     aktualny_magazynek = []
     naboj_w_komorze = False
     szybkostrzelnosc = 0
-    odrzut = 0
+    odrzut_aktualny = 0
 
 # if is smaller than 5 then it makes work for increased penalty for range, because of shit instead of sights
     # TODO do przeróbki
@@ -205,7 +249,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
         self.szybkostrzelnosc = bron[2]
 
     def odrzut(self, opetator):
-        redukcja = self.odrzut + opetator.mod_sila
+        redukcja = self.odrzut_aktualny + opetator.mod_sila
         if redukcja < 0:
             return redukcja
         else:
@@ -215,10 +259,13 @@ class BronStrzelecka(Bron): #pełne pokrycie
         return super(BronStrzelecka, self).test_trafienia(operator, cel, dodatkowe, zasieg)
 
     def aktualna_premia(self, operator, odległosc):
+        super(BronStrzelecka, self).aktualna_premia(operator, odległosc)
         kara_za_zasieg = odległosc / self.zasieg_przyrost
         if 1 < self.zasieg_minimalny < 5:
             kara_za_zasieg = kara_za_zasieg * self.zasieg_minimalny
-        premia = self.premia + self.odrzut(operator) - int(kara_za_zasieg)
+        premia = int(self.premia)
+        premia = premia + int(self.odrzut(operator))
+        premia = premia - int(kara_za_zasieg)
         return premia
 
     def zmien_celownik(self, celownik):
@@ -234,8 +281,8 @@ class BronStrzelecka(Bron): #pełne pokrycie
         odloz = self.aktualny_magazynek
         self.aktualny_magazynek = magazynek
         self.kosc_obrazen = magazynek.amunicja.kosc_obrazen
-        self.penetracja = magazynek.amunicja.penetracja
-        self.odrzut = magazynek.amunicja.odrzut
+        self.penetracja = self.penetracja_to_int(magazynek.amunicja.penetracja)
+        self.odrzut_aktualny = magazynek.amunicja.odrzut
         return odloz
 
     def zaciagnij_naboj(self):

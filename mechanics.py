@@ -42,8 +42,11 @@ class Shooting(akcje):
     """
 
     def test_trafienia(self, operator, cel, dodatkowe, zasieg):
-        return operator.aktywna_bron.test_trafienia(operator, cel, dodatkowe, zasieg)
+        return int(operator.aktywna_bron.test_trafienia(operator, cel, dodatkowe, zasieg))
 
+    """
+    do check procedure, if you are able to shoot.
+    """
     def __sprawdzenie_czy_mozna_strzelac(self, operator, tryb):
         if not operator.aktywna_bron.naboj_w_komorze:
             raise Exception("brak naboju w komorze.\nPo nacisnieciu spustu nic sie nie stalo.")
@@ -52,7 +55,7 @@ class Shooting(akcje):
                 tryb = "pojedynczy"
                 Bot.output("Po nacisnieciu spustu, lufę opóścił tylko 1 nabój. "
                            "Następnym razem sprawdź z czego strzelasz")
-
+        return True
         """
         deals damage to "cel", by gun, and additional modifier (if apply), and many times if nessesary.
         """
@@ -75,6 +78,7 @@ class Shooting(akcje):
                 dodatkowe = Bot.roll_dice_from_text("3d6")
                 zasieg = zasieg/2
             wynik = self.test_trafienia(operator, cel, dodatkowe, zasieg) #failuje juz z wyjatku testu trafienia
+            print(wynik)
             if wynik > 0:
                 wynik = int(wynik)
                 ilosc_trafien = self.__zuzycie(operator.aktywna_bron, tryb, wynik)
