@@ -78,10 +78,8 @@ class Shooting(akcje):
                 dodatkowe = Bot.roll_dice_from_text("3d6")
                 zasieg = zasieg/2
             wynik = self.test_trafienia(operator, cel, dodatkowe, zasieg) #failuje juz z wyjatku testu trafienia
-            print(wynik)
+            ilosc_trafien = self.__zuzycie(operator.aktywna_bron, tryb)
             if wynik > 0:
-                wynik = int(wynik)
-                ilosc_trafien = self.__zuzycie(operator.aktywna_bron, tryb, wynik)
                 if tryb in ("pojedynczy", "pelne skupienie"):
                     if wynik > 10:
                         cel.rana(11)
@@ -89,8 +87,10 @@ class Shooting(akcje):
                         premia = wynik / 3
                         self.__zadaj_obrazenia(cel, operator.aktywna_bron, int(premia))
                         return True
-                self.__zadaj_obrazenia(cel, operator.aktywna_bron, 0, ilosc_trafien)
-                return wynik
+                if wynik > ilosc_trafien:
+                    wynik = ilosc_trafien
+                self.__zadaj_obrazenia(cel, operator.aktywna_bron, 0, wynik)
+                return True
             else:
                 operator.aktywna_bron.test_obrazen_z_egzekucja(cel)
                 return True
@@ -99,29 +99,27 @@ class Shooting(akcje):
             Bot.output(cel.imie + " nie oberwal bo " + powod)
             return False
 
-    def __zuzycie(self, bron, tryb, proponowana_libcza_naboi=1):
-        realnie_wystrzelone_naboje = 0
-        if proponowana_libcza_naboi > bron.szybkostrzelnosc:
-            proponowana_libcza_naboi = bron.szybkostrzelnosc
+    """
+    liczy zuzycie naboi i od razu aplikuje
+    """
+    def __zuzycie(self, bron, tryb):
+        wystrzelone_naboje = 0
+        if tryb == "samoczynny":
+            if bron.szybkostrzelnosc > bron.aktualny_magazynek.stan_nabojow:
+                wystrzelone_naboje = bron.aktualny_magazynek.stan_nabojow + 1
+                bron.aktualny_magazynek.stan_nabojow = 0
+                bron.naboj_w_komorze = False
+            else:
+                wystrzelone_naboje = bron.szybkostrzelnosc
+                bron.aktualny_magazynek.stan_nabojow = bron.aktualny_magazynek.stan_nabojow - bron.szybkostrzelnosc
         if tryb == "serie":
-            if proponowana_libcza_naboi > 3:
-               proponowana_libcza_naboi = 3
+               wystrzelone_naboje = 3
         if tryb in ("pelne skupienie", "pojedynczy"):
-            proponowana_libcza_naboi = 1
+            wystrzelone_naboje = 1
             if bron.statystyki_podstawowe[2] in ("ba", "bu"):
                 bron.naboj_w_komorze = False
                 return 1
-        if bron.aktualny_magazynek.stan_nabojow >= proponowana_libcza_naboi:
-            bron.aktualny_magazynek.stan_nabojow = bron.aktualny_magazynek.stan_nabojow - proponowana_libcza_naboi
-            realnie_wystrzelone_naboje = proponowana_libcza_naboi
-        else:
-            realnie_wystrzelone_naboje = bron.aktualny_magazynek.stan_nabojow + 1
-            bron.aktualny_magazynek.stan_nabojow = 0
-            bron.naboj_w_komorze = 0
-            if tryb in ("samoczynny", "serie"):
-                Bot.output("podczas prowadzenia ognia, karabin przestał strzelać")
-        return realnie_wystrzelone_naboje
-
+        return wystrzelone_naboje
 
 
 
