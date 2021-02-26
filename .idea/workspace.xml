@@ -194,13 +194,6 @@
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
     </task>
-    <task id="LOCAL-00019" summary="buying ranks in progress">
-      <created>1612397755083</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1612397755083</updated>
-    </task>
     <task id="LOCAL-00020" summary="buying ranks maybe finished, but there is no test. we need more tests to hero.">
       <created>1612400089420</created>
       <option name="number" value="00020" />
@@ -537,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614295138786</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="przerobione zuzycie - w końcu na prawdziwe. Pojedynczy w koncu zuzywa, nawet gdy jest to sa, albo automat.">
+      <created>1614296946011</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1614296946011</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -553,7 +553,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="zejabny test walki wręcz trzeba będzie coś przerobić przy losowaniu. Coś jest ostro z tym zjebane." />
     <MESSAGE value="naprawione. warto pamiętać że nie wolno, ale nie wolno zbyt szybko po sobie losować zmiennych bez przypisania, bo wyjdzie nic." />
     <MESSAGE value="refaktor, tak aby trzymać wszędzie tę samą konwencję." />
     <MESSAGE value="poprawione testy, i usunięto artefakty." />
@@ -578,32 +577,28 @@
     <MESSAGE value="naprawiono parę istotnych rzeczy. python nie radzi sobie najlepiej z przeciążeniami zmiennej i funkcji.&#10;Dodatkowo więcej komentarzy" />
     <MESSAGE value="dopracowywanie testów.&#10;przerobienie ran." />
     <MESSAGE value="przerobione zuzycie - w końcu na prawdziwe.&#10;plus poprawa testów." />
-    <option name="LAST_COMMIT_MESSAGE" value="przerobione zuzycie - w końcu na prawdziwe.&#10;plus poprawa testów." />
+    <MESSAGE value="przerobione zuzycie - w końcu na prawdziwe. Pojedynczy w koncu zuzywa, nawet gdy jest to sa, albo automat." />
+    <option name="LAST_COMMIT_MESSAGE" value="przerobione zuzycie - w końcu na prawdziwe. Pojedynczy w koncu zuzywa, nawet gdy jest to sa, albo automat." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/items.py</url>
-          <line>263</line>
-          <option name="timeStamp" value="23" />
+          <url>file://$PROJECT_DIR$/mechanics.py</url>
+          <line>111</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/items.py</url>
-          <line>262</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/items.py</url>
-          <line>267</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/items.py</url>
-          <line>251</line>
-          <option name="timeStamp" value="31" />
+          <url>file://$PROJECT_DIR$/mechanics.py</url>
+          <line>113</line>
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="wojtek.aktywna_bron.zasieg_maksymalny" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

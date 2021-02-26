@@ -241,10 +241,22 @@ def test_mechanik_walki():
     x = x + strzelanie.strzelaj(wojtek, beben, 50, "serie")
     x = x + strzelanie.strzelaj(wojtek, beben, 50, "samoczynny")
     x = x + strzelanie.strzelaj(wojtek, beben, 50, "pojedynczy")
-    print(wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow)
     assert wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow == 12
-
-    return 3
+    scout = itemki.luskacz_broni("steyr scout")
+    scout = items.BronStrzelecka(scout)
+    mag_scout = items.Magazynek(scout)
+    mag_scout.zaladuj_magazynek(NATO)
+    scout.zmien_magazynek(mag_scout)
+    wojtek.aktywna_bron = scout
+    assert not strzelanie.strzelaj(wojtek, beben, 50, "serie")
+    wojtek.aktywna_bron.zaciagnij_naboj()
+    assert strzelanie.strzelaj(wojtek, beben, 50, "serie")
+    print(wojtek.aktywna_bron.naboj_w_komorze)
+    assert not strzelanie.strzelaj(wojtek, beben, 50, "serie")
+    wojtek.aktywna_bron.zaciagnij_naboj()
+    assert strzelanie.strzelaj(wojtek, beben, 50, "samoczynny")
+    assert wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow == 8
+    return 8
 
 ilosc_testow_pass = 0
 ilosc_testow_pass = test_luskania_danych_z_excela()
@@ -260,5 +272,5 @@ ilosc_testow_pass += test_dzialania_broni_strzeleckiej()
 ilosc_testow_pass += test_broni_bialej()
 ilosc_testow_pass += test_mechanik_walki()
 ilosc_testow_pass += test_amunicji_i_magazynkow()
-print("przeszlo " + str(ilosc_testow_pass) + " testow \nJest to " + str(ilosc_testow_pass/65 * 100) + "% testów.")
+print("przeszlo " + str(ilosc_testow_pass) + " testow \nJest to " + str(ilosc_testow_pass/70 * 100) + "% testów.")
 #unittest.main()

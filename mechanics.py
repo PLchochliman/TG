@@ -55,7 +55,7 @@ class Shooting(akcje):
                 tryb = "pojedynczy"
                 Bot.output("Po nacisnieciu spustu, lufę opóścił tylko 1 nabój. "
                            "Następnym razem sprawdź z czego strzelasz")
-        return True
+        return tryb
         """
         deals damage to "cel", by gun, and additional modifier (if apply), and many times if nessesary.
         """
@@ -72,7 +72,7 @@ class Shooting(akcje):
         try:
             if tryb not in ("pojedynczy", "pelne skupienie", "samoczynny", "serie"):
                 raise Exception("nie ma takiego trybu. Dostępne tryby to: pojedynczy, pelne skupienie, samoczynny, serie")
-            self.__sprawdzenie_czy_mozna_strzelac(operator, tryb)
+            tryb = self.__sprawdzenie_czy_mozna_strzelac(operator, tryb)
             dodatkowe = 0
             if tryb == "pelne skupienie":
                 dodatkowe = Bot.roll_dice_from_text("3d6")
@@ -110,7 +110,7 @@ class Shooting(akcje):
             self.__zuzyj_naboje(bron, 3)
         if tryb in ("pelne skupienie", "pojedynczy"):
             wystrzelone_naboje = 1
-            if bron.statystyki_podstawowe[2] in ("ba", "bu"):
+            if bron.szybkostrzelnosc in ("ba", "bu"):
                 bron.naboj_w_komorze = False
                 return 1
             self.__zuzyj_naboje(bron, 1)
