@@ -56,9 +56,11 @@ class Shooting(akcje):
                 Bot.output("Po nacisnieciu spustu, lufę opóścił tylko 1 nabój. "
                            "Następnym razem sprawdź z czego strzelasz")
         return tryb
-        """
-        deals damage to "cel", by gun, and additional modifier (if apply), and many times if nessesary.
-        """
+
+
+    """
+    deals damage to "cel", by gun, and additional modifier (if apply), and many times if nessesary.
+    """
     def __zadaj_obrazenia(self, cel, bron, premia=0, ilosc_trafien=1):
         for i in range(0, ilosc_trafien):
             bron.test_obrazen_z_egzekucja(cel, int(premia))

@@ -175,11 +175,14 @@ class Magazynek():
             paczka_amunicji.ilosc_amunicji = 0
 
     """
-    unloads the ammo to the selected ammunition"""
+    unloads the ammo to the selected ammunition
+    """
     def wyladuj_amunicje(self, paczka_amunicji):
-        paczka_amunicji.ilosc_amunicji = paczka_amunicji.ilosc_amunicji + self.stan_nabojow
-        self.stan_nabojow = 0
-
+        if self.amunicja.nazwa_amunicji == paczka_amunicji.nazwa_amunicji:
+            paczka_amunicji.ilosc_amunicji = paczka_amunicji.ilosc_amunicji + self.stan_nabojow
+            self.stan_nabojow = 0
+            return True
+        return False
 
 class Bron: #pełne pokrycie
     rodzaj_testu = ""
@@ -243,7 +246,8 @@ class BronStrzelecka(Bron): #pełne pokrycie
         self.statystyki_podstawowe = bron
         self.__nastaw_celownik(celownik)
         self.amunicja = amunicja
-        self.aktualny_magazynek = magazynek
+        if magazynek == "":
+            self.aktualny_magazynek = Magazynek(self)
         self.zasady_specjalne = bron[7].split(",")
         self.oczysc_zasady_specjalne()
         self.szybkostrzelnosc = bron[2]
@@ -286,18 +290,23 @@ class BronStrzelecka(Bron): #pełne pokrycie
         return odloz
 
     def zaciagnij_naboj(self):
-        if self.aktualny_magazynek.amunicja.nazwa_naboju == self.statystyki_podstawowe[8]:
-            if self.aktualny_magazynek.stan_nabojow > 0:
-                self.aktualny_magazynek.stan_nabojow = self.aktualny_magazynek.stan_nabojow -1
-                self.naboj_w_komorze = True
-                return True
+        try:
+            if self.aktualny_magazynek.amunicja.nazwa_naboju == self.statystyki_podstawowe[8]:
+                if self.aktualny_magazynek.stan_nabojow > 0:
+                    self.aktualny_magazynek.stan_nabojow = self.aktualny_magazynek.stan_nabojow - 1
+                    self.naboj_w_komorze = True
+                    return True
+                else:
+                    Bot.output("nie masz dosc nabojow w magazynku!")
+                    return False
             else:
-                Bot.output("nie masz dosc nabojow w magazynku!")
+                Bot.output("Naboje nie pasuja do broni!")
                 return False
-        else:
-            Bot.output("Naboje nie pasuja do broni!")
-            return False
-
+        except AttributeError:
+            if self.aktualny_magazynek.amunicja == []:
+                Bot.output("magazynek nie jest zaladowany nabojami!")
+                return False
+            raise AttributeError
 
 # TODo zasady specjalne broni, możliwość wpływu specjalizacji.
 class BronBiala(Bron):

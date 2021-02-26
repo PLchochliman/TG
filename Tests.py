@@ -25,7 +25,10 @@ def test_runner(test):
     def parser():
         try:
             return test()
-        except AssertionError:
+        except AssertionError as inst:
+            print(type(inst))
+            print(inst.args)
+            print(inst)
             print(AssertionError)
             return 0
     return parser
@@ -183,13 +186,25 @@ def test_dzialania_broni_strzeleckiej():
     M4KA = items.BronStrzelecka(m4ka)
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     wojtek.aktywna_bron = M4KA
-    beben = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
-#    if wojtek.aktywna_bron.atakuj(wojtek, beben, 0):
-#        sprawdz_jak_cel_oberwal(beben)
     assert M4KA.zasieg_minimalny == 0
     assert M4KA.zasieg_przyrost == 25
+    assert M4KA.szybkostrzelnosc == 13
+    assert M4KA.zasieg_minimalny == 0
+    assert M4KA.penetracja == 3
+    assert M4KA.zasieg_maksymalny == 300
+    assert M4KA.aktualny_magazynek.stan_nabojow == 0
+    assert M4KA.aktualny_magazynek.maksymalna_pojemnosc == 30
+    natowska = itemki.luskacz_amunicji("5,56 nato")
+    NATO = items.Amunicja(natowska)
+    ak = itemki.luskacz_amunicji("5,45 x 39")
+    ak = items.Amunicja(ak)
+    assert M4KA.aktualny_magazynek.zaladuj_magazynek(NATO)
+    assert not M4KA.aktualny_magazynek.wyladuj_amunicje(ak)
+    assert M4KA.aktualny_magazynek.wyladuj_amunicje(NATO)
+    assert NATO.ilosc_amunicji == 75
+    assert not M4KA.zaciagnij_naboj()
     Bot.output("TEN TEST BRONI STRZELECKIEJ JEST NEDOROBIONY, bo Bron palna ni chuja nie jest skonczona!")
-    return 2
+    return 13
 
 
 @test_runner
@@ -285,7 +300,7 @@ def test_mechanik_walki():
 
 
 ilosc_testow_pass = 0
-ilosc_testow_pass = int(test_luskania_danych_z_excela())
+ilosc_testow_pass = test_luskania_danych_z_excela()
 ilosc_testow_pass += test_systemu()
 ilosc_testow_pass += test_stalych()
 ilosc_testow_pass += test_ran_kar_smierci()
@@ -298,5 +313,5 @@ ilosc_testow_pass += test_dzialania_broni_strzeleckiej()
 ilosc_testow_pass += test_broni_bialej()
 ilosc_testow_pass += test_mechanik_walki()
 ilosc_testow_pass += test_amunicji_i_magazynkow()
-print("przeszlo " + str(ilosc_testow_pass) + " testow \nJest to " + str(ilosc_testow_pass/70 * 100) + "% testów.")
+print("przeszlo " + str(ilosc_testow_pass) + " testow \nJest to " + str(ilosc_testow_pass/81 * 100) + "% testów.")
 #unittest.main()
