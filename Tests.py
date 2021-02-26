@@ -21,6 +21,17 @@ def sprawdz_jak_cel_oberwal(cel):
         assert cel.lekka_rana > 0
 
 
+def test_runner(test):
+    def parser():
+        try:
+            return test()
+        except AssertionError:
+            print(AssertionError)
+            return 0
+    return parser
+
+
+@test_runner
 def test_systemu():
     assert Bot.roll_dice(4) > 0
     assert Bot.roll_dice(4) < 5
@@ -36,6 +47,7 @@ def test_systemu():
     return 10
 
 
+@test_runner
 def test_stalych():
     assert constants.mod(10) == 2
     assert constants.mod(5) == 0
@@ -44,6 +56,7 @@ def test_stalych():
     return 3
 
 
+@test_runner
 def test_luskania_danych_z_excela():
     specki = excelDigger.Loader("Specjalizacje.xlsx", ["umiejetnasci"], ["B26"])
     specki = specki.zwroc()
@@ -53,6 +66,7 @@ def test_luskania_danych_z_excela():
     return 2
 
 
+@test_runner
 def test_ran_kar_smierci(): #testy mortal.py
     wojtek = mortal.IstotaZywa(8, 8, 8, "Wojtek")
     wojtek.rana(10, 0)
@@ -79,6 +93,7 @@ def test_ran_kar_smierci(): #testy mortal.py
     return 9
 
 
+@test_runner
 def test_umiejetnosci_i_aktywacji(): # test mortal.py
     wojtek = mortal.IstotaZywa(8, 8, 8, "Wojtek")
     assert wojtek.aktywacja(2)
@@ -89,6 +104,7 @@ def test_umiejetnosci_i_aktywacji(): # test mortal.py
     return 4
 
 
+@test_runner
 def test_wykupowania_umiejetnosci_z_obnizeniem_przez_specjalizacje():
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     wojtek.wykup_range("obsluga broni")
@@ -118,6 +134,7 @@ def test_wykupowania_umiejetnosci_z_obnizeniem_przez_specjalizacje():
     return 15
 
 
+@test_runner
 def test_jezykow():
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     wojtek.wykup_range("jezyki")
@@ -126,6 +143,7 @@ def test_jezykow():
     return 1
 
 
+@test_runner
 def test_przedmiotow():
     itemki = items.Przedmioty('')
     m4ka = itemki.luskacz_broni("m4a1")
@@ -158,6 +176,7 @@ def test_dzialania_broni():
 """
 
 
+@test_runner
 def test_dzialania_broni_strzeleckiej():
     itemki = items.Przedmioty('')
     m4ka = itemki.luskacz_broni("m4a1")
@@ -172,6 +191,8 @@ def test_dzialania_broni_strzeleckiej():
     Bot.output("TEN TEST BRONI STRZELECKIEJ JEST NEDOROBIONY, bo Bron palna ni chuja nie jest skonczona!")
     return 2
 
+
+@test_runner
 #do przerobki zalkowitej - inaczej  sie atakuje
 def test_broni_bialej():
     itemki = items_old.Przedmioty('')
@@ -189,6 +210,9 @@ def test_broni_bialej():
     assert NOZ.atakuj(wojtek, beben, 0)
     return 2
 
+
+
+@test_runner
 def test_amunicji_i_magazynkow():
     itemki = items.Przedmioty('')
     natowska = itemki.luskacz_amunicji("5,56 nato")
@@ -217,6 +241,7 @@ def test_amunicji_i_magazynkow():
 
 
 #trzeba go dorobic
+@test_runner
 def test_mechanik_walki():
     Bot.output("test samej walki")
     itemki = items.Przedmioty('')
@@ -258,8 +283,9 @@ def test_mechanik_walki():
     assert wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow == 8
     return 8
 
+
 ilosc_testow_pass = 0
-ilosc_testow_pass = test_luskania_danych_z_excela()
+ilosc_testow_pass = int(test_luskania_danych_z_excela())
 ilosc_testow_pass += test_systemu()
 ilosc_testow_pass += test_stalych()
 ilosc_testow_pass += test_ran_kar_smierci()

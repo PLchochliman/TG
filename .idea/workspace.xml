@@ -7,7 +7,6 @@
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mechanics.py" beforeDir="false" afterPath="$PROJECT_DIR$/mechanics.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,13 +192,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00020" summary="buying ranks maybe finished, but there is no test. we need more tests to hero.">
-      <created>1612400089420</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1612400089420</updated>
     </task>
     <task id="LOCAL-00021" summary="some tests done, but still not enough.">
       <created>1612415415367</created>
@@ -537,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614296946011</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="zgadnijcie co znowu nie działało xD zuzycie dla ba, bo blokada działała, jak wszystko było w jednej funkcji. Teraz śmiga.">
+      <created>1614299021097</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1614299021098</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -553,7 +552,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="naprawione. warto pamiętać że nie wolno, ale nie wolno zbyt szybko po sobie losować zmiennych bez przypisania, bo wyjdzie nic." />
     <MESSAGE value="refaktor, tak aby trzymać wszędzie tę samą konwencję." />
     <MESSAGE value="poprawione testy, i usunięto artefakty." />
     <MESSAGE value="calkowity rework strzelania" />
@@ -578,7 +576,8 @@
     <MESSAGE value="dopracowywanie testów.&#10;przerobienie ran." />
     <MESSAGE value="przerobione zuzycie - w końcu na prawdziwe.&#10;plus poprawa testów." />
     <MESSAGE value="przerobione zuzycie - w końcu na prawdziwe. Pojedynczy w koncu zuzywa, nawet gdy jest to sa, albo automat." />
-    <option name="LAST_COMMIT_MESSAGE" value="przerobione zuzycie - w końcu na prawdziwe. Pojedynczy w koncu zuzywa, nawet gdy jest to sa, albo automat." />
+    <MESSAGE value="zgadnijcie co znowu nie działało xD zuzycie dla ba, bo blokada działała, jak wszystko było w jednej funkcji. Teraz śmiga." />
+    <option name="LAST_COMMIT_MESSAGE" value="zgadnijcie co znowu nie działało xD zuzycie dla ba, bo blokada działała, jak wszystko było w jednej funkcji. Teraz śmiga." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
