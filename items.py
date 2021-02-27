@@ -192,6 +192,7 @@ class Bron: #pełne pokrycie
     zasieg_maksymalny = 0
     zasady_specjalne = []
 
+
     def __init__(self, rodzaj_testu, kosc_obrazen, premia, penetracja, zasieg_maksymalny):
         self.rodzaj_testu = rodzaj_testu
         self.kosc_obrazen = kosc_obrazen
@@ -225,8 +226,6 @@ class Bron: #pełne pokrycie
             self.zasady_specjalne[i] = self.zasady_specjalne[i].strip
 
 
-
-
 # TODO specjalna amunicja, zasady specjalne broni, możliwość wpływu specjalizacji.
 class BronStrzelecka(Bron): #pełne pokrycie
 
@@ -238,6 +237,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
     naboj_w_komorze = False
     szybkostrzelnosc = 0
     odrzut_aktualny = 0
+    walka_wrecz = []
 
 # if is smaller than 5 then it makes work for increased penalty for range, because of shit instead of sights
     # TODO do przeróbki
@@ -251,6 +251,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
         self.zasady_specjalne = bron[7].split(",")
         self.oczysc_zasady_specjalne()
         self.szybkostrzelnosc = bron[2]
+        self.walka_wrecz = BronBiala(['kolba/pięść', 0, '-', '-', 0, 'd2', '-', 'obuchowa', '$0,00'])
 
     def odrzut(self, opetator):
         redukcja = self.odrzut_aktualny + opetator.mod_sila
@@ -308,6 +309,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
                 return False
             raise AttributeError
 
+
 # TODo zasady specjalne broni, możliwość wpływu specjalizacji.
 class BronBiala(Bron):
 
@@ -316,6 +318,7 @@ class BronBiala(Bron):
         super(BronBiala, self).__init__("walka wrecz", bron[5], bron[3], bron[6], bron[1])
         self.statystyki_podstawowe = bron
 
+    """
     def atakuj(self, operator, cel, zasieg):
         try:
             return self.test_trafenia(operator, cel, zasieg)
@@ -323,8 +326,8 @@ class BronBiala(Bron):
             powod = inst.args[0]
             Bot.output('Na celu nie zrobilo to zadnego wrazenia bo ' + powod)
             return False
-
-    def test_trafienia(self, operator, cel, zasieg=0):
+    """
+    def test_trafienia(self, operator, cel, zasieg=0, dodatkowe=0):
         wynik = operator.rzut_na_umiejetnasc(self.rodzaj_testu)
         wynik = wynik + self.premia
         if wynik > cel.rzut_na_umiejetnasc(self.rodzaj_testu):

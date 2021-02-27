@@ -11,17 +11,33 @@ class WalkaWrecz(akcje):
     """
     did without tests, and execution is not ready.
     """
+
     def uderz(self, operator, cel, zasieg=0): # TODO bez testow!!!!!
         try:
+            bron = []
+            if operator.aktywna_bron == []:
+                bron = operator.aktywna_bron =\
+                    items.BronBiala(['pięść', 0, 0, 0, 0, 'd2', '-', 'obuchowa', '$0,00'])
+            elif type(operator.aktywna_bron) is not items.BronBiala:
+                print("gunwo")
+                bron = operator.aktywna_bron.walka_wrecz
+                print("gunwo")
+            else:
+                bron = operator.aktywna_bron
             wynik = operator.rzut_na_umiejetnasc("walka wrecz")
-            if operator.aktywna_bron.zasieg_maksymalny < 2:
-                wynik = wynik + operator.aktywna_bron.premia
             odpowiedz = cel.rzut_na_umiejetnasc("walka wrecz")
-            if cel.aktywna_bron.zasieg_maksymalny < 2:
+            if bron.zasieg_maksymalny < zasieg:
+                raise Exception("nie dosięgnąłeś bronią wroga")
+            if bron.zasieg_maksymalny < 2:
+                print(operator.aktywna_bron.premia)
+                wynik = wynik + int(operator.aktywna_bron.premia) #TODO KURWA!!!
+            if cel.aktywna_bron == []:
+                odpowiedz = odpowiedz
+            elif cel.bron.zasieg_maksymalny < 2:
                 odpowiedz = odpowiedz + cel.aktywna_bron.premia
             if wynik > odpowiedz:
                 if wynik >= cel.bazowy_unik / 2:
-                    self.test_obrazen_z_egzekucja(cel)
+                    bron.test_obrazen_z_egzekucja(cel)
                     return True
                 else:
                     raise Exception('walczysz lepiej od wroga, ale wciąż nie jesteś w stanie go trafić')
@@ -30,11 +46,13 @@ class WalkaWrecz(akcje):
         except Exception as inst:
             powod = inst.args[0]
             Bot.output('Na celu nie zrobilo to zadnego wrazenia bo ' + powod)
+           # raise inst
+            return False
 
 
 class Shooting(akcje):
     @staticmethod
-    def strzal(operator, cel, odleglosc):
+    def strzal(operator, cel, odleglosc, tryb):
         return 0
 
     """

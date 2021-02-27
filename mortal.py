@@ -9,7 +9,7 @@ class IstotaZywa: #pełne pokrycie
     sila, zrecznasc, intelekt = 0, 0, 0,
     mod_sila, mod_zrecznosc, mod_intelekt = 0, 0, 0,
     status = True
-    drasniecia, lekka_rana, powazna_rana, krytyczna_rana = 0, 0, 0, 0,
+   # drasniecia, lekka_rana, powazna_rana, krytyczna_rana = 0, 0, 0, 0,
     rana_konczyny = [0, 0, 0, 0]
     rany = [0, 0, 0, 0, [0, 0, 0, 0]]
     redukcja_obrazen, typ_ochrony = 0, 0
@@ -20,7 +20,7 @@ class IstotaZywa: #pełne pokrycie
     unik = 10
     punktyWytrwalosci, przeznaczenie = 0, 0,
     udzwig = 0
-    umiejetnasci = constans.Umiejetnasci
+    umiejetnasci = []
     jezyki = [["angielski", 2], ["polski", 0]]
 
     def __init__(self, sila, zrecznasc, intelekt, imie="Bot", unik=10, redukcjaObrazen=0, typOchrony=0):
@@ -42,6 +42,12 @@ class IstotaZywa: #pełne pokrycie
         self.redukcja_obrazen = redukcjaObrazen
         if self.mod_sila == 3:
             self.redukcja_obrazen += 1
+        self.umiejetnasci = [[0], [0, 0, 0, 0, 2], [0, 0, 0, 0, 2], [0, 0, 0, 0, 3], [0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 2], [0, 0, 0, 0, 0], [0, 0, 0, 0, 5], [0, 0, 0, 0, 2], [0, 0, 0, 0, 2],
+                [0, 0, 0, 0, 6], [0, 0, 0, 0, 5], [0, 0, 0, 0, 5], [0, 0, 0, 0, 2], [0, 0, 0, 0, 3],
+                [0, 0, 0, 0, 3], [0, 0, 0, 0, 3], [0, 0, 0, 0, 3], [0, 0, 0, 0, 3], [0, 0, 0, 0, 3],
+                [0, 0, 0, 0, 3], [0, 0, 0, 0, 3], [0, 0, 0, 0, 3], [0, 0, 0, 0, 3], [0, 0, 0, 0, 3],
+                ]
         self.nastaw_umiejetnasci()
 
     def nastaw_unik(self):   #todo because of lack of equipment in code implemented.

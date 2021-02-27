@@ -6,6 +6,7 @@ import hero as hero
 import items_old as items_old
 import items as items
 import mechanics as mechanics
+import copy
 
 
 def sprawdz_jak_cel_oberwal(cel):
@@ -207,23 +208,29 @@ def test_dzialania_broni_strzeleckiej():
     return 13
 
 
-@test_runner
+#@test_runner
 #do przerobki zalkowitej - inaczej  sie atakuje
 def test_broni_bialej():
-    itemki = items_old.Przedmioty('')
+    ww = mechanics.WalkaWrecz()
+
+    wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"], "operejtor")
+    itemki = items.Przedmioty('')
     noz = itemki.luskacz_broni_bialej("nóż")
-    NOZ = items_old.BronBiala(noz)
-    wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
-    beben = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
-    assert not NOZ.atakuj(wojtek, beben, 0)
+    piesc = itemki.luskacz_broni_bialej("kolba")
+    NOZ = items.BronBiala(noz)
+    obrywa = hero.Postac(5, 5, 5, ["bron boczna", "karabiny", "bron krotka"], "obrywacz")
+    assert not ww.uderz(wojtek, obrywa, 0)
+    assert not ww.uderz(wojtek, obrywa, 1)
     wojtek.wykup_range("walka wrecz")
     wojtek.wykup_range("walka wrecz")
     wojtek.wykup_range("walka wrecz")
     wojtek.wykup_range("walka wrecz")
     wojtek.wykup_range("walka wrecz")
     wojtek.wykup_range("walka wrecz")
-    assert NOZ.atakuj(wojtek, beben, 0)
-    return 2
+    assert ww.uderz(wojtek, obrywa, 0)
+    wojtek.aktywna_bron = NOZ
+    assert ww.uderz(wojtek, obrywa, 0)
+    return 4
 
 
 
@@ -291,12 +298,13 @@ def test_mechanik_walki():
     assert not strzelanie.strzelaj(wojtek, beben, 50, "serie")
     wojtek.aktywna_bron.zaciagnij_naboj()
     assert strzelanie.strzelaj(wojtek, beben, 50, "serie")
-    print(wojtek.aktywna_bron.naboj_w_komorze)
     assert not strzelanie.strzelaj(wojtek, beben, 50, "serie")
     wojtek.aktywna_bron.zaciagnij_naboj()
     assert strzelanie.strzelaj(wojtek, beben, 50, "samoczynny")
     assert wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow == 8
-    return 8
+    wojtek.aktywna_bron.zaciagnij_naboj()
+    assert wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow == 7
+    return 9
 
 
 ilosc_testow_pass = 0
@@ -313,5 +321,5 @@ ilosc_testow_pass += test_dzialania_broni_strzeleckiej()
 ilosc_testow_pass += test_broni_bialej()
 ilosc_testow_pass += test_mechanik_walki()
 ilosc_testow_pass += test_amunicji_i_magazynkow()
-print("przeszlo " + str(ilosc_testow_pass) + " testow \nJest to " + str(ilosc_testow_pass/81 * 100) + "% testów.")
+print("przeszlo " + str(ilosc_testow_pass) + " testow \nJest to " + str(ilosc_testow_pass/84 * 100) + "% testów.")
 #unittest.main()

@@ -104,32 +104,32 @@ Umiejetnosci = {
     for Inteligence, 4 is for Power or Inteligence, 5 is for Dexerity or Inteligence, 6 is for Power or Dexerity.
 """
 
-Umiejetnasci = [[0],
-               [0, 0, 0, 0, 2],
-               [0, 0, 0, 0, 2],
-               [0, 0, 0, 0, 3],
-               [0, 0, 0, 0, 0],
-               [0, 0, 0, 0, 2],
-               [0, 0, 0, 0, 0],
-               [0, 0, 0, 0, 5],
-               [0, 0, 0, 0, 2], #prowadzeinie pojazdu
-               [0, 0, 0, 0, 2],
-               [0, 0, 0, 0, 6],
-               [0, 0, 0, 0, 5],
-               [0, 0, 0, 0, 5],
-               [0, 0, 0, 0, 2],
-               [0, 0, 0, 0, 3],
-               [0, 0, 0, 0, 3],
-               [0, 0, 0, 0, 3],
-               [0, 0, 0, 0, 3], #nastepne sa juz odmianami dyscypliny naukowej itd.
-               [0, 0, 0, 0, 3],
-               [0, 0, 0, 0, 3],
-               [0, 0, 0, 0, 3],
-               [0, 0, 0, 0, 3],
-               [0, 0, 0, 0, 3],
-               [0, 0, 0, 0, 3],
-               [0, 0, 0, 0, 3],
-               ]
+umiejetnasci = [[0],
+                [0, 0, 0, 0, 2],
+                [0, 0, 0, 0, 2],
+                [0, 0, 0, 0, 3],
+                [0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 2],
+                [0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 5],
+                [0, 0, 0, 0, 2],  #prowadzeinie pojazdu
+                [0, 0, 0, 0, 2],
+                [0, 0, 0, 0, 6],
+                [0, 0, 0, 0, 5],
+                [0, 0, 0, 0, 5],
+                [0, 0, 0, 0, 2],
+                [0, 0, 0, 0, 3],
+                [0, 0, 0, 0, 3],
+                [0, 0, 0, 0, 3],
+                [0, 0, 0, 0, 3],  #nastepne sa juz odmianami dyscypliny naukowej itd.
+                [0, 0, 0, 0, 3],
+                [0, 0, 0, 0, 3],
+                [0, 0, 0, 0, 3],
+                [0, 0, 0, 0, 3],
+                [0, 0, 0, 0, 3],
+                [0, 0, 0, 0, 3],
+                [0, 0, 0, 0, 3],
+                ]
 
 """
 It's providing table of activation. Made into tuple, for optimalisation cause.
