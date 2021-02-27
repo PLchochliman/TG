@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TabelaBroni.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constans.py" beforeDir="false" afterPath="$PROJECT_DIR$/constans.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/items.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mechanics.py" beforeDir="false" afterPath="$PROJECT_DIR$/mechanics.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mortal.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortal.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -197,13 +193,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00023" summary="added predisposition, with tests.">
-      <created>1612560395084</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1612560395084</updated>
     </task>
     <task id="LOCAL-00024" summary="Battle sence finally propered used.  next Languages.">
       <created>1612632198035</created>
@@ -541,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614336189912</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Naprawiono buga z umiejętnościami, oraz walka wręcz, podstawowe klepanie isę działa.">
+      <created>1614442744042</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1614442744042</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -557,7 +553,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="calkowity rework strzelania" />
     <MESSAGE value="Dalej próbuję ale jeszcze jest parę błędów do zaszpachlowania w samej konstrukcji - jak zwykle unit testy prawdę powiedziały." />
     <MESSAGE value="naprawione podstawowe atakuj strzelania, implementując wszystkie tryby strzelania." />
     <MESSAGE value="zmiana komunikatów obrażeń" />
@@ -582,7 +577,8 @@
     <MESSAGE value="zgadnijcie co znowu nie działało xD zuzycie dla ba, bo blokada działała, jak wszystko było w jednej funkcji. Teraz śmiga." />
     <MESSAGE value="parser testów zrobiony" />
     <MESSAGE value="did default magazine for the gun at init, also did good testing of gun. Also you can't unload ammo to any package. and tests. quite a lot of them." />
-    <option name="LAST_COMMIT_MESSAGE" value="did default magazine for the gun at init, also did good testing of gun. Also you can't unload ammo to any package. and tests. quite a lot of them." />
+    <MESSAGE value="Naprawiono buga z umiejętnościami, oraz walka wręcz, podstawowe klepanie isę działa." />
+    <option name="LAST_COMMIT_MESSAGE" value="Naprawiono buga z umiejętnościami, oraz walka wręcz, podstawowe klepanie isę działa." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

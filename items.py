@@ -246,6 +246,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
         self.statystyki_podstawowe = bron
         self.__nastaw_celownik(celownik)
         self.amunicja = amunicja
+        self.naboj_w_komorze = False
         if magazynek == "":
             self.aktualny_magazynek = Magazynek(self)
         self.zasady_specjalne = bron[7].split(",")

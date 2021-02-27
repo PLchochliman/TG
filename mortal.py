@@ -9,9 +9,7 @@ class IstotaZywa: #pełne pokrycie
     sila, zrecznasc, intelekt = 0, 0, 0,
     mod_sila, mod_zrecznosc, mod_intelekt = 0, 0, 0,
     status = True
-   # drasniecia, lekka_rana, powazna_rana, krytyczna_rana = 0, 0, 0, 0,
-    rana_konczyny = [0, 0, 0, 0]
-    rany = [0, 0, 0, 0, [0, 0, 0, 0]]
+    rany = []
     redukcja_obrazen, typ_ochrony = 0, 0
     imie = ""
     typ_budowy = []
@@ -21,7 +19,7 @@ class IstotaZywa: #pełne pokrycie
     punktyWytrwalosci, przeznaczenie = 0, 0,
     udzwig = 0
     umiejetnasci = []
-    jezyki = [["angielski", 2], ["polski", 0]]
+    jezyki = []
 
     def __init__(self, sila, zrecznasc, intelekt, imie="Bot", unik=10, redukcjaObrazen=0, typOchrony=0):
         self.sila = sila
@@ -39,6 +37,8 @@ class IstotaZywa: #pełne pokrycie
         self.przeznaczenie = self.mod_intelekt + 1
         self.typ_ochrony = typOchrony
         self.udzwig = self.sila * 5
+        self.rany = [0, 0, 0, 0, [0, 0, 0, 0]]
+        self.jezyki = [["angielski", 2], ["polski", 0]]
         self.redukcja_obrazen = redukcjaObrazen
         if self.mod_sila == 3:
             self.redukcja_obrazen += 1
@@ -161,8 +161,8 @@ class IstotaZywa: #pełne pokrycie
 
     def kara(self):
         minus = self.rany[1] * 3 + self.rany[2] * 5
-        for i in range(0, len(self.rana_konczyny)):
-            if self.rana_konczyny[i] == 1:
+        for i in range(0, len(self.rany[4])):
+            if self.rany[4][i] == 1:
                 Bot.output("Pamietaj ze ranna jest twoja " + constans.Konczyna[i] + "\n Domyslna dodatkowa kara z tego wynikajaca jest to -4")
         return minus
 
