@@ -17,7 +17,7 @@ class WalkaWrecz(akcje):
             bron = []
             if operator.aktywna_bron == []:
                 bron = operator.aktywna_bron =\
-                    items.BronBiala(['pięść', 0, 0, 0, 0, 'd2', '-', 'obuchowa', '$0,00'])
+                    items.BronBiala(['pięść', 0, 0, 0, 0, 'd2', 'x', 'obuchowa', '$0,00'])
             elif type(operator.aktywna_bron) is not items.BronBiala:
                 print("gunwo")
                 bron = operator.aktywna_bron.walka_wrecz
@@ -74,7 +74,6 @@ class Shooting(akcje):
                 Bot.output("Po nacisnieciu spustu, lufę opóścił tylko 1 nabój. "
                            "Następnym razem sprawdź z czego strzelasz")
         return tryb
-
 
     """
     deals damage to "cel", by gun, and additional modifier (if apply), and many times if nessesary.

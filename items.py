@@ -252,7 +252,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
         self.zasady_specjalne = bron[7].split(",")
         self.oczysc_zasady_specjalne()
         self.szybkostrzelnosc = bron[2]
-        self.walka_wrecz = BronBiala(['kolba/pięść', 0, '-', '-', 0, 'd2', '-', 'obuchowa', '$0,00'])
+        self.walka_wrecz = BronBiala(['kolba', 0, 0, 0, 0, 'd2', 'x', 'obuchowa', '$0,00'])
 
     def odrzut(self, opetator):
         redukcja = self.odrzut_aktualny + opetator.mod_sila
