@@ -102,20 +102,54 @@ class Magazynek():
     maksymalna_pojemnosc: int = 0
     amunicja = []
     rodzina = ""
+    typ_magazynka = ""
 
-    def __init__(self, bron, typ="podstawowy", naboje_z_paczki_amunicji=""):
+    def __init__(self, bron, typ="", naboje_z_paczki_amunicji=""):
         self.maksymalna_pojemnosc = bron.statystyki_podstawowe[9]
-        self.__zaladuj_rodzine(bron)
+        self.__zaladuj_rodzine_i_typ(bron, typ)
 
     """
     cheks if magazine WHICH YOU BUY is special for purposes of avaibility of feeding another gun
     """
-    def __zaladuj_rodzine(self, bron):
+    #TODO NIE MA:typów taśm, podziału na pistoletowe, łudeczek, ani obsługi zintegrowqanych magazynkóW!!!
+    def __zaladuj_rodzine_i_typ(self, bron, typ):
+        podstawowy_jest_specjalny = False
         for i in bron.zasady_specjalne:
             if i in ("ar", "sr25", "g36", "glock", "g3", "as", "akm", "ak74"):
                 self.rodzina = i
+            if i in ("powiększone magazynki", "taśma", "taśma i stanagi", "bębnowy magazynek"):
+                self.typ_magazynka = i
+                podstawowy_jest_specjalny = True
+                if typ == "":
+                    typ = i
+                if i == "taśma i stanagi":
+                    self.typ_magazynka = "taśma"
+                    if typ == "":
+                        typ = i
         if self.rodzina == "":
             self.rodzina = bron.statystyki_podstawowe[0]
+        if typ == "":
+            return True
+        if typ == "podstawowy":
+            if podstawowy_jest_specjalny:
+                if self.typ_magazynka in ("powiększone magazynki", "bębnowy magazynek"):
+                    self.typ_magazynka = typ
+                    self.maksymalna_pojemnosc = 30
+                    return True
+        if typ == "powiększone magazynki":
+            if podstawowy_jest_specjalny:
+                if self.typ_magazynka in ("bębnowy magazynek"):
+                    self.typ_magazynka = typ
+                    self.maksymalna_pojemnosc = 45
+                    return True
+        else:
+            self.typ_magazynka = typ
+            self.maksymalna_pojemnosc = int(self.maksymalna_pojemnosc * 1.5)
+            return True
+        if typ == "bębnowy magazynek":
+            self.typ_magazynka = typ
+            self.maksymalna_pojemnosc = 100
+            return True
 
     """
     cheks if magazine is special for purposes of avaibility of feeding another gun, to be checked after reload
