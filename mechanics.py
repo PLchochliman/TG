@@ -3,11 +3,12 @@ import items as items
 import Bot as Bot
 
 
-class akcje():
+class Akcje():
+    # teoretyczniue to w tym się wszystko będzie rozgrywać....
     costam = 0
 
 
-class WalkaWrecz(akcje):
+class WalkaWrecz():
     """
     did without tests, and execution is not ready.
     """
@@ -50,7 +51,7 @@ class WalkaWrecz(akcje):
             return False
 
 
-class Shooting(akcje):
+class Shooting():
     @staticmethod
     def strzal(operator, cel, odleglosc, tryb):
         return 0

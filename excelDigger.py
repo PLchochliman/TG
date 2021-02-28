@@ -18,7 +18,7 @@ class Loader: #pelne pokrycie
         self.sorowka = []
 
     """
-    loads the sheet from document (you provide name, and end cel
+    loads the sheet from document (you provide name, and end cell)
     """
 
     def zaladuj_arkusz(self, arkusz, zasieg):

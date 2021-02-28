@@ -238,6 +238,10 @@ class BronStrzelecka(Bron): #pełne pokrycie
     szybkostrzelnosc = 0
     odrzut_aktualny = 0
     walka_wrecz = []
+    porecznosc = 0
+    # zasady do poktycia - będnowy magazynek, Magazynek rurowy, Kobyła, CIężka, Pełna komora, Podwójny magazynek rurowy
+    # Powiększone magazynki,Poręczna,  taśma, taśma i stanagi  zintegrowany(x)
+    # Strzelba, snajperka Pośrednia,
 
 # if is smaller than 5 then it makes work for increased penalty for range, because of shit instead of sights
     # TODO do przeróbki

@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/excelDigger.py" beforeDir="false" afterPath="$PROJECT_DIR$/excelDigger.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/items_old.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mechanics.py" beforeDir="false" afterPath="$PROJECT_DIR$/mechanics.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -193,13 +196,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Battle sence finally propered used. redone test (was print instead of assert.  next Languages.">
-      <created>1612635542805</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1612635542805</updated>
     </task>
     <task id="LOCAL-00026" summary="jezyki zrobione, wraz z testem">
       <created>1612750710459</created>
@@ -537,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614443386736</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="drobne literowki">
+      <created>1614470627747</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1614470627751</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -553,7 +556,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="naprawione podstawowe atakuj strzelania, implementując wszystkie tryby strzelania." />
     <MESSAGE value="zmiana komunikatów obrażeń" />
     <MESSAGE value="dorobienie testow" />
     <MESSAGE value="naprawa czesci testow + ograczenia za FA" />
@@ -578,19 +580,20 @@
     <MESSAGE value="did default magazine for the gun at init, also did good testing of gun. Also you can't unload ammo to any package. and tests. quite a lot of them." />
     <MESSAGE value="Naprawiono buga z umiejętnościami, oraz walka wręcz, podstawowe klepanie isę działa." />
     <MESSAGE value="konsekwentny debug rzeczy, zanim same się wykopcą." />
-    <option name="LAST_COMMIT_MESSAGE" value="konsekwentny debug rzeczy, zanim same się wykopcą." />
+    <MESSAGE value="drobne literowki" />
+    <option name="LAST_COMMIT_MESSAGE" value="drobne literowki" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mechanics.py</url>
-          <line>130</line>
+          <line>131</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mechanics.py</url>
-          <line>132</line>
+          <line>133</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>

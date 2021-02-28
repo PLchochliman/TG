@@ -3,10 +3,8 @@ import constans as constants
 import Bot as Bot
 import excelDigger as excelDigger
 import hero as hero
-import items_old as items_old
 import items as items
 import mechanics as mechanics
-import copy
 
 
 def sprawdz_jak_cel_oberwal(cel):
