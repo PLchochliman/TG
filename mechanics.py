@@ -5,14 +5,33 @@ import Bot as Bot
 
 class Akcje():
     # teoretyczniue to w tym się wszystko będzie rozgrywać....
-    costam = 0
+    tura = 0
+    faza = 0
+    walka_wrecz = []
+    strzelanie = []
+
+    def __init__(self, tura=0, faza=0):
+        self.tura = tura
+        self.faza = faza
+        self.walka_wrecz = WalkaWrecz()
+        self.strzelanie = Strzelanie()
+
+    def kolejna_faza(self, faza=1):
+        if faza > 5:
+            self.tura = self.tura + int(faza / 6)
+            self.kolejna_faza((faza % 6))
+            return True
+        self.faza = self.faza + faza
+        if self.faza > 5:
+            self.tura = self.tura + 1
+            self.faza = self.faza - 6
+        return True
 
 
 class WalkaWrecz():
     """
     did without tests, and execution is not ready.
     """
-
     def uderz(self, operator, cel, zasieg=0): # TODO bez testow!!!!!
         try:
             bron = []
@@ -51,16 +70,12 @@ class WalkaWrecz():
             return False
 
 
-class Shooting():
-    @staticmethod
-    def strzal(operator, cel, odleglosc, tryb):
-        return 0
-
+class Strzelanie():
     """
     failuje w momencie kiedy operator nie moze trafic celu. Przekierowuje wszystko do broni na ten moment.
     """
 
-    def test_trafienia(self, operator, cel, dodatkowe, zasieg):
+    def __test_trafienia(self, operator, cel, dodatkowe, zasieg):
         return int(operator.aktywna_bron.test_trafienia(operator, cel, dodatkowe, zasieg))
 
     """
@@ -88,7 +103,7 @@ class Shooting():
         """
 # oraz nie daje możliwości do strzelania 2 wrogów naRaz.
 # nie sprawdza równierz kar za różne zasięgi.
-    def strzelaj(self, operator, cel, zasieg, tryb="pojedynczy"):
+    def strzal(self, operator, cel, zasieg, tryb="pojedynczy"):
         try:
             if tryb not in ("pojedynczy", "pelne skupienie", "samoczynny", "serie"):
                 raise Exception("nie ma takiego trybu. Dostępne tryby to: pojedynczy, pelne skupienie, samoczynny, serie")
@@ -97,7 +112,7 @@ class Shooting():
             if tryb == "pelne skupienie":
                 dodatkowe = Bot.roll_dice_from_text("3d6")
                 zasieg = zasieg/2
-            wynik = self.test_trafienia(operator, cel, dodatkowe, zasieg) #failuje juz z wyjatku testu trafienia
+            wynik = self.__test_trafienia(operator, cel, dodatkowe, zasieg) #failuje juz z wyjatku testu trafienia
             ilosc_trafien = self.__zuzycie(operator.aktywna_bron, tryb)
             if wynik > 0:
                 if tryb in ("pojedynczy", "pelne skupienie"):

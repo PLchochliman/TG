@@ -260,7 +260,6 @@ def test_amunicji_i_magazynkow():
     return 8
 
 
-#trzeba go dorobic
 @test_runner
 def test_mechanik_walki():
     Bot.output("test samej walki")
@@ -273,19 +272,19 @@ def test_mechanik_walki():
     mag.zaladuj_magazynek(NATO)
     M4KA.zmien_magazynek(mag)
     M4KA.zaciagnij_naboj()
-    strzelanie = mechanics.Shooting()
+    strzelanie = mechanics.Strzelanie()
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     wojtek.aktywna_bron = M4KA
     beben = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
-    x = strzelanie.strzelaj(wojtek, beben, 50, "pojedynczy")
+    x = strzelanie.strzal(wojtek, beben, 50, "pojedynczy")
     wojtek.wykup_range("strzelectwo")
     wojtek.wykup_range("strzelectwo")
     wojtek.wykup_range("strzelectwo")
     wojtek.wykup_range("strzelectwo")
     wojtek.wykup_range("strzelectwo")
-    x = x + strzelanie.strzelaj(wojtek, beben, 50, "serie")
-    x = x + strzelanie.strzelaj(wojtek, beben, 50, "samoczynny")
-    x = x + strzelanie.strzelaj(wojtek, beben, 50, "pojedynczy")
+    x = x + strzelanie.strzal(wojtek, beben, 50, "serie")
+    x = x + strzelanie.strzal(wojtek, beben, 50, "samoczynny")
+    x = x + strzelanie.strzal(wojtek, beben, 50, "pojedynczy")
     assert wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow == 12
     scout = itemki.luskacz_broni("steyr scout")
     scout = items.BronStrzelecka(scout)
@@ -293,16 +292,24 @@ def test_mechanik_walki():
     mag_scout.zaladuj_magazynek(NATO)
     scout.zmien_magazynek(mag_scout)
     wojtek.aktywna_bron = scout
-    assert not strzelanie.strzelaj(wojtek, beben, 50, "serie")
+    assert not strzelanie.strzal(wojtek, beben, 50, "serie")
     wojtek.aktywna_bron.zaciagnij_naboj()
-    assert strzelanie.strzelaj(wojtek, beben, 50, "serie")
-    assert not strzelanie.strzelaj(wojtek, beben, 50, "serie")
+    assert strzelanie.strzal(wojtek, beben, 50, "serie")
+    assert not strzelanie.strzal(wojtek, beben, 50, "serie")
     wojtek.aktywna_bron.zaciagnij_naboj()
-    assert strzelanie.strzelaj(wojtek, beben, 50, "samoczynny")
+    assert strzelanie.strzal(wojtek, beben, 50, "samoczynny")
     assert wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow == 8
     wojtek.aktywna_bron.zaciagnij_naboj()
     assert wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow == 7
     return 9
+
+@test_runner
+def test_akcji():
+    akcja = mechanics.Akcje()
+    assert akcja.kolejna_faza(15)
+    assert akcja.tura == 2
+    assert akcja.faza == 3
+    return 3
 
 
 ilosc_testow_pass = 0
@@ -314,10 +321,10 @@ ilosc_testow_pass += test_umiejetnosci_i_aktywacji()
 ilosc_testow_pass += test_wykupowania_umiejetnosci_z_obnizeniem_przez_specjalizacje()
 ilosc_testow_pass += test_jezykow()
 ilosc_testow_pass += test_przedmiotow()
-#test_dzialania_broni()
 ilosc_testow_pass += test_dzialania_broni_strzeleckiej()
 ilosc_testow_pass += test_broni_bialej()
 ilosc_testow_pass += test_mechanik_walki()
 ilosc_testow_pass += test_amunicji_i_magazynkow()
-print("przeszlo " + str(ilosc_testow_pass) + " testow \nJest to " + str(ilosc_testow_pass/84 * 100) + "% testów.")
+ilosc_testow_pass += test_akcji()
+print("przeszlo " + str(ilosc_testow_pass) + " testow \nJest to " + str(ilosc_testow_pass/87 * 100) + "% testów.")
 #unittest.main()
