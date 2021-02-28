@@ -117,7 +117,7 @@ class Magazynek():
         for i in bron.zasady_specjalne:
             if i in ("ar", "sr25", "g36", "glock", "g3", "as", "akm", "ak74"):
                 self.rodzina = i
-            if i in ("powiększone magazynki", "taśma", "taśma i stanagi", "bębnowy magazynek"):
+            if i in ("powiększone magazynki", "taśma", "taśma i stanagi", "bębnowy magazynek", "łódeczki"):
                 self.typ_magazynka = i
                 podstawowy_jest_specjalny = True
                 if typ == "":
@@ -147,6 +147,16 @@ class Magazynek():
             self.maksymalna_pojemnosc = int(self.maksymalna_pojemnosc * 1.5)
             return True
         if typ == "bębnowy magazynek":
+            for i in bron.zasady_specjalne:
+                if i in ("pistolet", "pistolet maszynowy"):
+                    self.typ_magazynka = typ
+                    self.maksymalna_pojemnosc = 50
+                    return True
+                if i == "strzelba":
+                    self.typ_magazynka = typ
+                    self.maksymalna_pojemnosc = 32
+                    return True
+            #srobic dla strzelby i pmów!!!
             self.typ_magazynka = typ
             self.maksymalna_pojemnosc = 100
             return True
@@ -273,6 +283,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
     odrzut_aktualny = 0
     walka_wrecz = []
     porecznosc = 0
+    wymienny_magazynek = 0
     # zasady do poktycia - będnowy magazynek, Magazynek rurowy, Kobyła, CIężka, Pełna komora, Podwójny magazynek rurowy
     # Powiększone magazynki,Poręczna,  taśma, taśma i stanagi  zintegrowany(x)
     # Strzelba, snajperka Pośrednia,
@@ -287,10 +298,18 @@ class BronStrzelecka(Bron): #pełne pokrycie
         self.naboj_w_komorze = False
         if magazynek == "":
             self.aktualny_magazynek = Magazynek(self)
+            self.wymienny_magazynek = True
         self.zasady_specjalne = bron[7].split(",")
         self.oczysc_zasady_specjalne()
+        for i in self.zasady_specjalne:
+            if i in ("podwójny magazynek rurowy", "magazynek rurowy", "łódeczki"):
+                self.__zamontuj_magazynek_staly()
         self.szybkostrzelnosc = bron[2]
         self.walka_wrecz = BronBiala(['kolba', 0, 0, 0, 0, 'd2', 'x', 'obuchowa', '$0,00'])
+
+    def __zamontuj_magazynek_staly(self):
+        self.wymienny_magazynek = False
+
 
     def odrzut(self, opetator):
         redukcja = self.odrzut_aktualny + opetator.mod_sila
@@ -322,6 +341,18 @@ class BronStrzelecka(Bron): #pełne pokrycie
         self.premia = self.premia + self.statystyki_celownika[1]
 
     def zmien_magazynek(self, magazynek):
+        if not self.wymienny_magazynek:
+            if magazynek.typ_magazynka == "łódeczki":
+                pustka = self.aktualny_magazynek.maksymalna_pojemnosc - self.aktualny_magazynek.stan_nabojow
+                if magazynek.aktualny_magazynek.stan_nabojow >= pustka:
+                    self.aktualny_magazynek.stan_nabojow = self.aktualny_magazynek.stan_nabojow + pustka
+                    magazynek.aktualny_magazynek.stan_nabojow = magazynek.aktualny_magazynek.stan_nabojow - pustka
+                else:
+                    self.aktualny_magazynek.stan_nabojow = self.aktualny_magazynek.stan_nabojow + magazynek.aktualny_magazynek.stan_nabojow
+                    magazynek.aktualny_magazynek.stan_nabojow = 0
+                return True
+            Bot.output("Ta broń ma stały magazynek!\n")
+            return False
         odloz = self.aktualny_magazynek
         self.aktualny_magazynek = magazynek
         self.kosc_obrazen = magazynek.amunicja.kosc_obrazen

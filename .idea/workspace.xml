@@ -193,20 +193,6 @@
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
     </task>
-    <task id="LOCAL-00028" summary="renamed system to bot, due to idiotism of first naming.">
-      <created>1612814229486</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1612814229486</updated>
-    </task>
-    <task id="LOCAL-00029" summary="added basic load of guns.">
-      <created>1612830792897</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1612830792897</updated>
-    </task>
     <task id="LOCAL-00030" summary="refactor due to PIP8.&#10;Finally understood, for what it is.">
       <created>1612890881668</created>
       <option name="number" value="00030" />
@@ -536,7 +522,21 @@
       <option name="project" value="LOCAL" />
       <updated>1614514455238</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="podejście do magazynków, jeszcze bez dużych przeróbek.&#10;na razie podstawowe dobrze działają.">
+      <created>1614535115762</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1614535115762</updated>
+    </task>
+    <task id="LOCAL-00078" summary="prototyp specek - tak aby były rozumiane przez gre.">
+      <created>1614539389209</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1614539389239</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -552,8 +552,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="naprawa czesci testow + ograczenia za FA" />
-    <MESSAGE value="Walka wrecz bez testow" />
     <MESSAGE value="zalążek magazynków i amunicji" />
     <MESSAGE value="zalążek magazynków i amunicji, chyba do zaorania???" />
     <MESSAGE value="powoli przymierzam się do zrobienia magów i amunicja" />
@@ -577,7 +575,9 @@
     <MESSAGE value="drobne literowki" />
     <MESSAGE value="usunięto items_old&#10;wytyczono nowy plan - pomysł na prowadzenie akcji" />
     <MESSAGE value="pierwsze testy akcji, oraz poprawki." />
-    <option name="LAST_COMMIT_MESSAGE" value="pierwsze testy akcji, oraz poprawki." />
+    <MESSAGE value="podejście do magazynków, jeszcze bez dużych przeróbek.&#10;na razie podstawowe dobrze działają." />
+    <MESSAGE value="prototyp specek - tak aby były rozumiane przez gre." />
+    <option name="LAST_COMMIT_MESSAGE" value="prototyp specek - tak aby były rozumiane przez gre." />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
