@@ -178,7 +178,7 @@ def test_dzialania_broni():
 """
 
 
-@test_runner
+#@test_runner
 def test_dzialania_broni_strzeleckiej():
     itemki = items.Przedmioty('')
     m4ka = itemki.luskacz_broni("m4a1")
@@ -202,15 +202,28 @@ def test_dzialania_broni_strzeleckiej():
     assert M4KA.aktualny_magazynek.wyladuj_amunicje(NATO)
     assert NATO.ilosc_amunicji == 75
     assert not M4KA.zaciagnij_naboj()
-    Bot.output("TEN TEST BRONI STRZELECKIEJ JEST NEDOROBIONY, bo Bron palna ni chuja nie jest skonczona!")
-    return 13
+    mosin = itemki.luskacz_broni("mosin nagant")
+    mosin = items.BronStrzelecka(mosin)
+    wojtek.aktywna_bron = mosin
+    radziecka = itemki.luskacz_amunicji("7,62 x 54 r")
+    czerwona = items.Amunicja(radziecka)
+    stal = items.Magazynek(mosin)
+    stal.zaladuj_magazynek(czerwona)
+    print(stal.stan_nabojow)
+    #TODO coś nie tak z amunicją i jej zaciąganiem
+    assert wojtek.aktywna_bron.zmien_magazynek(stal)
+    assert wojtek.aktywna_bron.zaciagnij_naboj()
+    mag = items.Magazynek(mosin)
+    mag.zaladuj_magazynek(czerwona)
+    print("prawie")
+    assert wojtek.aktywna_bron.zmien_magazynek(mag)
+    return 16
 
 
 #@test_runner
 #do przerobki zalkowitej - inaczej  sie atakuje
 def test_broni_bialej():
     ww = mechanics.WalkaWrecz()
-
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"], "operejtor")
     itemki = items.Przedmioty('')
     noz = itemki.luskacz_broni_bialej("nóż")
@@ -228,7 +241,11 @@ def test_broni_bialej():
     assert ww.uderz(wojtek, obrywa, 0)
     wojtek.aktywna_bron = NOZ
     assert ww.uderz(wojtek, obrywa, 0)
-    return 4
+    m4ka = itemki.luskacz_broni("m4a1")
+    M4KA = items.BronStrzelecka(m4ka)
+    wojtek.aktywna_bron = M4KA
+    assert ww.uderz(wojtek, obrywa, 0)
+    return 5
 
 
 
@@ -257,7 +274,23 @@ def test_amunicji_i_magazynkow():
     M4KA.zaciagnij_naboj()
     assert M4KA.aktualny_magazynek.stan_nabojow == 29
     assert M4KA.naboj_w_komorze
-    return 8
+    #test z łódeczkami jest w teście broni
+    # taśma - FN MAG
+    #870 MCS
+
+    srut = itemki.luskacz_amunicji("12g")
+    Srut = items.Amunicja(srut)
+    mcs = itemki.luskacz_broni("870 mcs")
+    MCS = items.BronStrzelecka(mcs)
+    rura = items.Magazynek(MCS)
+    rura.zaladuj_magazynek(Srut)
+    print(MCS.wymienny_magazynek)
+    print(MCS.zasady_specjalne)
+    assert not MCS.zmien_magazynek(rura)
+    assert MCS.aktualny_magazynek.zaladuj_magazynek(Srut)
+
+
+    return 10
 
 
 @test_runner
@@ -326,5 +359,5 @@ ilosc_testow_pass += test_broni_bialej()
 ilosc_testow_pass += test_mechanik_walki()
 ilosc_testow_pass += test_amunicji_i_magazynkow()
 ilosc_testow_pass += test_akcji()
-print("przeszlo " + str(ilosc_testow_pass) + " testow \nJest to " + str(ilosc_testow_pass/87 * 100) + "% testów.")
+print("przeszlo " + str(ilosc_testow_pass) + " testow \nJest to " + str(ilosc_testow_pass/93 * 100) + "% testów.")
 #unittest.main()

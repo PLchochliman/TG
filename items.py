@@ -267,7 +267,7 @@ class Bron: #pełne pokrycie
 
     def oczysc_zasady_specjalne(self):
         for i in range(0, len(self.zasady_specjalne)):
-            self.zasady_specjalne[i] = self.zasady_specjalne[i].strip
+            self.zasady_specjalne[i] = self.zasady_specjalne[i].strip()
 
 
 # TODO specjalna amunicja, zasady specjalne broni, możliwość wpływu specjalizacji.
@@ -344,14 +344,13 @@ class BronStrzelecka(Bron): #pełne pokrycie
         if not self.wymienny_magazynek:
             if magazynek.typ_magazynka == "łódeczki":
                 pustka = self.aktualny_magazynek.maksymalna_pojemnosc - self.aktualny_magazynek.stan_nabojow
-                if magazynek.aktualny_magazynek.stan_nabojow >= pustka:
+                if magazynek.stan_nabojow >= pustka:
                     self.aktualny_magazynek.stan_nabojow = self.aktualny_magazynek.stan_nabojow + pustka
-                    magazynek.aktualny_magazynek.stan_nabojow = magazynek.aktualny_magazynek.stan_nabojow - pustka
+                    magazynek.stan_nabojow = magazynek.stan_nabojow - pustka
                 else:
-                    self.aktualny_magazynek.stan_nabojow = self.aktualny_magazynek.stan_nabojow + magazynek.aktualny_magazynek.stan_nabojow
-                    magazynek.aktualny_magazynek.stan_nabojow = 0
+                    self.aktualny_magazynek.stan_nabojow = self.aktualny_magazynek.stan_nabojow + magazynek.stan_nabojow
+                    magazynek.stan_nabojow = 0
                 return True
-            Bot.output("Ta broń ma stały magazynek!\n")
             return False
         odloz = self.aktualny_magazynek
         self.aktualny_magazynek = magazynek
@@ -374,7 +373,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
                 Bot.output("Naboje nie pasuja do broni!")
                 return False
         except AttributeError:
-            if self.aktualny_magazynek.amunicja == []:
+            if not self.aktualny_magazynek.amunicja:
                 Bot.output("magazynek nie jest zaladowany nabojami!")
                 return False
             raise AttributeError

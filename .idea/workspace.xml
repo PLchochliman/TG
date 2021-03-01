@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TabelaBroni.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/items.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -192,13 +194,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00030" summary="refactor due to PIP8.&#10;Finally understood, for what it is.">
-      <created>1612890881668</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1612890881669</updated>
     </task>
     <task id="LOCAL-00031" summary="items implementation partly done. no ammo done, or non table equipment.">
       <created>1613000254389</created>
@@ -536,7 +531,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614539389239</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="prototyp stałego magazynka, jeszcze nie skończone.">
+      <created>1614555502763</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1614555502764</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -552,7 +554,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="zalążek magazynków i amunicji" />
     <MESSAGE value="zalążek magazynków i amunicji, chyba do zaorania???" />
     <MESSAGE value="powoli przymierzam się do zrobienia magów i amunicja" />
     <MESSAGE value="skrócenie działania tego, bo było źle." />
@@ -577,9 +578,29 @@
     <MESSAGE value="pierwsze testy akcji, oraz poprawki." />
     <MESSAGE value="podejście do magazynków, jeszcze bez dużych przeróbek.&#10;na razie podstawowe dobrze działają." />
     <MESSAGE value="prototyp specek - tak aby były rozumiane przez gre." />
-    <option name="LAST_COMMIT_MESSAGE" value="prototyp specek - tak aby były rozumiane przez gre." />
+    <MESSAGE value="prototyp stałego magazynka, jeszcze nie skończone." />
+    <option name="LAST_COMMIT_MESSAGE" value="prototyp stałego magazynka, jeszcze nie skończone." />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/items.py</url>
+          <line>346</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/items.py</url>
+          <line>350</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/items.py</url>
+          <line>348</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="wojtek.aktywna_bron.zasieg_maksymalny" />
