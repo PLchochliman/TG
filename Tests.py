@@ -209,13 +209,11 @@ def test_dzialania_broni_strzeleckiej():
     czerwona = items.Amunicja(radziecka)
     stal = items.Magazynek(mosin)
     stal.zaladuj_magazynek(czerwona)
-    print(stal.stan_nabojow)
     #TODO coś nie tak z amunicją i jej zaciąganiem
     assert wojtek.aktywna_bron.zmien_magazynek(stal)
     assert wojtek.aktywna_bron.zaciagnij_naboj()
     mag = items.Magazynek(mosin)
     mag.zaladuj_magazynek(czerwona)
-    print("prawie")
     assert wojtek.aktywna_bron.zmien_magazynek(mag)
     return 16
 

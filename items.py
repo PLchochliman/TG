@@ -345,6 +345,11 @@ class BronStrzelecka(Bron): #pełne pokrycie
             if magazynek.typ_magazynka == "łódeczki":
                 pustka = self.aktualny_magazynek.maksymalna_pojemnosc - self.aktualny_magazynek.stan_nabojow
                 if magazynek.stan_nabojow >= pustka:
+                    if self.aktualny_magazynek.stan_nabojow == 0:
+                        self.aktualny_magazynek.amunicja = magazynek.amunicja
+                        self.kosc_obrazen = magazynek.amunicja.kosc_obrazen
+                        self.penetracja = self.penetracja_to_int(magazynek.amunicja.penetracja)
+                        self.odrzut_aktualny = magazynek.amunicja.odrzut
                     self.aktualny_magazynek.stan_nabojow = self.aktualny_magazynek.stan_nabojow + pustka
                     magazynek.stan_nabojow = magazynek.stan_nabojow - pustka
                 else:

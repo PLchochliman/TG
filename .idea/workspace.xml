@@ -7,7 +7,6 @@
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TabelaBroni.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/items.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -194,13 +193,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00031" summary="items implementation partly done. no ammo done, or non table equipment.">
-      <created>1613000254389</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1613000254389</updated>
     </task>
     <task id="LOCAL-00032" summary="done proper loading, all in lowercase- making it case unsesitive. default input is case unsesitive.&#10;did beggining for guns, and shooting from them.">
       <created>1613008434999</created>
@@ -538,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614555502764</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="stały magazynek wymaga wciąż popraw. jakimś cudem nie ładuje naboi poprawnie...">
+      <created>1614559450015</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1614559450015</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -554,7 +553,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="zalążek magazynków i amunicji, chyba do zaorania???" />
     <MESSAGE value="powoli przymierzam się do zrobienia magów i amunicja" />
     <MESSAGE value="skrócenie działania tego, bo było źle." />
     <MESSAGE value="same istnienie nabojow jest, ale jeszcze niejest wykorzystywane!&#10;testy w drodze" />
@@ -579,7 +577,8 @@
     <MESSAGE value="podejście do magazynków, jeszcze bez dużych przeróbek.&#10;na razie podstawowe dobrze działają." />
     <MESSAGE value="prototyp specek - tak aby były rozumiane przez gre." />
     <MESSAGE value="prototyp stałego magazynka, jeszcze nie skończone." />
-    <option name="LAST_COMMIT_MESSAGE" value="prototyp stałego magazynka, jeszcze nie skończone." />
+    <MESSAGE value="stały magazynek wymaga wciąż popraw. jakimś cudem nie ładuje naboi poprawnie..." />
+    <option name="LAST_COMMIT_MESSAGE" value="stały magazynek wymaga wciąż popraw. jakimś cudem nie ładuje naboi poprawnie..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -591,13 +590,63 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/items.py</url>
-          <line>350</line>
+          <line>355</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/items.py</url>
-          <line>348</line>
+          <line>353</line>
           <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/items.py</url>
+          <line>368</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/items.py</url>
+          <line>369</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/items.py</url>
+          <line>370</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/items.py</url>
+          <line>371</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/items.py</url>
+          <line>372</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/items.py</url>
+          <line>373</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/items.py</url>
+          <line>374</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/items.py</url>
+          <line>375</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/items.py</url>
+          <line>377</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/items.py</url>
+          <line>380</line>
+          <option name="timeStamp" value="47" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
