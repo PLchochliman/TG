@@ -215,11 +215,29 @@ def test_dzialania_broni_strzeleckiej():
     mag = items.Magazynek(mosin)
     mag.zaladuj_magazynek(czerwona)
     assert wojtek.aktywna_bron.zmien_magazynek(mag)
-    return 16
+    saw = itemki.luskacz_broni("m249 saw")
+    SAW = items.BronStrzelecka(saw)
+    stal = items.Magazynek(SAW)
+    stal.zaladuj_magazynek(NATO)
+    mag = items.Magazynek(M4KA)
+    mag.zaladuj_magazynek(NATO)
+    assert SAW.zmien_magazynek(mag)
+    assert SAW.zmien_magazynek(stal)
+    assert SAW.zaciagnij_naboj()
+    assert SAW.kara_za_nierostawienie == -4
+    natowska = itemki.luskacz_amunicji("7,62 nato")
+    NATO = items.Amunicja(natowska)
+    swina = itemki.luskacz_broni("m240b")
+    Swinia = items.BronStrzelecka(swina)
+    stal = items.Magazynek(Swinia)
+    stal.zaladuj_magazynek(NATO)
+    assert Swinia.zmien_magazynek(stal)
+    assert Swinia.zaciagnij_naboj()
+    assert Swinia.kara_za_nierostawienie == -10
+    return 23
 
 
-#@test_runner
-#do przerobki zalkowitej - inaczej  sie atakuje
+@test_runner
 def test_broni_bialej():
     ww = mechanics.WalkaWrecz()
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"], "operejtor")
@@ -275,20 +293,16 @@ def test_amunicji_i_magazynkow():
     #test z łódeczkami jest w teście broni
     # taśma - FN MAG
     #870 MCS
-
     srut = itemki.luskacz_amunicji("12g")
     Srut = items.Amunicja(srut)
     mcs = itemki.luskacz_broni("870 mcs")
     MCS = items.BronStrzelecka(mcs)
     rura = items.Magazynek(MCS)
     rura.zaladuj_magazynek(Srut)
-    print(MCS.wymienny_magazynek)
-    print(MCS.zasady_specjalne)
     assert not MCS.zmien_magazynek(rura)
     assert MCS.aktualny_magazynek.zaladuj_magazynek(Srut)
-
-
-    return 10
+    assert MCS.zaciagnij_naboj()
+    return 11
 
 
 @test_runner
@@ -357,5 +371,5 @@ ilosc_testow_pass += test_broni_bialej()
 ilosc_testow_pass += test_mechanik_walki()
 ilosc_testow_pass += test_amunicji_i_magazynkow()
 ilosc_testow_pass += test_akcji()
-print("przeszlo " + str(ilosc_testow_pass) + " testow \nJest to " + str(ilosc_testow_pass/93 * 100) + "% testów.")
+print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \nJest to " + str(ilosc_testow_pass/101 * 100) + "% testów.")
 #unittest.main()

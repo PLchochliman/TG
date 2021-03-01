@@ -284,6 +284,9 @@ class BronStrzelecka(Bron): #pełne pokrycie
     walka_wrecz = []
     porecznosc = 0
     wymienny_magazynek = 0
+    rostawiona = False
+    kara_za_nierostawienie = 0
+    czas_rostawienia = 0
     # zasady do poktycia - będnowy magazynek, Magazynek rurowy, Kobyła, CIężka, Pełna komora, Podwójny magazynek rurowy
     # Powiększone magazynki,Poręczna,  taśma, taśma i stanagi  zintegrowany(x)
     # Strzelba, snajperka Pośrednia,
@@ -306,10 +309,22 @@ class BronStrzelecka(Bron): #pełne pokrycie
                 self.__zamontuj_magazynek_staly()
         self.szybkostrzelnosc = bron[2]
         self.walka_wrecz = BronBiala(['kolba', 0, 0, 0, 0, 'd2', 'x', 'obuchowa', '$0,00'])
+        self.__nastaw_kare_za_nierostawienie()
 
     def __zamontuj_magazynek_staly(self):
         self.wymienny_magazynek = False
 
+    def __nastaw_kare_za_nierostawienie(self):
+        self.kara_za_nierostawienie = -1
+        if "kobyła" in self.zasady_specjalne:
+            self.kara_za_nierostawienie = -10
+        if "ciężka" in self.zasady_specjalne:
+            self.kara_za_nierostawienie = -4
+        if "poręczna" in self.zasady_specjalne:
+            self.kara_za_nierostawienie = 0
+
+    def rostaw_bron(self):
+        self.rostawiona = True
 
     def odrzut(self, opetator):
         redukcja = self.odrzut_aktualny + opetator.mod_sila
@@ -329,6 +344,11 @@ class BronStrzelecka(Bron): #pełne pokrycie
         premia = int(self.premia)
         premia = premia + int(self.odrzut(operator))
         premia = premia - int(kara_za_zasieg)
+        if not self.rostawiona:
+            premia = premia + self.kara_za_nierostawienie
+        if self.rostawiona:
+            if self.kara_za_nierostawienie == 0:
+                premia = premia + 1
         return premia
 
     def zmien_celownik(self, celownik):
