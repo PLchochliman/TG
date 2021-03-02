@@ -287,8 +287,6 @@ class BronStrzelecka(Bron): #pełne pokrycie
     rostawiona = False
     kara_za_nierostawienie = 0
     czas_rostawienia = 0
-    # zasady do poktycia - będnowy magazynek, Magazynek rurowy, Kobyła, CIężka, Pełna komora, Podwójny magazynek rurowy
-    # Powiększone magazynki,Poręczna,  taśma, taśma i stanagi  zintegrowany(x)
     # Strzelba, snajperka Pośrednia,
 
 # if is smaller than 5 then it makes work for increased penalty for range, because of shit instead of sights
@@ -325,6 +323,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
 
     def rostaw_bron(self):
         self.rostawiona = True
+        return self.czas_rostawienia
 
     def odrzut(self, opetator):
         redukcja = self.odrzut_aktualny + opetator.mod_sila
@@ -336,6 +335,21 @@ class BronStrzelecka(Bron): #pełne pokrycie
     def test_trafienia(self, operator, cel, dodatkowe, zasieg):
         return super(BronStrzelecka, self).test_trafienia(operator, cel, dodatkowe, zasieg)
 
+    def __interpretuj_zasady_bazujace_na_amunicji(self, zasięg):
+        premia = 0
+        if "snajperka" in self.zasady_specjalne:
+            if self.aktualny_magazynek.amunicja.typ_amunicji == "wyborowa":
+                premia = premia + 1
+            if self.aktualny_magazynek.amunicja.typ_amunicji == "wybitnie wyborowa":
+                premia = premia + 1
+        if "strzelba" in self.zasady_specjalne:
+            if self.aktualny_magazynek.amunicja.typ_amunicji == "podstawowa":
+                if zasięg <= 15:
+                    premia = premia + 3
+                if zasięg <= 5:
+                    premia = premia + 2
+        return premia
+
     def aktualna_premia(self, operator, odległosc):
         super(BronStrzelecka, self).aktualna_premia(operator, odległosc)
         kara_za_zasieg = odległosc / self.zasieg_przyrost
@@ -344,6 +358,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
         premia = int(self.premia)
         premia = premia + int(self.odrzut(operator))
         premia = premia - int(kara_za_zasieg)
+        premia = premia + self.__interpretuj_zasady_bazujace_na_amunicji(odległosc)
         if not self.rostawiona:
             premia = premia + self.kara_za_nierostawienie
         if self.rostawiona:
