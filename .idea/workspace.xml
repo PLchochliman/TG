@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TabelaBroni.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/items.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -192,13 +193,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00033" summary="base generic weapon added. With test of course.">
-      <created>1613011285816</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1613011285816</updated>
     </task>
     <task id="LOCAL-00034" summary="shooting from gan (basic) almoust done, but not proper tested.">
       <created>1613093850891</created>
@@ -536,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614614059959</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="premia do ataku z tytułu zasad snajperka i strzelba pokryte.">
+      <created>1614728690398</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1614728690400</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -552,7 +553,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="skrócenie działania tego, bo było źle." />
     <MESSAGE value="same istnienie nabojow jest, ale jeszcze niejest wykorzystywane!&#10;testy w drodze" />
     <MESSAGE value="spore zmiany, magazynki zaczynaja działać, ale wciąż da się wystrzelić bez naboju w komorze." />
     <MESSAGE value="te magi sa nieskonczone, ale naprawiono excela, plus z pustego juz nie strzela." />
@@ -577,7 +577,8 @@
     <MESSAGE value="prototyp stałego magazynka, jeszcze nie skończone." />
     <MESSAGE value="stały magazynek wymaga wciąż popraw. jakimś cudem nie ładuje naboi poprawnie..." />
     <MESSAGE value="naprawiono problem łódeczek." />
-    <option name="LAST_COMMIT_MESSAGE" value="naprawiono problem łódeczek." />
+    <MESSAGE value="premia do ataku z tytułu zasad snajperka i strzelba pokryte." />
+    <option name="LAST_COMMIT_MESSAGE" value="premia do ataku z tytułu zasad snajperka i strzelba pokryte." />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

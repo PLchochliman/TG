@@ -83,6 +83,7 @@ class Amunicja:
     ilosc_paczek = 0
     ilosc_amunicji: int = 0
     precyzyjna_dla:str = ""
+    cena = 0
 
     def __init__(self, amunicja, ilosc_paczek=1, typ_amunicji="podstawowa"):
         self.odrzut = amunicja[4]
@@ -93,6 +94,36 @@ class Amunicja:
         self.nazwa_amunicji = self.nazwa_naboju + " " + self.typ_amunicji
         self.ilosc_amunicji = ilosc_paczek * amunicja[2]
         self.ilosc_paczek = ilosc_paczek
+        self.cena = amunicja[3]
+
+    """
+    na razie sama cena
+    """
+    def __dostosuj_cene_amunicji(self):
+        if self.typ_amunicji == "podstawowa":
+            return 0
+        elif self.typ_amunicji == "wyborowa":
+            self.cena = self.cena * 3
+        elif self.typ_amunicji == "przeciwpancerna":
+            self.cena = self.cena * 3
+        elif self.typ_amunicji == "grzybkująca":
+            self.cena = self.cena * 3
+        elif self.typ_amunicji == "wyborowa dalekodystansowa":
+            self.cena = self.cena * 3
+        elif self.typ_amunicji == "breneka":
+            self.cena = self.cena * 1
+        elif self.typ_amunicji == "sportowa":
+            self.cena = self.cena * 1
+        elif self.typ_amunicji == "na strzałki":
+            self.cena = self.cena * 5
+        elif self.typ_amunicji == "poddźwiękowa":
+            self.cena = self.cena * 2
+        elif self.typ_amunicji == "gumowe kule":
+            self.cena = self.cena * 2
+        elif self.typ_amunicji == "wyborowa dalekodystansowa":
+            self.cena = self.cena * 3
+        elif self.typ_amunicji == "9mm++":
+            self.cena = self.cena * 7.5
 
 
 
@@ -290,7 +321,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
     # Strzelba, snajperka Pośrednia,
 
 # if is smaller than 5 then it makes work for increased penalty for range, because of shit instead of sights
-    # TODO do przeróbki
+
     def __init__(self, bron, celownik=muszka_i_szczerbinka, amunicja=("podstawowa"), magazynek=""):
         super(BronStrzelecka, self).__init__("strzelectwo", bron[5], bron[3], bron[6], bron[1])
         self.statystyki_podstawowe = bron
@@ -335,7 +366,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
     def test_trafienia(self, operator, cel, dodatkowe, zasieg):
         return super(BronStrzelecka, self).test_trafienia(operator, cel, dodatkowe, zasieg)
 
-    def __interpretuj_zasady_bazujace_na_amunicji(self, zasięg):
+    def __interpretuj_zasady_bazujace_na_amunicji(self, zasięg): #nie przetestowana
         premia = 0
         if "snajperka" in self.zasady_specjalne:
             if self.aktualny_magazynek.amunicja.typ_amunicji == "wyborowa":
