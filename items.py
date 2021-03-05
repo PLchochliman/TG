@@ -386,11 +386,20 @@ class BronStrzelecka(Bron): #pełne pokrycie
                     premia = premia + 2
         return premia
 
+    def __specjalne_kary_za_odleglosc(self, odleglosc):
+        kara = odleglosc / self.zasieg_przyrost
+        for i in self.zasady_specjalne:
+            if i == "pistolet":
+                kara = kara * 3
+            if i == "pistolet maszynowy":
+                kara = kara * 2
+        return kara
+
     def aktualna_premia(self, operator, odległosc):
         super(BronStrzelecka, self).aktualna_premia(operator, odległosc)
         if odległosc > self.aktualny_magazynek.amunicja.maks_zasieg_amunicji:
             raise Exception('cel jest po za zasiegiem.')
-        kara_za_zasieg = odległosc / self.zasieg_przyrost
+        kara_za_zasieg = self.__specjalne_kary_za_odleglosc(odległosc)
         if 1 < self.zasieg_minimalny < 5:
             kara_za_zasieg = kara_za_zasieg * self.zasieg_minimalny
         premia = int(self.premia)
