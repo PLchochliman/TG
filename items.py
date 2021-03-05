@@ -15,7 +15,7 @@ class Przedmioty(): #pełne pokrycie
 
     def __init__(self, CoDoQRWY):
         self.przetwornik = Excel.Loader('TabelaBroni.xlsx', ['bron', 'bronbiala', 'granaty', 'celowniki', 'amunicja'],
-                                        ['O300', 'I19', 'I10', 'G28', 'H40'])
+                                        ['O300', 'I19', 'I10', 'G28', 'I40'])
         self.dane = self.przetwornik.zwroc()
         self.przetwornik.wyczysc()
 
@@ -84,6 +84,7 @@ class Amunicja:
     ilosc_amunicji: int = 0
     precyzyjna_dla:str = ""
     cena = 0
+    maks_zasieg_amunicji = 0
 
     def __init__(self, amunicja, ilosc_paczek=1, typ_amunicji="podstawowa"):
         self.odrzut = amunicja[4]
@@ -95,6 +96,7 @@ class Amunicja:
         self.ilosc_amunicji = ilosc_paczek * amunicja[2]
         self.ilosc_paczek = ilosc_paczek
         self.cena = amunicja[3]
+        self.maks_zasieg_amunicji = amunicja[8]
 
     """
     na razie sama cena
@@ -103,6 +105,7 @@ class Amunicja:
         if self.typ_amunicji == "podstawowa":
             return 0
         elif self.typ_amunicji == "wyborowa":
+            self.maks_zasieg_amunicji = 1000
             self.cena = self.cena * 3
         elif self.typ_amunicji == "przeciwpancerna":
             self.cena = self.cena * 3
@@ -110,6 +113,8 @@ class Amunicja:
             self.cena = self.cena * 3
         elif self.typ_amunicji == "wyborowa dalekodystansowa":
             self.cena = self.cena * 3
+            self.maks_zasieg_amunicji = 3500
+            #mozna przejsc na ciekawsze zasady specjalnej amunicji
         elif self.typ_amunicji == "breneka":
             self.cena = self.cena * 1
         elif self.typ_amunicji == "sportowa":
@@ -120,10 +125,10 @@ class Amunicja:
             self.cena = self.cena * 2
         elif self.typ_amunicji == "gumowe kule":
             self.cena = self.cena * 2
-        elif self.typ_amunicji == "wyborowa dalekodystansowa":
-            self.cena = self.cena * 3
         elif self.typ_amunicji == "9mm++":
             self.cena = self.cena * 7.5
+            self.odrzut = -4
+            self.penetracja = 2
 
 
 
@@ -301,7 +306,7 @@ class Bron: #pełne pokrycie
             self.zasady_specjalne[i] = self.zasady_specjalne[i].strip()
 
 
-# TODO specjalna amunicja, zasady specjalne broni, możliwość wpływu specjalizacji.
+# TODO specjalna amunicja, zasady specjalne broni, możliwość wpływu specjalizacji. PISTOLETY PMY I INNE takie
 class BronStrzelecka(Bron): #pełne pokrycie
 
     statystyki_podstawowe: list = []
@@ -383,6 +388,8 @@ class BronStrzelecka(Bron): #pełne pokrycie
 
     def aktualna_premia(self, operator, odległosc):
         super(BronStrzelecka, self).aktualna_premia(operator, odległosc)
+        if odległosc > self.aktualny_magazynek.amunicja.maks_zasieg_amunicji:
+            raise Exception('cel jest po za zasiegiem.')
         kara_za_zasieg = odległosc / self.zasieg_przyrost
         if 1 < self.zasieg_minimalny < 5:
             kara_za_zasieg = kara_za_zasieg * self.zasieg_minimalny
