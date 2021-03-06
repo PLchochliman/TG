@@ -178,8 +178,8 @@ def test_dzialania_broni():
 """
 
 
-#@test_runner
-def test_dzialania_broni_strzeleckiej():
+@test_runner
+def test_Broni_strzelcekiej_magazynki_zaciaganie_amunicja_czterotakt():
     itemki = items.Przedmioty('')
     m4ka = itemki.luskacz_broni("m4a1")
     M4KA = items.BronStrzelecka(m4ka)
@@ -235,6 +235,23 @@ def test_dzialania_broni_strzeleckiej():
     assert Swinia.zaciagnij_naboj()
     assert Swinia.kara_za_nierostawienie == -10
     return 23
+
+@test_runner
+def test_broni_strzeleckiej_specjalne_magi():
+    itemki = items.Przedmioty('')
+    mk23 = itemki.luskacz_broni("mk23")
+    MK23 = items.BronStrzelecka(mk23)
+    wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
+    wojtek.aktywna_bron = MK23
+    ACP = itemki.luskacz_amunicji("acp'45")
+    ACP = items.Amunicja(ACP)
+    mag = items.Magazynek(MK23)
+    mag.zaladuj_magazynek(ACP)
+    powiekszaony_mag = items.Magazynek(MK23, "powiekszone magazynki")
+    powiekszaony_mag.zaladuj_magazynek(ACP)
+    assert powiekszaony_mag.stan_nabojow == 18
+
+    return 1
 
 
 @test_runner
@@ -302,6 +319,14 @@ def test_amunicji_i_magazynkow():
     assert not MCS.zmien_magazynek(rura)
     assert MCS.aktualny_magazynek.zaladuj_magazynek(Srut)
     assert MCS.zaciagnij_naboj()
+    srut = itemki.luskacz_amunicji("12g")
+    breneka = items.Amunicja(srut, 1, "breneka")
+    assert breneka.nazwa_amunicji == "12g breneka"
+    natowska = itemki.luskacz_amunicji("5,56 nato")
+    NATO = items.Amunicja(natowska, 1, "przeciwpancerna")
+    assert NATO.nazwa_amunicji == "5,56 nato przeciwpancerna"
+    print(NATO.penetracja)
+
     return 11
 
 
@@ -366,10 +391,11 @@ ilosc_testow_pass += test_umiejetnosci_i_aktywacji()
 ilosc_testow_pass += test_wykupowania_umiejetnosci_z_obnizeniem_przez_specjalizacje()
 ilosc_testow_pass += test_jezykow()
 ilosc_testow_pass += test_przedmiotow()
-ilosc_testow_pass += test_dzialania_broni_strzeleckiej()
+ilosc_testow_pass += test_Broni_strzelcekiej_magazynki_zaciaganie_amunicja_czterotakt()
 ilosc_testow_pass += test_broni_bialej()
 ilosc_testow_pass += test_mechanik_walki()
 ilosc_testow_pass += test_amunicji_i_magazynkow()
 ilosc_testow_pass += test_akcji()
-print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \nJest to " + str(ilosc_testow_pass/101 * 100) + "% testów.")
+ilosc_testow_pass += test_broni_strzeleckiej_specjalne_magi()
+print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \nJest to " + str(ilosc_testow_pass/102 * 100) + "% testów.")
 #unittest.main()

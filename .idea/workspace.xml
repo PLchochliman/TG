@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,13 +192,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00036" summary="tests repaired, need more tests">
-      <created>1613234536353</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1613234536353</updated>
     </task>
     <task id="LOCAL-00037" summary="did some testing.">
       <created>1613310966963</created>
@@ -536,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614975319731</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="uwzględnione użycie pistoletu bądź pistoletu maszynowego.">
+      <created>1614979713584</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1614979713584</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -552,7 +552,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="te magi sa nieskonczone, ale naprawiono excela, plus z pustego juz nie strzela." />
     <MESSAGE value="blokada na magazynkach - działają tylko na broni do niej, lub w rodzinie - tak jak być powinno.&#10;można załadować złą amunicję - ale nie strzeli." />
     <MESSAGE value="BRAK TESTOW - ale strzelanie z powrotem dziala.&#10;wyrzucono wiele logiki do zewnetrznych funkcji." />
     <MESSAGE value="wciąż problem z konsupcja nabojów..." />
@@ -577,7 +576,8 @@
     <MESSAGE value="premia do ataku z tytułu zasad snajperka i strzelba pokryte." />
     <MESSAGE value="przygotowane początek różnych amunicji." />
     <MESSAGE value="zrobiona maksymalny zasięg amunicji." />
-    <option name="LAST_COMMIT_MESSAGE" value="zrobiona maksymalny zasięg amunicji." />
+    <MESSAGE value="uwzględnione użycie pistoletu bądź pistoletu maszynowego." />
+    <option name="LAST_COMMIT_MESSAGE" value="uwzględnione użycie pistoletu bądź pistoletu maszynowego." />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
