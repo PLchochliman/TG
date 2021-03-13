@@ -107,12 +107,18 @@ class Amunicja:
     """
     def zadaj_obrazenia(self, cel, premia, zasieg):
         # TODO może przerobić na zwrot do broni i egzekucję obrażeń w broni?
-        cel.rana(self.rzut_na_obrazenia() + premia, self.penetracja)
+        if self.typ_amunicji == "grzybkująca":
+            cel.rana(self.rzut_na_obrazenia(0) + premia, self.penetracja)
+            cel.rana(self.rzut_na_obrazenia("d6") + premia, self.penetracja)
+            return True
+        cel.rana(self.rzut_na_obrazenia(0) + premia, self.penetracja)
         return True
-
-    def rzut_na_obrazenia(self):
-        return Bot.roll_dice_from_text(self.kosc_obrazen)
-
+    #obrazenia=kosc_obrazen
+    def rzut_na_obrazenia(self, obrazenia):
+        if obrazenia == 0:
+            return Bot.roll_dice_from_text(self.kosc_obrazen)
+        else:
+            return Bot.roll_dice_from_text(obrazenia)
     """
     na razie część amunicji zrobiona (ppanc gotowa, wyborowa gotowa, podźwiękowa gotowa)
     """
