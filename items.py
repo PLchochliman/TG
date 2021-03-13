@@ -103,6 +103,17 @@ class Amunicja:
         self.__dostosuj_specjalna_amunicje()
 
     """
+    zadawanie obrażenia
+    """
+    def zadaj_obrazenia(self, cel, premia, zasieg):
+        # TODO może przerobić na zwrot do broni i egzekucję obrażeń w broni?
+        cel.rana(self.rzut_na_obrazenia() + premia, self.penetracja)
+        return True
+
+    def rzut_na_obrazenia(self):
+        return Bot.roll_dice_from_text(self.kosc_obrazen)
+
+    """
     na razie część amunicji zrobiona (ppanc gotowa, wyborowa gotowa, podźwiękowa gotowa)
     """
     def __dostosuj_specjalna_amunicje(self):
@@ -388,8 +399,9 @@ class BronStrzelecka(Bron): #pełne pokrycie
     def rzut_na_obrazenia(self):
         return Bot.roll_dice_from_text(self.kosc_obrazen)
 
-    def test_obrazen_z_egzekucja(self, cel, premia, dystans): # TODO stąd doprowadzić do końca przekierowywanie dystansu
-        cel.rana(self.rzut_na_obrazenia() + premia, self.penetracja)
+    def test_obrazen_z_egzekucja(self, cel, premia, dystans):  # TODO stąd doprowadzić do końca przekierowywanie dystansu
+        self.aktualny_magazynek.amunicja.zadaj_obrazenia(cel, premia, dystans)
+        #cel.rana(self.rzut_na_obrazenia() + premia, self.penetracja)
 
     def test_trafienia(self, operator, cel, dodatkowe, zasieg):
         return super(BronStrzelecka, self).test_trafienia(operator, cel, dodatkowe, zasieg)

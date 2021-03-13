@@ -7,7 +7,6 @@
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/items.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mechanics.py" beforeDir="false" afterPath="$PROJECT_DIR$/mechanics.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,13 +192,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00041" summary="dorobienie broni białej bez zasad specjalnych i testu + mały refaktor">
-      <created>1613740590534</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1613740590534</updated>
     </task>
     <task id="LOCAL-00042" summary="zejabny test walki wręcz trzeba będzie coś przerobić przy losowaniu. Coś jest ostro z tym zjebane.">
       <created>1613742277739</created>
@@ -537,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615647795608</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="przygotowanie pod właściwą implementację zasad specjalnych z dystanem i amunicją.">
+      <created>1615654224721</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1615654224721</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -553,7 +552,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="naprawiono parę istotnych rzeczy. python nie radzi sobie najlepiej z przeciążeniami zmiennej i funkcji.&#10;Dodatkowo więcej komentarzy" />
     <MESSAGE value="dopracowywanie testów.&#10;przerobienie ran." />
     <MESSAGE value="przerobione zuzycie - w końcu na prawdziwe.&#10;plus poprawa testów." />
     <MESSAGE value="przerobione zuzycie - w końcu na prawdziwe. Pojedynczy w koncu zuzywa, nawet gdy jest to sa, albo automat." />
@@ -578,7 +576,8 @@
     <MESSAGE value="amunicja ppanz bez testów" />
     <MESSAGE value="testy amunicji ppanz" />
     <MESSAGE value="kolajne partia amunicji gotowa." />
-    <option name="LAST_COMMIT_MESSAGE" value="kolajne partia amunicji gotowa." />
+    <MESSAGE value="przygotowanie pod właściwą implementację zasad specjalnych z dystanem i amunicją." />
+    <option name="LAST_COMMIT_MESSAGE" value="przygotowanie pod właściwą implementację zasad specjalnych z dystanem i amunicją." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
