@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/items.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -193,13 +192,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00039" summary="did counting range, and communicates if missed.">
-      <created>1613331115690</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1613331115690</updated>
     </task>
     <task id="LOCAL-00040" summary="wprowadzenie broni białej bez testu">
       <created>1613709060386</created>
@@ -537,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615636154423</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="testy amunicji ppanz">
+      <created>1615637725803</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1615637725803</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -553,7 +552,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="wciąż problem z konsupcja nabojów..." />
     <MESSAGE value="już konsupcja jest ok" />
     <MESSAGE value="naprawiono parę istotnych rzeczy. python nie radzi sobie najlepiej z przeciążeniami zmiennej i funkcji.&#10;Dodatkowo więcej komentarzy" />
     <MESSAGE value="dopracowywanie testów.&#10;przerobienie ran." />
@@ -578,7 +576,8 @@
     <MESSAGE value="uwzględnione użycie pistoletu bądź pistoletu maszynowego." />
     <MESSAGE value="przerobienie penetracji już na poziomie samej amunicji" />
     <MESSAGE value="amunicja ppanz bez testów" />
-    <option name="LAST_COMMIT_MESSAGE" value="amunicja ppanz bez testów" />
+    <MESSAGE value="testy amunicji ppanz" />
+    <option name="LAST_COMMIT_MESSAGE" value="testy amunicji ppanz" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

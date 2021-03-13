@@ -85,6 +85,7 @@ class Amunicja:
     cena = 0
     maks_zasieg_amunicji = 0
     charakterystyka_naboju = ""
+    specjalne = []
 
     def __init__(self, amunicja, ilosc_paczek=1, typ_amunicji="podstawowa"):
         self.odrzut = amunicja[4]
@@ -98,10 +99,11 @@ class Amunicja:
         self.cena = amunicja[3]
         self.maks_zasieg_amunicji = amunicja[8]
         self.charakterystyka_naboju = amunicja[1]
+        self.specjalne = amunicja[7].split(",")
         self.__dostosuj_specjalna_amunicje()
 
     """
-    na razie sama cena
+    na razie część amunicji zrobiona (ppanc gotowa, wyborowa gotowa, podźwiękowa gotowa)
     """
     def __dostosuj_specjalna_amunicje(self):
         if self.typ_amunicji == "podstawowa":
@@ -119,21 +121,27 @@ class Amunicja:
             if self.charakterystyka_naboju == "rewolwerowe":
                 self.kosc_obrazen = "d6"
         elif self.typ_amunicji == "grzybkująca":
-            self.cena = self.cena * 3
+            self.cena = self.cena * 3   # W tym momencie nie ma możliwości implementacji w tym wydaniu
         elif self.typ_amunicji == "wyborowa dalekodystansowa":
             self.cena = self.cena * 3
-            self.maks_zasieg_amunicji = 3500
+            self.maks_zasieg_amunicji = 4000
             #mozna przejsc na ciekawsze zasady specjalnej amunicji
         elif self.typ_amunicji == "breneka":
             self.cena = self.cena * 1
         elif self.typ_amunicji == "sportowa":
             self.cena = self.cena * 1
+            self.kosc_obrazen = "d" + str(int(self.kosc_obrazen[1]) - 4)
+            self.odrzut = int(self.odrzut / 3) * 2
+            if self.odrzut % 3 > 0:
+                self.odrzut = self.odrzut + 1
         elif self.typ_amunicji == "na strzałki":
             self.cena = self.cena * 5
         elif self.typ_amunicji == "poddźwiękowa":
             self.cena = self.cena * 2
+            self.specjalne.append("wytłumiona")
         elif self.typ_amunicji == "gumowe kule":
-            self.cena = self.cena * 2
+            self.cena = self.cena * 2   # w tym momencie nie ma możliwości implementacji w tym wydaniu.
+            self.specjalne.append("wytłumiona")
         elif self.typ_amunicji == "9mm++":
             self.cena = self.cena * 7.5
             self.odrzut = -4
@@ -376,6 +384,9 @@ class BronStrzelecka(Bron): #pełne pokrycie
             return redukcja
         else:
             return 0
+
+    def rzut_na_obrazenia(self):
+        return Bot.roll_dice_from_text(self.kosc_obrazen)
 
     def test_trafienia(self, operator, cel, dodatkowe, zasieg):
         return super(BronStrzelecka, self).test_trafienia(operator, cel, dodatkowe, zasieg)
