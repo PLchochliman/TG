@@ -325,9 +325,13 @@ def test_amunicji_i_magazynkow():
     natowska = itemki.luskacz_amunicji("5,56 nato")
     NATO = items.Amunicja(natowska, 1, "przeciwpancerna")
     assert NATO.nazwa_amunicji == "5,56 nato przeciwpancerna"
-    print(NATO.penetracja)
-
-    return 11
+    assert NATO.penetracja == 4
+    assert NATO.kosc_obrazen == "d6"
+    dziewiatka = itemki.luskacz_amunicji("9mm parabellum")
+    dziewiatka = items.Amunicja(dziewiatka, 1, "przeciwpancerna")
+    assert dziewiatka.penetracja == 2
+    assert dziewiatka.kosc_obrazen == "d4"
+    return 17
 
 
 @test_runner
@@ -397,5 +401,5 @@ ilosc_testow_pass += test_mechanik_walki()
 ilosc_testow_pass += test_amunicji_i_magazynkow()
 ilosc_testow_pass += test_akcji()
 ilosc_testow_pass += test_broni_strzeleckiej_specjalne_magi()
-print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \nJest to " + str(ilosc_testow_pass/102 * 100) + "% testów.")
+print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \nJest to " + str(ilosc_testow_pass/108 * 100) + "% testów.")
 #unittest.main()

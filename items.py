@@ -114,7 +114,7 @@ class Amunicja:
             self.penetracja = self.penetracja + 1
             if self.charakterystyka_naboju == "pistoletowe":
                 self.kosc_obrazen = "d4"
-            if self.charakterystyka_naboju == "posrednie":
+            if self.charakterystyka_naboju == "pośrednie": #w pliku są polskie znaki!!!
                 self.kosc_obrazen = "d6"
             if self.charakterystyka_naboju == "rewolwerowe":
                 self.kosc_obrazen = "d6"
