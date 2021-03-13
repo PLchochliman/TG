@@ -94,9 +94,9 @@ class Strzelanie():
     """
     deals damage to "cel", by gun, and additional modifier (if apply), and many times if nessesary.
     """
-    def __zadaj_obrazenia(self, cel, bron, premia=0, ilosc_trafien=1):
+    def __zadaj_obrazenia(self, cel, bron, dystans, premia=0, ilosc_trafien=1):
         for i in range(0, ilosc_trafien):
-            bron.test_obrazen_z_egzekucja(cel, int(premia))
+            bron.test_obrazen_z_egzekucja(cel, int(premia), dystans)
 
         """
         implements shooting procedure from TG.
@@ -120,11 +120,11 @@ class Strzelanie():
                         cel.rana(11)
                     else:
                         premia = wynik / 3
-                        self.__zadaj_obrazenia(cel, operator.aktywna_bron, int(premia))
+                        self.__zadaj_obrazenia(cel, operator.aktywna_bron,  zasieg, int(premia))
                         return True
                 if wynik > ilosc_trafien:
                     wynik = ilosc_trafien
-                self.__zadaj_obrazenia(cel, operator.aktywna_bron, 0, wynik)
+                self.__zadaj_obrazenia(cel, operator.aktywna_bron, zasieg, 0, wynik)    # dodać tutaj zasięg
                 return True
             else:
                 operator.aktywna_bron.test_obrazen_z_egzekucja(cel)

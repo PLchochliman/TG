@@ -388,6 +388,9 @@ class BronStrzelecka(Bron): #pełne pokrycie
     def rzut_na_obrazenia(self):
         return Bot.roll_dice_from_text(self.kosc_obrazen)
 
+    def test_obrazen_z_egzekucja(self, cel, premia, dystans): # TODO stąd doprowadzić do końca przekierowywanie dystansu
+        cel.rana(self.rzut_na_obrazenia() + premia, self.penetracja)
+
     def test_trafienia(self, operator, cel, dodatkowe, zasieg):
         return super(BronStrzelecka, self).test_trafienia(operator, cel, dodatkowe, zasieg)
 
