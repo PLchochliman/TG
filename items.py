@@ -82,7 +82,6 @@ class Amunicja:
     nazwa_amunicji = ""
     ilosc_paczek = 0
     ilosc_amunicji: int = 0
-    precyzyjna_dla:str = ""
     cena = 0
     maks_zasieg_amunicji = 0
 
@@ -90,18 +89,19 @@ class Amunicja:
         self.odrzut = amunicja[4]
         self.nazwa_naboju = amunicja[0]
         self.kosc_obrazen = amunicja[5]
-        self.penetracja = amunicja[6]
+        self.penetracja = constants.penetracja[amunicja[6]]
         self.typ_amunicji = typ_amunicji
         self.nazwa_amunicji = self.nazwa_naboju + " " + self.typ_amunicji
         self.ilosc_amunicji = ilosc_paczek * amunicja[2]
         self.ilosc_paczek = ilosc_paczek
         self.cena = amunicja[3]
         self.maks_zasieg_amunicji = amunicja[8]
+        self.__dostosuj_specjalna_amunicje()
 
     """
     na razie sama cena
     """
-    def __dostosuj_cene_amunicji(self):
+    def __dostosuj_specjalna_amunicje(self):
         if self.typ_amunicji == "podstawowa":
             return 0
         elif self.typ_amunicji == "wyborowa":
@@ -430,7 +430,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
                     if self.aktualny_magazynek.stan_nabojow == 0:
                         self.aktualny_magazynek.amunicja = magazynek.amunicja
                         self.kosc_obrazen = magazynek.amunicja.kosc_obrazen
-                        self.penetracja = self.penetracja_to_int(magazynek.amunicja.penetracja)
+                        self.penetracja = magazynek.amunicja.penetracja
                         self.odrzut_aktualny = magazynek.amunicja.odrzut
                     self.aktualny_magazynek.stan_nabojow = self.aktualny_magazynek.stan_nabojow + pustka
                     magazynek.stan_nabojow = magazynek.stan_nabojow - pustka
@@ -442,7 +442,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
         odloz = self.aktualny_magazynek
         self.aktualny_magazynek = magazynek
         self.kosc_obrazen = magazynek.amunicja.kosc_obrazen
-        self.penetracja = self.penetracja_to_int(magazynek.amunicja.penetracja)
+        self.penetracja = magazynek.amunicja.penetracja
         self.odrzut_aktualny = magazynek.amunicja.odrzut
         return odloz
 
