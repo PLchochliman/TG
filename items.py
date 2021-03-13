@@ -84,6 +84,7 @@ class Amunicja:
     ilosc_amunicji: int = 0
     cena = 0
     maks_zasieg_amunicji = 0
+    charakterystyka_naboju = ""
 
     def __init__(self, amunicja, ilosc_paczek=1, typ_amunicji="podstawowa"):
         self.odrzut = amunicja[4]
@@ -96,6 +97,7 @@ class Amunicja:
         self.ilosc_paczek = ilosc_paczek
         self.cena = amunicja[3]
         self.maks_zasieg_amunicji = amunicja[8]
+        self.charakterystyka_naboju = amunicja[1]
         self.__dostosuj_specjalna_amunicje()
 
     """
@@ -109,6 +111,13 @@ class Amunicja:
             self.cena = self.cena * 3
         elif self.typ_amunicji == "przeciwpancerna":
             self.cena = self.cena * 3
+            self.penetracja = self.penetracja + 1
+            if self.charakterystyka_naboju == "pistoletowe":
+                self.kosc_obrazen = "d4"
+            if self.charakterystyka_naboju == "posrednie":
+                self.kosc_obrazen = "d6"
+            if self.charakterystyka_naboju == "rewolwerowe":
+                self.kosc_obrazen = "d6"
         elif self.typ_amunicji == "grzybkująca":
             self.cena = self.cena * 3
         elif self.typ_amunicji == "wyborowa dalekodystansowa":
