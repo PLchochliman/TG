@@ -193,13 +193,6 @@
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
     </task>
-    <task id="LOCAL-00043" summary="naprawione. warto pamiętać że nie wolno, ale nie wolno zbyt szybko po sobie losować zmiennych bez przypisania, bo wyjdzie nic.">
-      <created>1613744871069</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1613744871069</updated>
-    </task>
     <task id="LOCAL-00044" summary="refaktor, tak aby trzymać wszędzie tę samą konwencję.">
       <created>1613744967087</created>
       <option name="number" value="00044" />
@@ -536,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615655290590</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="Grzybkująca gotowa, oraz możliwość robienia dowolnych premi do obrażeń z amunicji (wreszcie)">
+      <created>1615656234462</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1615656234462</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -552,7 +552,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="przerobione zuzycie - w końcu na prawdziwe.&#10;plus poprawa testów." />
     <MESSAGE value="przerobione zuzycie - w końcu na prawdziwe. Pojedynczy w koncu zuzywa, nawet gdy jest to sa, albo automat." />
     <MESSAGE value="zgadnijcie co znowu nie działało xD zuzycie dla ba, bo blokada działała, jak wszystko było w jednej funkcji. Teraz śmiga." />
     <MESSAGE value="parser testów zrobiony" />
@@ -577,7 +576,8 @@
     <MESSAGE value="kolajne partia amunicji gotowa." />
     <MESSAGE value="przygotowanie pod właściwą implementację zasad specjalnych z dystanem i amunicją." />
     <MESSAGE value="Przerobione całe zadawanie obrażeń.&#10;na razie nie ma większch efektów ale przygotowanie pod zastosowanie specjalnych obrażeń oraz specjalnej amuunicji." />
-    <option name="LAST_COMMIT_MESSAGE" value="Przerobione całe zadawanie obrażeń.&#10;na razie nie ma większch efektów ale przygotowanie pod zastosowanie specjalnych obrażeń oraz specjalnej amuunicji." />
+    <MESSAGE value="Grzybkująca gotowa, oraz możliwość robienia dowolnych premi do obrażeń z amunicji (wreszcie)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Grzybkująca gotowa, oraz możliwość robienia dowolnych premi do obrażeń z amunicji (wreszcie)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

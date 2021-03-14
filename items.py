@@ -138,7 +138,8 @@ class Amunicja:
             if self.charakterystyka_naboju == "rewolwerowe":
                 self.kosc_obrazen = "d6"
         elif self.typ_amunicji == "grzybkująca":
-            self.cena = self.cena * 3   # W tym momencie nie ma możliwości implementacji w tym wydaniu
+            self.cena = self.cena * 3   # done
+            self.penetracja = 0
         elif self.typ_amunicji == "wyborowa dalekodystansowa":
             self.cena = self.cena * 3
             self.maks_zasieg_amunicji = 4000
@@ -153,6 +154,7 @@ class Amunicja:
                 self.odrzut = self.odrzut + 1
         elif self.typ_amunicji == "na strzałki":
             self.cena = self.cena * 5
+            self.specjalne.append("wytłumiona")
         elif self.typ_amunicji == "poddźwiękowa":
             self.cena = self.cena * 2
             self.specjalne.append("wytłumiona")
@@ -163,7 +165,6 @@ class Amunicja:
             self.cena = self.cena * 7.5
             self.odrzut = -4
             self.penetracja = 2
-
 
 
 # na razie da się wyłądować amunicje do dowolnej paczki. i dowolną amunicję do dowolnego magazynka.
@@ -226,7 +227,6 @@ class Magazynek():
                     self.typ_magazynka = typ
                     self.maksymalna_pojemnosc = 32
                     return True
-            #srobic dla strzelby i pmów!!!
             self.typ_magazynka = typ
             self.maksymalna_pojemnosc = 100
             return True
