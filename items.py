@@ -104,6 +104,12 @@ class Amunicja:
 
     """
     zadawanie obrażenia
+    Gumowe kule do implementacji
+    Kość obrażeń zmniejszona o połowę, po zadaniu Out of action, nie staje się Out of Action a Obezwładniony. 
+    Po 30 minutach wstaje i regeneruje wszystkie rany z kulowych kul jakby nigdy nic. Po zadaniu lekkiej, rzuć na 
+    obezwładnienie. rzuć na D6. Jeśli rzut jest równy/wyższy 6, obezwładnia. Jeżeli ma poważną ranę, i zadasz mu lekką
+     ranę, obezwładnia natychmiastowo. Nie ma penetracji. Domyślnie poddźwiękowa. Zasięg skuteczny to 50m. nie do 
+     połączona z czymkolwiek, nawet jeśli zasady drugiej amunicji mówi co innego..
     """
     def zadaj_obrazenia(self, cel, premia, zasieg):
         # TODO może przerobić na zwrot do broni i egzekucję obrażeń w broni?
