@@ -331,7 +331,15 @@ def test_amunicji_i_magazynkow():
     dziewiatka = items.Amunicja(dziewiatka, 1, "przeciwpancerna")
     assert dziewiatka.penetracja == 2
     assert dziewiatka.kosc_obrazen == "d4"
-    return 17
+    siodemka = itemki.luskacz_amunicji("7,62 nato")
+    Siodemka = items.Amunicja(siodemka, 1, "przeciwpancerna")
+    assert Siodemka.penetracja == 4
+    assert Siodemka.kosc_obrazen == "d8"
+    dziewiatka = itemki.luskacz_amunicji("9mm parabellum")
+    dziewiatka = items.Amunicja(dziewiatka, 1, "9mm++")
+    assert dziewiatka.odrzut == -4
+    assert dziewiatka.penetracja == 2
+    return 21
 
 
 @test_runner
