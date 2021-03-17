@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -192,13 +191,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00046" summary="calkowity rework strzelania">
-      <created>1613837219501</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1613837219501</updated>
     </task>
     <task id="LOCAL-00047" summary="Dalej próbuję ale jeszcze jest parę błędów do zaszpachlowania w samej konstrukcji - jak zwykle unit testy prawdę powiedziały.">
       <created>1613849326528</created>
@@ -536,7 +528,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616016225928</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="few more tests of special ammunition.">
+      <created>1616017144289</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1616017144289</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -552,7 +551,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="parser testów zrobiony" />
     <MESSAGE value="did default magazine for the gun at init, also did good testing of gun. Also you can't unload ammo to any package. and tests. quite a lot of them." />
     <MESSAGE value="Naprawiono buga z umiejętnościami, oraz walka wręcz, podstawowe klepanie isę działa." />
     <MESSAGE value="konsekwentny debug rzeczy, zanim same się wykopcą." />
@@ -577,7 +575,8 @@
     <MESSAGE value="Grzybkująca gotowa, oraz możliwość robienia dowolnych premi do obrażeń z amunicji (wreszcie)" />
     <MESSAGE value="grzybkująca gotowa&#10;teraz czas na jej testy" />
     <MESSAGE value="note about gum balls" />
-    <option name="LAST_COMMIT_MESSAGE" value="note about gum balls" />
+    <MESSAGE value="few more tests of special ammunition." />
+    <option name="LAST_COMMIT_MESSAGE" value="few more tests of special ammunition." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

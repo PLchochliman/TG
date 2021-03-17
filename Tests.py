@@ -339,7 +339,11 @@ def test_amunicji_i_magazynkow():
     dziewiatka = items.Amunicja(dziewiatka, 1, "9mm++")
     assert dziewiatka.odrzut == -4
     assert dziewiatka.penetracja == 2
-    return 21
+    ACP = itemki.luskacz_amunicji("acp'45")
+    ACP = items.Amunicja(ACP, )
+    assert ACP.odrzut == -2
+    assert ACP.specjalne == ["wytłumiona"]
+    return 23
 
 
 @test_runner
