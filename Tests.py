@@ -340,7 +340,7 @@ def test_amunicji_i_magazynkow():
     assert dziewiatka.odrzut == -4
     assert dziewiatka.penetracja == 2
     ACP = itemki.luskacz_amunicji("acp'45")
-    ACP = items.Amunicja(ACP, )
+    ACP = items.Amunicja(ACP)
     assert ACP.odrzut == -2
     assert ACP.specjalne == ["wytłumiona"]
     return 23
@@ -413,5 +413,5 @@ ilosc_testow_pass += test_mechanik_walki()
 ilosc_testow_pass += test_amunicji_i_magazynkow()
 ilosc_testow_pass += test_akcji()
 ilosc_testow_pass += test_broni_strzeleckiej_specjalne_magi()
-print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \nJest to " + str(ilosc_testow_pass/112 * 100) + "% testów.")
+print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \nJest to " + str(ilosc_testow_pass/114 * 100) + "% testów.")
 #unittest.main()

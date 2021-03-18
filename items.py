@@ -346,7 +346,7 @@ class Bron: #pełne pokrycie
             self.zasady_specjalne[i] = self.zasady_specjalne[i].strip()
 
 
-# TODO specjalna amunicja, zasady specjalne broni, możliwość wpływu specjalizacji. PISTOLETY PMY I INNE takie
+# TODO specjalna amunicja, zasady specjalne broni, możliwość wpływu specjalizacji.
 class BronStrzelecka(Bron): #pełne pokrycie
 
     statystyki_podstawowe: list = []
@@ -363,7 +363,6 @@ class BronStrzelecka(Bron): #pełne pokrycie
     rostawiona = False
     kara_za_nierostawienie = 0
     czas_rostawienia = 0
-    # Strzelba, snajperka Pośrednia,
 
 # if is smaller than 5 then it makes work for increased penalty for range, because of shit instead of sights
 
@@ -411,9 +410,8 @@ class BronStrzelecka(Bron): #pełne pokrycie
     def rzut_na_obrazenia(self):
         return Bot.roll_dice_from_text(self.kosc_obrazen)
 
-    def test_obrazen_z_egzekucja(self, cel, premia, dystans):  # TODO stąd doprowadzić do końca przekierowywanie dystansu
+    def test_obrazen_z_egzekucja(self, cel, premia, dystans):
         self.aktualny_magazynek.amunicja.zadaj_obrazenia(cel, premia, dystans)
-        #cel.rana(self.rzut_na_obrazenia() + premia, self.penetracja)
 
     def test_trafienia(self, operator, cel, dodatkowe, zasieg):
         return super(BronStrzelecka, self).test_trafienia(operator, cel, dodatkowe, zasieg)
@@ -542,11 +540,3 @@ class BronBiala(Bron):
         else:
             raise Exception('przeciwnik lepiej walczy')
 
-"""
-itemki = Przedmioty("")
-m4ka = itemki.luskaczBroni("m4a1")
-M4KA = BronStrzelecka(m4ka)
-wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
-cel = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
-M4KA.atakuj(wojtek, cel) ec
-"""

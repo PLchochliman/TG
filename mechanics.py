@@ -32,7 +32,7 @@ class WalkaWrecz():
     """
     did without tests, and execution is not ready.
     """
-    def uderz(self, operator, cel, zasieg=0): # TODO bez testow!!!!!
+    def uderz(self, operator, cel, zasieg=0):
         try:
             bron = []
             if operator.aktywna_bron == []:
