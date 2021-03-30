@@ -20,6 +20,19 @@ def sprawdz_jak_cel_oberwal(cel):
         assert cel.lekka_rana > 0
 
 
+def kup_i_zaladuj_giwere(nazwa_giwery):
+    itemki = items.Przedmioty('')
+    giwera = itemki.luskacz_broni(nazwa_giwery)
+    giwera = items.BronStrzelecka(giwera)
+    mag = items.Magazynek(giwera)
+    ammo = itemki.luskacz_amunicji(giwera.statystyki_podstawowe[8])
+    ammo = items.Amunicja(ammo)
+    mag.zaladuj_magazynek(ammo)
+    giwera.zmien_magazynek(mag)
+    giwera.zaciagnij_naboj()
+
+
+
 def test_runner(test):
     def parser():
         try:

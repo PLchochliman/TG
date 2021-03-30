@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="Wojtek should never be in global.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/excelDigger.py" beforeDir="false" afterPath="$PROJECT_DIR$/excelDigger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mechanics.py" beforeDir="false" afterPath="$PROJECT_DIR$/mechanics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mortal.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortal.py" afterDir="false" />
+    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="deleting, and updating comments">
+      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,27 +191,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00052" summary="naprawa czesci testow + ograczenia za FA">
-      <created>1613915174750</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1613915174751</updated>
-    </task>
-    <task id="LOCAL-00053" summary="Walka wrecz bez testow">
-      <created>1613950280344</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1613950280344</updated>
-    </task>
-    <task id="LOCAL-00054" summary="zalążek magazynków i amunicji">
-      <created>1613984955522</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1613984955523</updated>
     </task>
     <task id="LOCAL-00055" summary="zalążek magazynków i amunicji, chyba do zaorania???">
       <created>1614013492502</created>
@@ -538,7 +514,28 @@
       <option name="project" value="LOCAL" />
       <updated>1617139415771</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="deleting, and updating comments">
+      <created>1617140989366</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1617140989366</updated>
+    </task>
+    <task id="LOCAL-00102" summary="deleting, and updating comments">
+      <created>1617141097146</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1617141097146</updated>
+    </task>
+    <task id="LOCAL-00103" summary="deleting, and updating comments">
+      <created>1617141179896</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1617141179896</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -554,7 +551,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="pierwsze testy akcji, oraz poprawki." />
     <MESSAGE value="podejście do magazynków, jeszcze bez dużych przeróbek.&#10;na razie podstawowe dobrze działają." />
     <MESSAGE value="prototyp specek - tak aby były rozumiane przez gre." />
     <MESSAGE value="prototyp stałego magazynka, jeszcze nie skończone." />
@@ -579,14 +575,15 @@
     <MESSAGE value="Specialisations in progress" />
     <MESSAGE value="pierdolety" />
     <MESSAGE value="Wojtek should never be in global." />
-    <option name="LAST_COMMIT_MESSAGE" value="Wojtek should never be in global." />
+    <MESSAGE value="deleting, and updating comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleting, and updating comments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Tests.py</url>
-          <line>327</line>
+          <line>326</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
