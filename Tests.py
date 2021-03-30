@@ -163,20 +163,6 @@ def test_przedmiotow():
     Bot.output("przedmioty dzialaja")
     return 6
 
-"""
-def test_dzialania_broni():
-    wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
-    cel = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
-    giwera = items_old.Bron("strzelectwo", "2D2", 14, "m", 500)
-    giwera.atakuj(wojtek, cel, 1)
-    assert cel.rany[1] > 0
-    giwera2 = items_old.Bron("strzelectwo", "2D2", -5, "ś", 0)
-    assert giwera2.kosc_obrazen == "2D2"
-    giwera2.atakuj(cel, wojtek, 2)
-    assert wojtek.rany[1] == 0
-    Bot.output("podstawowa Bron dziala")
-"""
-
 
 @test_runner
 def test_Broni_strzelcekiej_magazynki_zaciaganie_amunicja_czterotakt():
