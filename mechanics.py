@@ -159,35 +159,3 @@ class Strzelanie():
         else:
             bron.aktualny_magazynek.stan_nabojow = bron.aktualny_magazynek.stan_nabojow - maksymalne
         return maksymalne
-
-"""
-dzialajacy blok samoczynnech i serii
-                if tryb == "samoczynny":
-                    if wynik > operator.aktywna_bron.statystyki_podstawowe[2]:
-                        wynik = operator.aktywna_bron.statystyki_podstawowe[2]
-                    if wynik > operator.aktywna_bron.aktualny_magazynek.stan_nabojow:
-                        wynik = operator.aktywna_bron.aktualny_magazynek.stan_nabojow + 1
-                        operator.aktywna_bron.aktualny_magazynek.stan_nabojow = 0
-                        operator.aktywna_bron.naboj_w_komorze = False
-                    else:
-                        operator.aktywna_bron.aktualny_magazynek.stan_nabojow = operator.aktywna_bron.aktualny_magazynek.stan_nabojow - wynik
-                    self.__zadaj_obrazenia(cel, operator.aktywna_bron, 0, wynik)
-                if tryb == 'serie':
-                    if wynik > 3:
-                        wynik = 3
-                    if wynik > operator.aktywna_bron.aktualny_magazynek.stan_nabojow:
-                        wynik = int(operator.aktywna_bron.aktualny_magazynek.stan_nabojow) + 1
-                        operator.aktywna_bron.aktualny_magazynek.stan_nabojow = 0
-                        operator.aktywna_bron.naboj_w_komorze = False
-                    else:
-                        operator.aktywna_bron.aktualny_magazynek.stan_nabojow =\
-                            int(operator.aktywna_bron.aktualny_magazynek.stan_nabojow) - wynik
-                    self.__zadaj_obrazenia(cel, operator.aktywna_bron, 0, wynik)
-"""
-
-"""
-itemki = items_old.Przedmioty('')
-m4ka = itemki.luskacz_broni("m4a1")
-M4KA = items_old.BronStrzelecka(m4ka)
-wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
-"""

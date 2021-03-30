@@ -207,11 +207,7 @@ class IstotaZywa: #pełne pokrycie
         return constans.KoscUmiejetnosci[doRzutu[0]] + doRzutu[3]
 
     """
-        umiejetnasci is table for skills. from constants you 
-    first states for skill level, second for Cost, 
-    3rd of specializations (Cost is depending on it), 
-    4th is for all modifiers from predispositions (skill in specialisations)and modifiers from stats
-    5th is all for modifier based on base stats modifier.
+    heals the wound
     """
     def wylecz(self, typ_rany):
 

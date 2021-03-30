@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="pierdolety">
-      <change beforePath="$PROJECT_DIR$/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/hero.py" afterDir="false" />
+    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="Wojtek should never be in global.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/excelDigger.py" beforeDir="false" afterPath="$PROJECT_DIR$/excelDigger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mechanics.py" beforeDir="false" afterPath="$PROJECT_DIR$/mechanics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mortal.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortal.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,13 +194,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00051" summary="dorobienie testow">
-      <created>1613861714958</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1613861714958</updated>
     </task>
     <task id="LOCAL-00052" summary="naprawa czesci testow + ograczenia za FA">
       <created>1613915174750</created>
@@ -535,7 +531,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617138511381</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="Wojtek should never be in global.">
+      <created>1617139415771</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1617139415771</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -551,7 +554,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="usunięto items_old&#10;wytyczono nowy plan - pomysł na prowadzenie akcji" />
     <MESSAGE value="pierwsze testy akcji, oraz poprawki." />
     <MESSAGE value="podejście do magazynków, jeszcze bez dużych przeróbek.&#10;na razie podstawowe dobrze działają." />
     <MESSAGE value="prototyp specek - tak aby były rozumiane przez gre." />
@@ -576,7 +578,8 @@
     <MESSAGE value="fixed test counter" />
     <MESSAGE value="Specialisations in progress" />
     <MESSAGE value="pierdolety" />
-    <option name="LAST_COMMIT_MESSAGE" value="pierdolety" />
+    <MESSAGE value="Wojtek should never be in global." />
+    <option name="LAST_COMMIT_MESSAGE" value="Wojtek should never be in global." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

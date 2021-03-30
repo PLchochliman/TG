@@ -42,7 +42,3 @@ class Loader: #pelne pokrycie
 
     def wyczysc(self):
         self.zaladowane = []
-
-
-#giweryICelowniki = Loader('TabelaBroni.xlsx', ['bron', 'bronbiala', 'granaty', 'lunety', 'celowniki',], ['O300', 'I19','I10', 'F13', 'G14'])
-#print(giweryICelowniki.zwroc())
