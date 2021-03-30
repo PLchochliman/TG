@@ -1,8 +1,8 @@
 import Bot
 import excelDigger
 """
-COnstans are not tested directly!!!!
-Only by the way of other tests, so we got full coverage.
+wszelkie przeliczanie tego systemu, które jest potrzebne więcej niż 1 raz.
+fully tested
 """
 
 
@@ -208,7 +208,3 @@ def mod(statystyka):
     if statystyka > 13:
         Bot.output("coś dużo tego. chyba to potwór \n  Jeśli nie jesteś mutantem, zmień to natychmiast")
         return 4
-
-"""
-wszelkie przeliczanie tego systemu, które jest potrzebne więcej niż 1 raz.
-"""
