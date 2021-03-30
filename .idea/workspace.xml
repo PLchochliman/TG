@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="some tests done, but still not enough.">
+    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="Specialisations in progress">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpecjalizacjeDoZrobienia.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/SpecjalizacjeDoZrobienia.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/hero.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,13 +191,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00049" summary="zmiana komunikatów obrażeń">
-      <created>1613861113173</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1613861113173</updated>
     </task>
     <task id="LOCAL-00050" summary="zmiana komunikatów obrażeń">
       <created>1613861219610</created>
@@ -537,7 +528,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616017396184</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="Specialisations in progress">
+      <created>1617136836896</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1617136836896</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -553,7 +551,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="konsekwentny debug rzeczy, zanim same się wykopcą." />
     <MESSAGE value="drobne literowki" />
     <MESSAGE value="usunięto items_old&#10;wytyczono nowy plan - pomysł na prowadzenie akcji" />
     <MESSAGE value="pierwsze testy akcji, oraz poprawki." />
@@ -578,7 +575,8 @@
     <MESSAGE value="few more tests of special ammunition." />
     <MESSAGE value="few more tests of ammunition." />
     <MESSAGE value="fixed test counter" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed test counter" />
+    <MESSAGE value="Specialisations in progress" />
+    <option name="LAST_COMMIT_MESSAGE" value="Specialisations in progress" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
