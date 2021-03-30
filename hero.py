@@ -222,7 +222,8 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
                     switch = 1
             if switch == 0:
                 self.jezyki.append([wejcie, 1])
-"""
-do testów
+
+    def dodaj_umiejetnosci_specjalizacji(self):
+        return 0
+
 wojtek = Postac(8, 8, 8, ["Bron boczna", "Karabiny", "Karabiny maszynowe"])
-"""
