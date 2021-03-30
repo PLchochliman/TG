@@ -225,5 +225,3 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
 
     def dodaj_umiejetnosci_specjalizacji(self):
         return 0
-
-wojtek = Postac(8, 8, 8, ["Bron boczna", "Karabiny", "Karabiny maszynowe"])
