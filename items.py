@@ -363,7 +363,8 @@ class BronStrzelecka(Bron): #pełne pokrycie
     rostawiona = False
     kara_za_nierostawienie = 0
     czas_rostawienia = 0
-
+    awaria = False
+    zacinka = False
 # if is smaller than 5 then it makes work for increased penalty for range, because of shit instead of sights
 
     def __init__(self, bron, celownik=muszka_i_szczerbinka, amunicja=("podstawowa"), magazynek=""):
@@ -383,6 +384,8 @@ class BronStrzelecka(Bron): #pełne pokrycie
         self.szybkostrzelnosc = bron[2]
         self.walka_wrecz = BronBiala(['kolba', 0, 0, 0, 0, 'd2', 'x', 'obuchowa', '$0,00'])
         self.__nastaw_kare_za_nierostawienie()
+        self.awaria = False
+        self.zacinka = False
 
     def __zamontuj_magazynek_staly(self):
         self.wymienny_magazynek = False
@@ -510,6 +513,19 @@ class BronStrzelecka(Bron): #pełne pokrycie
                 return False
             raise AttributeError
 
+    def rzut_na_awarie(self):
+        kosc_rzutu = 10
+        if "bezawaryjna" in self.zasady_specjalne:
+            kosc_rzutu = 100
+        result = Bot.roll_dice(kosc_rzutu)
+        if result == 1:
+            self.naboj_w_komorze = False
+            kosc_rzutu = 10
+            if "niezniszczalna" in self.zasady_specjalne:
+                kosc_rzutu = 100
+            result = Bot.roll_dice(kosc_rzutu)
+            if result == 1:
+                self.awaria = True
 
 # TODo zasady specjalne broni, możliwość wpływu specjalizacji.
 class BronBiala(Bron):

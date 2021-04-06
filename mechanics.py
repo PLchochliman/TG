@@ -105,6 +105,8 @@ class Strzelanie():
 # nie sprawdza równierz kar za różne zasięgi.
     def strzal(self, operator, cel, zasieg, tryb="pojedynczy"):
         try:
+            if operator.aktywna_bron.awaria:
+                raise Exception("BRON MA AWARIE")
             if tryb not in ("pojedynczy", "pelne skupienie", "samoczynny", "serie"):
                 raise Exception("nie ma takiego trybu. Dostępne tryby to: pojedynczy, pelne skupienie, samoczynny, serie")
             tryb = self.__sprawdzenie_czy_mozna_strzelac(operator, tryb)
