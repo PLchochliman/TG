@@ -233,7 +233,8 @@ def test_Broni_strzelcekiej_magazynki_zaciaganie_amunicja_czterotakt():
     assert Swinia.zmien_magazynek(stal)
     assert Swinia.zaciagnij_naboj()
     assert Swinia.kara_za_nierostawienie == -10
-    return 23
+    assert Swinia.rostaw_bron() == 0
+    return 24
 
 @test_runner
 def test_broni_strzeleckiej_specjalne_magi():
@@ -386,7 +387,9 @@ def test_mechanik_walki():
     assert wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow == 8
     wojtek.aktywna_bron.zaciagnij_naboj()
     assert wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow == 7
-    return 9
+    wojtek.aktywna_bron.awaria = True
+    assert not strzelanie.strzal(wojtek, beben, 50, "serie")
+    return 10
 
 @test_runner
 def test_akcji():
@@ -412,5 +415,5 @@ ilosc_testow_pass += test_mechanik_walki()
 ilosc_testow_pass += test_amunicji_i_magazynkow()
 ilosc_testow_pass += test_akcji()
 ilosc_testow_pass += test_broni_strzeleckiej_specjalne_magi()
-print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \nJest to " + str(ilosc_testow_pass/114 * 100) + "% testów.")
+print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \nJest to " + str(ilosc_testow_pass/116 * 100) + "% testów.")
 #unittest.main()
