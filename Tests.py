@@ -307,9 +307,6 @@ def test_amunicji_i_magazynkow():
     M4KA.zaciagnij_naboj()
     assert M4KA.aktualny_magazynek.stan_nabojow == 29
     assert M4KA.naboj_w_komorze
-    #test z łódeczkami jest w teście broni
-    # taśma - FN MAG
-    #870 MCS
     srut = itemki.luskacz_amunicji("12g")
     Srut = items.Amunicja(srut)
     mcs = itemki.luskacz_broni("870 mcs")

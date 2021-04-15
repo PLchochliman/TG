@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="deleting, and updating comments">
+    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="preparing refactor of tests">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mechanics.py" beforeDir="false" afterPath="$PROJECT_DIR$/mechanics.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +23,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -191,13 +194,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00055" summary="zalążek magazynków i amunicji, chyba do zaorania???">
-      <created>1614013492502</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1614013492502</updated>
     </task>
     <task id="LOCAL-00056" summary="powoli przymierzam się do zrobienia magów i amunicja">
       <created>1614040326403</created>
@@ -535,7 +531,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617141179896</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="preparing refactor of tests">
+      <created>1617141521024</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1617141521025</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -551,7 +554,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="podejście do magazynków, jeszcze bez dużych przeróbek.&#10;na razie podstawowe dobrze działają." />
     <MESSAGE value="prototyp specek - tak aby były rozumiane przez gre." />
     <MESSAGE value="prototyp stałego magazynka, jeszcze nie skończone." />
     <MESSAGE value="stały magazynek wymaga wciąż popraw. jakimś cudem nie ładuje naboi poprawnie..." />
@@ -576,14 +578,15 @@
     <MESSAGE value="pierdolety" />
     <MESSAGE value="Wojtek should never be in global." />
     <MESSAGE value="deleting, and updating comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleting, and updating comments" />
+    <MESSAGE value="preparing refactor of tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="preparing refactor of tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Tests.py</url>
-          <line>326</line>
+          <line>323</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
