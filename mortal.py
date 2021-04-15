@@ -20,6 +20,7 @@ class IstotaZywa: #pełne pokrycie
     udzwig = 0
     umiejetnasci = []
     jezyki = []
+    planowane_dzialania = []
 
     def __init__(self, sila, zrecznasc, intelekt, imie="Bot", unik=10, redukcjaObrazen=0, typOchrony=0):
         self.sila = sila
@@ -49,6 +50,7 @@ class IstotaZywa: #pełne pokrycie
                 [0, 0, 0, 0, 3], [0, 0, 0, 0, 3], [0, 0, 0, 0, 3], [0, 0, 0, 0, 3], [0, 0, 0, 0, 3],
                 ]
         self.nastaw_umiejetnasci()
+        self.planowane_dzialania = []
 
     def nastaw_unik(self):   #todo because of lack of equipment in code implemented.
         self.unik = (self.bazowy_unik + self.umiejetnasci[6][0])
@@ -215,4 +217,15 @@ class IstotaZywa: #pełne pokrycie
             return 0
         else:
             Bot.output("nie ma takiej rany!")
+
+    def zaplanuj_akcje(self, komenda):
+        self.planowane_dzialania.append(komenda)
+
+    def akcja(self):
+        if len(self.planowane_dzialania) == 0:
+            self.planowane_dzialania.append("nic")
+        wyjscie = self.planowane_dzialania[0]
+        self.planowane_dzialania.pop(0)
+        return wyjscie
+
 

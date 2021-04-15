@@ -3,7 +3,6 @@ here some utils for future - rebuilding for Discord server.
 Preparations for rebuilding it in the future - now piece of sh*t
 """
 import random as random
-from time import sleep
 
 random.seed(a=5, version=2)
 

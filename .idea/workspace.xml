@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="preparing refactor of tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/hero.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mechanics.py" beforeDir="false" afterPath="$PROJECT_DIR$/mechanics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mortal.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortal.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,13 +196,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00056" summary="powoli przymierzam się do zrobienia magów i amunicja">
-      <created>1614040326403</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1614040326403</updated>
     </task>
     <task id="LOCAL-00057" summary="skrócenie działania tego, bo było źle.">
       <created>1614047859374</created>
@@ -538,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617141521025</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="preparing refactor of tests">
+      <created>1618522434813</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1618522434814</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -586,7 +588,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Tests.py</url>
-          <line>323</line>
+          <line>327</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

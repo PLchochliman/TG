@@ -9,12 +9,15 @@ class Akcje():
     faza = 0
     walka_wrecz = []
     strzelanie = []
+    postacie = []
 
-    def __init__(self, tura=0, faza=0):
+    def __init__(self, postacie, tura=0, faza=0):
         self.tura = tura
         self.faza = faza
         self.walka_wrecz = WalkaWrecz()
         self.strzelanie = Strzelanie()
+        self.postacie = postacie
+
 
     def kolejna_faza(self, faza=1):
         if faza > 5:
@@ -26,6 +29,8 @@ class Akcje():
             self.tura = self.tura + 1
             self.faza = self.faza - 6
         return True
+
+
 
 
 class WalkaWrecz():
