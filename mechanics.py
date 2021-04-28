@@ -11,18 +11,25 @@ class Akcje():
     strzelanie = []
     postacie = []
 
-    def __init__(self, postacie, tura=0, faza=0):
+    def __init__(self, postacie=[], tura=0, faza=0):
         self.tura = tura
         self.faza = faza
         self.walka_wrecz = WalkaWrecz()
         self.strzelanie = Strzelanie()
         self.postacie = postacie
 
+    def kolejna_faza(self):
+        for i in self.postacie:
+            self.__egzekucja_czynnosci(i.akcja())
+        self.przesun_faze()
 
-    def kolejna_faza(self, faza=1):
+    def __egzekucja_czynnosci(self):
+        return 0
+
+    def przesun_faze(self, faza=1):
         if faza > 5:
             self.tura = self.tura + int(faza / 6)
-            self.kolejna_faza((faza % 6))
+            self.przesun_faze((faza % 6))
             return True
         self.faza = self.faza + faza
         if self.faza > 5:

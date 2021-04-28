@@ -214,6 +214,7 @@ class IstotaZywa: #pełne pokrycie
     def wylecz(self, typ_rany):
 
         if typ_rany in ("drasniecie", "lekka rana", "powazna rana", "krytyczna rana", "rana konczyny"):
+
             return 0
         else:
             Bot.output("nie ma takiej rany!")

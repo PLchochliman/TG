@@ -281,7 +281,6 @@ def test_broni_bialej():
     return 5
 
 
-
 @test_runner
 def test_amunicji_i_magazynkow():
     itemki = items.Przedmioty('')
@@ -391,7 +390,7 @@ def test_mechanik_walki():
 @test_runner
 def test_akcji():
     akcja = mechanics.Akcje()
-    assert akcja.kolejna_faza(15)
+    assert akcja.przesun_faze(15)
     assert akcja.tura == 2
     assert akcja.faza == 3
     return 3
