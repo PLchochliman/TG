@@ -21,11 +21,12 @@ class Akcje():
     #TODO do wytestowania
     def kolejna_faza(self):
         for postac in self.postacie:
-            self.__egzekucja_czynnosci(postac.akcja())
+            co_robi = self.__egzekucja_czynnosci(postac.akcja())
+            Bot.output(postac.imie + " wykonuje " + co_robi)
         self.przesun_faze()
 
-    def __egzekucja_czynnosci(self):
-        return 0
+    def __egzekucja_czynnosci(self, czynnosc):
+        return czynnosc
 
     def przesun_faze(self, faza=1):
         if faza > 5:
@@ -37,6 +38,9 @@ class Akcje():
             self.tura = self.tura + 1
             self.faza = self.faza - 6
         return True
+
+    def ktora_faza(self):
+        return [self.tura, self.faza]
 
 
 
