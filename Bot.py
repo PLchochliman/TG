@@ -4,7 +4,10 @@ Preparations for rebuilding it in the future - now piece of sh*t
 """
 import random as random
 
+
+
 random.seed(a=5, version=2)
+
 
 """
 rolls Dice. in Dice type you write maximum value of the dice. 

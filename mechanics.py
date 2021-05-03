@@ -28,10 +28,8 @@ class Akcje():
     def __egzekucja_czynnosci(self, postac, czynnosc):
         czynnosci = czynnosc.split()
         if "strzelanie" in czynnosci:
-            try:
-                self.strzelanie(postac, czynnosci[1])
-            except Exception:
-                Bot.output("nie ma takiego celu!!!")
+            self.__strzelanie(postac, czynnosci[1])
+
 
         return czynnosc
 
