@@ -27,9 +27,8 @@ class Akcje():
 
     def __egzekucja_czynnosci(self, postac, czynnosc):
         czynnosci = czynnosc.split()
-        if "strzelam" in czynnosci:
+        if "strzelanie" in czynnosci:
             self.strzelanie(postac, self.__rozpoznaj_cel(czynnosci[1]))
-
         return czynnosc
 
 

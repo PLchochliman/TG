@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="przygotowanie operacji na fazach, ale jeszcze bez obsługi samych czynności">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mechanics.py" beforeDir="false" afterPath="$PROJECT_DIR$/mechanics.py" afterDir="false" />
-    </list>
+    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="przygotowanie operacji na fazach, ale jeszcze bez obsługi samych czynności" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -193,13 +190,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00060" summary="te magi sa nieskonczone, ale naprawiono excela, plus z pustego juz nie strzela.">
-      <created>1614076778523</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1614076778524</updated>
     </task>
     <task id="LOCAL-00061" summary="blokada na magazynkach - działają tylko na broni do niej, lub w rodzinie - tak jak być powinno.&#10;można załadować złą amunicję - ale nie strzeli.">
       <created>1614088640933</created>
@@ -537,7 +527,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619820278283</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="powoli dodawane programowalne z zewnątrz strzelanie.">
+      <created>1620001688102</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1620001688103</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -553,7 +550,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="naprawiono problem łódeczek." />
     <MESSAGE value="premia do ataku z tytułu zasad snajperka i strzelba pokryte." />
     <MESSAGE value="przygotowane początek różnych amunicji." />
     <MESSAGE value="zrobiona maksymalny zasięg amunicji." />
@@ -578,7 +574,8 @@
     <MESSAGE value="przygotowanie komend" />
     <MESSAGE value="przygotowanie operacji na fazach, ale jeszcze bez obsługi samych czynności" />
     <MESSAGE value="default communicate during execution" />
-    <option name="LAST_COMMIT_MESSAGE" value="default communicate during execution" />
+    <MESSAGE value="powoli dodawane programowalne z zewnątrz strzelanie." />
+    <option name="LAST_COMMIT_MESSAGE" value="powoli dodawane programowalne z zewnątrz strzelanie." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
