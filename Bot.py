@@ -72,3 +72,7 @@ def output(text):
 def input_for_bot():
     nowy = input()
     return nowy.lower()
+
+def gm_input_for_bot():
+    nowy = input()
+    return nowy.lower()

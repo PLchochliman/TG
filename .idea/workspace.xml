@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="przygotowanie operacji na fazach, ale jeszcze bez obsługi samych czynności" />
+    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="przygotowanie operacji na fazach, ale jeszcze bez obsługi samych czynności">
+      <change beforePath="$PROJECT_DIR$/mechanics.py" beforeDir="false" afterPath="$PROJECT_DIR$/mechanics.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -190,13 +192,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00061" summary="blokada na magazynkach - działają tylko na broni do niej, lub w rodzinie - tak jak być powinno.&#10;można załadować złą amunicję - ale nie strzeli.">
-      <created>1614088640933</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1614088640933</updated>
     </task>
     <task id="LOCAL-00062" summary="BRAK TESTOW - ale strzelanie z powrotem dziala.&#10;wyrzucono wiele logiki do zewnetrznych funkcji.">
       <created>1614093025779</created>
@@ -534,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620001688103</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="powoli dodawane programowalne z zewnątrz strzelanie.">
+      <created>1620002199805</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1620002199805</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

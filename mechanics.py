@@ -28,18 +28,33 @@ class Akcje():
     def __egzekucja_czynnosci(self, postac, czynnosc):
         czynnosci = czynnosc.split()
         if "strzelanie" in czynnosci:
-            self.strzelanie(postac, self.__rozpoznaj_cel(czynnosci[1]))
+            try:
+                self.strzelanie(postac, czynnosci[1])
+            except Exception:
+                Bot.output("nie ma takiego celu!!!")
+
         return czynnosc
 
 
-    def __strzelanie(self, postac, wrog):
-        self.strzelanie.strzal(postac, wrog, self.__zasieg())
+    def __strzelanie(self, postac, wrog="brak"):
+        try:
+            if wrog == "brak":
+                return False
+            return self.strzelanie.strzal(postac, self.__rozpoznaj_cel(wrog), self.__zasieg())
+        except Exception:
+            Bot.output("nie ma takiego celu!!! GMie popraw. wpisz brak, jeśli sytuacja się zmieniła i nie"
+                       " chcesz oddawać tego strzału")
+            wrog = Bot.gm_input_for_bot()
+            self.__strzelanie(postac, wrog)
 
     def __zasieg(self):
         return 0
 
-    def __rozpoznaj_cel(self):
-        return 0
+    def __rozpoznaj_cel(self, imie):
+        for postac in self.postacie:
+            if postac.imie == imie:
+                return postac
+        raise Exception("nie ma takiego celu")
 
     def przesun_faze(self, faza=1):
         if faza > 5:
