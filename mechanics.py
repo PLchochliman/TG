@@ -21,12 +21,26 @@ class Akcje():
     #TODO do wytestowania
     def kolejna_faza(self):
         for postac in self.postacie:
-            co_robi = self.__egzekucja_czynnosci(postac.akcja())
-            Bot.output(postac.imie + " wykonuje " + co_robi)
+            co_robi = self.__egzekucja_czynnosci(postac, postac.akcja())
+            Bot.output(postac.imie + " wykonał " + co_robi)
         self.przesun_faze()
 
-    def __egzekucja_czynnosci(self, czynnosc):
+    def __egzekucja_czynnosci(self, postac, czynnosc):
+        czynnosci = czynnosc.split()
+        if "strzelam" in czynnosci:
+            self.strzelanie(postac, self.__rozpoznaj_cel(czynnosci[1]))
+
         return czynnosc
+
+
+    def __strzelanie(self, postac, wrog):
+        self.strzelanie.strzal(postac, wrog, self.__zasieg())
+
+    def __zasieg(self):
+        return 0
+
+    def __rozpoznaj_cel(self):
+        return 0
 
     def przesun_faze(self, faza=1):
         if faza > 5:
