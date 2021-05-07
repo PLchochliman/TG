@@ -37,6 +37,7 @@ async def on_message(message):
     if message.content.startswith('$postac'):
         try:
             if str(message.attachments) == "[]":  # Checks if there is an attachment on the message
+                await message.channel.send('nie mam pliku(załącz go, a w treści wiadomości napisz $postać)')
                 return
             else:  # If there is it gets the filename from message.attachments
                 split_v1 = str(message.attachments).split("filename='")[1]
