@@ -448,12 +448,21 @@ class BronStrzelecka(Bron): #pełne pokrycie
         if odległosc > self.aktualny_magazynek.amunicja.maks_zasieg_amunicji:
             raise Exception('cel jest po za zasiegiem.')
         kara_za_zasieg = self.__specjalne_kary_za_odleglosc(odległosc)
+
         if 1 < self.zasieg_minimalny < 5:
             kara_za_zasieg = kara_za_zasieg * self.zasieg_minimalny
         premia = int(self.premia)
         premia = premia + int(self.odrzut(operator))
         premia = premia - int(kara_za_zasieg)
         premia = premia + self.__interpretuj_zasady_bazujace_na_amunicji(odległosc)
+        if "celna" in self.zasady_specjalne:
+            if operator.umiejetnosci[constants.UmiejetnasciDoInt["strzelectwo"]][0] > 2:
+                premia = premia + 1
+        if "wbitnie celna" in self.zasady_specjalne:
+            if operator.umiejetnosci[constants.UmiejetnasciDoInt["strzelectwo"]][0] > 2:
+                premia = premia + 1
+            if operator.umiejetnosci[constants.UmiejetnasciDoInt["strzelectwo"]][0] > 4:
+                premia = premia + 1
         if not self.rostawiona:
             premia = premia + self.kara_za_nierostawienie
         if self.rostawiona:

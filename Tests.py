@@ -112,10 +112,10 @@ def test_ran_kar_smierci(): #testy mortal.py
 def test_umiejetnosci_i_aktywacji(): # test mortal.py
     wojtek = mortal.IstotaZywa(8, 8, 8, "Wojtek")
     assert wojtek.aktywacja(2)
-    assert wojtek.umiejetnasci[3][3] == 1
-    assert wojtek.umiejetnasci[4][3] == 0
+    assert wojtek.umiejetnosci[3][3] == 1
+    assert wojtek.umiejetnosci[4][3] == 0
     assert wojtek.rzut_na_umiejetnasc("skupienie") >= 2
-    Bot.output("umiejetnasci dzialaja")
+    Bot.output("umiejetnosci dzialaja")
     return 4
 
 
@@ -124,28 +124,28 @@ def test_wykupowania_umiejetnosci_z_obnizeniem_przez_specjalizacje():
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     wojtek.wykup_range("obsluga broni")
     assert wojtek.punktyUmiejetnasci == 165
-    assert wojtek.umiejetnasci[1][0] == 1
+    assert wojtek.umiejetnosci[1][0] == 1
     wojtek.wykup_range("obsluga broni")
     assert wojtek.punktyUmiejetnasci == 164
-    assert wojtek.umiejetnasci[1][0] == 2
+    assert wojtek.umiejetnosci[1][0] == 2
     wojtek.wykup_range("gadana")
     assert wojtek.punktyUmiejetnasci == 161
-    assert wojtek.umiejetnasci[15][0] == 1
+    assert wojtek.umiejetnosci[15][0] == 1
     wojtek.wykup_range("prowadzenie pojazdu")
     assert wojtek.punktyUmiejetnasci == 159
-    assert wojtek.umiejetnasci[8][0] == 1
+    assert wojtek.umiejetnosci[8][0] == 1
     wojtek.wykup_range("gadana")
     assert wojtek.punktyUmiejetnasci == 153
-    assert wojtek.umiejetnasci[15][0] == 2
+    assert wojtek.umiejetnosci[15][0] == 2
     wojtek.wykup_range("prowadzenie pojazdu")
     assert wojtek.punktyUmiejetnasci == 149
-    assert wojtek.umiejetnasci[8][0] == 2
+    assert wojtek.umiejetnosci[8][0] == 2
     assert wojtek.rzut_na_umiejetnasc("prowadzenie pojazdu") > 3
     wojtek.podnies_predyspozycje("bron boczna")
-    assert wojtek.umiejetnasci[8][3] == 2
+    assert wojtek.umiejetnosci[8][3] == 2
     wojtek.wykup_range("zmysl bitewny")
     assert wojtek.unik == 13
-    Bot.output("wykupowanie umiejetnasci dziala")
+    Bot.output("wykupowanie umiejetnosci dziala")
     return 15
 
 

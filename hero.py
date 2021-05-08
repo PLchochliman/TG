@@ -62,8 +62,8 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
                 if umiejetnascWyciagnieta in ["dyscyplina naukowa lub zawod", "dyscyplina naukowa", "zawod"]:
                     self.dobierz_zawod(umiejetnascWyciagnieta)
                 else:
-                    self.umiejetnasci[constans.UmiejetnasciDoInt[umiejetnascWyciagnieta]][2] = \
-                        self.umiejetnasci[constans.UmiejetnasciDoInt[umiejetnascWyciagnieta]][2] + 1
+                    self.umiejetnosci[constans.UmiejetnasciDoInt[umiejetnascWyciagnieta]][2] = \
+                        self.umiejetnosci[constans.UmiejetnasciDoInt[umiejetnascWyciagnieta]][2] + 1
 
 
     #rozwiązuje problem zawodu, dyscypliny naukowej.
@@ -78,9 +78,9 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
                     wejscie = Bot.input_for_bot()
                     if 17 < constans.UmiejetnasciDoInt[wejscie] < 25:
                         if wejscie in constans.UmiejetnasciDoInt:
-                            if self.umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] != 3:
-                                self.umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] = \
-                                    self.umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] + 1
+                            if self.umiejetnosci[constans.UmiejetnasciDoInt[wejscie]][2] != 3:
+                                self.umiejetnosci[constans.UmiejetnasciDoInt[wejscie]][2] = \
+                                    self.umiejetnosci[constans.UmiejetnasciDoInt[wejscie]][2] + 1
                                 hamulec += 1
                             else:
                                 Bot.output("juz 3 raz wybrales te umiejetnasc. wybierz inna.")
@@ -96,9 +96,9 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
                     wejscie = Bot.input_for_bot()
                     if 17 < constans.UmiejetnasciDoInt[wejscie] < 21:
                         if wejscie in constans.UmiejetnasciDoInt:
-                            if self.umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] != 3:
-                                self.umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] = \
-                                    self.umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] + 1
+                            if self.umiejetnosci[constans.UmiejetnasciDoInt[wejscie]][2] != 3:
+                                self.umiejetnosci[constans.UmiejetnasciDoInt[wejscie]][2] = \
+                                    self.umiejetnosci[constans.UmiejetnasciDoInt[wejscie]][2] + 1
                                 hamulec += 1
                             else:
                                 Bot.output("juz 3 raz wybrales te umiejetnasc. wybierz inna.")
@@ -114,9 +114,9 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
                     wejscie = Bot.input_for_bot()
                     if 20 < constans.UmiejetnasciDoInt[wejscie] < 25:
                         if wejscie in constans.UmiejetnasciDoInt:
-                            if self.umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] != 3:
-                                self.umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] = \
-                                    self.umiejetnasci[constans.UmiejetnasciDoInt[wejscie]][2] + 1
+                            if self.umiejetnosci[constans.UmiejetnasciDoInt[wejscie]][2] != 3:
+                                self.umiejetnosci[constans.UmiejetnasciDoInt[wejscie]][2] = \
+                                    self.umiejetnosci[constans.UmiejetnasciDoInt[wejscie]][2] + 1
                                 hamulec += 1
                             else:
                                 Bot.output("juz 3 raz wybrales te umiejetnasc. wybierz inna.")
@@ -125,7 +125,7 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
                     else:
                         Bot.output("wybrano umiejetnosc spoza spektrum! \n sprobuj ponownie")
         except KeyError:
-            Bot.output("Zle podales nazwe umiejetnasci, sproboj jeszcze raz")
+            Bot.output("Zle podales nazwe umiejetnosci, sproboj jeszcze raz")
             self.dobierz_zawod(typDoprecyzowania)
 
     """
@@ -143,18 +143,18 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
                 if umiejetnasc == "dyscyplina naukowa lub zawod":
                     hamulec: int = 0
                     while hamulec == 0:
-                        if self.umiejetnasci[constans.UmiejetnasciDoInt["dyscyplina naukowa Medycyna"]][2] < 3:
-                            self.umiejetnasci[constans.UmiejetnasciDoInt["dyscyplina naukowa Medycyna"]][2] += 1
-                        elif self.umiejetnasci[constans.UmiejetnasciDoInt["zawod Rusznikarz"]][2] < 3:
-                            self.umiejetnasci[constans.UmiejetnasciDoInt["zawod Rusznikarz"]][2] += 1
-                        elif self.umiejetnasci[constans.UmiejetnasciDoInt["dyscyplina naukowa Informatyka"]][2] < 3:
-                            self.umiejetnasci[constans.UmiejetnasciDoInt["dyscyplina naukowa Informatyka"]][2] += 1
+                        if self.umiejetnosci[constans.UmiejetnasciDoInt["dyscyplina naukowa Medycyna"]][2] < 3:
+                            self.umiejetnosci[constans.UmiejetnasciDoInt["dyscyplina naukowa Medycyna"]][2] += 1
+                        elif self.umiejetnosci[constans.UmiejetnasciDoInt["zawod Rusznikarz"]][2] < 3:
+                            self.umiejetnosci[constans.UmiejetnasciDoInt["zawod Rusznikarz"]][2] += 1
+                        elif self.umiejetnosci[constans.UmiejetnasciDoInt["dyscyplina naukowa Informatyka"]][2] < 3:
+                            self.umiejetnosci[constans.UmiejetnasciDoInt["dyscyplina naukowa Informatyka"]][2] += 1
                         hamulec = 1
                 else:
-                    self.umiejetnasci[constans.UmiejetnasciDoInt[umiejetnasc]][2] = self.umiejetnasci[constans.UmiejetnasciDoInt[umiejetnasc]][2] + 1
+                    self.umiejetnosci[constans.UmiejetnasciDoInt[umiejetnasc]][2] = self.umiejetnosci[constans.UmiejetnasciDoInt[umiejetnasc]][2] + 1
 
     """
-        umiejetnasci is table for skills. from constants you 
+        umiejetnosci is table for skills. from constants you 
         first states for skill level, second for Cost, 
         3rd of specializations (Cost is dependingo for it), 
         4th is for all modifiers from predispositions (skill in specialisations)and modifiers from stats
@@ -165,26 +165,26 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
         if nazwaUmiejetnasci in constans.UmiejetnasciDoInt:
             umiejetnasc = constans.UmiejetnasciDoInt[nazwaUmiejetnasci]
             # jeżeli w 3 speckach jest dana umiejka to wtedy jest specjalne wykupowanie
-            if self.umiejetnasci[umiejetnasc][2] == 3:
-                if self.umiejetnasci[umiejetnasc][0] == 0:
-                    self.umiejetnasci[umiejetnasc][0] = 1
+            if self.umiejetnosci[umiejetnasc][2] == 3:
+                if self.umiejetnosci[umiejetnasc][0] == 0:
+                    self.umiejetnosci[umiejetnasc][0] = 1
                 else:
-                    if self.punktyUmiejetnasci >= (self.umiejetnasci[umiejetnasc][0]):
-                        self.punktyUmiejetnasci = self.punktyUmiejetnasci - (self.umiejetnasci[umiejetnasc][0])
-                        self.umiejetnasci[umiejetnasc][0] = self.umiejetnasci[umiejetnasc][0] + 1
-                        self.umiejetnasci[umiejetnasc][1] = self.umiejetnasci[umiejetnasc][0] + \
-                                                            (self.umiejetnasci[umiejetnasc][0])
+                    if self.punktyUmiejetnasci >= (self.umiejetnosci[umiejetnasc][0]):
+                        self.punktyUmiejetnasci = self.punktyUmiejetnasci - (self.umiejetnosci[umiejetnasc][0])
+                        self.umiejetnosci[umiejetnasc][0] = self.umiejetnosci[umiejetnasc][0] + 1
+                        self.umiejetnosci[umiejetnasc][1] = self.umiejetnosci[umiejetnasc][0] + \
+                                                            (self.umiejetnosci[umiejetnasc][0])
                     else:
                         Bot.output("nie stać Cię. Podexp")
 
             #dla reszty
             else:
-                if self.punktyUmiejetnasci >= (self.umiejetnasci[umiejetnasc][0] + 1)*(3 - self.umiejetnasci[umiejetnasc][2]):
+                if self.punktyUmiejetnasci >= (self.umiejetnosci[umiejetnasc][0] + 1)*(3 - self.umiejetnosci[umiejetnasc][2]):
                     self.punktyUmiejetnasci = self.punktyUmiejetnasci - \
-                                    ((self.umiejetnasci[umiejetnasc][0] + 1) * (3 - self.umiejetnasci[umiejetnasc][2]))
-                    self.umiejetnasci[umiejetnasc][0] = self.umiejetnasci[umiejetnasc][0] + 1
-                    self.umiejetnasci[umiejetnasc][1] = self.umiejetnasci[umiejetnasc][1] + \
-                                                        (self.umiejetnasci[umiejetnasc][0] * (3 - self.umiejetnasci[umiejetnasc][2]))
+                                    ((self.umiejetnosci[umiejetnasc][0] + 1) * (3 - self.umiejetnosci[umiejetnasc][2]))
+                    self.umiejetnosci[umiejetnasc][0] = self.umiejetnosci[umiejetnasc][0] + 1
+                    self.umiejetnosci[umiejetnasc][1] = self.umiejetnosci[umiejetnasc][1] + \
+                                                        (self.umiejetnosci[umiejetnasc][0] * (3 - self.umiejetnosci[umiejetnasc][2]))
                 else:
                     Bot.output("nie stać Cię. Podexp")
             if umiejetnasc == constans.UmiejetnasciDoInt["jezyki"]:
@@ -192,7 +192,7 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
             if umiejetnasc == constans.UmiejetnasciDoInt["zmysl bitewny"]:
                 self.nastaw_unik()
         else:
-            Bot.output("nie ma takiej umiejetnasci")
+            Bot.output("nie ma takiej umiejetnosci")
 
     def podnies_predyspozycje(self, specjalizacja):
         for i in self.specjalizacje:
@@ -201,7 +201,7 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
                 i[5] = i[5].strip()
                 for umiejetnasc in i:
                     umiejetnasc = constans.UmiejetnasciDoInt[umiejetnasc]
-                    self.umiejetnasci[umiejetnasc][3] = self.umiejetnasci[umiejetnasc][3] + 1
+                    self.umiejetnosci[umiejetnasc][3] = self.umiejetnosci[umiejetnasc][3] + 1
 
     def podnies_jezyki(self, jezyk=""): # do obejrzenia ANIOŁ LUDZIEJ EWOLUCJI
         if jezyk:

@@ -96,7 +96,7 @@ Umiejetnosci = {
 }
 
 """
-    umiejetnasci is table for skills. from constants you 
+    umiejetnosci is table for skills. from constants you 
     first states for skill level, second for Cost, 
     3rd of specializations (Cost is dependingo for it), 
     4th is for all modifiers from predispositions (skill in specialisations)and modifiers from stats

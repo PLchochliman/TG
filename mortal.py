@@ -18,7 +18,7 @@ class IstotaZywa: #pełne pokrycie
     unik = 10
     punktyWytrwalosci, przeznaczenie = 0, 0,
     udzwig = 0
-    umiejetnasci = []
+    umiejetnosci = []
     jezyki = []
     planowane_dzialania = []
 
@@ -43,17 +43,17 @@ class IstotaZywa: #pełne pokrycie
         self.redukcja_obrazen = redukcjaObrazen
         if self.mod_sila == 3:
             self.redukcja_obrazen += 1
-        self.umiejetnasci = [[0], [0, 0, 0, 0, 2], [0, 0, 0, 0, 2], [0, 0, 0, 0, 3], [0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 2], [0, 0, 0, 0, 0], [0, 0, 0, 0, 5], [0, 0, 0, 0, 2], [0, 0, 0, 0, 2],
-                [0, 0, 0, 0, 6], [0, 0, 0, 0, 5], [0, 0, 0, 0, 5], [0, 0, 0, 0, 2], [0, 0, 0, 0, 3],
-                [0, 0, 0, 0, 3], [0, 0, 0, 0, 3], [0, 0, 0, 0, 3], [0, 0, 0, 0, 3], [0, 0, 0, 0, 3],
-                [0, 0, 0, 0, 3], [0, 0, 0, 0, 3], [0, 0, 0, 0, 3], [0, 0, 0, 0, 3], [0, 0, 0, 0, 3],
-                ]
+        self.umiejetnosci = [[0], [0, 0, 0, 0, 2], [0, 0, 0, 0, 2], [0, 0, 0, 0, 3], [0, 0, 0, 0, 0],
+                             [0, 0, 0, 0, 2], [0, 0, 0, 0, 0], [0, 0, 0, 0, 5], [0, 0, 0, 0, 2], [0, 0, 0, 0, 2],
+                             [0, 0, 0, 0, 6], [0, 0, 0, 0, 5], [0, 0, 0, 0, 5], [0, 0, 0, 0, 2], [0, 0, 0, 0, 3],
+                             [0, 0, 0, 0, 3], [0, 0, 0, 0, 3], [0, 0, 0, 0, 3], [0, 0, 0, 0, 3], [0, 0, 0, 0, 3],
+                             [0, 0, 0, 0, 3], [0, 0, 0, 0, 3], [0, 0, 0, 0, 3], [0, 0, 0, 0, 3], [0, 0, 0, 0, 3],
+                             ]
         self.nastaw_umiejetnasci()
         self.planowane_dzialania = []
 
     def nastaw_unik(self):   #todo because of lack of equipment in code implemented.
-        self.unik = (self.bazowy_unik + self.umiejetnasci[6][0])
+        self.unik = (self.bazowy_unik + self.umiejetnosci[6][0])
 
     """
     all about dying, but without destroing object.
@@ -174,30 +174,30 @@ class IstotaZywa: #pełne pokrycie
 
     def nastaw_umiejetnasci(self):
         # setting mods for skills.
-        for i in range(0, len(self.umiejetnasci)):
+        for i in range(0, len(self.umiejetnosci)):
             if i == 0:
                 continue
-            if self.umiejetnasci[i][4] == 1:
-                self.umiejetnasci[i][3] = self.mod_sila
-            if self.umiejetnasci[i][4] == 2:
-                self.umiejetnasci[i][3] = self.modZrecznasc
-            if self.umiejetnasci[i][4] == 3:
-                self.umiejetnasci[i][3] = self.mod_intelekt
-            if self.umiejetnasci[i][4] == 4:
+            if self.umiejetnosci[i][4] == 1:
+                self.umiejetnosci[i][3] = self.mod_sila
+            if self.umiejetnosci[i][4] == 2:
+                self.umiejetnosci[i][3] = self.modZrecznasc
+            if self.umiejetnosci[i][4] == 3:
+                self.umiejetnosci[i][3] = self.mod_intelekt
+            if self.umiejetnosci[i][4] == 4:
                 if self.mod_sila > self.mod_intelekt:
-                    self.umiejetnasci[i][3] = self.mod_sila
+                    self.umiejetnosci[i][3] = self.mod_sila
                 else:
-                    self.umiejetnasci[i][3] = self.mod_intelekt
-            if self.umiejetnasci[i][4] == 5:
+                    self.umiejetnosci[i][3] = self.mod_intelekt
+            if self.umiejetnosci[i][4] == 5:
                 if self.modZrecznasc > self.mod_intelekt:
-                    self.umiejetnasci[i][3] = self.modZrecznasc
+                    self.umiejetnosci[i][3] = self.modZrecznasc
                 else:
-                    self.umiejetnasci[i][3] = self.mod_intelekt
-            if self.umiejetnasci[i][4] == 6:
+                    self.umiejetnosci[i][3] = self.mod_intelekt
+            if self.umiejetnosci[i][4] == 6:
                 if self.mod_sila > self.modZrecznasc:
-                    self.umiejetnasci[i][3] = self.mod_sila
+                    self.umiejetnosci[i][3] = self.mod_sila
                 else:
-                    self.umiejetnasci[i][3] = self.modZrecznasc
+                    self.umiejetnosci[i][3] = self.modZrecznasc
 
     """
     it's about testing the skill.
@@ -205,7 +205,7 @@ class IstotaZywa: #pełne pokrycie
 
     def rzut_na_umiejetnasc(self, testowana_umiejetnasc):
         umiejka = constans.UmiejetnasciDoInt[testowana_umiejetnasc]
-        doRzutu = self.umiejetnasci[umiejka]
+        doRzutu = self.umiejetnosci[umiejka]
         return constans.KoscUmiejetnosci[doRzutu[0]] + doRzutu[3]
 
     """
