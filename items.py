@@ -117,6 +117,8 @@ class Amunicja:
             cel.rana(self.rzut_na_obrazenia(0) + premia, self.penetracja)
             cel.rana(self.rzut_na_obrazenia("d6") + premia, self.penetracja)
             return True
+        if self.typ_amunicji == "wyborowe":
+            premia = premia * 4
         cel.rana(self.rzut_na_obrazenia(0) + premia, self.penetracja)
         return True
     #obrazenia=kosc_obrazen
@@ -422,6 +424,11 @@ class BronStrzelecka(Bron): #pełne pokrycie
     def __interpretuj_zasady_bazujace_na_amunicji(self, zasięg): #nie przetestowana
         premia = 0
         if "snajperka" in self.zasady_specjalne:
+            if self.aktualny_magazynek.amunicja.typ_amunicji == "wyborowa":
+                premia = premia + 1
+            if self.aktualny_magazynek.amunicja.typ_amunicji == "wybitnie wyborowa":
+                premia = premia + 1
+        if "duzy kaliber" in self.zasady_specjalne:
             if self.aktualny_magazynek.amunicja.typ_amunicji == "wyborowa":
                 premia = premia + 1
             if self.aktualny_magazynek.amunicja.typ_amunicji == "wybitnie wyborowa":
