@@ -458,7 +458,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
         if "celna" in self.zasady_specjalne:
             if operator.umiejetnosci[constants.UmiejetnasciDoInt["strzelectwo"]][0] > 2:
                 premia = premia + 1
-        if "wbitnie celna" in self.zasady_specjalne:
+        if "wybitnie celna" in self.zasady_specjalne:
             if operator.umiejetnosci[constants.UmiejetnasciDoInt["strzelectwo"]][0] > 2:
                 premia = premia + 1
             if operator.umiejetnosci[constants.UmiejetnasciDoInt["strzelectwo"]][0] > 4:
