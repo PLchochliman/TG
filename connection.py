@@ -46,11 +46,15 @@ async def on_message(message):
                     await message.attachments[0].save(fp="postacie/{}".format(filename))
             await message.channel.send('ładuje')
         except Exception:
-            await message.channel.send('cos nie pykło')
-    if message.content.startswith('$oddawaj'):
+            await message.channel.send('cos pykło')
+    if message.content.startswith('$zwroc'):
         try:
-            with open('./postacie/Karta-do-TG-v18.ods', 'rb') as fp:
-                await message.channel.send(file=discord.File(fp, 'Karta-do-TG-v18.ods'))
+            name_of_file = message.content.split()
+            name_of_file = name_of_file[1]
+            with open('./postacie/'+ name_of_file, 'rb') as fp:
+                await message.channel.send(file=discord.File(fp, name_of_file))
+        except IOError:
+            await message.channel.send('Nie mam takiego pliku')
         except Exception:
             await message.channel.send('coś nie pykło')
 
