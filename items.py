@@ -416,6 +416,8 @@ class BronStrzelecka(Bron): #pełne pokrycie
         return Bot.roll_dice_from_text(self.kosc_obrazen)
 
     def test_obrazen_z_egzekucja(self, cel, premia, dystans):
+        if "potezna" in self.zasady_specjalne:
+            premia = premia * 2
         self.aktualny_magazynek.amunicja.zadaj_obrazenia(cel, premia, dystans)
 
     def test_trafienia(self, operator, cel, dodatkowe, zasieg):
