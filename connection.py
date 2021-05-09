@@ -33,6 +33,10 @@ async def on_message(message):
         return
     if "/" in message.content:
         await message.channel.send('Wypierdalaj hakerze')
+    if "DROP" in message.content:
+        await message.channel.send('Wypierdalaj hakerze')
+
+
 
     if message.content.startswith('$dzialaj'):
         await message.channel.send('Kurwa dzialam')
