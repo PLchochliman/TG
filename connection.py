@@ -31,6 +31,8 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
+    if message.content.contains("/"):
+        await message.channel.send('Wypierdalaj hakerze')
 
     if message.content.startswith('$dzialaj'):
         await message.channel.send('Kurwa dzialam')
