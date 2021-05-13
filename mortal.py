@@ -21,6 +21,7 @@ class IstotaZywa: #pełne pokrycie
     umiejetnosci = []
     jezyki = []
     planowane_dzialania = []
+    oslona = 0
 
     def __init__(self, sila, zrecznasc, intelekt, imie="Bot", unik=10, redukcjaObrazen=0, typOchrony=0):
         self.sila = sila
@@ -51,6 +52,7 @@ class IstotaZywa: #pełne pokrycie
                              ]
         self.nastaw_umiejetnasci()
         self.planowane_dzialania = []
+        self.oslona = 0
 
     def nastaw_unik(self):   #todo because of lack of equipment in code implemented.
         self.unik = (self.bazowy_unik + self.umiejetnosci[6][0])
@@ -230,4 +232,12 @@ class IstotaZywa: #pełne pokrycie
         self.planowane_dzialania.pop(0)
         return wyjscie
 
+    #BRAK TESTOW
+    def zmien_oslone(self, nowa_oslona):
+        if nowa_oslona > 10:
+            self.oslona = 0
+            Bot.output("Nie wałuj! Jeśli zrobiłeś legitnie taką osłonę, zgłoś to na chochlikman@gmail.com, i opisz.")
+            return 0
+        self.oslona = nowa_oslona
+        return self.oslona
 

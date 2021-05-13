@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="przygotowanie operacji na fazach, ale jeszcze bez obsługi samych czynności">
-      <change afterPath="$PROJECT_DIR$/Token.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/connection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mortal.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortal.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +22,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -63,7 +61,7 @@
       <recent name="C:\Users\choch\Documents\GitHub\TG" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.connection">
+  <component name="RunManager" selected="Python.Tests">
     <configuration name="Tests" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TG" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -171,15 +169,15 @@
     </configuration>
     <list>
       <item itemvalue="Python.Tests" />
+      <item itemvalue="Python.connection" />
       <item itemvalue="Python.excelDigger" />
       <item itemvalue="Python.hero" />
       <item itemvalue="Python.items_old" />
-      <item itemvalue="Python.connection" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.connection" />
         <item itemvalue="Python.Tests" />
+        <item itemvalue="Python.connection" />
         <item itemvalue="Python.items_old" />
         <item itemvalue="Python.hero" />
         <item itemvalue="Python.excelDigger" />
@@ -194,118 +192,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00064" summary="już konsupcja jest ok">
-      <created>1614101090748</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1614101090748</updated>
-    </task>
-    <task id="LOCAL-00065" summary="naprawiono parę istotnych rzeczy. python nie radzi sobie najlepiej z przeciążeniami zmiennej i funkcji.&#10;Dodatkowo więcej komentarzy">
-      <created>1614259673311</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1614259673312</updated>
-    </task>
-    <task id="LOCAL-00066" summary="dopracowywanie testów.&#10;przerobienie ran.">
-      <created>1614279560018</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1614279560018</updated>
-    </task>
-    <task id="LOCAL-00067" summary="przerobione zuzycie - w końcu na prawdziwe.&#10;plus poprawa testów.">
-      <created>1614295138786</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1614295138786</updated>
-    </task>
-    <task id="LOCAL-00068" summary="przerobione zuzycie - w końcu na prawdziwe. Pojedynczy w koncu zuzywa, nawet gdy jest to sa, albo automat.">
-      <created>1614296946011</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1614296946011</updated>
-    </task>
-    <task id="LOCAL-00069" summary="zgadnijcie co znowu nie działało xD zuzycie dla ba, bo blokada działała, jak wszystko było w jednej funkcji. Teraz śmiga.">
-      <created>1614299021097</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1614299021098</updated>
-    </task>
-    <task id="LOCAL-00070" summary="parser testów zrobiony">
-      <created>1614300206245</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1614300206246</updated>
-    </task>
-    <task id="LOCAL-00071" summary="did default magazine for the gun at init, also did good testing of gun. Also you can't unload ammo to any package. and tests. quite a lot of them.">
-      <created>1614336189912</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1614336189912</updated>
-    </task>
-    <task id="LOCAL-00072" summary="Naprawiono buga z umiejętnościami, oraz walka wręcz, podstawowe klepanie isę działa.">
-      <created>1614442744042</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1614442744042</updated>
-    </task>
-    <task id="LOCAL-00073" summary="konsekwentny debug rzeczy, zanim same się wykopcą.">
-      <created>1614443386736</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1614443386736</updated>
-    </task>
-    <task id="LOCAL-00074" summary="drobne literowki">
-      <created>1614470627747</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1614470627751</updated>
-    </task>
-    <task id="LOCAL-00075" summary="usunięto items_old&#10;wytyczono nowy plan - pomysł na prowadzenie akcji">
-      <created>1614511621765</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1614511621766</updated>
-    </task>
-    <task id="LOCAL-00076" summary="pierwsze testy akcji, oraz poprawki.">
-      <created>1614514455238</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1614514455238</updated>
-    </task>
-    <task id="LOCAL-00077" summary="podejście do magazynków, jeszcze bez dużych przeróbek.&#10;na razie podstawowe dobrze działają.">
-      <created>1614535115762</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1614535115762</updated>
-    </task>
-    <task id="LOCAL-00078" summary="prototyp specek - tak aby były rozumiane przez gre.">
-      <created>1614539389209</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1614539389239</updated>
-    </task>
-    <task id="LOCAL-00079" summary="prototyp stałego magazynka, jeszcze nie skończone.">
-      <created>1614555502763</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1614555502764</updated>
     </task>
     <task id="LOCAL-00080" summary="stały magazynek wymaga wciąż popraw. jakimś cudem nie ładuje naboi poprawnie...">
       <created>1614559450015</created>
@@ -538,7 +424,119 @@
       <option name="project" value="LOCAL" />
       <updated>1620080595584</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="Bot almoust ready">
+      <created>1620339434727</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1620339434743</updated>
+    </task>
+    <task id="LOCAL-00114" summary="downloading, and uploading file completed">
+      <created>1620428029537</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1620428029538</updated>
+    </task>
+    <task id="LOCAL-00115" summary="downloading, and uploading file completed">
+      <created>1620428736090</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1620428736090</updated>
+    </task>
+    <task id="LOCAL-00116" summary="choosing file to download completed">
+      <created>1620485001606</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1620485001607</updated>
+    </task>
+    <task id="LOCAL-00117" summary="wybitnie celna i celna obsłużone">
+      <created>1620498207248</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1620498207248</updated>
+    </task>
+    <task id="LOCAL-00118" summary="wybitnie celna i celna poprawione">
+      <created>1620498485528</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1620498485528</updated>
+    </task>
+    <task id="LOCAL-00119" summary="Duży kaliber uwzględniony, bez interakcji z celownikiem.">
+      <created>1620508778824</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1620508778824</updated>
+    </task>
+    <task id="LOCAL-00120" summary="zrobiono Potężna">
+      <created>1620508986617</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1620508986617</updated>
+    </task>
+    <task id="LOCAL-00121" summary="basic security implemented.">
+      <created>1620594085785</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1620594085786</updated>
+    </task>
+    <task id="LOCAL-00122" summary="basic security implemented.">
+      <created>1620594487556</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1620594487556</updated>
+    </task>
+    <task id="LOCAL-00123" summary="basic security implemented.">
+      <created>1620594840768</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1620594840768</updated>
+    </task>
+    <task id="LOCAL-00124" summary="basic security implemented.">
+      <created>1620595085589</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1620595085589</updated>
+    </task>
+    <task id="LOCAL-00125" summary="little change in file.">
+      <created>1620776094641</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1620776094642</updated>
+    </task>
+    <task id="LOCAL-00126" summary="preparing specialisations.">
+      <created>1620891055614</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1620891055614</updated>
+    </task>
+    <task id="LOCAL-00127" summary="preparing specialisations.">
+      <created>1620891704812</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1620891704812</updated>
+    </task>
+    <task id="LOCAL-00128" summary="preparing specialisations.">
+      <created>1620893263480</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1620893263480</updated>
+    </task>
+    <option name="localTasksCounter" value="129" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -554,16 +552,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="zrobiona maksymalny zasięg amunicji." />
-    <MESSAGE value="uwzględnione użycie pistoletu bądź pistoletu maszynowego." />
-    <MESSAGE value="przerobienie penetracji już na poziomie samej amunicji" />
-    <MESSAGE value="amunicja ppanz bez testów" />
-    <MESSAGE value="testy amunicji ppanz" />
-    <MESSAGE value="kolajne partia amunicji gotowa." />
-    <MESSAGE value="przygotowanie pod właściwą implementację zasad specjalnych z dystanem i amunicją." />
-    <MESSAGE value="Przerobione całe zadawanie obrażeń.&#10;na razie nie ma większch efektów ale przygotowanie pod zastosowanie specjalnych obrażeń oraz specjalnej amuunicji." />
-    <MESSAGE value="Grzybkująca gotowa, oraz możliwość robienia dowolnych premi do obrażeń z amunicji (wreszcie)" />
-    <MESSAGE value="grzybkująca gotowa&#10;teraz czas na jej testy" />
     <MESSAGE value="note about gum balls" />
     <MESSAGE value="few more tests of special ammunition." />
     <MESSAGE value="few more tests of ammunition." />
@@ -579,7 +567,17 @@
     <MESSAGE value="powoli dodawane programowalne z zewnątrz strzelanie." />
     <MESSAGE value="powoli wprowadzam strzelanie, wersji dla użytkownika. na razie dla faz jest niedokończona implementacja." />
     <MESSAGE value="preparing for bot" />
-    <option name="LAST_COMMIT_MESSAGE" value="preparing for bot" />
+    <MESSAGE value="Bot almoust ready" />
+    <MESSAGE value="downloading, and uploading file completed" />
+    <MESSAGE value="choosing file to download completed" />
+    <MESSAGE value="wybitnie celna i celna obsłużone" />
+    <MESSAGE value="wybitnie celna i celna poprawione" />
+    <MESSAGE value="Duży kaliber uwzględniony, bez interakcji z celownikiem." />
+    <MESSAGE value="zrobiono Potężna" />
+    <MESSAGE value="basic security implemented." />
+    <MESSAGE value="little change in file." />
+    <MESSAGE value="preparing specialisations." />
+    <option name="LAST_COMMIT_MESSAGE" value="preparing specialisations." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -588,6 +586,11 @@
           <url>file://$PROJECT_DIR$/Tests.py</url>
           <line>326</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/mortal.py</url>
+          <line>211</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
