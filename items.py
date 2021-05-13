@@ -447,9 +447,9 @@ class BronStrzelecka(Bron): #pełne pokrycie
         kara = odleglosc / self.zasieg_przyrost
         for i in self.zasady_specjalne:
             if i == "pistolet":
-                kara = kara * 3
-            if i == "pistolet maszynowy":
                 kara = kara * 2
+#            if i == "pistolet maszynowy":
+#                kara = kara * 2
         return kara
 
     def aktualna_premia(self, operator, odległosc):
