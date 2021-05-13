@@ -203,10 +203,11 @@ class IstotaZywa: #pełne pokrycie
     it's about testing the skill.
     """
 
-    def rzut_na_umiejetnasc(self, testowana_umiejetnasc):
+    def rzut_na_umiejetnasc(self, testowana_umiejetnasc, modyfikator = 0):
         umiejka = constans.UmiejetnasciDoInt[testowana_umiejetnasc]
         doRzutu = self.umiejetnosci[umiejka]
-        return constans.KoscUmiejetnosci[doRzutu[0]] + doRzutu[3]
+        wynik = int(constans.KoscUmiejetnosci[doRzutu[0]] + doRzutu[3] + modyfikator + self.kara())
+        return wynik
 
     """
     heals the wound

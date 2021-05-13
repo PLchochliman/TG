@@ -119,7 +119,7 @@ def test_umiejetnosci_i_aktywacji(): # test mortal.py
     return 4
 
 
-@test_runner
+#@test_runner
 def test_wykupowania_umiejetnosci_z_obnizeniem_przez_specjalizacje():
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     wojtek.wykup_range("obsluga broni")

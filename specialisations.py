@@ -12,7 +12,7 @@ class Specialisations():
     def handling_specialisations_after_hit(self):
         return 0
 
-    def handling_specialisations_about_skills(self, specjalizacje):
+    def handling_specialisations_about_skills(self, specjalizacje, umiejetnosc):
         return 0
 
     def handling_specialisations_changing_stats(self):
