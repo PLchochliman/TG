@@ -2,11 +2,13 @@ import mortal as mortal
 import Bot as Bot
 import excelDigger as excelDigger
 import constans as constans
+import specialisations as specialisations
 
 "starting creating real character"
 
 
 class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
+    obsluga_specek = specialisations.Specialisations()
     punktyUmiejetnasci = 0
     pieniadze = 0
     wyposazenie_zalozone = ["", "", "", "", "", "", "", ""]     #  states for Head, torso (tactical vest), belt, leg panel1, legpanel2, backpack, backpackslot1, backpackslot2
@@ -225,5 +227,10 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
 
     def dodaj_umiejetnosci_specjalizacji(self):
         return 0
+
+    def rzut_na_umiejetnasc(self, testowana_umiejetnasc):
+        wynik = super(mortal, self).rzut_na_umiejetnasc(testowana_umiejetnasc)
+        wynik = wynik + self.obsluga_specek.handling_specialisations_about_skills(self.specjalizacje, testowana_umiejetnasc)
+        return wynik
 
 

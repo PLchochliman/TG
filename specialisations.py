@@ -12,4 +12,9 @@ class Specialisations():
     def handling_specialisations_after_hit(self):
         return 0
 
+    def handling_specialisations_about_skills(self, specjalizacje):
+        return 0
+
+    def handling_specialisations_changing_stats(self):
+        return 0
 
