@@ -236,7 +236,6 @@ class IstotaZywa: #pełne pokrycie
         self.planowane_dzialania.pop(0)
         return wyjscie
 
-    #BRAK TESTOW
     def zmien_oslone(self, nowa_oslona):
         if nowa_oslona > 10:
             self.oslona = 0

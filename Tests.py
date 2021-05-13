@@ -109,6 +109,17 @@ def test_ran_kar_smierci(): #testy mortal.py
 
 
 @test_runner
+def test_uniku(): #testy mortal.py
+    wojtek = mortal.IstotaZywa(8, 8, 8, "Wojtek")
+    assert wojtek.aktualny_unik() == 12
+    assert wojtek.zmien_oslone(2) == 2
+    assert wojtek.oslona == 2
+    assert wojtek.aktualny_unik() == 14
+    assert wojtek.zmien_oslone(12) == 0
+    assert wojtek.aktualny_unik() == 12
+    return 7
+
+@test_runner
 def test_umiejetnosci_i_aktywacji(): # test mortal.py
     wojtek = mortal.IstotaZywa(8, 8, 8, "Wojtek")
     assert wojtek.aktywacja(2)
@@ -400,6 +411,7 @@ ilosc_testow_pass = 0
 ilosc_testow_pass = test_luskania_danych_z_excela()
 ilosc_testow_pass += test_systemu()
 ilosc_testow_pass += test_stalych()
+ilosc_testow_pass += test_uniku()
 ilosc_testow_pass += test_ran_kar_smierci()
 ilosc_testow_pass += test_umiejetnosci_i_aktywacji()
 ilosc_testow_pass += test_wykupowania_umiejetnosci_z_obnizeniem_przez_specjalizacje()
@@ -411,5 +423,5 @@ ilosc_testow_pass += test_mechanik_walki()
 ilosc_testow_pass += test_amunicji_i_magazynkow()
 ilosc_testow_pass += test_akcji()
 ilosc_testow_pass += test_broni_strzeleckiej_specjalne_magi()
-print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \nJest to " + str(ilosc_testow_pass/116 * 100) + "% testów.")
+print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \nJest to " + str(ilosc_testow_pass/118 * 100) + "% testów.")
 #unittest.main()
