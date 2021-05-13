@@ -57,6 +57,10 @@ class IstotaZywa: #pełne pokrycie
     def nastaw_unik(self):   #todo because of lack of equipment in code implemented.
         self.unik = (self.bazowy_unik + self.umiejetnosci[6][0])
 
+
+    def aktualny_unik(self):
+        return self.unik + self.oslona
+
     """
     all about dying, but without destroing object.
     """

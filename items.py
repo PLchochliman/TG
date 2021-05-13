@@ -329,7 +329,7 @@ class Bron: #pełne pokrycie
         cel.rana(self.rzut_na_obrazenia() + premia, self.penetracja)
 
     def test_trafienia(self, operator, cel, dodatkowe, zasieg=0):
-        wynik = operator.rzut_na_umiejetnasc(self.rodzaj_testu) + self.aktualna_premia(operator, zasieg) + dodatkowe - cel.unik
+        wynik = operator.rzut_na_umiejetnasc(self.rodzaj_testu) + self.aktualna_premia(operator, zasieg) + dodatkowe - cel.aktualny_unik()
         if wynik >= 0:
             return wynik
         else:
