@@ -84,6 +84,19 @@ def test_luskania_danych_z_excela():
 @test_runner
 def test_ran_kar_smierci(): #testy mortal.py
     wojtek = mortal.IstotaZywa(8, 8, 8, "Wojtek")
+    assert wojtek.w_ruchu == 0
+    wojtek.zaplanuj_akcje("krok")
+    wojtek.akcja()
+    assert wojtek.w_ruchu == -1
+    wojtek.zaplanuj_akcje("chód")
+    wojtek.akcja()
+    assert wojtek.w_ruchu == -5
+    wojtek.zaplanuj_akcje("bieg")
+    wojtek.akcja()
+    assert wojtek.w_ruchu == -10
+    wojtek.zaplanuj_akcje("kurwa sram")
+    wojtek.akcja()
+    assert wojtek.w_ruchu == 0
     wojtek.rana(10, 0)
     wojtek.rana(1)
     assert wojtek.rany[0] == 2
@@ -105,7 +118,7 @@ def test_ran_kar_smierci(): #testy mortal.py
     Bot.output("zaawansowany Bot aktywacji zakonczony")
     wojtek.allokuj(15)
     assert not wojtek.status
-    return 9
+    return 15
 
 
 @test_runner
@@ -423,5 +436,6 @@ ilosc_testow_pass += test_mechanik_walki()
 ilosc_testow_pass += test_amunicji_i_magazynkow()
 ilosc_testow_pass += test_akcji()
 ilosc_testow_pass += test_broni_strzeleckiej_specjalne_magi()
-print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \nJest to " + str(ilosc_testow_pass/123     * 100) + "% testów.")
+print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \n"
+      "Jest to " + str(ilosc_testow_pass/129 * 100) + "% testów.")
 #unittest.main()

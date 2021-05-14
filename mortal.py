@@ -234,8 +234,8 @@ class IstotaZywa: #pełne pokrycie
     def akcja(self):
         if len(self.planowane_dzialania) == 0:
             self.planowane_dzialania.append("nic")
-
         wyjscie = self.planowane_dzialania[0]
+        self.kara_za_ruch(wyjscie)
         self.planowane_dzialania.pop(0)
         return wyjscie
 
@@ -250,8 +250,6 @@ class IstotaZywa: #pełne pokrycie
             return True
         self.w_ruchu = 0
         return False
-
-
 
     def zmien_oslone(self, nowa_oslona):
         if nowa_oslona > 10:
