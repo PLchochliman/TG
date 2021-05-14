@@ -228,7 +228,7 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
     def dodaj_umiejetnosci_specjalizacji(self):
         return 0
 
-    def rzut_na_umiejetnasc(self, testowana_umiejetnasc, modyfikator = 0):
+    def rzut_na_umiejetnasc(self, testowana_umiejetnasc, modyfikator=0):
         return super(Postac, self).rzut_na_umiejetnasc(testowana_umiejetnasc, self.obsluga_specek.handling_specialisations_about_skills(self.specjalizacje, testowana_umiejetnasc))
 
 

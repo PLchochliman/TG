@@ -22,6 +22,7 @@ class IstotaZywa: #pełne pokrycie
     jezyki = []
     planowane_dzialania = []
     oslona = 0
+    w_ruchu = 0
 
     def __init__(self, sila, zrecznasc, intelekt, imie="Bot", unik=10, redukcjaObrazen=0, typOchrony=0):
         self.sila = sila
@@ -53,6 +54,7 @@ class IstotaZywa: #pełne pokrycie
         self.nastaw_umiejetnasci()
         self.planowane_dzialania = []
         self.oslona = 0
+        self.w_ruchu = 0
 
     def nastaw_unik(self):   #todo because of lack of equipment in code implemented.
         self.unik = (self.bazowy_unik + self.umiejetnosci[6][0])
@@ -232,9 +234,24 @@ class IstotaZywa: #pełne pokrycie
     def akcja(self):
         if len(self.planowane_dzialania) == 0:
             self.planowane_dzialania.append("nic")
+
         wyjscie = self.planowane_dzialania[0]
         self.planowane_dzialania.pop(0)
         return wyjscie
+
+    def kara_za_ruch(self, dzialanie):
+        if dzialanie in ["krok","chod","chód","bieg"]:
+            if dzialanie == "krok":
+                self.w_ruchu = -1
+            if dzialanie in ["chod","chód"]:
+                self.w_ruchu = -5
+            if dzialanie == "bieg":
+                self.w_ruchu = -10
+            return True
+        self.w_ruchu = 0
+        return False
+
+
 
     def zmien_oslone(self, nowa_oslona):
         if nowa_oslona > 10:

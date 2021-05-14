@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="przygotowanie operacji na fazach, ale jeszcze bez obsługi samych czynności">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpecjalizacjeDoZrobienia.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/SpecjalizacjeDoZrobienia.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/hero.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mortal.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/specialisations.py" beforeDir="false" afterPath="$PROJECT_DIR$/specialisations.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,13 +197,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00082" summary="premia do ataku z tytułu zasad snajperka i strzelba pokryte.">
-      <created>1614728690398</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1614728690400</updated>
     </task>
     <task id="LOCAL-00083" summary="przygotowane początek różnych amunicji.">
       <created>1614806894784</created>
@@ -537,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620894991194</updated>
     </task>
-    <option name="localTasksCounter" value="131" />
+    <task id="LOCAL-00131" summary="added tests for cover">
+      <created>1620895482599</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1620895482599</updated>
+    </task>
+    <option name="localTasksCounter" value="132" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -553,7 +557,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="few more tests of special ammunition." />
     <MESSAGE value="few more tests of ammunition." />
     <MESSAGE value="fixed test counter" />
     <MESSAGE value="Specialisations in progress" />
@@ -578,7 +581,8 @@
     <MESSAGE value="little change in file." />
     <MESSAGE value="preparing specialisations." />
     <MESSAGE value="added any cover." />
-    <option name="LAST_COMMIT_MESSAGE" value="added any cover." />
+    <MESSAGE value="added tests for cover" />
+    <option name="LAST_COMMIT_MESSAGE" value="added tests for cover" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -590,7 +594,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mortal.py</url>
-          <line>215</line>
+          <line>217</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
