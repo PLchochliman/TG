@@ -28,8 +28,6 @@ class Akcje():
         czynnosci = czynnosc.split()
         if "strzelanie" in czynnosci:
             self.__strzelanie(postac, czynnosci[1])
-
-
         return czynnosc
 
 
@@ -151,12 +149,12 @@ class Strzelanie():
                 raise Exception("BRON MA AWARIE")
             if tryb not in ("pojedynczy", "pelne skupienie", "samoczynny", "serie"):
                 raise Exception("nie ma takiego trybu. Dostępne tryby to: pojedynczy, pelne skupienie, samoczynny, serie")
+            ilosc_trafien = self.__zuzycie(operator.aktywna_bron, tryb)
             tryb = self.__sprawdzenie_czy_mozna_strzelac(operator, tryb)
-            dodatkowe = 0
+            dodatkowe = operator.handling_specialisations_before_hit()
             if tryb == "pelne skupienie":
                 dodatkowe = Bot.roll_dice_from_text("3d6")
                 zasieg = zasieg/2
-            ilosc_trafien = self.__zuzycie(operator.aktywna_bron, tryb)
             wynik = self.__test_trafienia(operator, cel, tryb, dodatkowe, zasieg) #failuje juz z wyjatku testu trafienia
             if wynik > 0:
                 if tryb in ("pojedynczy", "pelne skupienie"):
@@ -168,7 +166,7 @@ class Strzelanie():
                         return True
                 if wynik > ilosc_trafien:
                     wynik = ilosc_trafien
-                self.__zadaj_obrazenia(cel, operator.aktywna_bron, zasieg, 0, wynik)    # dodać tutaj zasięg
+                self.__zadaj_obrazenia(cel, operator.aktywna_bron, zasieg, 0, wynik)
                 return True
             else:
                 self.__zadaj_obrazenia(cel, operator.aktywna_bron, zasieg, 0, wynik)

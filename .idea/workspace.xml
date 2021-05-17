@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/hero.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mechanics.py" beforeDir="false" afterPath="$PROJECT_DIR$/mechanics.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -193,13 +193,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00090" summary="przygotowanie pod właściwą implementację zasad specjalnych z dystanem i amunicją.">
-      <created>1615654224721</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1615654224721</updated>
     </task>
     <task id="LOCAL-00091" summary="Przerobione całe zadawanie obrażeń.&#10;na razie nie ma większch efektów ale przygotowanie pod zastosowanie specjalnych obrażeń oraz specjalnej amuunicji.">
       <created>1615655290589</created>
@@ -537,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621270334808</updated>
     </task>
-    <option name="localTasksCounter" value="139" />
+    <task id="LOCAL-00139" summary="fixed costs of specs, and their weird output...">
+      <created>1621274350301</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1621274350301</updated>
+    </task>
+    <option name="localTasksCounter" value="140" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -553,7 +553,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="preparing refactor of tests" />
     <MESSAGE value="przygotowanie komend" />
     <MESSAGE value="przygotowanie operacji na fazach, ale jeszcze bez obsługi samych czynności" />
     <MESSAGE value="default communicate during execution" />
@@ -578,16 +577,12 @@
     <MESSAGE value="some changes for specialisations, shooting in VIP, but at least works." />
     <MESSAGE value="finally, recoil is ok." />
     <MESSAGE value="fixed distance penalty&#10;There is some error at skills..." />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed distance penalty&#10;There is some error at skills..." />
+    <MESSAGE value="fixed costs of specs, and their weird output..." />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed costs of specs, and their weird output..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Tests.py</url>
-          <line>153</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Tests.py</url>
           <line>297</line>

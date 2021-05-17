@@ -238,7 +238,7 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
             for kosc in range(0, constans.liczba_kosci_umiejetnosci[doRzutu[0]]):
                     rzut_koscia = Bot.roll_dice(6)
                     wynik.append(rzut_koscia)
-            wynik = self.wprawa(wynik)
+            wynik = self.aplikuj_wprawe_izsumuj_wynik(wynik)
             wynik += int(doRzutu[3] + modyfikator + self.kara())
             return wynik
         return super(Postac, self).rzut_na_umiejetnasc(testowana_umiejetnasc, self.handling_specialisations_about_skills(self.specjalizacje, testowana_umiejetnasc))
@@ -260,7 +260,7 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
     def handling_specialisations_changing_stats(self):
         return 0
 
-    def wprawa(self,  result):
+    def aplikuj_wprawe_izsumuj_wynik(self, result):
         check = min(result)
 #        if check <
         wyjscie = 0
