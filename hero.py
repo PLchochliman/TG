@@ -11,7 +11,7 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
     #obsluga_specek = specialisations.Specialisations()
     punktyUmiejetnasci = 0
     pieniadze = 0
-    wyposazenie_zalozone = ["", "", "", "", "", "", "", ""]     #  states for Head, torso (tactical vest), belt, leg panel1, legpanel2, backpack, backpackslot1, backpackslot2
+    wyposazenie_zalozone = []
     zalozony_mundur = None
     specjalizacje = []
     aktywna_bron = []
@@ -20,6 +20,7 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
         super().__init__(sila, zrecznasc, intelekt, imie)
         self.punktyUmiejetnasci = pu + pu / 10 * self.mod_intelekt
         self.pieniadze = kasa
+        self.wyposazenie_zalozone = ["", "", "", "", "", "", "", ""] #  states for Head, torso (tactical vest), belt, leg panel1, legpanel2, backpack, backpackslot1, backpackslot2
         if specjalizacje:
             self.przypisz_specjalizacje(specjalizacje[0])
             self.przypisz_specjalizacje(specjalizacje[1])
@@ -237,7 +238,6 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
                     rzut_koscia = Bot.roll_dice(6)
                     wynik.append(rzut_koscia)
             wynik = self.wprawa(wynik)
-
             wynik += int(doRzutu[3] + modyfikator + self.kara())
             return wynik
         return super(Postac, self).rzut_na_umiejetnasc(testowana_umiejetnasc, self.handling_specialisations_about_skills(self.specjalizacje, testowana_umiejetnasc))
