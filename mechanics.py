@@ -18,7 +18,6 @@ class Akcje():
         self.strzelanie = Strzelanie()
         self.postacie = postacie
 
-    #TODO do wytestowania
     def kolejna_faza(self):
         for postac in self.postacie:
             co_robi = self.__egzekucja_czynnosci(postac, postac.akcja())
