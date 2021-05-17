@@ -159,7 +159,6 @@ class Strzelanie():
                 zasieg = zasieg/2
             ilosc_trafien = self.__zuzycie(operator.aktywna_bron, tryb)
             wynik = self.__test_trafienia(operator, cel, dodatkowe, zasieg) #failuje juz z wyjatku testu trafienia
-
             if wynik > 0:
                 if tryb in ("pojedynczy", "pelne skupienie"):
                     if wynik > 10:
@@ -184,6 +183,8 @@ class Strzelanie():
     liczy zuzycie naboi i od razu aplikuje
     """
     def __zuzycie(self, bron, tryb):
+        if bron.naboj_w_komorze == False:
+            raise Exception("NIE MA NABOJU W KOMORZE")
         wystrzelone_naboje = 0
         if tryb in ("samoczynny"):
             self.__zuzyj_naboje(bron, bron.szybkostrzelnosc)
