@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="przygotowanie operacji na fazach, ale jeszcze bez obsługi samych czynności">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpecjalizacjeDoZrobienia.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/SpecjalizacjeDoZrobienia.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constans.py" beforeDir="false" afterPath="$PROJECT_DIR$/constans.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/hero.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mortal.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mechanics.py" beforeDir="false" afterPath="$PROJECT_DIR$/mechanics.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/specialisations.py" beforeDir="false" afterPath="$PROJECT_DIR$/specialisations.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -197,20 +196,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00083" summary="przygotowane początek różnych amunicji.">
-      <created>1614806894784</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1614806894785</updated>
-    </task>
-    <task id="LOCAL-00084" summary="zrobiona maksymalny zasięg amunicji.">
-      <created>1614975319730</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1614975319731</updated>
     </task>
     <task id="LOCAL-00085" summary="uwzględnione użycie pistoletu bądź pistoletu maszynowego.">
       <created>1614979713584</created>
@@ -541,7 +526,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620895482599</updated>
     </task>
-    <option name="localTasksCounter" value="132" />
+    <task id="LOCAL-00132" summary="przygotowanie kary za ruch">
+      <created>1621032360895</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1621032360896</updated>
+    </task>
+    <task id="LOCAL-00133" summary="kara za ruch z testami">
+      <created>1621033112300</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1621033112301</updated>
+    </task>
+    <option name="localTasksCounter" value="134" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -557,8 +556,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="few more tests of ammunition." />
-    <MESSAGE value="fixed test counter" />
     <MESSAGE value="Specialisations in progress" />
     <MESSAGE value="pierdolety" />
     <MESSAGE value="Wojtek should never be in global." />
@@ -582,14 +579,16 @@
     <MESSAGE value="preparing specialisations." />
     <MESSAGE value="added any cover." />
     <MESSAGE value="added tests for cover" />
-    <option name="LAST_COMMIT_MESSAGE" value="added tests for cover" />
+    <MESSAGE value="przygotowanie kary za ruch" />
+    <MESSAGE value="kara za ruch z testami" />
+    <option name="LAST_COMMIT_MESSAGE" value="kara za ruch z testami" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Tests.py</url>
-          <line>337</line>
+          <line>350</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

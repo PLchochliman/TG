@@ -188,6 +188,26 @@ KoscUmiejetnosci = {
     6: Bot.sum_multi_roll_dice(6, 4) + 6,
 }
 
+liczba_kosci_umiejetnosci = {
+                0: 1,
+                1: 2,
+                2: 2,
+                3: 2,
+                4: 3,
+                5: 3,
+                6: 4,
+}
+
+modyfikator_kosci_umiejetnosci = {
+                0: 0,
+                1: 2,
+                2: 2,
+                3: 4,
+                4: 4,
+                5: 6,
+                6: 6,
+}
+
 """
 racalculating statistics into modifiers to roll.
 """

@@ -157,8 +157,9 @@ class Strzelanie():
             if tryb == "pelne skupienie":
                 dodatkowe = Bot.roll_dice_from_text("3d6")
                 zasieg = zasieg/2
-            wynik = self.__test_trafienia(operator, cel, dodatkowe, zasieg) #failuje juz z wyjatku testu trafienia
             ilosc_trafien = self.__zuzycie(operator.aktywna_bron, tryb)
+            wynik = self.__test_trafienia(operator, cel, dodatkowe, zasieg) #failuje juz z wyjatku testu trafienia
+
             if wynik > 0:
                 if tryb in ("pojedynczy", "pelne skupienie"):
                     if wynik > 10:
@@ -172,7 +173,7 @@ class Strzelanie():
                 self.__zadaj_obrazenia(cel, operator.aktywna_bron, zasieg, 0, wynik)    # dodać tutaj zasięg
                 return True
             else:
-                operator.aktywna_bron.test_obrazen_z_egzekucja(cel)
+                self.__zadaj_obrazenia(cel, operator.aktywna_bron, zasieg, 0, wynik)
                 return True
         except Exception as inst:
             powod = inst.args[0]
@@ -184,11 +185,11 @@ class Strzelanie():
     """
     def __zuzycie(self, bron, tryb):
         wystrzelone_naboje = 0
-        if tryb == "samoczynny":
+        if tryb in ("samoczynny"):
             self.__zuzyj_naboje(bron, bron.szybkostrzelnosc)
-        if tryb == "serie":
+        if tryb in "serie":
             self.__zuzyj_naboje(bron, 3)
-        if tryb in ("pelne skupienie", "pojedynczy"):
+        if tryb in ("pojedynczy", "pelne skupienie"):
             wystrzelone_naboje = 1
             if bron.szybkostrzelnosc in ("ba", "bu"):
                 bron.naboj_w_komorze = False
