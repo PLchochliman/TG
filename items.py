@@ -422,7 +422,28 @@ class BronStrzelecka(Bron): #pełne pokrycie
 
     def test_trafienia(self, operator, cel, tryb, dodatkowe, zasieg):
         #potrzeba dodatkowe odrzuty policzyć
+        if tryb in ("samoczynny", "serie"):
+            dodatkowe = dodatkowe + self.__dodatkowy_odrzut_ognia_samoczynnego(tryb)
         return super(BronStrzelecka, self).test_trafienia(operator, cel, dodatkowe, zasieg)
+
+    def __dodatkowy_odrzut_ognia_samoczynnego(self, tryb):
+        dodatkowa_redukcja = 0
+        if "stabilny ostrzał" in self.zasady_specjalne:
+            for i in self.zasady_specjalne:
+                if "stabilny ostrzał" in i:
+                    dodatkowa_redukcja = i[-1]
+        if tryb == "serie":
+            if dodatkowa_redukcja < int(self.odrzut_aktualny/2):
+                return 0
+            else:
+                return int(self.odrzut_aktualny/2 + dodatkowa_redukcja)
+        if tryb == "samoczynny":
+            if dodatkowa_redukcja < self.odrzut_aktualny:
+                return 0
+            else:
+                return self.odrzut_aktualny + dodatkowa_redukcja
+
+
 
     def __interpretuj_zasady_bazujace_na_amunicji(self, zasięg): #nie przetestowana
         premia = 0

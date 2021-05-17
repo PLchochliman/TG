@@ -7,7 +7,7 @@
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mechanics.py" beforeDir="false" afterPath="$PROJECT_DIR$/mechanics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/items.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,20 +193,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00086" summary="przerobienie penetracji już na poziomie samej amunicji">
-      <created>1615634893305</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1615634893306</updated>
-    </task>
-    <task id="LOCAL-00087" summary="amunicja ppanz bez testów">
-      <created>1615636154423</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1615636154423</updated>
     </task>
     <task id="LOCAL-00088" summary="testy amunicji ppanz">
       <created>1615637725803</created>
@@ -537,7 +523,21 @@
       <option name="project" value="LOCAL" />
       <updated>1621244781451</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="some changes for specialisations, shooting in VIP.">
+      <created>1621246649873</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1621246649873</updated>
+    </task>
+    <task id="LOCAL-00136" summary="some changes for specialisations, shooting in VIP, but at least works.">
+      <created>1621261681259</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1621261681259</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -553,7 +553,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="pierdolety" />
     <MESSAGE value="Wojtek should never be in global." />
     <MESSAGE value="deleting, and updating comments" />
     <MESSAGE value="preparing refactor of tests" />
@@ -578,20 +577,36 @@
     <MESSAGE value="przygotowanie kary za ruch" />
     <MESSAGE value="kara za ruch z testami" />
     <MESSAGE value="some changes for specialisations, shooting in VIP." />
-    <option name="LAST_COMMIT_MESSAGE" value="some changes for specialisations, shooting in VIP." />
+    <MESSAGE value="some changes for specialisations, shooting in VIP, but at least works." />
+    <option name="LAST_COMMIT_MESSAGE" value="some changes for specialisations, shooting in VIP, but at least works." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Tests.py</url>
-          <line>350</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/items.py</url>
+          <line>444</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/mortal.py</url>
-          <line>217</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/items.py</url>
+          <line>439</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/items.py</url>
+          <line>437</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/items.py</url>
+          <line>442</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/items.py</url>
+          <line>430</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

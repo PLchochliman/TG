@@ -381,7 +381,7 @@ def test_mechanik_walki():
     strzelanie = mechanics.Strzelanie()
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     wojtek.aktywna_bron = M4KA
-    beben = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
+    beben = hero.Postac(2, 2, 2, ["bron boczna", "karabiny", "bron krotka"])
     x = strzelanie.strzal(wojtek, beben, 50, "pojedynczy")
     wojtek.wykup_range("strzelectwo")
     wojtek.wykup_range("strzelectwo")
@@ -402,7 +402,7 @@ def test_mechanik_walki():
     assert not strzelanie.strzal(wojtek, beben, 50, "serie")
     wojtek.aktywna_bron.zaciagnij_naboj()
 #    assert strzelanie.strzal(wojtek, beben, 50, "serie")
-    assert not strzelanie.strzal(wojtek, beben, 50, "serie")
+    assert strzelanie.strzal(wojtek, beben, 50, "serie")
     wojtek.aktywna_bron.zaciagnij_naboj()
     assert strzelanie.strzal(wojtek, beben, 50, "samoczynny")
     assert wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow == 8
