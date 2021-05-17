@@ -420,7 +420,8 @@ class BronStrzelecka(Bron): #pełne pokrycie
             premia = premia * 2
         self.aktualny_magazynek.amunicja.zadaj_obrazenia(cel, premia, dystans)
 
-    def test_trafienia(self, operator, cel, dodatkowe, zasieg):
+    def test_trafienia(self, operator, cel, tryb, dodatkowe, zasieg):
+        #potrzeba dodatkowe odrzuty policzyć
         return super(BronStrzelecka, self).test_trafienia(operator, cel, dodatkowe, zasieg)
 
     def __interpretuj_zasady_bazujace_na_amunicji(self, zasięg): #nie przetestowana

@@ -118,8 +118,8 @@ class Strzelanie():
     failuje w momencie kiedy operator nie moze trafic celu. Przekierowuje wszystko do broni na ten moment.
     """
 
-    def __test_trafienia(self, operator, cel, dodatkowe, zasieg):
-        return int(operator.aktywna_bron.test_trafienia(operator, cel, dodatkowe, zasieg))
+    def __test_trafienia(self, operator, cel, tryb, dodatkowe, zasieg):
+        return int(operator.aktywna_bron.test_trafienia(operator, cel, tryb, dodatkowe, zasieg))
 
     """
     do check procedure, if you are able to shoot.
@@ -158,7 +158,7 @@ class Strzelanie():
                 dodatkowe = Bot.roll_dice_from_text("3d6")
                 zasieg = zasieg/2
             ilosc_trafien = self.__zuzycie(operator.aktywna_bron, tryb)
-            wynik = self.__test_trafienia(operator, cel, dodatkowe, zasieg) #failuje juz z wyjatku testu trafienia
+            wynik = self.__test_trafienia(operator, cel, tryb, dodatkowe, zasieg) #failuje juz z wyjatku testu trafienia
             if wynik > 0:
                 if tryb in ("pojedynczy", "pelne skupienie"):
                     if wynik > 10:
