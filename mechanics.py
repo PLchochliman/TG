@@ -125,7 +125,7 @@ class Strzelanie():
         if not operator.aktywna_bron.naboj_w_komorze:
             raise Exception("brak naboju w komorze.\nPo nacisnieciu spustu nic sie nie stalo.")
         if tryb in ("samoczynny", "serie"):
-            if operator.aktywna_bron.statystyki_podstawowe[2] in ("sa", "ba", "bu"):
+            if operator.aktywna_bron.szybkostrzelnosc in ("sa", "ba", "bu"):
                 tryb = "pojedynczy"
                 Bot.output("Po nacisnieciu spustu, lufę opóścił tylko 1 nabój. "
                            "Następnym razem sprawdź z czego strzelasz")
@@ -149,8 +149,8 @@ class Strzelanie():
                 raise Exception("BRON MA AWARIE")
             if tryb not in ("pojedynczy", "pelne skupienie", "samoczynny", "serie"):
                 raise Exception("nie ma takiego trybu. Dostępne tryby to: pojedynczy, pelne skupienie, samoczynny, serie")
-            ilosc_trafien = self.__zuzycie(operator.aktywna_bron, tryb)
             tryb = self.__sprawdzenie_czy_mozna_strzelac(operator, tryb)
+            ilosc_trafien = self.__zuzycie(operator.aktywna_bron, tryb)
             dodatkowe = operator.handling_specialisations_before_hit()
             if tryb == "pelne skupienie":
                 dodatkowe = Bot.roll_dice_from_text("3d6")
@@ -175,7 +175,6 @@ class Strzelanie():
             powod = inst.args[0]
             Bot.output(cel.imie + " nie oberwal bo " + powod)
             return False
-
     """
     liczy zuzycie naboi i od razu aplikuje
     """
@@ -184,9 +183,9 @@ class Strzelanie():
             raise Exception("NIE MA NABOJU W KOMORZE")
         wystrzelone_naboje = 0
         if tryb in ("samoczynny"):
-            self.__zuzyj_naboje(bron, bron.szybkostrzelnosc)
+            wystrzelone_naboje = self.__zuzyj_naboje(bron, int(bron.szybkostrzelnosc))
         if tryb in "serie":
-            self.__zuzyj_naboje(bron, 3)
+            wystrzelone_naboje = self.__zuzyj_naboje(bron, 3)
         if tryb in ("pojedynczy", "pelne skupienie"):
             wystrzelone_naboje = 1
             if bron.szybkostrzelnosc in ("ba", "bu"):

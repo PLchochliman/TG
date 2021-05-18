@@ -431,17 +431,17 @@ class BronStrzelecka(Bron): #pełne pokrycie
         if "stabilny ostrzał" in self.zasady_specjalne:
             for i in self.zasady_specjalne:
                 if "stabilny ostrzał" in i:
-                    dodatkowa_redukcja = i[-1]
+                    dodatkowa_redukcja = int(i[-1])
         if tryb == "serie":
             if dodatkowa_redukcja < int(self.odrzut_aktualny/2):
                 return 0
             else:
-                return int(self.odrzut_aktualny/2 + dodatkowa_redukcja)
+                return int(int(self.odrzut_aktualny)/2 + dodatkowa_redukcja)
         if tryb == "samoczynny":
-            if dodatkowa_redukcja < self.odrzut_aktualny:
+            if dodatkowa_redukcja < int(self.odrzut_aktualny):
                 return 0
             else:
-                return self.odrzut_aktualny + dodatkowa_redukcja
+                return int(self.odrzut_aktualny) + dodatkowa_redukcja
 
 
 
