@@ -4,7 +4,7 @@ import excelDigger as excelDigger
 import constans as constans
 #import specialisations as specialisations
 
-"starting creating real character"
+"""starting creating real playable character"""
 
 
 class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
@@ -202,7 +202,8 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
         for i in self.specjalizacje:
             if specjalizacja == i[0]:
                 i = i[1].split(", ")
-                i[5] = i[5].strip()
+                for j in range(0, len(i)):
+                    i[j] = i[j].strip()
                 for umiejetnasc in i:
                     umiejetnasc = constans.UmiejetnasciDoInt[umiejetnasc]
                     self.umiejetnosci[umiejetnasc][3] = self.umiejetnosci[umiejetnasc][3] + 1
