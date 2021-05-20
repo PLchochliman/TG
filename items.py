@@ -15,7 +15,7 @@ class Przedmioty(): #pełne pokrycie
 
     def __init__(self, CoDoQRWY):
         self.przetwornik = Excel.Loader('TabelaBroni.xlsx', ['bron', 'bronbiala', 'granaty', 'celowniki', 'amunicja'],
-                                        ['O300', 'I19', 'I10', 'G28', 'I40'])
+                                        ['O300', 'I19', 'I10', 'G28', 'I42'])
         self.dane = self.przetwornik.zwroc()
         self.przetwornik.wyczysc()
 

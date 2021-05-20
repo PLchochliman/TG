@@ -266,10 +266,9 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
         if self.aktywna_bron != []:
             for zasada_broni in self.aktywna_bron.zasady_specjalne:
                 for specjalizacja in self.specjalizacje:
-                    for zakres in specjalizacja[4]:
-                        if zasada_broni in zakres:
-                            if specjalizacja[2] > check:
-                                result[result.index(check)] = specjalizacja[2]
+                    if zasada_broni in specjalizacja[4]:
+                        if specjalizacja[2] > check:
+                            result[result.index(check)] = specjalizacja[2]
         wyjscie = 0
         for i in result:
             wyjscie += i

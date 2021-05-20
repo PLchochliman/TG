@@ -125,7 +125,7 @@ class Strzelanie():
         if not operator.aktywna_bron.naboj_w_komorze:
             raise Exception("brak naboju w komorze.\nPo nacisnieciu spustu nic sie nie stalo.")
         if tryb in ("samoczynny", "serie"):
-            if operator.aktywna_bron.szybkostrzelnosc in ("sa", "ba", "bu"):
+            if operator.aktywna_bron.szybkostrzelnosc in ("sa", "ba", "bu", "Sa", "Ba", "Bu"):
                 tryb = "pojedynczy"
                 Bot.output("Po nacisnieciu spustu, lufę opóścił tylko 1 nabój. "
                            "Następnym razem sprawdź z czego strzelasz")
@@ -188,7 +188,7 @@ class Strzelanie():
             wystrzelone_naboje = self.__zuzyj_naboje(bron, 3)
         if tryb in ("pojedynczy", "pelne skupienie"):
             wystrzelone_naboje = 1
-            if bron.szybkostrzelnosc in ("ba", "bu"):
+            if bron.szybkostrzelnosc in ("ba", "bu",):
                 bron.naboj_w_komorze = False
                 return 1
             self.__zuzyj_naboje(bron, 1)

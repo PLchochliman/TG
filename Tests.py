@@ -201,7 +201,7 @@ def test_przedmiotow():
     return 6
 
 
-@test_runner
+#@test_runner
 def test_Broni_strzelcekiej_magazynki_zaciaganie_amunicja_czterotakt():
     itemki = items.Przedmioty('')
     m4ka = itemki.luskacz_broni("m4a1")
@@ -391,6 +391,7 @@ def test_mechanik_walki():
     x = x + strzelanie.strzal(wojtek, beben, 50, "serie")
     x = x + strzelanie.strzal(wojtek, beben, 50, "samoczynny")
     x = x + strzelanie.strzal(wojtek, beben, 50)
+    print(wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow)
     assert wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow == 11
     #TODO KURAW COŚ SIĘ SPIERDOLI
     scout = itemki.luskacz_broni("steyr scout")
@@ -399,11 +400,11 @@ def test_mechanik_walki():
     mag_scout.zaladuj_magazynek(NATO)
     scout.zmien_magazynek(mag_scout)
     wojtek.aktywna_bron = scout
-    assert not strzelanie.strzal(wojtek, beben, 50, "serie")
+    assert not strzelanie.strzal(wojtek, beben, 15, "serie")
+    assert wojtek.aktywna_bron.zaciagnij_naboj()
+    assert strzelanie.strzal(wojtek, beben, 15, "serie")
     wojtek.aktywna_bron.zaciagnij_naboj()
-    assert strzelanie.strzal(wojtek, beben, 50, "serie")
-    wojtek.aktywna_bron.zaciagnij_naboj()
-    assert strzelanie.strzal(wojtek, beben, 50, "samoczynny")
+    assert strzelanie.strzal(wojtek, beben, 15, "samoczynny")
     assert wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow == 8
     wojtek.aktywna_bron.zaciagnij_naboj()
     assert wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow == 7

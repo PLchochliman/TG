@@ -28,7 +28,7 @@ TypBudowy = {
 here is some code for specialisations. Replaces classes from casual RPGs.
 """
 
-specjalizacje = excelDigger.Loader("SpecjalizacjeDoZrobienia.xlsx", ["umiejetnasci"], ["J27"])
+specjalizacje = excelDigger.Loader("SpecjalizacjeDoZrobienia.xlsx", ["umiejetnasci"], ["Q27"])
 specjalizacje = specjalizacje.zwroc()
 specjalizacje = specjalizacje[0]
 
