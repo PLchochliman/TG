@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TabelaBroni.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mechanics.py" beforeDir="false" afterPath="$PROJECT_DIR$/mechanics.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,13 +193,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00096" summary="few more tests of ammunition.">
-      <created>1616017345847</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1616017345847</updated>
     </task>
     <task id="LOCAL-00097" summary="fixed test counter">
       <created>1616017396184</created>
@@ -536,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621489770055</updated>
     </task>
-    <option name="localTasksCounter" value="145" />
+    <task id="LOCAL-00145" summary="Fixed">
+      <created>1621489974892</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1621489974892</updated>
+    </task>
+    <option name="localTasksCounter" value="146" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -552,7 +553,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="preparing for bot" />
     <MESSAGE value="Bot almoust ready" />
     <MESSAGE value="downloading, and uploading file completed" />
     <MESSAGE value="choosing file to download completed" />
@@ -577,7 +577,8 @@
     <MESSAGE value="prepared for new Specialisations" />
     <MESSAGE value="wprawa almoust ready." />
     <MESSAGE value="strange error durring loading first bullet into chamber...&#10;redo equipment, and specialisations partly ready." />
-    <option name="LAST_COMMIT_MESSAGE" value="strange error durring loading first bullet into chamber...&#10;redo equipment, and specialisations partly ready." />
+    <MESSAGE value="Fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -619,53 +620,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/items.py</url>
-          <line>551</line>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/items.py</url>
-          <line>550</line>
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/items.py</url>
-          <line>547</line>
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/items.py</url>
-          <line>544</line>
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/items.py</url>
-          <line>541</line>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/items.py</url>
-          <line>540</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/items.py</url>
           <line>90</line>
           <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Tests.py</url>
-          <line>236</line>
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/items.py</url>
-          <line>538</line>
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Tests.py</url>
-          <line>235</line>
-          <option name="timeStamp" value="50" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

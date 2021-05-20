@@ -575,15 +575,6 @@ class BronBiala(Bron):
         super(BronBiala, self).__init__("walka wrecz", bron[5], bron[3], bron[6], bron[1])
         self.statystyki_podstawowe = bron
 
-    """
-    def atakuj(self, operator, cel, zasieg):
-        try:
-            return self.test_trafenia(operator, cel, zasieg)
-        except Exception as inst:
-            powod = inst.args[0]
-            Bot.output('Na celu nie zrobilo to zadnego wrazenia bo ' + powod)
-            return False
-    """
     def test_trafienia(self, operator, cel, zasieg=0, dodatkowe=0):
         wynik = operator.rzut_na_umiejetnasc(self.rodzaj_testu)
         wynik = wynik + self.premia
@@ -595,4 +586,3 @@ class BronBiala(Bron):
                 raise Exception('walczysz lepiej od wroga, ale wciąż nie jesteś w stanie go trafić')
         else:
             raise Exception('przeciwnik lepiej walczy')
-
