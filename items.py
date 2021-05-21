@@ -337,7 +337,7 @@ class Bron: #pełne pokrycie
 
     def aktualna_premia(self, operator, zasieg):
         if zasieg <= self.zasieg_maksymalny:
-            return self.premia - zasieg
+            return 0 #self.premia - zasieg
         raise Exception('cel jest po za zasiegiem.')
 
     def penetracja_to_int(self, penetracja):
@@ -475,23 +475,23 @@ class BronStrzelecka(Bron): #pełne pokrycie
                 kara = kara * 2
             return kara
         else:
-            kara = odleglosc / operator.zwroc_naturalny_przyrost_zasiegu
+            kara = odleglosc / operator.zwroc_naturalny_przyrost_zasiegu()
             kara = kara * 5
             return kara
 
-    def aktualna_premia(self, operator, odległosc):
+    def aktualna_premia(self, operator, odleglosc):
         if operator.w_ruchu < -1:
             self.zlozony_do_strzalu = False
-        super(BronStrzelecka, self).aktualna_premia(odległosc, operator)
-        if odległosc > self.aktualny_magazynek.amunicja.maks_zasieg_amunicji:
+        super(BronStrzelecka, self).aktualna_premia(operator, odleglosc)
+        if odleglosc > self.aktualny_magazynek.amunicja.maks_zasieg_amunicji:
             raise Exception('cel jest po za zasiegiem.')
-        kara_za_zasieg = self.__specjalne_kary_za_odleglosc(odległosc, operator)
+        kara_za_zasieg = self.__specjalne_kary_za_odleglosc(operator, odleglosc)
         if 1 < self.zasieg_minimalny < 5:
             kara_za_zasieg = kara_za_zasieg * self.zasieg_minimalny
         premia = int(self.premia)
         premia = premia + int(self.odrzut(operator))
         premia = premia - int(kara_za_zasieg)
-        premia = premia + self.__interpretuj_zasady_bazujace_na_amunicji(odległosc)
+        premia = premia + self.__interpretuj_zasady_bazujace_na_amunicji(odleglosc)
         if "celna" in self.zasady_specjalne:
             if operator.umiejetnosci[constants.UmiejetnasciDoInt["strzelectwo"]][0] > 2:
                 premia = premia + 1

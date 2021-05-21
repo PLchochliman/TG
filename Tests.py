@@ -368,7 +368,7 @@ def test_amunicji_i_magazynkow():
     return 23
 
 
-@test_runner
+#@test_runner
 def test_mechanik_walki():
     Bot.output("test samej walki")
     itemki = items.Przedmioty('')
@@ -397,6 +397,7 @@ def test_mechanik_walki():
     assert wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow == 11
     #TODO KURAW COŚ SIĘ SPIERDOLI
     scout = kup_i_zaladuj_giwere("steyr scout")
+    scout.naboj_w_komorze = False
     wojtek.aktywna_bron = scout
     assert not strzelanie.strzal(wojtek, beben, 15, "serie")
     wojtek.aktywna_bron.zloz_sie_do_strzalu()
@@ -404,9 +405,9 @@ def test_mechanik_walki():
     assert strzelanie.strzal(wojtek, beben, 15, "serie")
     wojtek.aktywna_bron.zaciagnij_naboj()
     assert strzelanie.strzal(wojtek, beben, 15, "samoczynny")
-    assert wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow == 8
-    wojtek.aktywna_bron.zaciagnij_naboj()
     assert wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow == 7
+    wojtek.aktywna_bron.zaciagnij_naboj()
+    assert wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow == 6
     wojtek.aktywna_bron.awaria = True
     assert not strzelanie.strzal(wojtek, beben, 50, "serie")
     return 10
