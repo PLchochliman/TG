@@ -242,7 +242,7 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
             wynik = self.aplikuj_wprawe_izsumuj_wynik(wynik)
             wynik += int(doRzutu[3] + modyfikator + self.kara())
             return wynik
-        return super(Postac, self).rzut_na_umiejetnasc(testowana_umiejetnasc, self.handling_specialisations_about_skills(self.specjalizacje, testowana_umiejetnasc))
+        return super(Postac, self).rzut_na_umiejetnasc(testowana_umiejetnasc, self.handling_specialisations_about_skills(testowana_umiejetnasc))
 
     #Specialisations should be under hero
 
@@ -255,7 +255,7 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
     def handling_specialisations_after_hit(self):
         return 0
 
-    def handling_specialisations_about_skills(self, specjalizacje, umiejetnosc):
+    def handling_specialisations_about_skills(self, umiejetnosc):
         return 0
 
     def handling_specialisations_changing_stats(self):

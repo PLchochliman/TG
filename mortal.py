@@ -23,6 +23,7 @@ class IstotaZywa: #pełne pokrycie
     planowane_dzialania = []
     oslona = 0
     w_ruchu = 0
+    naturalny_przyrost_zasiegu = 5
 
     def __init__(self, sila, zrecznasc, intelekt, imie="Bot", unik=10, redukcjaObrazen=0, typOchrony=0):
         self.sila = sila
@@ -55,10 +56,13 @@ class IstotaZywa: #pełne pokrycie
         self.planowane_dzialania = []
         self.oslona = 0
         self.w_ruchu = 0
+        self.naturalny_przyrost_zasiegu = 5
 
     def nastaw_unik(self):   #todo because of lack of equipment in code implemented.
         self.unik = (self.bazowy_unik + self.umiejetnosci[6][0])
 
+    def zwroc_naturalny_przyrost_zasiegu(self):
+        return self.naturalny_przyrost_zasiegu
 
     def aktualny_unik(self):
         return self.unik + self.oslona

@@ -4,7 +4,7 @@ import constans as constants
 import hero as hero
 
 #kurwa bieda, może i lepiej bybyło przedmioty zadeklarować wcześniej ale robiłem to na prosto.
-muszka_i_szczerbinka = ('zwykłe', 0, 25, '', 'w nocy kara -4,', 0, '-')
+muszka_i_szczerbinka = ('zwykłe', 0, 25, '', 'w nocy kara -4,', 0, '-', 2)
 
 class Przedmioty(): #pełne pokrycie
     dane = []
@@ -15,7 +15,7 @@ class Przedmioty(): #pełne pokrycie
 
     def __init__(self, CoDoQRWY):
         self.przetwornik = Excel.Loader('TabelaBroni.xlsx', ['bron', 'bronbiala', 'granaty', 'celowniki', 'amunicja'],
-                                        ['O300', 'I19', 'I10', 'G28', 'I42'])
+                                        ['O300', 'I19', 'I10', 'H28', 'I42'])
         self.dane = self.przetwornik.zwroc()
         self.przetwornik.wyczysc()
 
@@ -367,6 +367,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
     czas_rostawienia = 0
     awaria = False
     zacinka = False
+    zlozony_do_strzalu = False
 # if is smaller than 5 then it makes work for increased penalty for range, because of shit instead of sights
 
     def __init__(self, bron, celownik=muszka_i_szczerbinka, amunicja=("podstawowa"), magazynek=""):
@@ -388,6 +389,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
         self.__nastaw_kare_za_nierostawienie()
         self.awaria = False
         self.zacinka = False
+        self.zlozony_do_strzalu = False
 
     def __zamontuj_magazynek_staly(self):
         self.wymienny_magazynek = False
@@ -465,21 +467,25 @@ class BronStrzelecka(Bron): #pełne pokrycie
                     premia = premia + 2
         return premia
 
-    def __specjalne_kary_za_odleglosc(self, odleglosc):
-        kara = odleglosc / self.zasieg_przyrost
-        kara = kara * 2
-        if "pistolet" in self.zasady_specjalne:
+    def __specjalne_kary_za_odleglosc(self, operator, odleglosc):
+        if self.zlozony_do_strzalu:
+            kara = odleglosc / self.zasieg_przyrost
             kara = kara * 2
-#            if i == "pistolet maszynowy":
-#                kara = kara * 2
-        return kara
+            if "pistolet" in self.zasady_specjalne:
+                kara = kara * 2
+            return kara
+        else:
+            kara = odleglosc / operator.zwroc_naturalny_przyrost_zasiegu
+            kara = kara * 5
+            return kara
 
     def aktualna_premia(self, operator, odległosc):
-        super(BronStrzelecka, self).aktualna_premia(operator, odległosc)
+        if operator.w_ruchu < -1:
+            self.zlozony_do_strzalu = False
+        super(BronStrzelecka, self).aktualna_premia(odległosc, operator)
         if odległosc > self.aktualny_magazynek.amunicja.maks_zasieg_amunicji:
             raise Exception('cel jest po za zasiegiem.')
-        kara_za_zasieg = self.__specjalne_kary_za_odleglosc(odległosc)
-
+        kara_za_zasieg = self.__specjalne_kary_za_odleglosc(odległosc, operator)
         if 1 < self.zasieg_minimalny < 5:
             kara_za_zasieg = kara_za_zasieg * self.zasieg_minimalny
         premia = int(self.premia)
@@ -500,6 +506,9 @@ class BronStrzelecka(Bron): #pełne pokrycie
             if self.kara_za_nierostawienie == 0:
                 premia = premia + 1
         return premia
+
+    def zloz_sie_do_strzalu(self):
+        self.zlozony_do_strzalu = True
 
     def zmien_celownik(self, celownik):
         self.premia = self.premia - self.statystyki_celownika[1]

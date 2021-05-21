@@ -30,6 +30,8 @@ def kup_i_zaladuj_giwere(nazwa_giwery):
     mag.zaladuj_magazynek(ammo)
     giwera.zmien_magazynek(mag)
     giwera.zaciagnij_naboj()
+    giwera.zloz_sie_do_strzalu()
+    return giwera
 
 
 
@@ -366,7 +368,7 @@ def test_amunicji_i_magazynkow():
     return 23
 
 
-#@test_runner
+@test_runner
 def test_mechanik_walki():
     Bot.output("test samej walki")
     itemki = items.Przedmioty('')
@@ -394,13 +396,10 @@ def test_mechanik_walki():
     print(wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow)
     assert wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow == 11
     #TODO KURAW COŚ SIĘ SPIERDOLI
-    scout = itemki.luskacz_broni("steyr scout")
-    scout = items.BronStrzelecka(scout)
-    mag_scout = items.Magazynek(scout)
-    mag_scout.zaladuj_magazynek(NATO)
-    scout.zmien_magazynek(mag_scout)
+    scout = kup_i_zaladuj_giwere("steyr scout")
     wojtek.aktywna_bron = scout
     assert not strzelanie.strzal(wojtek, beben, 15, "serie")
+    wojtek.aktywna_bron.zloz_sie_do_strzalu()
     assert wojtek.aktywna_bron.zaciagnij_naboj()
     assert strzelanie.strzal(wojtek, beben, 15, "serie")
     wojtek.aktywna_bron.zaciagnij_naboj()
