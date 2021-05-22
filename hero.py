@@ -2,6 +2,7 @@ import mortal as mortal
 import Bot as Bot
 import excelDigger as excelDigger
 import constans as constans
+import items as items
 #import specialisations as specialisations
 
 """starting creating real playable character"""
@@ -157,14 +158,6 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
                 else:
                     self.umiejetnosci[constans.UmiejetnasciDoInt[umiejetnasc]][2] = self.umiejetnosci[constans.UmiejetnasciDoInt[umiejetnasc]][2] + 1
 
-    """
-        umiejetnosci is table for skills. from constants you 
-        first states for skill level, second for Cost, 
-        3rd of specializations (Cost is dependingo for it), 
-        4th is for all modifiers from predispositions (skill in specialisations)and modifiers from stats
-        5th is all for modifier based on base stats modifier. 0 states for none, 1 is for Power, 2 is for Dexerity, 3 is
-        for Inteligence, 4 is for Power or Inteligence, 5 is for Dexerity or Inteligence, 6 is for Power or Dexerity.
-    """
     def wykup_range(self, nazwaUmiejetnasci):
         if nazwaUmiejetnasci in constans.UmiejetnasciDoInt:
             umiejetnasc = constans.UmiejetnasciDoInt[nazwaUmiejetnasci]
@@ -239,10 +232,12 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
             for kosc in range(0, constans.liczba_kosci_umiejetnosci[doRzutu[0]]):
                     rzut_koscia = Bot.roll_dice(6)
                     wynik.append(rzut_koscia)
-            wynik = self.aplikuj_wprawe_izsumuj_wynik(wynik)
+            wynik = self.__aplikuj_wprawe_izsumuj_wynik(wynik)
             wynik += int(doRzutu[3] + modyfikator + self.kara())
             return wynik
-        return super(Postac, self).rzut_na_umiejetnasc(testowana_umiejetnasc, self.handling_specialisations_about_skills(testowana_umiejetnasc))
+        return super(Postac, self).rzut_na_umiejetnasc(testowana_umiejetnasc,
+                                                       self.handling_specialisations_about_skills(testowana_umiejetnasc))
+
 
     #Specialisations should be under hero
 
@@ -261,9 +256,9 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
     def handling_specialisations_changing_stats(self):
         return 0
 
-    def aplikuj_wprawe_izsumuj_wynik(self, result):
+    def __aplikuj_wprawe_izsumuj_wynik(self, result):
         check = min(result)
-        if self.aktywna_bron != []:
+        if self.aktywna_bron:
             for zasada_broni in self.aktywna_bron.zasady_specjalne:
                 for specjalizacja in self.specjalizacje:
                     if zasada_broni in specjalizacja[4]:
