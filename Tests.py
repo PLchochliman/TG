@@ -145,8 +145,8 @@ def test_umiejetnosci_i_aktywacji(): # test mortal.py
     return 4
 
 
-#@test_runner
-def test_wykupowania_umiejetnosci_z_obnizeniem_przez_specjalizacje():
+@test_runner
+def test_wykupowania_umiejetnosci_z_obnizeniem_przez_specjalizacje_oraz_umiejetnosci_specjalizacji():
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     wojtek.wykup_range("obsluga broni")
     assert wojtek.punktyUmiejetnasci == 165
@@ -172,7 +172,10 @@ def test_wykupowania_umiejetnosci_z_obnizeniem_przez_specjalizacje():
     wojtek.wykup_range("zmysl bitewny")
     assert wojtek.unik == 13
     Bot.output("wykupowanie umiejetnosci dziala")
-    return 15
+    wojtek.podnies_umiejetnosc_specjalizacji("bron boczna", "wprawa")
+    print(wojtek.specjalizacje[0][2])
+    assert wojtek.specjalizacje[0][2] == 1
+    return 16
 
 
 @test_runner
@@ -203,7 +206,7 @@ def test_przedmiotow():
     return 6
 
 
-#@test_runner
+@test_runner
 def test_Broni_strzelcekiej_magazynki_zaciaganie_amunicja_czterotakt():
     itemki = items.Przedmioty('')
     m4ka = itemki.luskacz_broni("m4a1")
@@ -368,7 +371,7 @@ def test_amunicji_i_magazynkow():
     return 23
 
 
-#@test_runner
+@test_runner
 def test_mechanik_walki():
     Bot.output("test samej walki")
     itemki = items.Przedmioty('')
@@ -428,7 +431,7 @@ ilosc_testow_pass += test_stalych()
 ilosc_testow_pass += test_uniku()
 ilosc_testow_pass += test_ran_kar_smierci()
 ilosc_testow_pass += test_umiejetnosci_i_aktywacji()
-ilosc_testow_pass += test_wykupowania_umiejetnosci_z_obnizeniem_przez_specjalizacje()
+ilosc_testow_pass += test_wykupowania_umiejetnosci_z_obnizeniem_przez_specjalizacje_oraz_umiejetnosci_specjalizacji()
 ilosc_testow_pass += test_jezykow()
 ilosc_testow_pass += test_przedmiotow()
 ilosc_testow_pass += test_Broni_strzelcekiej_magazynki_zaciaganie_amunicja_czterotakt()

@@ -224,8 +224,7 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
     def podnies_umiejetnosc_specjalizacji(self, ktora_specjalizacja, ktora_umiejetnasc):
         for specjalizacja in self.specjalizacje:
             if specjalizacja[0] == ktora_specjalizacja:
-                for umiejetnasc_index in specjalizacja:
-                    #xD
+                for umiejetnasc_index in range(0, len(specjalizacja)):
                     if specjalizacja[umiejetnasc_index] == ktora_umiejetnasc:
                         mnoznik_ceny = 2
                         if umiejetnasc_index == 12:

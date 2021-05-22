@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/hero.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -192,13 +193,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00101" summary="deleting, and updating comments">
-      <created>1617140989366</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1617140989366</updated>
     </task>
     <task id="LOCAL-00102" summary="deleting, and updating comments">
       <created>1617141097146</created>
@@ -536,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621679740392</updated>
     </task>
-    <option name="localTasksCounter" value="150" />
+    <task id="LOCAL-00150" summary="specs upgrade complete">
+      <created>1621718807831</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1621718807832</updated>
+    </task>
+    <option name="localTasksCounter" value="151" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -552,7 +553,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="wybitnie celna i celna poprawione" />
     <MESSAGE value="Duży kaliber uwzględniony, bez interakcji z celownikiem." />
     <MESSAGE value="zrobiono Potężna" />
     <MESSAGE value="basic security implemented." />
@@ -577,7 +577,8 @@
     <MESSAGE value="złożenie do strzału io zrywanie zrobione, i strzelanie z biodra, tylko że strzelanie z scouta nie działa...." />
     <MESSAGE value="naprawiono masę baboli.&#10;Jeszcze masa rzeczy do wytestowania...&#10;po zrobieniu wprawy czas na duże testowanie." />
     <MESSAGE value="did specs into file. now ith's time to read it as whole, and use." />
-    <option name="LAST_COMMIT_MESSAGE" value="did specs into file. now ith's time to read it as whole, and use." />
+    <MESSAGE value="specs upgrade complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="specs upgrade complete" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -594,7 +595,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Tests.py</url>
-          <line>404</line>
+          <line>407</line>
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
