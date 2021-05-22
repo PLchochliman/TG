@@ -441,5 +441,5 @@ ilosc_testow_pass += test_amunicji_i_magazynkow()
 ilosc_testow_pass += test_akcji()
 ilosc_testow_pass += test_broni_strzeleckiej_specjalne_magi()
 print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \n"
-      "Jest to " + str(ilosc_testow_pass/129 * 100) + "% testów.")
+      "Jest to " + str(ilosc_testow_pass/130 * 100) + "% testów.")
 #unittest.main()
