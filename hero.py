@@ -221,8 +221,22 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
             if switch == 0:
                 self.jezyki.append([wejcie, 1])
 
-    def dodaj_umiejetnosci_specjalizacji(self):
-        return 0
+    def podnies_umiejetnosc_specjalizacji(self, ktora_specjalizacja, ktora_umiejetnasc):
+        for specjalizacja in self.specjalizacje:
+            if specjalizacja[0] == ktora_specjalizacja:
+                for umiejetnasc_index in specjalizacja:
+                    #xD
+                    if specjalizacja[umiejetnasc_index] == ktora_umiejetnasc:
+                        mnoznik_ceny = 2
+                        if umiejetnasc_index == 12:
+                            mnoznik_ceny = 3
+                        if self.punktyUmiejetnasci >= (specjalizacja[umiejetnasc_index - 1] + 1) * mnoznik_ceny:
+                            if specjalizacja[umiejetnasc_index - 1] < 5:
+                                specjalizacja[umiejetnasc_index - 1] = specjalizacja[umiejetnasc_index - 1] + 1
+                        else:
+                            Bot.output("nie stać Cię. Podexp")
+                        return True
+        return False
 
     def rzut_na_umiejetnasc(self, testowana_umiejetnasc, modyfikator=0):
         if testowana_umiejetnasc == "strzelectwo":
