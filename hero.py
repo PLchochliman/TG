@@ -229,8 +229,10 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
                         mnoznik_ceny = 2
                         if umiejetnasc_index == 12:
                             mnoznik_ceny = 3
-                        if self.punktyUmiejetnasci >= (specjalizacja[umiejetnasc_index - 1] + 1) * mnoznik_ceny:
-                            if specjalizacja[umiejetnasc_index - 1] < 5:
+                        cena_podniesienia_umiejetnasci = (specjalizacja[umiejetnasc_index - 1] + 1) * mnoznik_ceny
+                        if self.punktyUmiejetnasci >= cena_podniesienia_umiejetnasci:
+                            if specjalizacja[umiejetnasc_index - 1] < 6:
+                                self.punktyUmiejetnasci = int(self.punktyUmiejetnasci - cena_podniesienia_umiejetnasci)
                                 specjalizacja[umiejetnasc_index - 1] = specjalizacja[umiejetnasc_index - 1] + 1
                         else:
                             Bot.output("nie stać Cię. Podexp")

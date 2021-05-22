@@ -173,8 +173,14 @@ def test_wykupowania_umiejetnosci_z_obnizeniem_przez_specjalizacje_oraz_umiejetn
     assert wojtek.unik == 13
     Bot.output("wykupowanie umiejetnosci dziala")
     wojtek.podnies_umiejetnosc_specjalizacji("bron boczna", "wprawa")
-    print(wojtek.specjalizacje[0][2])
+    assert wojtek.punktyUmiejetnasci == 146
     assert wojtek.specjalizacje[0][2] == 1
+    wojtek.podnies_umiejetnosc_specjalizacji("bron boczna", "wprawa")
+    wojtek.podnies_umiejetnosc_specjalizacji("bron boczna", "wprawa")
+    wojtek.podnies_umiejetnosc_specjalizacji("bron boczna", "wprawa")
+    wojtek.podnies_umiejetnosc_specjalizacji("bron boczna", "wprawa")
+    wojtek.podnies_umiejetnosc_specjalizacji("bron boczna", "wprawa")
+    assert wojtek.punktyUmiejetnasci == 106
     return 16
 
 

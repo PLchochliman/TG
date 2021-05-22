@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami" />
+    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/hero.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -189,13 +193,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00103" summary="deleting, and updating comments">
-      <created>1617141179896</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1617141179896</updated>
     </task>
     <task id="LOCAL-00104" summary="preparing refactor of tests">
       <created>1617141521024</created>
@@ -533,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621721276123</updated>
     </task>
-    <option name="localTasksCounter" value="152" />
+    <task id="LOCAL-00152" summary="Fixed">
+      <created>1621721458876</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1621721458876</updated>
+    </task>
+    <option name="localTasksCounter" value="153" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -567,14 +571,14 @@
     <MESSAGE value="prepared for new Specialisations" />
     <MESSAGE value="wprawa almoust ready." />
     <MESSAGE value="strange error durring loading first bullet into chamber...&#10;redo equipment, and specialisations partly ready." />
-    <MESSAGE value="Fixed" />
     <MESSAGE value="some cleanUp" />
     <MESSAGE value="złożenie do strzału io zrywanie zrobione, i strzelanie z biodra, tylko że strzelanie z scouta nie działa...." />
     <MESSAGE value="naprawiono masę baboli.&#10;Jeszcze masa rzeczy do wytestowania...&#10;po zrobieniu wprawy czas na duże testowanie." />
     <MESSAGE value="did specs into file. now ith's time to read it as whole, and use." />
     <MESSAGE value="specs upgrade complete" />
     <MESSAGE value="due to tests, we know, that it is not complete..." />
-    <option name="LAST_COMMIT_MESSAGE" value="due to tests, we know, that it is not complete..." />
+    <MESSAGE value="Fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -591,7 +595,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Tests.py</url>
-          <line>407</line>
+          <line>413</line>
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -681,17 +685,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/hero.py</url>
-          <line>231</line>
+          <line>232</line>
           <option name="timeStamp" value="67" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/hero.py</url>
-          <line>232</line>
+          <line>233</line>
           <option name="timeStamp" value="69" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/hero.py</url>
-          <line>233</line>
+          <line>235</line>
           <option name="timeStamp" value="70" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
