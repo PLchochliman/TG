@@ -421,6 +421,29 @@ def test_mechanik_walki():
     assert not strzelanie.strzal(wojtek, beben, 50, "serie")
     return 10
 
+
+#by specialisation, his damage roll is almost constant
+@test_runner
+def test_mechanik_i_zasad_specjalnych():
+    kalach = kup_i_zaladuj_giwere("AKM")
+    wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
+    wojtek.aktywna_bron = kalach
+    wojtek.podnies_umiejetnosc_specjalizacji("bron boczna", "wprawa")
+    wojtek.podnies_umiejetnosc_specjalizacji("bron boczna", "wprawa")
+    wojtek.podnies_umiejetnosc_specjalizacji("bron boczna", "wprawa")
+    wojtek.podnies_umiejetnosc_specjalizacji("bron boczna", "wprawa")
+    wojtek.podnies_umiejetnosc_specjalizacji("bron boczna", "wprawa")
+    wojtek.podnies_umiejetnosc_specjalizacji("bron boczna", "wprawa")
+    wojtek.podnies_umiejetnosc_specjalizacji("karabiny", "wprawa")
+    wojtek.podnies_umiejetnosc_specjalizacji("karabiny", "wprawa")
+    wojtek.podnies_umiejetnosc_specjalizacji("karabiny", "wprawa")
+    wojtek.podnies_umiejetnosc_specjalizacji("karabiny", "wprawa")
+    wojtek.podnies_umiejetnosc_specjalizacji("karabiny", "wprawa")
+    wojtek.podnies_umiejetnosc_specjalizacji("karabiny", "wprawa")
+    gong = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
+    print(gong.unik)
+
+
 @test_runner
 def test_akcji():
     akcja = mechanics.Akcje()

@@ -144,6 +144,24 @@ TypyAktywacji = {
     2: (0, 1, 1, 1, 1, 1),
     3: (1, 1, 1, 1, 1, 1),
 }
+"""
+for injuries
+"""
+Rana = {
+0: "drasniecie",
+    1: "lekka rana",
+    2: "powazna rana",
+    3: "rana krytyczna",
+    4: "rana konczyny"
+}
+
+RanaToInt = {
+    "drasniecie": 0,
+    "lekka rana": 1,
+    "powazna rana": 2,
+    "rana krytyczna": 3,
+    "rana konczyny": 4
+}
 
 """"
 for purposes of limb injury
