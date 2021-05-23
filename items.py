@@ -69,6 +69,31 @@ class Przedmioty(): #pełne pokrycie
                 return i
         return False
 
+class Przedmiot():
+    wartosc = 0
+    waga = 0
+
+    def __init__(self, wartosc, masa):
+        self.wartosc = wartosc
+        self.masa = masa
+
+    def zwroc_mase(self):
+        return self.masa
+
+    def zwroc_wartosc(self):
+        return self.wartosc
+
+
+class DodatekDoBroni():
+    def zaloz(self, bron):
+        return self.dzialanie(bron, True)
+
+    def zdejmij(self, bron):
+        return self.dzialanie(bron, False)
+
+    def dzialanie(self, bron, akcja):
+        return 0
+
 """
 it's all about the ammunition for the gun.
 """

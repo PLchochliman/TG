@@ -446,10 +446,9 @@ def test_mechanik_i_zasad_specjalnych():
     wojtek.podnies_umiejetnosc_specjalizacji("karabiny", "wprawa")
     wojtek.podnies_umiejetnosc_specjalizacji("karabiny", "wprawa")
     wez_i_zmien_celownik(wojtek.aktywna_bron, "aimpoint")
-    gong = hero.Postac(5, 5, 5, ["bron boczna", "karabiny", "bron krotka"], "gong")
+    gong = hero.Postac(8, 5, 2, ["bron boczna", "karabiny", "bron krotka"], "gong")
     strzelanie = mechanics.Strzelanie()
-
-    strzelanie.strzal(wojtek, gong, 5)
+    assert strzelanie.strzal(wojtek, gong, 5)
     print(gong.unik)
 
     return 1
