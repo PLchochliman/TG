@@ -274,11 +274,14 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
     def __aplikuj_wprawe_izsumuj_wynik(self, result):
         check = min(result)
         if self.aktywna_bron:
-            for zasada_broni in self.aktywna_bron.zasady_specjalne:
-                for specjalizacja in self.specjalizacje:
+            for specjalizacja in self.specjalizacje:
+                for zasada_broni in self.aktywna_bron.zasady_specjalne:
                     if zasada_broni in specjalizacja[4]:
                         if specjalizacja[2] > check:
                             result[result.index(check)] = specjalizacja[2]
+                if self.aktywna_bron.aktualny_magazynek.amunicja.typ_amunicji in specjalizacja[4]:
+                    if specjalizacja[2] > check:
+                        result[result.index(check)] = specjalizacja[2]
         wyjscie = 0
         for i in result:
             wyjscie += i

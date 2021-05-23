@@ -6,6 +6,7 @@ import hero as hero
 import items as items
 import mechanics as mechanics
 
+itemki = items.Przedmioty('')
 
 def sprawdz_jak_cel_oberwal(cel):
     if cel.lekka_rana == 0:
@@ -20,7 +21,8 @@ def sprawdz_jak_cel_oberwal(cel):
         assert cel.lekka_rana > 0
 
 
-def kup_i_zaladuj_giwere(nazwa_giwery):
+def wez_i_zaladuj_giwere(nazwa_giwery):
+    nazwa_giwery = nazwa_giwery.lower()
     itemki = items.Przedmioty('')
     giwera = itemki.luskacz_broni(nazwa_giwery)
     giwera = items.BronStrzelecka(giwera)
@@ -33,6 +35,10 @@ def kup_i_zaladuj_giwere(nazwa_giwery):
     giwera.zloz_sie_do_strzalu()
     return giwera
 
+
+def wez_i_zmien_celownik(giwera, nazwa_celownika):
+    giwera.zmien_celownik(itemki.luskacz_celownikow(nazwa_celownika))
+    return True
 
 
 def test_runner(test):
@@ -195,7 +201,6 @@ def test_jezykow():
 
 @test_runner
 def test_przedmiotow():
-    itemki = items.Przedmioty('')
     m4ka = itemki.luskacz_broni("m4a1")
     assert m4ka[6] == 'ś'
     nozyk = itemki.luskacz_broni_bialej("nóż")
@@ -405,7 +410,7 @@ def test_mechanik_walki():
     print(wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow)
     assert wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow == 11
     #TODO KURAW COŚ SIĘ SPIERDOLI
-    scout = kup_i_zaladuj_giwere("steyr scout")
+    scout = wez_i_zaladuj_giwere("steyr scout")
     scout.naboj_w_komorze = False
     wojtek.aktywna_bron = scout
     assert not strzelanie.strzal(wojtek, beben, 15, "serie")
@@ -425,7 +430,7 @@ def test_mechanik_walki():
 #by specialisation, his damage roll is almost constant
 @test_runner
 def test_mechanik_i_zasad_specjalnych():
-    kalach = kup_i_zaladuj_giwere("AKM")
+    kalach = wez_i_zaladuj_giwere("AKM")
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     wojtek.aktywna_bron = kalach
     wojtek.podnies_umiejetnosc_specjalizacji("bron boczna", "wprawa")
@@ -440,8 +445,14 @@ def test_mechanik_i_zasad_specjalnych():
     wojtek.podnies_umiejetnosc_specjalizacji("karabiny", "wprawa")
     wojtek.podnies_umiejetnosc_specjalizacji("karabiny", "wprawa")
     wojtek.podnies_umiejetnosc_specjalizacji("karabiny", "wprawa")
-    gong = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
+    wez_i_zmien_celownik(wojtek.aktywna_bron, "aimpoint")
+    gong = hero.Postac(5, 5, 5, ["bron boczna", "karabiny", "bron krotka"], "gong")
+    strzelanie = mechanics.Strzelanie()
+
+    strzelanie.strzal(wojtek, gong, 5)
     print(gong.unik)
+
+    return 1
 
 
 @test_runner
@@ -469,6 +480,7 @@ ilosc_testow_pass += test_mechanik_walki()
 ilosc_testow_pass += test_amunicji_i_magazynkow()
 ilosc_testow_pass += test_akcji()
 ilosc_testow_pass += test_broni_strzeleckiej_specjalne_magi()
+ilosc_testow_pass += test_mechanik_i_zasad_specjalnych()
 print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \n"
-      "Jest to " + str(ilosc_testow_pass/130 * 100) + "% testów.")
+      "Jest to " + str(ilosc_testow_pass/131 * 100) + "% testów.")
 #unittest.main()
