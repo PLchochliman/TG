@@ -4,7 +4,7 @@ import constans as constants
 import hero as hero
 
 #kurwa bieda, może i lepiej bybyło przedmioty zadeklarować wcześniej ale robiłem to na prosto.
-muszka_i_szczerbinka = ('zwykłe', 0, 25, '', 'w nocy kara -4,', 0, '-', 2)
+
 
 class Przedmioty(): #pełne pokrycie
     dane = []
@@ -15,7 +15,7 @@ class Przedmioty(): #pełne pokrycie
 
     def __init__(self, CoDoQRWY):
         self.przetwornik = Excel.Loader('TabelaBroni.xlsx', ['bron', 'bronbiala', 'granaty', 'celowniki', 'amunicja'],
-                                        ['O300', 'I19', 'I10', 'H28', 'I42'])
+                                        ['O300', 'I19', 'I10', 'I28', 'I42'])
         self.dane = self.przetwornik.zwroc()
         self.przetwornik.wyczysc()
 
@@ -72,10 +72,12 @@ class Przedmioty(): #pełne pokrycie
 class Przedmiot():
     wartosc = 0
     waga = 0
+    nazwa = ""
 
     def __init__(self, wartosc, masa):
         self.wartosc = wartosc
         self.masa = masa
+        self.nazwa = ""
 
     def zwroc_mase(self):
         return self.masa
@@ -84,20 +86,43 @@ class Przedmiot():
         return self.wartosc
 
 
-class DodatekDoBroni():
-    def zaloz(self, bron):
+
+class DodatekDoBroni(Przedmiot):
+
+    def zaloz(self, bron, miejsce):
+        miejsce = self
         return self.dzialanie(bron, True)
 
-    def zdejmij(self, bron):
+    def zdejmij(self, bron, miejsce):
+        miejsce = []
         return self.dzialanie(bron, False)
 
     def dzialanie(self, bron, akcja):
         return 0
 
+
+class Celownik(DodatekDoBroni):
+    premia = 0
+    przyrost_zasiegu = 0
+    zasady_specjalne = ""
+    typ = ""
+    czas_do_zlozenia = 0
+
+    def __init__(self, czysta_dana):
+        self.nazwa = czysta_dana[0]
+        self.wartosc = czysta_dana[-1]
+        self.masa = czysta_dana[-2]
+        self.premia = czysta_dana[1]
+        self.przyrost_zasiegu = czysta_dana[2]
+        self.zasady_specjalne = ""
+
+    def zaloz(self, bron, miejsce):
+        bron.przyrost_zasiegu = self.przyrost_zasiegu
+
 """
 it's all about the ammunition for the gun.
 """
-
+muszka_i_szczerbinka = Celownik(('zwykłe', 0, 25, '', 'w nocy kara -4,', 2, 0, '-'))
 class Amunicja:
     nazwa_naboju = ""
     kosc_obrazen = ""
@@ -394,6 +419,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
     awaria = False
     zacinka = False
     zlozony_do_strzalu = False
+    celownik = []
 # if is smaller than 5 then it makes work for increased penalty for range, because of shit instead of sights
 
     def __init__(self, bron, celownik=muszka_i_szczerbinka, amunicja=("podstawowa"), magazynek=""):
@@ -416,6 +442,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
         self.awaria = False
         self.zacinka = False
         self.zlozony_do_strzalu = False
+        self.celownik = celownik
 
     def __zamontuj_magazynek_staly(self):
         self.wymienny_magazynek = False
