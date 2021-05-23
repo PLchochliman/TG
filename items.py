@@ -331,7 +331,8 @@ class Magazynek():
             return True
         return False
 
-class Bron: #pełne pokrycie
+
+class Bron(Przedmiot):
     rodzaj_testu = ""
     kosc_obrazen = ""
     premia = 0
@@ -339,8 +340,8 @@ class Bron: #pełne pokrycie
     zasieg_maksymalny = 0
     zasady_specjalne = []
 
-
-    def __init__(self, rodzaj_testu, kosc_obrazen, premia, penetracja, zasieg_maksymalny):
+    def __init__(self, rodzaj_testu, kosc_obrazen, premia, penetracja, zasieg_maksymalny, masa=3, cena=0):
+        super(Bron, self).__init__(masa, cena)
         self.rodzaj_testu = rodzaj_testu
         self.kosc_obrazen = kosc_obrazen
         self.premia = premia
@@ -396,7 +397,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
 # if is smaller than 5 then it makes work for increased penalty for range, because of shit instead of sights
 
     def __init__(self, bron, celownik=muszka_i_szczerbinka, amunicja=("podstawowa"), magazynek=""):
-        super(BronStrzelecka, self).__init__("strzelectwo", bron[5], bron[3], bron[6], bron[1])
+        super(BronStrzelecka, self).__init__("strzelectwo", bron[5], bron[3], bron[6], bron[1], bron[13], bron[14])
         self.statystyki_podstawowe = bron
         self.__nastaw_celownik(celownik)
         self.amunicja = amunicja

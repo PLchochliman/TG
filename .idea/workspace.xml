@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/items.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -193,13 +192,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00107" summary="przygotowanie operacji na fazach, ale jeszcze bez obsługi samych czynności">
-      <created>1619644870621</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1619644870622</updated>
     </task>
     <task id="LOCAL-00108" summary="default communicate during execution">
       <created>1619820278283</created>
@@ -537,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621766425049</updated>
     </task>
-    <option name="localTasksCounter" value="156" />
+    <task id="LOCAL-00156" summary="przygotowanie pod Ekwipunek i pilnowania go.">
+      <created>1621783197626</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1621783197627</updated>
+    </task>
+    <option name="localTasksCounter" value="157" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -553,7 +552,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="preparing specialisations." />
     <MESSAGE value="added any cover." />
     <MESSAGE value="added tests for cover" />
     <MESSAGE value="przygotowanie kary za ruch" />
@@ -578,24 +576,25 @@
     <MESSAGE value="Fixed all mistakes." />
     <MESSAGE value="przygotowanie leczenia, kontynuacja testów całości" />
     <MESSAGE value="naprawiono zakladanie celownikow" />
-    <option name="LAST_COMMIT_MESSAGE" value="naprawiono zakladanie celownikow" />
+    <MESSAGE value="przygotowanie pod Ekwipunek i pilnowania go." />
+    <option name="LAST_COMMIT_MESSAGE" value="przygotowanie pod Ekwipunek i pilnowania go." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/items.py</url>
-          <line>477</line>
+          <line>478</line>
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/items.py</url>
-          <line>478</line>
+          <line>479</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/items.py</url>
-          <line>476</line>
+          <line>477</line>
           <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -615,7 +614,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/items.py</url>
-          <line>357</line>
+          <line>358</line>
           <option name="timeStamp" value="79" />
         </line-breakpoint>
       </breakpoints>
