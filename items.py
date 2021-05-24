@@ -107,6 +107,7 @@ class Celownik(DodatekDoBroni):
     zasady_specjalne = ""
     typ = ""
     czas_do_zlozenia = 0
+    zasieg_minimalny = 0
 
     def __init__(self, czysta_dana):
         self.nazwa = czysta_dana[0]
@@ -114,9 +115,14 @@ class Celownik(DodatekDoBroni):
         self.masa = czysta_dana[-2]
         self.premia = czysta_dana[1]
         self.przyrost_zasiegu = czysta_dana[2]
+        if czysta_dana[3] in ['', '-']:
+            self.zasieg_minimalny = 0
+        else:
+            self.zasieg_minimalny = int(czysta_dana[3])
         self.zasady_specjalne = czysta_dana[4]
         self.typ = czysta_dana[5]
         self.czas_do_zlozenia = czysta_dana[6]
+
 
     def zaloz(self, bron, miejsce):
         bron.przyrost_zasiegu = self.przyrost_zasiegu
@@ -427,7 +433,6 @@ class BronStrzelecka(Bron): #pełne pokrycie
     zacinka = False
     zlozony_do_strzalu = False
     celownik = []
-# if is smaller than 5 then it makes work for increased penalty for range, because of shit instead of sights
 
     def __init__(self, bron, celownik=muszka_i_szczerbinka, amunicja=("podstawowa"), magazynek=""):
         super(BronStrzelecka, self).__init__("strzelectwo", bron[5], bron[3], bron[6], bron[1], bron[13], bron[14])
@@ -528,7 +533,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
         return premia
 
     def __specjalne_kary_za_odleglosc(self, operator, odleglosc):
-        if self.zlozony_do_strzalu:
+        if self.zlozony_do_strzalu & (self.celownik.zasieg_minimalny < odleglosc):
             kara = odleglosc / self.celownik.przyrost_zasiegu
             kara = kara * 2 - self.celownik.premia
             if "pistolet" in self.zasady_specjalne:
