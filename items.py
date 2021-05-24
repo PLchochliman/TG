@@ -114,11 +114,15 @@ class Celownik(DodatekDoBroni):
         self.masa = czysta_dana[-2]
         self.premia = czysta_dana[1]
         self.przyrost_zasiegu = czysta_dana[2]
-        self.zasady_specjalne = ""
+        self.zasady_specjalne = czysta_dana[4]
+        self.typ = czysta_dana[5]
+        self.czas_do_zlozenia = czysta_dana[6]
 
     def zaloz(self, bron, miejsce):
         bron.przyrost_zasiegu = self.przyrost_zasiegu
 
+    def zdejmij(self, bron):
+        bron.przyrost_zasiegu = 10
 """
 it's all about the ammunition for the gun.
 """
@@ -522,8 +526,8 @@ class BronStrzelecka(Bron): #pełne pokrycie
 
     def __specjalne_kary_za_odleglosc(self, operator, odleglosc):
         if self.zlozony_do_strzalu:
-            kara = odleglosc / self.zasieg_przyrost
-            kara = kara * 2
+            kara = odleglosc / self.celownik.przyrost_zasiegu
+            kara = kara * 2 - self.celownik.premia
             if "pistolet" in self.zasady_specjalne:
                 kara = kara * 2
             return kara
@@ -564,13 +568,11 @@ class BronStrzelecka(Bron): #pełne pokrycie
         self.zlozony_do_strzalu = True
 
     def zmien_celownik(self, celownik):
-        self.premia = self.premia - self.statystyki_celownika[1]
         self.__nastaw_celownik(celownik)
 
     def __nastaw_celownik(self, celownik):
-        self.statystyki_celownika = celownik
-        self.zasieg_przyrost = self.statystyki_celownika[2]
-        self.premia = self.premia + self.statystyki_celownika[1]
+        self.celownik = celownik
+        self.zasieg_przyrost = self.celownik.przyrost_zasiegu
 
     def zmien_magazynek(self, magazynek):
         if not self.wymienny_magazynek:

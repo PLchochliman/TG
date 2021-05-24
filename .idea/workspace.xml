@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpecjalizacjeDoZrobienia.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/SpecjalizacjeDoZrobienia.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/items.py" afterDir="false" />
     </list>
@@ -194,13 +193,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00110" summary="powoli dodawane programowalne z zewnątrz strzelanie.">
-      <created>1620002199805</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1620002199805</updated>
     </task>
     <task id="LOCAL-00111" summary="powoli wprowadzam strzelanie, wersji dla użytkownika. na razie dla faz jest niedokończona implementacja.">
       <created>1620003016009</created>
@@ -538,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621809609621</updated>
     </task>
-    <option name="localTasksCounter" value="159" />
+    <task id="LOCAL-00159" summary="scopes under WIP">
+      <created>1621843926149</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1621843926149</updated>
+    </task>
+    <option name="localTasksCounter" value="160" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -554,7 +553,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added tests for cover" />
     <MESSAGE value="przygotowanie kary za ruch" />
     <MESSAGE value="kara za ruch z testami" />
     <MESSAGE value="some changes for specialisations, shooting in VIP." />
@@ -579,29 +577,30 @@
     <MESSAGE value="naprawiono zakladanie celownikow" />
     <MESSAGE value="przygotowanie pod Ekwipunek i pilnowania go." />
     <MESSAGE value="Celowniki w toku (już jako dodatki" />
-    <option name="LAST_COMMIT_MESSAGE" value="Celowniki w toku (już jako dodatki" />
+    <MESSAGE value="scopes under WIP" />
+    <option name="LAST_COMMIT_MESSAGE" value="scopes under WIP" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/items.py</url>
-          <line>505</line>
+          <line>509</line>
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/items.py</url>
-          <line>506</line>
+          <line>510</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/items.py</url>
-          <line>504</line>
+          <line>508</line>
           <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Tests.py</url>
-          <line>445</line>
+          <line>442</line>
           <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -616,7 +615,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/items.py</url>
-          <line>383</line>
+          <line>387</line>
           <option name="timeStamp" value="79" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

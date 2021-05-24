@@ -36,7 +36,8 @@ def wez_i_zaladuj_giwere(nazwa_giwery):
 
 
 def wez_i_zmien_celownik(giwera, nazwa_celownika):
-    giwera.zmien_celownik(itemki.luskacz_celownikow(nazwa_celownika))
+    giwera.zmien_celownik(items.Celownik(itemki.luskacz_celownikow(nazwa_celownika)))
+
     return True
 
 
@@ -276,7 +277,6 @@ def test_Broni_strzelcekiej_magazynki_zaciaganie_amunicja_czterotakt():
 
 @test_runner
 def test_broni_strzeleckiej_specjalne_magi():
-    itemki = items.Przedmioty('')
     mk23 = itemki.luskacz_broni("mk23")
     MK23 = items.BronStrzelecka(mk23)
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
@@ -296,7 +296,6 @@ def test_broni_strzeleckiej_specjalne_magi():
 def test_broni_bialej():
     ww = mechanics.WalkaWrecz()
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"], "operejtor")
-    itemki = items.Przedmioty('')
     noz = itemki.luskacz_broni_bialej("nóż")
     piesc = itemki.luskacz_broni_bialej("kolba")
     NOZ = items.BronBiala(noz)
@@ -321,7 +320,6 @@ def test_broni_bialej():
 
 @test_runner
 def test_amunicji_i_magazynkow():
-    itemki = items.Przedmioty('')
     natowska = itemki.luskacz_amunicji("5,56 nato")
     NATO = items.Amunicja(natowska)
     m4ka = itemki.luskacz_broni("m4a1")
@@ -383,7 +381,6 @@ def test_amunicji_i_magazynkow():
 @test_runner
 def test_mechanik_walki():
     Bot.output("test samej walki")
-    itemki = items.Przedmioty('')
     natowska = itemki.luskacz_amunicji("5,56 nato")
     NATO = items.Amunicja(natowska)
     m4ka = itemki.luskacz_broni("m4a1")
@@ -444,7 +441,7 @@ def test_mechanik_i_zasad_specjalnych():
     wojtek.podnies_umiejetnosc_specjalizacji("karabiny", "wprawa")
     wojtek.podnies_umiejetnosc_specjalizacji("karabiny", "wprawa")
     wez_i_zmien_celownik(wojtek.aktywna_bron, "aimpoint")
-    gong = hero.Postac(8, 5, 5, ["bron boczna", "karabiny", "bron krotka"], "gong")
+    gong = hero.Postac(8, 5, 3, ["bron boczna", "karabiny", "bron krotka"], "gong")
     strzelanie = mechanics.Strzelanie()
     wojtek.aktywna_bron.rostaw_bron()
     assert strzelanie.strzal(wojtek, gong, 5)
