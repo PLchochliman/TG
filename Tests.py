@@ -6,7 +6,7 @@ import hero as hero
 import items as items
 import mechanics as mechanics
 
-itemki = items.Przedmioty('')
+itemki = items.Przedmioty()
 
 def sprawdz_jak_cel_oberwal(cel):
     if cel.lekka_rana == 0:
@@ -23,7 +23,6 @@ def sprawdz_jak_cel_oberwal(cel):
 
 def wez_i_zaladuj_giwere(nazwa_giwery):
     nazwa_giwery = nazwa_giwery.lower()
-    itemki = items.Przedmioty('')
     giwera = itemki.luskacz_broni(nazwa_giwery)
     giwera = items.BronStrzelecka(giwera)
     mag = items.Magazynek(giwera)
@@ -219,7 +218,6 @@ def test_przedmiotow():
 
 @test_runner
 def test_Broni_strzelcekiej_magazynki_zaciaganie_amunicja_czterotakt():
-    itemki = items.Przedmioty('')
     m4ka = itemki.luskacz_broni("m4a1")
     M4KA = items.BronStrzelecka(m4ka)
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])

@@ -13,7 +13,7 @@ class Przedmioty(): #pełne pokrycie
     loads the guns, and accesories to TG from file
     """
 
-    def __init__(self, CoDoQRWY):
+    def __init__(self):
         self.przetwornik = Excel.Loader('TabelaBroni.xlsx', ['bron', 'bronbiala', 'granaty', 'celowniki', 'amunicja'],
                                         ['O300', 'I19', 'I10', 'I28', 'I42'])
         self.dane = self.przetwornik.zwroc()
