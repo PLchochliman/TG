@@ -529,7 +529,12 @@ class BronStrzelecka(Bron): #pełne pokrycie
             kara = odleglosc / self.celownik.przyrost_zasiegu
             kara = kara * 2 - self.celownik.premia
             if "pistolet" in self.zasady_specjalne:
-                kara = kara * 2
+                if self.celownik.typ == "mechaniczne":
+                    kara = odleglosc / (self.celownik.przyrost_zasiegu - 5)
+                    kara = kara * 4 - self.celownik.premia
+                    return kara
+                kara = odleglosc / self.celownik.przyrost_zasiegu
+                kara = kara * 2 - self.celownik.premia
             return kara
         else:
             kara = odleglosc / operator.zwroc_naturalny_przyrost_zasiegu()
