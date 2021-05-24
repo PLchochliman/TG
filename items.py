@@ -120,9 +120,12 @@ class Celownik(DodatekDoBroni):
 
     def zaloz(self, bron, miejsce):
         bron.przyrost_zasiegu = self.przyrost_zasiegu
+        bron.masa = bron.masa + self.masa
 
     def zdejmij(self, bron):
         bron.przyrost_zasiegu = 10
+        bron.masa = bron.masa - self.masa
+
 """
 it's all about the ammunition for the gun.
 """
