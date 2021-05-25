@@ -125,17 +125,15 @@ class Celownik(DodatekDoBroni):
 
 
     def zaloz(self, bron, miejsce):
-        bron.przyrost_zasiegu = self.przyrost_zasiegu
         bron.masa = bron.masa + self.masa
 
     def zdejmij(self, bron):
-        bron.przyrost_zasiegu = 10
         bron.masa = bron.masa - self.masa
 
 """
 it's all about the ammunition for the gun.
 """
-muszka_i_szczerbinka = Celownik(('zwykłe', 0, 25, '', 'w nocy kara -4,', 2, 0, '-'))
+
 class Amunicja:
     nazwa_naboju = ""
     kosc_obrazen = ""
@@ -434,7 +432,8 @@ class BronStrzelecka(Bron): #pełne pokrycie
     zlozony_do_strzalu = False
     celownik = []
 
-    def __init__(self, bron, celownik=muszka_i_szczerbinka, amunicja=("podstawowa"), magazynek=""):
+    #defaultowo ma muszczkę i szczerbinkę.
+    def __init__(self, bron, celownik=Celownik(('zwykłe', 0, 25, '', 'w nocy kara -4,', 2, 0, '-')), amunicja=("podstawowa"), magazynek=""):
         super(BronStrzelecka, self).__init__("strzelectwo", bron[5], bron[3], bron[6], bron[1], bron[13], bron[14])
         self.statystyki_podstawowe = bron
         self.__nastaw_celownik(celownik)
@@ -455,6 +454,18 @@ class BronStrzelecka(Bron): #pełne pokrycie
         self.zacinka = False
         self.zlozony_do_strzalu = False
         self.celownik = celownik
+
+    def __przygotuj_miejsca_do_zamontowania(self):
+        return True
+
+    def dokup_szyny(self, operator):
+        return True
+
+    def dokup_szyny(self):
+        return True
+
+    def zamontuj_dodatek(self, dodatek):
+        return True
 
     def __zamontuj_magazynek_staly(self):
         self.wymienny_magazynek = False
