@@ -466,6 +466,9 @@ class BronStrzelecka(Bron): #pełne pokrycie
         if dozwolone_dodatki.startswith('0'):
             for i in range(0, int(dozwolone_dodatki[2])):
                 self.miejsca_do_montarzu[i] = "wykup"
+            for i in range(0, len(self.miejsca_do_montarzu)):
+                if not self.miejsca_do_montarzu[i]:
+                    self.miejsca_do_montarzu[i] = "nie"
         return True
 
     def dokup_szyny(self, operator):
