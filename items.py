@@ -431,6 +431,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
     zacinka = False
     zlozony_do_strzalu = False
     celownik = []
+    miejsca_do_montarzu = []
 
     #defaultowo ma muszczkę i szczerbinkę.
     def __init__(self, bron, celownik=Celownik(('zwykłe', 0, 25, '', 'w nocy kara -4,', 2, 0, '-')), amunicja=("podstawowa"), magazynek=""):
@@ -454,6 +455,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
         self.zacinka = False
         self.zlozony_do_strzalu = False
         self.celownik = celownik
+        self.miejsca_do_montarzu = self.__przygotuj_miejsca_do_zamontowania()
 
     def __przygotuj_miejsca_do_zamontowania(self):
         return True
