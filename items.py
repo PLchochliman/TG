@@ -455,9 +455,17 @@ class BronStrzelecka(Bron): #pełne pokrycie
         self.zacinka = False
         self.zlozony_do_strzalu = False
         self.celownik = celownik
-        self.miejsca_do_montarzu = self.__przygotuj_miejsca_do_zamontowania()
+        self.miejsca_do_montarzu = []
+        self.__przygotuj_miejsca_do_zamontowania()
 
     def __przygotuj_miejsca_do_zamontowania(self):
+        dozwolone_dodatki = str(self.statystyki_podstawowe[11])
+        if dozwolone_dodatki in ("nie", "0"):
+            self.miejsca_do_montarzu = ["nie", "nie", "nie", "nie"]
+            return True
+#        if dozwolone_dodatki.startswith('0'):
+#            for i in range(0, int(dozwolone_dodatki[2])):
+#                self.miejsca_do_montarzu[i] = "wykup"
         return True
 
     def dokup_szyny(self, operator):
