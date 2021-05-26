@@ -193,13 +193,6 @@
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
     </task>
-    <task id="LOCAL-00121" summary="basic security implemented.">
-      <created>1620594085785</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1620594085786</updated>
-    </task>
     <task id="LOCAL-00122" summary="basic security implemented.">
       <created>1620594487556</created>
       <option name="number" value="00122" />
@@ -536,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622017974738</updated>
     </task>
-    <option name="localTasksCounter" value="170" />
+    <task id="LOCAL-00170" summary="prepared mounting scopes for pistols in best way.">
+      <created>1622033413769</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1622033413769</updated>
+    </task>
+    <option name="localTasksCounter" value="171" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -552,7 +552,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed distance penalty&#10;There is some error at skills..." />
     <MESSAGE value="fixed costs of specs, and their weird output..." />
     <MESSAGE value="some minor fixes..." />
     <MESSAGE value="fixed ammo consuption error" />
@@ -577,24 +576,25 @@
     <MESSAGE value="added minimum range." />
     <MESSAGE value="przygotowanie pod dodatki." />
     <MESSAGE value="prepared mointing scopes in best way." />
-    <option name="LAST_COMMIT_MESSAGE" value="prepared mointing scopes in best way." />
+    <MESSAGE value="prepared mounting scopes for pistols in best way." />
+    <option name="LAST_COMMIT_MESSAGE" value="prepared mounting scopes for pistols in best way." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/items.py</url>
-          <line>572</line>
+          <line>586</line>
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/items.py</url>
-          <line>573</line>
+          <line>587</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/items.py</url>
-          <line>571</line>
+          <line>585</line>
           <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -614,7 +614,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/items.py</url>
-          <line>413</line>
+          <line>427</line>
           <option name="timeStamp" value="79" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

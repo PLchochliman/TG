@@ -14,8 +14,8 @@ class Przedmioty(): #pełne pokrycie
     """
 
     def __init__(self):
-        self.przetwornik = Excel.Loader('TabelaBroni.xlsx', ['bron', 'bronbiala', 'granaty', 'celowniki', 'amunicja'],
-                                        ['O300', 'I19', 'I10', 'I28', 'I42'])
+        self.przetwornik = Excel.Loader('TabelaBroni.xlsx', ['bron', 'bronbiala', 'granaty', 'celowniki', 'amunicja', 'dodatki'],
+                                        ['O300', 'I19', 'I10', 'I28', 'I42', 'H5'])
         self.dane = self.przetwornik.zwroc()
         self.przetwornik.wyczysc()
 
@@ -68,6 +68,20 @@ class Przedmioty(): #pełne pokrycie
             if i[0] == nazwa_amunicji:
                 return i
         return False
+
+    def luskacz_dodatkow(self, nazwa_dodatku):
+        for i in self.dane[5]:
+            if i[0] == nazwa_dodatku:
+                return i
+        return False
+
+    def wyszukaj_i_zwroc_po_wszystkim(self, nazwa):
+        for tabela in self.dane:
+            for rekord in tabela:
+                if rekord[0] == nazwa:
+                    return rekord
+        return False
+
 
 class Przedmiot():
     wartosc = 0
