@@ -89,11 +89,11 @@ class Przedmiot():
 
 class DodatekDoBroni(Przedmiot):
 
-    def zaloz(self, bron, miejsce):
+    def zaloz(self, bron):
         miejsce = self
         return self.dzialanie(bron, True)
 
-    def zdejmij(self, bron, miejsce):
+    def zdejmij(self, bron):
         miejsce = []
         return self.dzialanie(bron, False)
 
@@ -124,11 +124,22 @@ class Celownik(DodatekDoBroni):
         self.czas_do_zlozenia = czysta_dana[6]
 
 
-    def zaloz(self, bron, miejsce):
-        bron.masa = bron.masa + self.masa
+    def zaloz(self, bron):
+        if self.typ == "mechaniczne":
+            bron.celownik = self
+            return True
+        if bron.szyny_montazowe[0] == "tak":
+            bron.celownik = self
+            bron.szyny_montazowe[0] = self
+            return True
+        return False
 
     def zdejmij(self, bron):
-        bron.masa = bron.masa - self.masa
+        bron.celownik = Celownik(('zwykłe', 0, 25, '', 'w nocy kara -4,', 2, 0, '-'))
+        if self.typ == "mechaniczne":
+            return True
+        bron.szyny_montazowe[0] = "tak"
+        return True
 
 """
 it's all about the ammunition for the gun.
@@ -431,7 +442,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
     zacinka = False
     zlozony_do_strzalu = False
     celownik = []
-    miejsca_do_montarzu = []
+    szyny_montazowe = []
 
     #defaultowo ma muszczkę i szczerbinkę.
     def __init__(self, bron, celownik=Celownik(('zwykłe', 0, 25, '', 'w nocy kara -4,', 2, 0, '-')), amunicja=("podstawowa"), magazynek=""):
@@ -455,30 +466,42 @@ class BronStrzelecka(Bron): #pełne pokrycie
         self.zacinka = False
         self.zlozony_do_strzalu = False
         self.celownik = celownik
-        self.miejsca_do_montarzu = [[], [], [], []]
+        self.szyny_montazowe = [[], [], [], []]
         self.__przygotuj_miejsca_do_zamontowania()
 
     def __przygotuj_miejsca_do_zamontowania(self):
         dozwolone_dodatki = str(self.statystyki_podstawowe[11])
-        if dozwolone_dodatki in ("nie", "0"):
-            self.miejsca_do_montarzu = ["nie", "nie", "nie", "nie"]
-            return True
-        if dozwolone_dodatki.startswith('0'):
+        if dozwolone_dodatki.startswith('0/'):
             for i in range(0, int(dozwolone_dodatki[2])):
-                self.miejsca_do_montarzu[i] = "wykup"
-            for i in range(0, len(self.miejsca_do_montarzu)):
-                if not self.miejsca_do_montarzu[i]:
-                    self.miejsca_do_montarzu[i] = "nie"
+                self.szyny_montazowe[i] = "wykup"
+            for i in range(0, len(self.szyny_montazowe)):
+                if not self.szyny_montazowe[i]:
+                    self.szyny_montazowe[i] = "nie"
+        if dozwolone_dodatki == "dolna":
+            self.szyny_montazowe = ["nie", "tak", "nie", "nie"]
+            return True
+        if dozwolone_dodatki in ("nie", "0"):
+            self.szyny_montazowe = ["nie", "nie", "nie", "nie"]
         return True
 
     def dokup_szyny(self, operator):
-        return True
-
-    def dokup_szyny(self):
+        if operator.pieniadze < 300:
+            Bot.output("Nie masz dość forsy")
+            return False
+        operator.pieniadze =operator.pieniadze - 300            #zafiksowana cena szyn dodatkowych
+        for i in range(0, len(self.szyny_montazowe)):
+            if self.szyny_montazowe[i] == "wykup":
+                self.szyny_montazowe[i] = "tak"
         return True
 
     def zamontuj_dodatek(self, dodatek):
-        return True
+        return dodatek.zaloz(self)
+
+    def zdejmij_dodatek(self, nazwa_dodatku):
+        for i in range(0,len(self.szyny_montazowe)):
+            if self.szyny_montazowe[i].nazwa == nazwa_dodatku:
+                self.szyny_montazowe[i].zdejmij(self)
+
 
     def __zamontuj_magazynek_staly(self):
         self.wymienny_magazynek = False
