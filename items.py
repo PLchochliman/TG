@@ -132,11 +132,19 @@ class Celownik(DodatekDoBroni):
             bron.celownik = self
             bron.szyny_montazowe[0] = self
             return True
+
+        if "pistolet" in bron.zasady_specjalne:
+            if "pistolety" in self.zasady_specjalne:
+                bron.celownik = self
+                return True
+        Bot.output("Nie masz odpowiedniej szyny/ jest zajęta")
         return False
 
     def zdejmij(self, bron):
         bron.celownik = Celownik(('zwykłe', 0, 25, '', 'w nocy kara -4,', 2, 0, '-'))
         if self.typ == "mechaniczne":
+            return True
+        if "pistolety" in self.zasady_specjalne:
             return True
         bron.szyny_montazowe[0] = "tak"
         return True

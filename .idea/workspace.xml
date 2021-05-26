@@ -193,13 +193,6 @@
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
     </task>
-    <task id="LOCAL-00120" summary="zrobiono Potężna">
-      <created>1620508986617</created>
-      <option name="number" value="00120" />
-      <option name="presentableId" value="LOCAL-00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1620508986617</updated>
-    </task>
     <task id="LOCAL-00121" summary="basic security implemented.">
       <created>1620594085785</created>
       <option name="number" value="00121" />
@@ -536,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621936210078</updated>
     </task>
-    <option name="localTasksCounter" value="169" />
+    <task id="LOCAL-00169" summary="prepared mointing scopes in best way.">
+      <created>1622017974738</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1622017974738</updated>
+    </task>
+    <option name="localTasksCounter" value="170" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -552,7 +552,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="finally, recoil is ok." />
     <MESSAGE value="fixed distance penalty&#10;There is some error at skills..." />
     <MESSAGE value="fixed costs of specs, and their weird output..." />
     <MESSAGE value="some minor fixes..." />
@@ -577,24 +576,25 @@
     <MESSAGE value="fixed penalties for pistols." />
     <MESSAGE value="added minimum range." />
     <MESSAGE value="przygotowanie pod dodatki." />
-    <option name="LAST_COMMIT_MESSAGE" value="przygotowanie pod dodatki." />
+    <MESSAGE value="prepared mointing scopes in best way." />
+    <option name="LAST_COMMIT_MESSAGE" value="prepared mointing scopes in best way." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/items.py</url>
-          <line>564</line>
+          <line>572</line>
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/items.py</url>
-          <line>565</line>
+          <line>573</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/items.py</url>
-          <line>563</line>
+          <line>571</line>
           <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -614,7 +614,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/items.py</url>
-          <line>405</line>
+          <line>413</line>
           <option name="timeStamp" value="79" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
