@@ -75,7 +75,7 @@ class Przedmioty(): #pełne pokrycie
                 return i
         return False
 
-    def wyszukaj_i_zwroc_po_wszystkim(self, nazwa):
+    def wyszukaj_przedmiot_i_zwroc_po_wszystkim(self, nazwa):
         for tabela in self.dane:
             for rekord in tabela:
                 if rekord[0] == nazwa:
@@ -105,11 +105,11 @@ class DodatekDoBroni(Przedmiot):
 
     def zaloz(self, bron):
         miejsce = self
-        return self.dzialanie(bron, True)
+        return True
 
     def zdejmij(self, bron):
         miejsce = []
-        return self.dzialanie(bron, False)
+        return True
 
     def dzialanie(self, bron, akcja):
         return 0
