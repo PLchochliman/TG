@@ -5,8 +5,9 @@ import excelDigger as excelDigger
 import hero as hero
 import items as items
 import mechanics as mechanics
+import items_read_from_excel as raw_items
 
-itemki = items.Przedmioty()
+przedmioty_jako_rekord = raw_items.Przedmioty()
 
 def sprawdz_jak_cel_oberwal(cel):
     if cel.lekka_rana == 0:
@@ -23,10 +24,10 @@ def sprawdz_jak_cel_oberwal(cel):
 
 def wez_i_zaladuj_giwere(nazwa_giwery):
     nazwa_giwery = nazwa_giwery.lower()
-    giwera = itemki.luskacz_broni(nazwa_giwery)
+    giwera = przedmioty_jako_rekord.luskacz_broni(nazwa_giwery)
     giwera = items.BronStrzelecka(giwera)
     mag = items.Magazynek(giwera)
-    ammo = itemki.luskacz_amunicji(giwera.statystyki_podstawowe[8])
+    ammo = przedmioty_jako_rekord.luskacz_amunicji(giwera.statystyki_podstawowe[8])
     ammo = items.Amunicja(ammo)
     mag.zaladuj_magazynek(ammo)
     giwera.zmien_magazynek(mag)
@@ -36,7 +37,7 @@ def wez_i_zaladuj_giwere(nazwa_giwery):
 
 
 def wez_i_zmien_celownik(giwera, nazwa_celownika):
-    giwera.zmien_celownik(items.Celownik(itemki.luskacz_celownikow(nazwa_celownika)))
+    giwera.zmien_celownik(items.Celownik(przedmioty_jako_rekord.luskacz_celownikow(nazwa_celownika)))
 
     return True
 
@@ -201,17 +202,17 @@ def test_jezykow():
 
 @test_runner
 def test_przedmiotow():
-    m4ka = itemki.luskacz_broni("m4a1")
+    m4ka = przedmioty_jako_rekord.luskacz_broni("m4a1")
     assert m4ka[6] == 'ś'
-    nozyk = itemki.luskacz_broni_bialej("nóż")
+    nozyk = przedmioty_jako_rekord.luskacz_broni_bialej("nóż")
     assert nozyk[3] == 3
-    hek = itemki.luskacz_granatow("granat ofensywny")
+    hek = przedmioty_jako_rekord.luskacz_granatow("granat ofensywny")
     assert hek[2] == "2d6"
-    acog = itemki.luskacz_celownikow("acogx4")
+    acog = przedmioty_jako_rekord.luskacz_celownikow("acogx4")
     assert acog[3] == 10
-    trijcon = itemki.luskacz_celownikow("trijcon")
+    trijcon = przedmioty_jako_rekord.luskacz_celownikow("trijcon")
     assert trijcon[4] == "strzelby"
-    pisiontka = itemki.luskacz_amunicji("‘50 bmg")
+    pisiontka = przedmioty_jako_rekord.luskacz_amunicji("‘50 bmg")
     assert pisiontka[5] == "4d6"
     Bot.output("przedmioty dzialaja")
     return 6
@@ -219,7 +220,7 @@ def test_przedmiotow():
 
 @test_runner
 def test_Broni_strzelcekiej_magazynki_zaciaganie_amunicja_czterotakt():
-    m4ka = itemki.luskacz_broni("m4a1")
+    m4ka = przedmioty_jako_rekord.luskacz_broni("m4a1")
     M4KA = items.BronStrzelecka(m4ka)
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     wojtek.aktywna_bron = M4KA
@@ -231,19 +232,19 @@ def test_Broni_strzelcekiej_magazynki_zaciaganie_amunicja_czterotakt():
     assert M4KA.zasieg_maksymalny == 300
     assert M4KA.aktualny_magazynek.stan_nabojow == 0
     assert M4KA.aktualny_magazynek.maksymalna_pojemnosc == 30
-    natowska = itemki.luskacz_amunicji("5,56 nato")
+    natowska = przedmioty_jako_rekord.luskacz_amunicji("5,56 nato")
     NATO = items.Amunicja(natowska)
-    ak = itemki.luskacz_amunicji("5,45 x 39")
+    ak = przedmioty_jako_rekord.luskacz_amunicji("5,45 x 39")
     ak = items.Amunicja(ak)
     assert M4KA.aktualny_magazynek.zaladuj_magazynek(NATO)
     assert not M4KA.aktualny_magazynek.wyladuj_amunicje(ak)
     assert M4KA.aktualny_magazynek.wyladuj_amunicje(NATO)
     assert NATO.ilosc_amunicji == 75
     assert not M4KA.zaciagnij_naboj()
-    mosin = itemki.luskacz_broni("mosin nagant")
+    mosin = przedmioty_jako_rekord.luskacz_broni("mosin nagant")
     mosin = items.BronStrzelecka(mosin)
     wojtek.aktywna_bron = mosin
-    radziecka = itemki.luskacz_amunicji("7,62 x 54 r")
+    radziecka = przedmioty_jako_rekord.luskacz_amunicji("7,62 x 54 r")
     czerwona = items.Amunicja(radziecka)
     stal = items.Magazynek(mosin)
     stal.zaladuj_magazynek(czerwona)
@@ -253,7 +254,7 @@ def test_Broni_strzelcekiej_magazynki_zaciaganie_amunicja_czterotakt():
     mag = items.Magazynek(mosin)
     mag.zaladuj_magazynek(czerwona)
     assert wojtek.aktywna_bron.zmien_magazynek(mag)
-    saw = itemki.luskacz_broni("m249 saw")
+    saw = przedmioty_jako_rekord.luskacz_broni("m249 saw")
     SAW = items.BronStrzelecka(saw)
     stal = items.Magazynek(SAW)
     stal.zaladuj_magazynek(NATO)
@@ -263,9 +264,9 @@ def test_Broni_strzelcekiej_magazynki_zaciaganie_amunicja_czterotakt():
     assert SAW.zmien_magazynek(stal)
     assert SAW.zaciagnij_naboj()
     assert SAW.kara_za_nierostawienie == -4
-    natowska = itemki.luskacz_amunicji("7,62 nato")
+    natowska = przedmioty_jako_rekord.luskacz_amunicji("7,62 nato")
     NATO = items.Amunicja(natowska)
-    swina = itemki.luskacz_broni("m240b")
+    swina = przedmioty_jako_rekord.luskacz_broni("m240b")
     Swinia = items.BronStrzelecka(swina)
     stal = items.Magazynek(Swinia)
     stal.zaladuj_magazynek(NATO)
@@ -277,11 +278,11 @@ def test_Broni_strzelcekiej_magazynki_zaciaganie_amunicja_czterotakt():
 
 @test_runner
 def test_broni_strzeleckiej_specjalne_magi():
-    mk23 = itemki.luskacz_broni("mk23")
+    mk23 = przedmioty_jako_rekord.luskacz_broni("mk23")
     MK23 = items.BronStrzelecka(mk23)
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     wojtek.aktywna_bron = MK23
-    ACP = itemki.luskacz_amunicji("acp'45")
+    ACP = przedmioty_jako_rekord.luskacz_amunicji("acp'45")
     ACP = items.Amunicja(ACP)
     mag = items.Magazynek(MK23)
     mag.zaladuj_magazynek(ACP)
@@ -296,8 +297,8 @@ def test_broni_strzeleckiej_specjalne_magi():
 def test_broni_bialej():
     ww = mechanics.WalkaWrecz()
     wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"], "operejtor")
-    noz = itemki.luskacz_broni_bialej("nóż")
-    piesc = itemki.luskacz_broni_bialej("kolba")
+    noz = przedmioty_jako_rekord.luskacz_broni_bialej("nóż")
+    piesc = przedmioty_jako_rekord.luskacz_broni_bialej("kolba")
     NOZ = items.BronBiala(noz)
     obrywa = hero.Postac(5, 5, 5, ["bron boczna", "karabiny", "bron krotka"], "obrywacz")
     assert not ww.uderz(wojtek, obrywa, 0)
@@ -311,7 +312,7 @@ def test_broni_bialej():
     assert ww.uderz(wojtek, obrywa, 0)
     wojtek.aktywna_bron = NOZ
     assert ww.uderz(wojtek, obrywa, 0)
-    m4ka = itemki.luskacz_broni("m4a1")
+    m4ka = przedmioty_jako_rekord.luskacz_broni("m4a1")
     M4KA = items.BronStrzelecka(m4ka)
     wojtek.aktywna_bron = M4KA
     assert ww.uderz(wojtek, obrywa, 0)
@@ -320,11 +321,11 @@ def test_broni_bialej():
 
 @test_runner
 def test_amunicji_i_magazynkow():
-    natowska = itemki.luskacz_amunicji("5,56 nato")
+    natowska = przedmioty_jako_rekord.luskacz_amunicji("5,56 nato")
     NATO = items.Amunicja(natowska)
-    m4ka = itemki.luskacz_broni("m4a1")
+    m4ka = przedmioty_jako_rekord.luskacz_broni("m4a1")
     M4KA = items.BronStrzelecka(m4ka)
-    scout = itemki.luskacz_broni("steyr scout")
+    scout = przedmioty_jako_rekord.luskacz_broni("steyr scout")
     scout = items.BronStrzelecka(scout)
     mag = items.Magazynek(M4KA)
     mag.zaladuj_magazynek(NATO)
@@ -342,36 +343,36 @@ def test_amunicji_i_magazynkow():
     M4KA.zaciagnij_naboj()
     assert M4KA.aktualny_magazynek.stan_nabojow == 29
     assert M4KA.naboj_w_komorze
-    srut = itemki.luskacz_amunicji("12g")
+    srut = przedmioty_jako_rekord.luskacz_amunicji("12g")
     Srut = items.Amunicja(srut)
-    mcs = itemki.luskacz_broni("870 mcs")
+    mcs = przedmioty_jako_rekord.luskacz_broni("870 mcs")
     MCS = items.BronStrzelecka(mcs)
     rura = items.Magazynek(MCS)
     rura.zaladuj_magazynek(Srut)
     assert not MCS.zmien_magazynek(rura)
     assert MCS.aktualny_magazynek.zaladuj_magazynek(Srut)
     assert MCS.zaciagnij_naboj()
-    srut = itemki.luskacz_amunicji("12g")
+    srut = przedmioty_jako_rekord.luskacz_amunicji("12g")
     breneka = items.Amunicja(srut, 1, "breneka")
     assert breneka.nazwa_amunicji == "12g breneka"
-    natowska = itemki.luskacz_amunicji("5,56 nato")
+    natowska = przedmioty_jako_rekord.luskacz_amunicji("5,56 nato")
     NATO = items.Amunicja(natowska, 1, "przeciwpancerna")
     assert NATO.nazwa_amunicji == "5,56 nato przeciwpancerna"
     assert NATO.penetracja == 4
     assert NATO.kosc_obrazen == "d6"
-    dziewiatka = itemki.luskacz_amunicji("9mm parabellum")
+    dziewiatka = przedmioty_jako_rekord.luskacz_amunicji("9mm parabellum")
     dziewiatka = items.Amunicja(dziewiatka, 1, "przeciwpancerna")
     assert dziewiatka.penetracja == 2
     assert dziewiatka.kosc_obrazen == "d4"
-    siodemka = itemki.luskacz_amunicji("7,62 nato")
+    siodemka = przedmioty_jako_rekord.luskacz_amunicji("7,62 nato")
     Siodemka = items.Amunicja(siodemka, 1, "przeciwpancerna")
     assert Siodemka.penetracja == 4
     assert Siodemka.kosc_obrazen == "d8"
-    dziewiatka = itemki.luskacz_amunicji("9mm parabellum")
+    dziewiatka = przedmioty_jako_rekord.luskacz_amunicji("9mm parabellum")
     dziewiatka = items.Amunicja(dziewiatka, 1, "9mm++")
     assert dziewiatka.odrzut == -4
     assert dziewiatka.penetracja == 2
-    ACP = itemki.luskacz_amunicji("acp'45")
+    ACP = przedmioty_jako_rekord.luskacz_amunicji("acp'45")
     ACP = items.Amunicja(ACP)
     assert ACP.odrzut == -2
     assert ACP.specjalne == ["wytłumiona"]
@@ -381,9 +382,9 @@ def test_amunicji_i_magazynkow():
 @test_runner
 def test_mechanik_walki():
     Bot.output("test samej walki")
-    natowska = itemki.luskacz_amunicji("5,56 nato")
+    natowska = przedmioty_jako_rekord.luskacz_amunicji("5,56 nato")
     NATO = items.Amunicja(natowska)
-    m4ka = itemki.luskacz_broni("m4a1")
+    m4ka = przedmioty_jako_rekord.luskacz_broni("m4a1")
     M4KA = items.BronStrzelecka(m4ka)
     mag = items.Magazynek(M4KA)
     mag.zaladuj_magazynek(NATO)
