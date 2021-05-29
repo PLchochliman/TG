@@ -1,11 +1,6 @@
 
 import Bot as Bot
 import constans as constants
-import hero as hero
-
-#kurwa bieda, może i lepiej bybyło przedmioty zadeklarować wcześniej ale robiłem to na prosto.
-
-
 
 
 class Przedmiot():
@@ -27,6 +22,32 @@ class Przedmiot():
 
 
 class DodatekDoBroni(Przedmiot):
+    premia = 0
+    efekt = ""
+    aktywowany = False
+    aktywny = False
+    wymaga_zlozenia = False
+    masa = 0
+    cena = 1
+    specjalne = ""
+
+    def __init__(self, czysta_dana):
+        self.nazwa = czysta_dana[0]
+        self.efekt = czysta_dana[1]
+        self.premia = czysta_dana[2]
+        if "tak" in czysta_dana[3]:
+            self.aktywowany = True
+            self.aktywny = False
+        else:
+            self.aktywowany = False
+            self.aktywny = True
+        if czysta_dana[4] == "tak":
+            self.wymaga_zlozenia = True
+        else:
+            self.wymaga_zlozenia = False
+        self.specjalne = czysta_dana[5]
+        self.masa = czysta_dana[6]
+        self.cena = czysta_dana[7]
 
     def zaloz(self, bron):
         miejsce = self
@@ -41,7 +62,6 @@ class DodatekDoBroni(Przedmiot):
 
 
 class Celownik(DodatekDoBroni):
-    premia = 0
     przyrost_zasiegu = 0
     zasady_specjalne = ""
     typ = ""
