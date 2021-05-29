@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
-      <change afterPath="$PROJECT_DIR$/FilesMenagment.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SQL_Database_Creator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/connection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SQL_Database_Creator.py" beforeDir="false" afterPath="$PROJECT_DIR$/SQL_Database_Creator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,13 +192,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00126" summary="preparing specialisations.">
-      <created>1620891055614</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1620891055614</updated>
     </task>
     <task id="LOCAL-00127" summary="preparing specialisations.">
       <created>1620891704812</created>
@@ -538,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622249465466</updated>
     </task>
-    <option name="localTasksCounter" value="175" />
+    <task id="LOCAL-00175" summary="preparing existance of SQL database">
+      <created>1622288987056</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1622288987057</updated>
+    </task>
+    <option name="localTasksCounter" value="176" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -554,7 +552,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="wprawa almoust ready." />
     <MESSAGE value="strange error durring loading first bullet into chamber...&#10;redo equipment, and specialisations partly ready." />
     <MESSAGE value="some cleanUp" />
     <MESSAGE value="złożenie do strzału io zrywanie zrobione, i strzelanie z biodra, tylko że strzelanie z scouta nie działa...." />
@@ -579,7 +576,8 @@
     <MESSAGE value="drobny rename" />
     <MESSAGE value="succesfull refactor of desintagrating from itesms, picking records from excel." />
     <MESSAGE value="preparing addons." />
-    <option name="LAST_COMMIT_MESSAGE" value="preparing addons." />
+    <MESSAGE value="preparing existance of SQL database" />
+    <option name="LAST_COMMIT_MESSAGE" value="preparing existance of SQL database" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

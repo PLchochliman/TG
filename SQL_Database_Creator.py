@@ -2,31 +2,44 @@ import psycopg2
 import FilesMenagment as FilesMenagment
 
 
+def SQL_table_creator(nazwa_tabeli, lista_kolumn_z_typami): #first column will be Primary Key
+   # lista_kolumn z typami should look:var type eg name varchar(128)
+   komenda_tworzenia_tabeli = "CREATE TABLE " + nazwa_tabeli + " (\n"
+   for i in range(0, len(lista_kolumn_z_typami)):
+      if i == 0:
+         komenda_tworzenia_tabeli = "\t" + komenda_tworzenia_tabeli + lista_kolumn_z_typami[i] + " PRIMARY KEY,\n"
+      elif i == len(lista_kolumn_z_typami):
+         komenda_tworzenia_tabeli = "\t" + komenda_tworzenia_tabeli + lista_kolumn_z_typami[i] + ",\n"
+      else:
+         komenda_tworzenia_tabeli = "\t" + komenda_tworzenia_tabeli + lista_kolumn_z_typami[i] + "\n"
+   komenda_tworzenia_tabeli = komenda_tworzenia_tabeli + ");"
+   return komenda_tworzenia_tabeli
+
 
 
 auth = FilesMenagment.OtworzPlik("LogiDoBazy.env") #to this file enter name of database, and password in second line
 
 #establishing the connection
 conn = psycopg2.connect(
-   database="postgres", user=auth[0], password=auth[1], host='127.0.0.1', port='5432'
+   database="postgres", user=auth[0], password=auth[1], host='127.0.0.1', port='5432' #settings are default.
 )
 conn.autocommit = True
 
 #Creating a cursor object using the cursor() method
 cursor = conn.cursor()
-
-#Preparing query to create a database
 sql = '''DROP database TG''';
-
-#Creating a database
-cursor.execute(sql)
-
-#Preparing query to create a database
+try:
+   cursor.execute(sql)
+except Exception:
+   print("there were no DataBase")
 sql = '''CREATE database TG''';
 
-#Creating a database
+
 cursor.execute(sql)
 print("Database created successfully........")
 
-#Closing the connection
+cursor.execute(SQL_table_creator("bron", ["Nazwa varchar(128)", "Premia int"]))
+
+
+
 conn.close()
