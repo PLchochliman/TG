@@ -17,29 +17,36 @@ def SQL_table_creator(nazwa_tabeli, lista_kolumn_z_typami): #first column will b
 
 
 
-auth = FilesMenagment.OtworzPlik("LogiDoBazy.env") #to this file enter name of database, and password in second line
+auth = FilesMenagment.OtworzPlik("LogiDoBazy.env") # to this file enter name of database, and password in second line
 
 #establishing the connection
 conn = psycopg2.connect(
-   database="postgres", user=auth[0], password=auth[1], host='127.0.0.1', port='5432' #settings are default.
+   database="postgres", user=auth[0], password=auth[1], host='127.0.0.1', port='5432'# settings are default.
 )
 conn.autocommit = True
 
 #Creating a cursor object using the cursor() method
 cursor = conn.cursor()
-sql = '''DROP database TG''';
+
 try:
-   cursor.execute(sql)
+   cursor.execute('''DROP DATABASE tg;''')
+   #cursor.execute('''DROP TABLE bron;''')
 except Exception:
    print("there were no DataBase")
-sql = '''CREATE database TG''';
 
+cursor.execute('CREATE DATABASE tg;')
+conn = psycopg2.connect(
+   database="tg", user=auth[0], password=auth[1], host='127.0.0.1', port='5432'# settings are default.
+)
 
-cursor.execute(sql)
-print("Database created successfully........")
+cursor = conn.cursor()
+
+#cursor.execute('\\c tg')
+print("Database created and connected successfully........")
 
 cursor.execute(SQL_table_creator("bron", ["Nazwa varchar(128)", "Premia int"]))
 
+print("Table created successfully........")
 
 
 conn.close()
