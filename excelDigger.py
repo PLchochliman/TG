@@ -1,4 +1,3 @@
-import Bot
 import pylightxl as xl
 
 
