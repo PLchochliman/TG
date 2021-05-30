@@ -19,13 +19,19 @@ conn = SQL.establish_connection_with_base("tg", auth)
 cursor = conn.cursor()
 print("Database created and connected successfully........")
 
-cursor.execute(SQL.table_creator("bron", ["Nazwa varchar(128)", "Premia int"]))
+#SQL.table_creator("bron", ["Nazwa varchar(128)", "Premia int"], cursor)
 
-print("Table created successfully........")
+przetwornik = excel.Loader('TabelaBroni.xlsx', ['bron', 'bronbiala', 'granaty', 'celowniki', 'amunicja', 'dodatki'],
+                           ['O300', 'I19', 'I10', 'I28', 'I42', 'H5'])
+dane = przetwornik.zwroc()
+przetwornik.wyczysc()
+
+nazwy = ['bron', 'bronbiala', 'granaty', 'celowniki', 'amunicja', 'dodatki']
+for table in range(0,len(dane)):
+   SQL.convert_excel_into_table(nazwy[table], dane[table], cursor)
 
 
-
-
+print("Tables created successfully........")
 
 
 

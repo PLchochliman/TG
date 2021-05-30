@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
-      <change afterPath="$PROJECT_DIR$/SQL_Base_Handling.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SQL_Base_Handling.py" beforeDir="false" afterPath="$PROJECT_DIR$/SQL_Base_Handling.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SQL_Database_Creator.py" beforeDir="false" afterPath="$PROJECT_DIR$/SQL_Database_Creator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/excelDigger.py" beforeDir="false" afterPath="$PROJECT_DIR$/excelDigger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TabelaBroni.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,13 +194,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00129" summary="added any cover.">
-      <created>1620894690444</created>
-      <option name="number" value="00129" />
-      <option name="presentableId" value="LOCAL-00129" />
-      <option name="project" value="LOCAL" />
-      <updated>1620894690444</updated>
     </task>
     <task id="LOCAL-00130" summary="added any cover.">
       <created>1620894991194</created>
@@ -538,7 +531,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622379123159</updated>
     </task>
-    <option name="localTasksCounter" value="178" />
+    <task id="LOCAL-00178" summary="refactot due to needs of rebuilding database.">
+      <created>1622390849455</created>
+      <option name="number" value="00178" />
+      <option name="presentableId" value="LOCAL-00178" />
+      <option name="project" value="LOCAL" />
+      <updated>1622390849455</updated>
+    </task>
+    <option name="localTasksCounter" value="179" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -554,7 +554,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="some cleanUp" />
     <MESSAGE value="złożenie do strzału io zrywanie zrobione, i strzelanie z biodra, tylko że strzelanie z scouta nie działa...." />
     <MESSAGE value="naprawiono masę baboli.&#10;Jeszcze masa rzeczy do wytestowania...&#10;po zrobieniu wprawy czas na duże testowanie." />
     <MESSAGE value="did specs into file. now ith's time to read it as whole, and use." />
@@ -579,7 +578,8 @@
     <MESSAGE value="preparing addons." />
     <MESSAGE value="preparing existance of SQL database" />
     <MESSAGE value="finally creating database and tables properly" />
-    <option name="LAST_COMMIT_MESSAGE" value="finally creating database and tables properly" />
+    <MESSAGE value="refactot due to needs of rebuilding database." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactot due to needs of rebuilding database." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
