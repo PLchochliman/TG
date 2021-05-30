@@ -195,13 +195,6 @@
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
     </task>
-    <task id="LOCAL-00130" summary="added any cover.">
-      <created>1620894991194</created>
-      <option name="number" value="00130" />
-      <option name="presentableId" value="LOCAL-00130" />
-      <option name="project" value="LOCAL" />
-      <updated>1620894991194</updated>
-    </task>
     <task id="LOCAL-00131" summary="added tests for cover">
       <created>1620895482599</created>
       <option name="number" value="00131" />
@@ -538,7 +531,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622390849455</updated>
     </task>
-    <option name="localTasksCounter" value="179" />
+    <task id="LOCAL-00179" summary="crating tables in SQL completed.">
+      <created>1622405948465</created>
+      <option name="number" value="00179" />
+      <option name="presentableId" value="LOCAL-00179" />
+      <option name="project" value="LOCAL" />
+      <updated>1622405948465</updated>
+    </task>
+    <option name="localTasksCounter" value="180" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -554,7 +554,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="złożenie do strzału io zrywanie zrobione, i strzelanie z biodra, tylko że strzelanie z scouta nie działa...." />
     <MESSAGE value="naprawiono masę baboli.&#10;Jeszcze masa rzeczy do wytestowania...&#10;po zrobieniu wprawy czas na duże testowanie." />
     <MESSAGE value="did specs into file. now ith's time to read it as whole, and use." />
     <MESSAGE value="specs upgrade complete" />
@@ -579,7 +578,8 @@
     <MESSAGE value="preparing existance of SQL database" />
     <MESSAGE value="finally creating database and tables properly" />
     <MESSAGE value="refactot due to needs of rebuilding database." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactot due to needs of rebuilding database." />
+    <MESSAGE value="crating tables in SQL completed." />
+    <option name="LAST_COMMIT_MESSAGE" value="crating tables in SQL completed." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

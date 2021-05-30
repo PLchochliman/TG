@@ -11,7 +11,6 @@ def table_creator(nazwa_tabeli, lista_kolumn_z_typami, cursor): #first column wi
       else:
          komenda_tworzenia_tabeli = "\t" + komenda_tworzenia_tabeli + lista_kolumn_z_typami[i] + ",\n"
    komenda_tworzenia_tabeli = komenda_tworzenia_tabeli + ");"
-   print(komenda_tworzenia_tabeli)
    cursor.execute(komenda_tworzenia_tabeli)
    return True
 
@@ -32,7 +31,24 @@ def is_a_number(s):
       return False
 
 
-def convert_excel_into_table(name, table, conn):
+def insert_content_of_table_into_SQL_table(name, table, cursor):
+   postgres_insert_query = " INSERT INTO " + name + "("
+   for i in table[0]:
+      postgres_insert_query = postgres_insert_query + i + ", "
+   postgres_insert_query = postgres_insert_query[0:-2] + ") VALUES ("
+   for i in range(0, len(table[0])):
+         postgres_insert_query = postgres_insert_query + "%s,"
+   postgres_insert_query = postgres_insert_query[0:-1] + ")"
+   for i in range(1, len(table)):
+      try:
+         cursor.execute(postgres_insert_query, table[i])
+      except Exception:
+         print(Exception.args)
+
+   return True
+
+
+def convert_excel_into_table(name, table, cursor):
    table_of_headers_with_variables = []
    headers = table[0]
    typeof = table[1]
@@ -41,5 +57,5 @@ def convert_excel_into_table(name, table, conn):
          table_of_headers_with_variables.append((headers[iterator] + " " + "float"))
       else:
          table_of_headers_with_variables.append((headers[iterator] + " " + "varchar(128)"))
-   table_creator(name, table_of_headers_with_variables, conn)
-   return True
+   table_creator(name, table_of_headers_with_variables, cursor)
+   return insert_content_of_table_into_SQL_table(name, table, cursor)

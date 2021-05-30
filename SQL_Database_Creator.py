@@ -33,6 +33,12 @@ for table in range(0,len(dane)):
 
 print("Tables created successfully........")
 
+postgreSQL_select_Query = "select * from bron"
+cursor.execute(postgreSQL_select_Query)
+print("Selecting rows from mobile table using cursor.fetchall")
+records = cursor.fetchall()
+for row in records:
+    print(row)
 
 
 
