@@ -30,6 +30,7 @@ class DodatekDoBroni(Przedmiot):
     masa = 0
     cena = 1
     specjalne = ""
+    uzywany = False
 
     def __init__(self, czysta_dana):
         self.nazwa = czysta_dana[0]
@@ -48,9 +49,24 @@ class DodatekDoBroni(Przedmiot):
         self.specjalne = czysta_dana[5]
         self.masa = czysta_dana[6]
         self.cena = czysta_dana[7]
+        self.uzywany = False
+
+    def montuj(self, szyny):
+        if "tylko dól" in self.specjalne:
+            if szyny[1] == "tak":
+                szyny[1] = self
+                return True
+        for slot in range(len(szyny), 0, -1):
+            if szyny[slot] == "tak":
+                szyny[slot] = self
+                return True
+        return False
 
     def zaloz(self, bron):
         miejsce = self
+
+        if self.aktywny == True:
+            bron.premia = bron.premia + self.premia
         return True
 
     def zdejmij(self, bron):
@@ -91,7 +107,6 @@ class Celownik(DodatekDoBroni):
             bron.celownik = self
             bron.szyny_montazowe[0] = self
             return True
-
         if "pistolet" in bron.zasady_specjalne:
             if "pistolety" in self.zasady_specjalne:
                 bron.celownik = self
