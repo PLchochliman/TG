@@ -38,7 +38,7 @@ conn = SQL.establish_connection_with_base("tg", auth)
 cursor = conn.cursor()
 print("Tables created successfully........")
 
-SQL.get_item_from_table("acogx3",'celowniki',cursor)
+print(SQL.get_item_from_table("acogx3", 'celowniki', cursor))
 
 
 
