@@ -9,7 +9,6 @@ def log_and_load_database(auth):
 
     try:
        cursor.execute('''DROP DATABASE tg;''')
-       #cursor.execute('''DROP TABLE bron;''')
     except Exception:
        print("there were no DataBase")
 
