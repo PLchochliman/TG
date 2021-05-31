@@ -59,3 +59,9 @@ def convert_excel_into_table(name, table, cursor):
          table_of_headers_with_variables.append((headers[iterator] + " " + "varchar(128)"))
    table_creator(name, table_of_headers_with_variables, cursor)
    return insert_content_of_table_into_SQL_table(name, table, cursor)
+
+def get_item_from_table(item, table, cursor):
+   postgreSQL_select_Query = "select * FROM %s where nazwa = \'%s\';"
+   cursor.execute(postgreSQL_select_Query, (table, item))
+   record = cursor.fetchone()
+   print(record)
