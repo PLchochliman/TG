@@ -6,8 +6,10 @@ import hero as hero
 import items as items
 import mechanics as mechanics
 import items_read_from_excel as raw_items
+import items_read_from_SQL as SQL
 
-przedmioty_jako_rekord = raw_items.Przedmioty()
+#przedmioty_jako_rekord = raw_items.Przedmioty()
+przedmioty_jako_rekord = SQL.Przedmioty()
 
 def sprawdz_jak_cel_oberwal(cel):
     if cel.lekka_rana == 0:
@@ -226,6 +228,7 @@ def test_Broni_strzelcekiej_magazynki_zaciaganie_amunicja_czterotakt():
     wojtek.aktywna_bron = M4KA
     assert M4KA.zasieg_minimalny == 0
     assert M4KA.zasieg_przyrost == 25
+    print(M4KA.szybkostrzelnosc)
     assert M4KA.szybkostrzelnosc == 13
     assert M4KA.zasieg_minimalny == 0
     assert M4KA.penetracja == 3

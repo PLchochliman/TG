@@ -426,7 +426,10 @@ class BronStrzelecka(Bron): #pełne pokrycie
         for i in self.zasady_specjalne:
             if i in ("podwójny magazynek rurowy", "magazynek rurowy", "łódeczki"):
                 self.__zamontuj_magazynek_staly()
-        self.szybkostrzelnosc = bron[2]
+        try:
+            self.szybkostrzelnosc = int(bron[2])
+        except Exception:
+            self.szybkostrzelnosc = bron[2]
         self.walka_wrecz = BronBiala(['kolba', 0, 0, 0, 0, 'd2', 'x', 'obuchowa', '$0,00'])
         self.__nastaw_kare_za_nierostawienie()
         self.awaria = False

@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
-      <change afterPath="$PROJECT_DIR$/items_read_from_SQL.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SQL_Base_Handling.py" beforeDir="false" afterPath="$PROJECT_DIR$/SQL_Base_Handling.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SQL_Database_Creator.py" beforeDir="false" afterPath="$PROJECT_DIR$/SQL_Database_Creator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TabelaBroni.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/items_read_from_SQL.py" beforeDir="false" afterPath="$PROJECT_DIR$/items_read_from_SQL.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +66,7 @@
       <recent name="C:\Users\choch\Documents\GitHub\TG" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.SQL_Database_Creator">
+  <component name="RunManager" selected="Python.Tests">
     <configuration name="SQL_Database_Creator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TG" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -177,8 +181,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.SQL_Database_Creator" />
         <item itemvalue="Python.Tests" />
+        <item itemvalue="Python.SQL_Database_Creator" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.connection" />
         <item itemvalue="Python.items_old" />
@@ -193,13 +197,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00135" summary="some changes for specialisations, shooting in VIP.">
-      <created>1621246649873</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1621246649873</updated>
     </task>
     <task id="LOCAL-00136" summary="some changes for specialisations, shooting in VIP, but at least works.">
       <created>1621261681259</created>
@@ -537,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622441887085</updated>
     </task>
-    <option name="localTasksCounter" value="184" />
+    <task id="LOCAL-00184" summary="SQL handling into game - ready for rechange from aktual base menagment">
+      <created>1622442620718</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1622442620718</updated>
+    </task>
+    <option name="localTasksCounter" value="185" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -553,7 +557,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed" />
     <MESSAGE value="Fixed all mistakes." />
     <MESSAGE value="przygotowanie leczenia, kontynuacja testów całości" />
     <MESSAGE value="naprawiono zakladanie celownikow" />
@@ -578,29 +581,30 @@
     <MESSAGE value="almoust taking record from base" />
     <MESSAGE value="implementing,and getting data from SQL ready" />
     <MESSAGE value="SQL support ready" />
-    <option name="LAST_COMMIT_MESSAGE" value="SQL support ready" />
+    <MESSAGE value="SQL handling into game - ready for rechange from aktual base menagment" />
+    <option name="LAST_COMMIT_MESSAGE" value="SQL handling into game - ready for rechange from aktual base menagment" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/items.py</url>
-          <line>531</line>
+          <line>534</line>
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/items.py</url>
-          <line>532</line>
+          <line>535</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/items.py</url>
-          <line>530</line>
+          <line>533</line>
           <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Tests.py</url>
-          <line>443</line>
+          <line>446</line>
           <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -637,6 +641,11 @@
           <url>file://F:/Pulpit/projektNOPyBartoszBiniek/projektNOPyBartoszBiniek/main.py</url>
           <line>17</line>
           <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Tests.py</url>
+          <line>231</line>
+          <option name="timeStamp" value="85" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

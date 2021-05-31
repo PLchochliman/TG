@@ -39,9 +39,12 @@ def insert_content_of_table_into_SQL_table(name, table, cursor):
    for i in range(0, len(table[0])):
          postgres_insert_query = postgres_insert_query + "%s,"
    postgres_insert_query = postgres_insert_query[0:-1] + ")"
-   for i in range(1, len(table)):
+   for record in range(1, len(table)):
       try:
-         cursor.execute(postgres_insert_query, table[i])
+#         for parameter in range(0,len(table[record])):
+#            if "\'" in table[record][parameter]:
+#               table[record][parameter] = table[record][parameter].replace("\'", "")
+         cursor.execute(postgres_insert_query, table[record])
       except Exception:
          print(Exception.args)
 

@@ -1,4 +1,5 @@
 import SQL_Base_Handling as SQL
+import SQL_Database_Creator as SQL_creator
 import FilesMenagment as FilesMenagment
 
 
@@ -12,7 +13,7 @@ class Przedmioty():
 
         auth = FilesMenagment.OtworzPlik(
             "LogiDoBazy.env")  # to this file enter name of database, and password in second line
-        #log_and_load_database(auth)    #to update just uncomment this line
+        #SQL_creator.log_and_load_database(auth)    #to update just uncomment this line
         conn = SQL.establish_connection_with_base("tg", auth)
         self.cursor = conn.cursor()
 
@@ -23,6 +24,7 @@ class Przedmioty():
     """
 
     def luskacz_broni(self, nazwa):
+        nazwa = nazwa.replace("\'", "\'\'")
         return SQL.get_item_from_table(nazwa, 'bron', self.cursor)
 
     """
@@ -30,6 +32,7 @@ class Przedmioty():
     """
 
     def luskacz_broni_bialej(self, nazwa):
+        nazwa = nazwa.replace("\'", "\'\'")
         return SQL.get_item_from_table(nazwa, 'bronbiala', self.cursor)
 
     """
@@ -37,6 +40,7 @@ class Przedmioty():
     """
 
     def luskacz_granatow(self, nazwa):
+        nazwa = nazwa.replace("\'", "\'\'")
         return SQL.get_item_from_table(nazwa, 'granaty', self.cursor)
 
     """
@@ -44,18 +48,22 @@ class Przedmioty():
     """
 
     def luskacz_celownikow(self, nazwa):
+        nazwa = nazwa.replace("\'", "\'\'")
         return SQL.get_item_from_table(nazwa, 'celowniki', self.cursor)
 
     """
     enable to select ammunition
     """
 
-    def luskacz_amunicji(self, nazwa_amunicji):
-        return SQL.get_item_from_table(nazwa_amunicji, 'amunicja', self.cursor)
+    def luskacz_amunicji(self, nazwa):
+        nazwa = nazwa.replace("\'", "\'\'")
+        return SQL.get_item_from_table(nazwa, 'amunicja', self.cursor)
 
-    def luskacz_dodatkow(self, nazwa_dodatku):
-        return SQL.get_item_from_table(nazwa_dodatku, 'dodatki', self.cursor)
+    def luskacz_dodatkow(self, nazwa):
+        nazwa = nazwa.replace("\'", "\'\'")
+        return SQL.get_item_from_table(nazwa, 'dodatki', self.cursor)
 
     def wyszukaj_przedmiot_i_zwroc_po_wszystkim(self, nazwa):
+        nazwa = nazwa.replace("\'", "\'\'")
         for tabela in ['bron', 'bronbiala', 'granaty', 'celowniki', 'amunicja', 'dodatki']:
             return SQL.get_item_from_table(nazwa, tabela, self.cursor)
