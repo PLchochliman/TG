@@ -30,15 +30,17 @@ def log_and_load_database(auth):
        SQL.convert_excel_into_table(nazwy[table], dane[table], cursor)
     return conn
 
+def test():
+    auth = FilesMenagment.OtworzPlik("LogiDoBazy.env") # to this file enter name of database, and password in second line
+    log_and_load_database(auth)    #to update just uncomment this line
+    conn = SQL.establish_connection_with_base("tg", auth)
+    cursor = conn.cursor()
 
-auth = FilesMenagment.OtworzPlik("LogiDoBazy.env") # to this file enter name of database, and password in second line
-log_and_load_database(auth)    #to update just uncomment this line
-conn = SQL.establish_connection_with_base("tg", auth)
-cursor = conn.cursor()
+    #cursor.execute('select * FROM bron')
+    #print(cursor.fetchall())
+    #
+    #print(SQL.get_item_from_table("m4a1", 'bron', cursor))
 
-#cursor.execute('select * FROM bron')
-#print(cursor.fetchall())
-#
-print(SQL.get_item_from_table("m4a1", 'bron', cursor))
+    conn.close()
 
-conn.close()
+#test()
