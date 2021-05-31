@@ -31,19 +31,12 @@ def log_and_load_database(auth):
        SQL.convert_excel_into_table(nazwy[table], dane[table], cursor)
     return conn
 
-auth = FilesMenagment.OtworzPlik("LogiDoBazy.env") # to this file enter name of database, and password in second line
 
-#conn = log_and_load_database(auth)
+auth = FilesMenagment.OtworzPlik("LogiDoBazy.env") # to this file enter name of database, and password in second line
+#log_and_load_database(auth)    #to update just uncomment this line
 conn = SQL.establish_connection_with_base("tg", auth)
 cursor = conn.cursor()
-print("Tables created successfully........")
 
 print(SQL.get_item_from_table("acogx3", 'celowniki', cursor))
-
-
-
-
-
-
 
 conn.close()

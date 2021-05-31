@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQL_Base_Handling.py" beforeDir="false" afterPath="$PROJECT_DIR$/SQL_Base_Handling.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SQL_Database_Creator.py" beforeDir="false" afterPath="$PROJECT_DIR$/SQL_Database_Creator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TabelaBroni.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,13 +192,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00133" summary="kara za ruch z testami">
-      <created>1621033112300</created>
-      <option name="number" value="00133" />
-      <option name="presentableId" value="LOCAL-00133" />
-      <option name="project" value="LOCAL" />
-      <updated>1621033112301</updated>
     </task>
     <task id="LOCAL-00134" summary="some changes for specialisations, shooting in VIP.">
       <created>1621244781451</created>
@@ -538,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622419901436</updated>
     </task>
-    <option name="localTasksCounter" value="182" />
+    <task id="LOCAL-00182" summary="implementing,and getting data from SQL ready">
+      <created>1622438162344</created>
+      <option name="number" value="00182" />
+      <option name="presentableId" value="LOCAL-00182" />
+      <option name="project" value="LOCAL" />
+      <updated>1622438162344</updated>
+    </task>
+    <option name="localTasksCounter" value="183" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -554,7 +552,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="specs upgrade complete" />
     <MESSAGE value="due to tests, we know, that it is not complete..." />
     <MESSAGE value="Fixed" />
     <MESSAGE value="Fixed all mistakes." />
@@ -579,7 +576,8 @@
     <MESSAGE value="crating tables in SQL completed." />
     <MESSAGE value="getting data from SQL ready" />
     <MESSAGE value="almoust taking record from base" />
-    <option name="LAST_COMMIT_MESSAGE" value="almoust taking record from base" />
+    <MESSAGE value="implementing,and getting data from SQL ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementing,and getting data from SQL ready" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
