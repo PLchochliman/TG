@@ -51,7 +51,7 @@ class DodatekDoBroni(Przedmiot):
         self.cena = czysta_dana[7]
         self.uzywany = False
 
-    def montuj(self, szyny):
+    def __montuj(self, szyny):
         if "tylko dól" in self.specjalne:
             if szyny[1] == "tak":
                 szyny[1] = self
@@ -63,15 +63,18 @@ class DodatekDoBroni(Przedmiot):
         return False
 
     def zaloz(self, bron):
-        miejsce = self
-
-        if self.aktywny == True:
-            bron.premia = bron.premia + self.premia
-        return True
+        return self.__montuj(bron.szyny_montazowe)
 
     def zdejmij(self, bron):
-        miejsce = []
-        return True
+        for i in range(0, len(bron.szyny_montazowe)):
+            if bron.szyny_montazowe == self:
+                if i == 1:
+                    if bron.szyny_montazowe[0] == "nie":
+                        bron.szyny_montazowe[1] = "dolna"
+                        return True
+                bron.szyny_montazowe[i] = "tak"
+                return True
+        return False
 
     def dzialanie(self, bron, akcja):
         if self.aktywny:
