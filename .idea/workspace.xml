@@ -168,11 +168,11 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.SQL_Database_Creator" />
       <item itemvalue="Python.Tests" />
       <item itemvalue="Python.connection" />
       <item itemvalue="Python.items_old" />
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.SQL_Database_Creator" />
     </list>
     <recent_temporary>
       <list>
@@ -192,13 +192,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00138" summary="fixed distance penalty&#10;There is some error at skills...">
-      <created>1621270334808</created>
-      <option name="number" value="00138" />
-      <option name="presentableId" value="LOCAL-00138" />
-      <option name="project" value="LOCAL" />
-      <updated>1621270334808</updated>
     </task>
     <task id="LOCAL-00139" summary="fixed costs of specs, and their weird output...">
       <created>1621274350301</created>
@@ -536,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622450752608</updated>
     </task>
-    <option name="localTasksCounter" value="187" />
+    <task id="LOCAL-00187" summary="implemented montage of accessories on gun.">
+      <created>1622486623071</created>
+      <option name="number" value="00187" />
+      <option name="presentableId" value="LOCAL-00187" />
+      <option name="project" value="LOCAL" />
+      <updated>1622486623076</updated>
+    </task>
+    <option name="localTasksCounter" value="188" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -552,7 +552,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="przygotowanie leczenia, kontynuacja testów całości" />
     <MESSAGE value="naprawiono zakladanie celownikow" />
     <MESSAGE value="przygotowanie pod Ekwipunek i pilnowania go." />
     <MESSAGE value="Celowniki w toku (już jako dodatki" />
@@ -577,26 +576,12 @@
     <MESSAGE value="SQL support ready" />
     <MESSAGE value="SQL handling into game - ready for rechange from aktual base menagment" />
     <MESSAGE value="finally All with new database is working" />
-    <option name="LAST_COMMIT_MESSAGE" value="finally All with new database is working" />
+    <MESSAGE value="implemented montage of accessories on gun." />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented montage of accessories on gun." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/items.py</url>
-          <line>549</line>
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/items.py</url>
-          <line>550</line>
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/items.py</url>
-          <line>548</line>
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Tests.py</url>
           <line>446</line>
@@ -614,7 +599,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/items.py</url>
-          <line>387</line>
+          <line>397</line>
           <option name="timeStamp" value="79" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

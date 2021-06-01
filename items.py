@@ -74,6 +74,16 @@ class DodatekDoBroni(Przedmiot):
         return True
 
     def dzialanie(self, bron, akcja):
+        if self.aktywny:
+            if self.wymaga_zlozenia:
+                if bron.zlozony_do_strzalu:
+                    if self.efekt == "premia":
+                        return self.premia
+                    if self.efekt == "odrzut":
+                        if bron.aktualny_odrzut + self.premia > 0:
+                            return self.premia - bron.aktualny_odrzut
+                        else:
+                            return self.premia
         return 0
 
 
@@ -427,7 +437,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
     szyny_montazowe = []
 
     #defaultowo ma muszczkę i szczerbinkę.
-    def __init__(self, bron, celownik=Celownik(('zwykłe', 0, 25, '', 'w nocy kara -4,', 2, 0, '-')), amunicja=("podstawowa"), magazynek=""):
+    def __init__(self, bron, celownik=Celownik(('zwykłe', 0, 25, '', 'w nocy kara -4,', 2, 0, '-')), amunicja="podstawowa", magazynek=""):
         super(BronStrzelecka, self).__init__("strzelectwo", bron[5], bron[3], bron[6], bron[1], bron[13], bron[14])
         self.statystyki_podstawowe = bron
         self.__nastaw_celownik(celownik)
