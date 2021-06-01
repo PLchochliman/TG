@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TabelaBroni.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/items.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -193,13 +193,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00140" summary="some minor fixes...">
-      <created>1621290657413</created>
-      <option name="number" value="00140" />
-      <option name="presentableId" value="LOCAL-00140" />
-      <option name="project" value="LOCAL" />
-      <updated>1621290657485</updated>
     </task>
     <task id="LOCAL-00141" summary="fixed ammo consuption error">
       <created>1621319082996</created>
@@ -537,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622530154173</updated>
     </task>
-    <option name="localTasksCounter" value="189" />
+    <task id="LOCAL-00189" summary="disasembly of addon added.">
+      <created>1622530957565</created>
+      <option name="number" value="00189" />
+      <option name="presentableId" value="LOCAL-00189" />
+      <option name="project" value="LOCAL" />
+      <updated>1622530957565</updated>
+    </task>
+    <option name="localTasksCounter" value="190" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -553,7 +553,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="przygotowanie pod Ekwipunek i pilnowania go." />
     <MESSAGE value="Celowniki w toku (już jako dodatki" />
     <MESSAGE value="scopes under WIP" />
     <MESSAGE value="scopes are fixed, and finnaly has their own class." />
@@ -578,7 +577,8 @@
     <MESSAGE value="finally All with new database is working" />
     <MESSAGE value="implemented montage of accessories on gun." />
     <MESSAGE value="added returning of modifier." />
-    <option name="LAST_COMMIT_MESSAGE" value="added returning of modifier." />
+    <MESSAGE value="disasembly of addon added." />
+    <option name="LAST_COMMIT_MESSAGE" value="disasembly of addon added." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -597,11 +597,6 @@
           <url>file://$PROJECT_DIR$/hero.py</url>
           <line>282</line>
           <option name="timeStamp" value="78" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/items.py</url>
-          <line>400</line>
-          <option name="timeStamp" value="79" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://F:/Pulpit/projektNOPyBartoszBiniek/projektNOPyBartoszBiniek/main.py</url>
@@ -625,8 +620,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Tests.py</url>
-          <line>231</line>
-          <option name="timeStamp" value="85" />
+          <line>451</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Tests.py</url>
+          <line>452</line>
+          <option name="timeStamp" value="87" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -89,6 +89,14 @@ class DodatekDoBroni(Przedmiot):
                             return self.premia
         return 0
 
+    def aktywacja(self):
+        self.aktywny = True
+        return True
+
+    def efekt_ruchu(self):
+        if self.wymaga_zlozenia == True:
+            self.aktywowany = False
+        return True
 
 class Celownik(DodatekDoBroni):
     przyrost_zasiegu = 0
@@ -397,13 +405,13 @@ class Bron(Przedmiot):
         cel.rana(self.rzut_na_obrazenia() + premia, self.penetracja)
 
     def test_trafienia(self, operator, cel, dodatkowe, zasieg=0):
-        wynik = operator.rzut_na_umiejetnasc(self.rodzaj_testu) + self.aktualna_premia(operator, zasieg) + dodatkowe - cel.aktualny_unik()
+        wynik = operator.rzut_na_umiejetnasc(self.rodzaj_testu) + self.__aktualna_premia(operator, zasieg) + dodatkowe - cel.aktualny_unik()
         if wynik >= 0:
             return wynik
         else:
             raise Exception('chybiles!')
 
-    def aktualna_premia(self, operator, zasieg):
+    def __aktualna_premia(self, operator, zasieg):
         if zasieg <= self.zasieg_maksymalny:
             return 0 #self.premia - zasieg
         raise Exception('cel jest po za zasiegiem.')
@@ -467,6 +475,13 @@ class BronStrzelecka(Bron): #pełne pokrycie
         self.szyny_montazowe = [[], [], [], []]
         self.__przygotuj_miejsca_do_zamontowania()
 
+
+    def aplikuj_ruch(self):
+        self.zlozony_do_strzalu = False
+        for przedmiot in range(0, len(self.szyny_montazowe)):
+            if self.szyny_montazowe is not str:
+                self.szyny_montazowe[przedmiot].efekt_ruchu
+
     def __przygotuj_miejsca_do_zamontowania(self):
         dozwolone_dodatki = str(self.statystyki_podstawowe[11])
         if dozwolone_dodatki.startswith('0/'):
@@ -496,7 +511,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
         return dodatek.zaloz(self)
 
     def zdejmij_dodatek(self, nazwa_dodatku):
-        for i in range(0,len(self.szyny_montazowe)):
+        for i in range(0, len(self.szyny_montazowe)):
             if self.szyny_montazowe[i].nazwa == nazwa_dodatku:
                 self.szyny_montazowe[i].zdejmij(self)
 
@@ -533,7 +548,6 @@ class BronStrzelecka(Bron): #pełne pokrycie
         self.aktualny_magazynek.amunicja.zadaj_obrazenia(cel, premia, dystans)
 
     def test_trafienia(self, operator, cel, tryb, dodatkowe, zasieg):
-        #potrzeba dodatkowe odrzuty policzyć
         if tryb in ("samoczynny", "serie"):
             dodatkowe = dodatkowe + self.__dodatkowy_odrzut_ognia_samoczynnego(tryb)
         return super(BronStrzelecka, self).test_trafienia(operator, cel, dodatkowe, zasieg)
@@ -594,10 +608,10 @@ class BronStrzelecka(Bron): #pełne pokrycie
             kara = kara * 5
             return kara
 
-    def aktualna_premia(self, operator, odleglosc):
+    def __aktualna_premia(self, operator, odleglosc):
         if operator.w_ruchu < -1:
             self.zlozony_do_strzalu = False
-        super(BronStrzelecka, self).aktualna_premia(operator, odleglosc)
+        super(BronStrzelecka, self).__aktualna_premia(operator, odleglosc)
         if odleglosc > self.aktualny_magazynek.amunicja.maks_zasieg_amunicji:
             raise Exception('cel jest po za zasiegiem.')
         kara_za_zasieg = self.__specjalne_kary_za_odleglosc(operator, odleglosc)
