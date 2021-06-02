@@ -409,13 +409,13 @@ class Bron(Przedmiot):
         cel.rana(self.rzut_na_obrazenia() + premia, self.penetracja)
 
     def test_trafienia(self, operator, cel, dodatkowe, zasieg=0):
-        wynik = operator.rzut_na_umiejetnasc(self.rodzaj_testu) + self.__aktualna_premia(operator, zasieg) + dodatkowe - cel.aktualny_unik()
+        wynik = operator.rzut_na_umiejetnasc(self.rodzaj_testu) + self.aktualna_premia(operator, zasieg) + dodatkowe - cel.aktualny_unik()
         if wynik >= 0:
             return wynik
         else:
             raise Exception('chybiles!')
 
-    def __aktualna_premia(self, operator, zasieg):
+    def aktualna_premia(self, operator, zasieg):
         if zasieg <= self.zasieg_maksymalny:
             return 0 #self.premia - zasieg
         raise Exception('cel jest po za zasiegiem.')
@@ -615,10 +615,10 @@ class BronStrzelecka(Bron): #pełne pokrycie
             kara = kara * 5
             return kara
 
-    def __aktualna_premia(self, operator, odleglosc):
+    def aktualna_premia(self, operator, odleglosc):
         if operator.w_ruchu < -1:
             self.zlozony_do_strzalu = False
-        super(BronStrzelecka, self).__aktualna_premia(operator, odleglosc)
+        super(BronStrzelecka, self).aktualna_premia(operator, odleglosc)
         if odleglosc > self.aktualny_magazynek.amunicja.maks_zasieg_amunicji:
             raise Exception('cel jest po za zasiegiem.')
         kara_za_zasieg = self.__specjalne_kary_za_odleglosc(operator, odleglosc)

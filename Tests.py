@@ -424,7 +424,8 @@ def test_mechanik_walki():
     return 10
 
 
-#by specialisation, his damage roll is almost constant
+# by specialisation, his toHit roll is constant (if you have 1 dice, and if smaller than highest score, you can test
+# constant roll.
 @test_runner
 def test_mechanik_i_zasad_specjalnych():
     kalach = wez_i_zaladuj_giwere("AKM")
@@ -445,10 +446,9 @@ def test_mechanik_i_zasad_specjalnych():
     assert not wez_i_zmien_celownik(wojtek.aktywna_bron, "aimpoint")
     wojtek.aktywna_bron.dokup_szyny(wojtek)
     assert wez_i_zmien_celownik(wojtek.aktywna_bron, "aimpoint")
-    gong = hero.Postac(8, 3, 3, ["bron boczna", "karabiny", "bron krotka"], "gong")
+    gong = hero.Postac(8, 5, 3, ["bron boczna", "karabiny", "bron krotka"], "gong")
     strzelanie = mechanics.Strzelanie()
     wojtek.aktywna_bron.rostaw_bron()
-    print(strzelanie.strzal(wojtek, gong, 5))
     assert strzelanie.strzal(wojtek, gong, 5)
     return 3
 
@@ -480,5 +480,5 @@ ilosc_testow_pass += test_akcji()
 ilosc_testow_pass += test_broni_strzeleckiej_specjalne_magi()
 ilosc_testow_pass += test_mechanik_i_zasad_specjalnych()
 print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \n"
-      "Jest to " + str(ilosc_testow_pass/131 * 100) + "% testów.")
+      "Jest to " + str(ilosc_testow_pass/133 * 100) + "% testów.")
 #unittest.main()
