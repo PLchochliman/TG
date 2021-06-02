@@ -192,7 +192,7 @@ class Amunicja:
             cel.rana(self.rzut_na_obrazenia(0) + premia, self.penetracja)
             cel.rana(self.rzut_na_obrazenia("d6") + premia, self.penetracja)
             return True
-        if self.typ_amunicji == "wyborowe":
+        if self.typ_amunicji == "wyborowa":
             premia = premia * 4
         cel.rana(self.rzut_na_obrazenia(0) + premia, self.penetracja)
         return True
@@ -214,11 +214,11 @@ class Amunicja:
         elif self.typ_amunicji == "przeciwpancerna":
             self.cena = self.cena * 3
             self.penetracja = self.penetracja + 1
-            if self.charakterystyka_naboju == "pistoletowe":
+            if self.charakterystyka_naboju == "pistoletowa":
                 self.kosc_obrazen = "d4"
-            if self.charakterystyka_naboju == "pośrednie": #w pliku są polskie znaki!!!
+            if self.charakterystyka_naboju == "pośrednia": #w pliku są polskie znaki!!!
                 self.kosc_obrazen = "d6"
-            if self.charakterystyka_naboju == "rewolwerowe":
+            if self.charakterystyka_naboju == "rewolwerowa":
                 self.kosc_obrazen = "d6"
         elif self.typ_amunicji == "grzybkująca":
             self.cena = self.cena * 3   # done

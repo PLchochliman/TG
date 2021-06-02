@@ -49,8 +49,8 @@ def test_runner(test):
         except AssertionError as inst:
             print(type(inst))
             print(inst.args)
-            print(inst)
-            print(AssertionError)
+            print(str(inst.with_traceback()))
+            print(test.__name__)
             return 0
     return parser
 
@@ -451,7 +451,6 @@ def test_mechanik_i_zasad_specjalnych():
     wojtek.aktywna_bron.rostaw_bron()
     assert strzelanie.strzal(wojtek, gong, 5)   #sprawdzona wprawa i podstawowe liczenie z AK
     assert strzelanie.strzal(wojtek, gong, 5)
- #   assert strzelanie.strzal(wojtek, gong, 5) odkomentowanie daje faila. trzeba zbadać wprawę.
     return 3
 
 
@@ -465,21 +464,21 @@ def test_akcji():
 
 
 ilosc_testow_pass = 0
-#ilosc_testow_pass = test_luskania_danych_z_excela()
-#ilosc_testow_pass += test_systemu()
-#ilosc_testow_pass += test_stalych()
-#ilosc_testow_pass += test_uniku()
-#ilosc_testow_pass += test_ran_kar_smierci()
-#ilosc_testow_pass += test_umiejetnosci_i_aktywacji()
-#ilosc_testow_pass += test_wykupowania_umiejetnosci_z_obnizeniem_przez_specjalizacje_oraz_umiejetnosci_specjalizacji()
-#ilosc_testow_pass += test_jezykow()
-#ilosc_testow_pass += test_przedmiotow()
-#ilosc_testow_pass += test_Broni_strzelcekiej_magazynki_zaciaganie_amunicja_czterotakt()
-#ilosc_testow_pass += test_broni_bialej()
-#ilosc_testow_pass += test_mechanik_walki()
-#ilosc_testow_pass += test_amunicji_i_magazynkow()
-#ilosc_testow_pass += test_akcji()
-#ilosc_testow_pass += test_broni_strzeleckiej_specjalne_magi()
+ilosc_testow_pass = test_luskania_danych_z_excela()
+ilosc_testow_pass += test_systemu()
+ilosc_testow_pass += test_stalych()
+ilosc_testow_pass += test_uniku()
+ilosc_testow_pass += test_ran_kar_smierci()
+ilosc_testow_pass += test_umiejetnosci_i_aktywacji()
+ilosc_testow_pass += test_wykupowania_umiejetnosci_z_obnizeniem_przez_specjalizacje_oraz_umiejetnosci_specjalizacji()
+ilosc_testow_pass += test_jezykow()
+ilosc_testow_pass += test_przedmiotow()
+ilosc_testow_pass += test_Broni_strzelcekiej_magazynki_zaciaganie_amunicja_czterotakt()
+ilosc_testow_pass += test_broni_bialej()
+ilosc_testow_pass += test_mechanik_walki()
+ilosc_testow_pass += test_amunicji_i_magazynkow()
+ilosc_testow_pass += test_akcji()
+ilosc_testow_pass += test_broni_strzeleckiej_specjalne_magi()
 ilosc_testow_pass += test_mechanik_i_zasad_specjalnych()
 print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \n"
       "Jest to " + str(ilosc_testow_pass/133 * 100) + "% testów.")
