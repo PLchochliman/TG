@@ -450,7 +450,6 @@ def test_mechanik_i_zasad_specjalnych():
     wojtek.aktywna_bron.rostaw_bron()
     print(strzelanie.strzal(wojtek, gong, 5))
     assert strzelanie.strzal(wojtek, gong, 5)
-    print(gong.unik)
 
     return 1
 

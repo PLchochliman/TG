@@ -490,11 +490,16 @@ class BronStrzelecka(Bron): #pełne pokrycie
             for i in range(0, len(self.szyny_montazowe)):
                 if not self.szyny_montazowe[i]:
                     self.szyny_montazowe[i] = "nie"
-        if dozwolone_dodatki == "dolna":
+        elif dozwolone_dodatki == "dolna":
             self.szyny_montazowe = ["nie", "tak", "nie", "nie"]
             return True
-        if dozwolone_dodatki in ("nie", "0"):
+        elif dozwolone_dodatki in ("nie", "0"):
             self.szyny_montazowe = ["nie", "nie", "nie", "nie"]
+        else:
+            for i in range(0, int(dozwolone_dodatki[0])):
+                self.szyny_montazowe[i] = "tak"
+            if dozwolone_dodatki.endswith("L]"):
+                self.szyny_montazowe.append("tak")
         return True
 
     def dokup_szyny(self, operator):
@@ -568,8 +573,6 @@ class BronStrzelecka(Bron): #pełne pokrycie
                 return 0
             else:
                 return int(self.odrzut_aktualny) + dodatkowa_redukcja
-
-
 
     def __interpretuj_zasady_bazujace_na_amunicji(self, zasięg): #nie przetestowana
         premia = 0
