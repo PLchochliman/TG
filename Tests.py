@@ -39,9 +39,7 @@ def wez_i_zaladuj_giwere(nazwa_giwery):
 
 
 def wez_i_zmien_celownik(giwera, nazwa_celownika):
-    giwera.zmien_celownik(items.Celownik(przedmioty_jako_rekord.luskacz_celownikow(nazwa_celownika)))
-
-    return True
+    return giwera.zmien_celownik(items.Celownik(przedmioty_jako_rekord.luskacz_celownikow(nazwa_celownika)))
 
 
 def test_runner(test):
@@ -444,14 +442,15 @@ def test_mechanik_i_zasad_specjalnych():
     wojtek.podnies_umiejetnosc_specjalizacji("karabiny", "wprawa")
     wojtek.podnies_umiejetnosc_specjalizacji("karabiny", "wprawa")
     wojtek.podnies_umiejetnosc_specjalizacji("karabiny", "wprawa")
-    wez_i_zmien_celownik(wojtek.aktywna_bron, "aimpoint")
+    assert not wez_i_zmien_celownik(wojtek.aktywna_bron, "aimpoint")
+    wojtek.aktywna_bron.dokup_szyny(wojtek)
+    assert wez_i_zmien_celownik(wojtek.aktywna_bron, "aimpoint")
     gong = hero.Postac(8, 3, 3, ["bron boczna", "karabiny", "bron krotka"], "gong")
     strzelanie = mechanics.Strzelanie()
     wojtek.aktywna_bron.rostaw_bron()
     print(strzelanie.strzal(wojtek, gong, 5))
     assert strzelanie.strzal(wojtek, gong, 5)
-
-    return 1
+    return 3
 
 
 @test_runner

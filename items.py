@@ -259,6 +259,10 @@ class Magazynek():
     typ_magazynka = ""
 
     def __init__(self, bron, typ="", naboje_z_paczki_amunicji=""):
+        self.stan_nabojow = 0
+        self.amunicja = []
+        self.rodzina = ""
+        self.typ_magazynka = ""
         self.maksymalna_pojemnosc = bron.statystyki_podstawowe[9]
         self.__zaladuj_rodzine_i_typ(bron, typ)
 
@@ -643,7 +647,10 @@ class BronStrzelecka(Bron): #pełne pokrycie
         self.zlozony_do_strzalu = True
 
     def zmien_celownik(self, celownik):
-        self.__nastaw_celownik(celownik)
+        if celownik.zaloz(self):
+            self.__nastaw_celownik(celownik)
+            return True
+        return False
 
     def __nastaw_celownik(self, celownik):
         self.celownik = celownik

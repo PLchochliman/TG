@@ -194,13 +194,6 @@
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
     </task>
-    <task id="LOCAL-00142" summary="prepared for new Specialisations">
-      <created>1621405070987</created>
-      <option name="number" value="00142" />
-      <option name="presentableId" value="LOCAL-00142" />
-      <option name="project" value="LOCAL" />
-      <updated>1621405070989</updated>
-    </task>
     <task id="LOCAL-00143" summary="wprawa almoust ready.">
       <created>1621434229520</created>
       <option name="number" value="00143" />
@@ -537,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622576547227</updated>
     </task>
-    <option name="localTasksCounter" value="191" />
+    <task id="LOCAL-00191" summary="szyny montażowe naprawione">
+      <created>1622617600481</created>
+      <option name="number" value="00191" />
+      <option name="presentableId" value="LOCAL-00191" />
+      <option name="project" value="LOCAL" />
+      <updated>1622617600481</updated>
+    </task>
+    <option name="localTasksCounter" value="192" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -553,7 +553,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="scopes under WIP" />
     <MESSAGE value="scopes are fixed, and finnaly has their own class." />
     <MESSAGE value="fixed penalties for pistols." />
     <MESSAGE value="added minimum range." />
@@ -578,45 +577,41 @@
     <MESSAGE value="added returning of modifier." />
     <MESSAGE value="disasembly of addon added." />
     <MESSAGE value="move effect taken into count" />
-    <option name="LAST_COMMIT_MESSAGE" value="move effect taken into count" />
+    <MESSAGE value="szyny montażowe naprawione" />
+    <option name="LAST_COMMIT_MESSAGE" value="szyny montażowe naprawione" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/hero.py</url>
           <line>283</line>
           <option name="timeStamp" value="77" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/hero.py</url>
           <line>282</line>
           <option name="timeStamp" value="78" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://F:/Pulpit/projektNOPyBartoszBiniek/projektNOPyBartoszBiniek/main.py</url>
           <line>21</line>
           <option name="timeStamp" value="80" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://F:/Pulpit/projektNOPyBartoszBiniek/projektNOPyBartoszBiniek/main.py</url>
           <line>19</line>
           <option name="timeStamp" value="81" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://F:/Pulpit/projektNOPyBartoszBiniek/projektNOPyBartoszBiniek/main.py</url>
           <line>18</line>
           <option name="timeStamp" value="82" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://F:/Pulpit/projektNOPyBartoszBiniek/projektNOPyBartoszBiniek/main.py</url>
           <line>17</line>
           <option name="timeStamp" value="83" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/items.py</url>
-          <line>502</line>
-          <option name="timeStamp" value="84" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Tests.py</url>
@@ -625,8 +620,48 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/items.py</url>
-          <line>639</line>
+          <line>643</line>
           <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Tests.py</url>
+          <line>447</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Tests.py</url>
+          <line>446</line>
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Tests.py</url>
+          <line>445</line>
+          <option name="timeStamp" value="89" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Tests.py</url>
+          <line>444</line>
+          <option name="timeStamp" value="90" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/items.py</url>
+          <line>651</line>
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/items.py</url>
+          <line>650</line>
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/items.py</url>
+          <line>652</line>
+          <option name="timeStamp" value="93" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Tests.py</url>
+          <line>41</line>
+          <option name="timeStamp" value="94" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
