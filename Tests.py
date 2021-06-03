@@ -455,7 +455,7 @@ def test_mechanik_walki():
 
 
 @test_runner
-def test_mechanik_i_zasad_specjalnych():
+def test_zasad_specjalnych_i_dodatkow_do_broni():
     wojtek = postac_co_z_pistoletu_i_karabinu_rzuca_6()
     kalach = wez_i_zaladuj_giwere("AKM")
     wojtek.aktywna_bron = kalach
@@ -472,7 +472,7 @@ def test_mechanik_i_zasad_specjalnych():
     print("nie trafia jak powinien")
     wojtek.aktywna_bron.szyny_montazowe[1].aktywacja()
     assert strzelanie.strzal(wojtek, gong, 5)
-    return 3
+    return 5
 
 
 @test_runner
@@ -502,7 +502,7 @@ ilosc_testow_pass += test_amunicji_i_magazynkow()
 ilosc_testow_pass += test_akcji()
 ilosc_testow_pass += test_broni_strzeleckiej_specjalne_magi()
 ilosc_testow_pass += test_broni_strzeleckiej_z_Celownikami()
-ilosc_testow_pass += test_mechanik_i_zasad_specjalnych()
+ilosc_testow_pass += test_zasad_specjalnych_i_dodatkow_do_broni()
 print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \n"
-      "Jest to " + str(ilosc_testow_pass/134 * 100) + "% testów.")
+      "Jest to " + str(ilosc_testow_pass/136 * 100) + "% testów.")
 #unittest.main()

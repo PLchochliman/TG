@@ -149,6 +149,7 @@ class Celownik(DodatekDoBroni):
 it's all about the ammunition for the gun.
 """
 
+
 class Amunicja:
     nazwa_naboju = ""
     kosc_obrazen = ""

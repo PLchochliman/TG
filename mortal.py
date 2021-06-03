@@ -257,10 +257,10 @@ class IstotaZywa: #pełne pokrycie
         return wyjscie
 
     def kara_za_ruch(self, dzialanie):
-        if dzialanie in ["krok","chod","chód","bieg"]:
+        if dzialanie in ["krok", "chod", "chód", "bieg"]:
             if dzialanie == "krok":
                 self.w_ruchu = -1
-            if dzialanie in ["chod","chód"]:
+            if dzialanie in ["chod", "chód"]:
                 self.w_ruchu = -5
             if dzialanie == "bieg":
                 self.w_ruchu = -10
