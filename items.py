@@ -67,7 +67,7 @@ class DodatekDoBroni(Przedmiot):
 
     def zdejmij(self, bron):
         for i in range(0, len(bron.szyny_montazowe)):
-            if bron.szyny_montazowe == self:
+            if bron.szyny_montazowe[i] == self:
                 if i == 1:
                     if bron.szyny_montazowe[0] == "nie":
                         bron.szyny_montazowe[1] = "dolna"

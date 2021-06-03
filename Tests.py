@@ -467,12 +467,13 @@ def test_zasad_specjalnych_i_dodatkow_do_broni():
     assert strzelanie.strzal(wojtek, gong, 5)   #sprawdzona wprawa i podstawowe liczenie z AK
     assert strzelanie.strzal(wojtek, gong, 5)
     wojtek.aktywna_bron = wez_i_zaladuj_giwere("SR25")
-    wojtek.aktywna_bron.zamontuj_dodatek(items.DodatekDoBroni(przedmioty_jako_rekord.luskacz_dodatkow("dwójnóg")))
+    assert wojtek.aktywna_bron.zamontuj_dodatek(items.DodatekDoBroni(przedmioty_jako_rekord.luskacz_dodatkow("dwójnóg")))
     assert not strzelanie.strzal(wojtek, gong, 5)
-    print("nie trafia jak powinien")
-    wojtek.aktywna_bron.szyny_montazowe[1].aktywacja()
+    assert wojtek.aktywna_bron.szyny_montazowe[1].aktywacja()
     assert strzelanie.strzal(wojtek, gong, 5)
-    return 5
+    assert wojtek.aktywna_bron.szyny_montazowe[1].nazwa == "dwójnóg"
+    assert wojtek.aktywna_bron.szyny_montazowe[1].zdejmij(wojtek.aktywna_bron)
+    return 8
 
 
 @test_runner
@@ -504,5 +505,5 @@ ilosc_testow_pass += test_broni_strzeleckiej_specjalne_magi()
 ilosc_testow_pass += test_broni_strzeleckiej_z_Celownikami()
 ilosc_testow_pass += test_zasad_specjalnych_i_dodatkow_do_broni()
 print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \n"
-      "Jest to " + str(ilosc_testow_pass/136 * 100) + "% testów.")
+      "Jest to " + str(ilosc_testow_pass/139 * 100) + "% testów.")
 #unittest.main()
