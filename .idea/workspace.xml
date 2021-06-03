@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TabelaBroni.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/items.py" afterDir="false" />
     </list>
@@ -194,13 +193,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00150" summary="specs upgrade complete">
-      <created>1621718807831</created>
-      <option name="number" value="00150" />
-      <option name="presentableId" value="LOCAL-00150" />
-      <option name="project" value="LOCAL" />
-      <updated>1621718807832</updated>
     </task>
     <task id="LOCAL-00151" summary="due to tests, we know, that it is not complete...">
       <created>1621721276122</created>
@@ -538,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622720488258</updated>
     </task>
-    <option name="localTasksCounter" value="199" />
+    <task id="LOCAL-00199" summary="added quite a lot of tests, and refactoring class Bron.">
+      <created>1622756734394</created>
+      <option name="number" value="00199" />
+      <option name="presentableId" value="LOCAL-00199" />
+      <option name="project" value="LOCAL" />
+      <updated>1622756734395</updated>
+    </task>
+    <option name="localTasksCounter" value="200" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -554,7 +553,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="drobny rename" />
     <MESSAGE value="succesfull refactor of desintagrating from itesms, picking records from excel." />
     <MESSAGE value="preparing addons." />
     <MESSAGE value="preparing existance of SQL database" />
@@ -579,7 +577,8 @@
     <MESSAGE value="finally provided proper handling of addons to gun." />
     <MESSAGE value="little refactor" />
     <MESSAGE value="fixed dissasembly of addons to gun" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed dissasembly of addons to gun" />
+    <MESSAGE value="added quite a lot of tests, and refactoring class Bron." />
+    <option name="LAST_COMMIT_MESSAGE" value="added quite a lot of tests, and refactoring class Bron." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -606,8 +605,28 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Tests.py</url>
-          <line>480</line>
-          <option name="timeStamp" value="138" />
+          <line>484</line>
+          <option name="timeStamp" value="143" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/items.py</url>
+          <line>522</line>
+          <option name="timeStamp" value="144" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/items.py</url>
+          <line>492</line>
+          <option name="timeStamp" value="146" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/items.py</url>
+          <line>413</line>
+          <option name="timeStamp" value="147" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/items.py</url>
+          <line>414</line>
+          <option name="timeStamp" value="148" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

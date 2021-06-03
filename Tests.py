@@ -472,15 +472,19 @@ def test_zasad_specjalnych_i_dodatkow_do_broni():
     assert strzelanie.strzal(wojtek, gong, 5)
     assert wojtek.aktywna_bron.szyny_montazowe[1].nazwa == "dwójnóg"
     assert wojtek.aktywna_bron.szyny_montazowe[1].zdejmij(wojtek.aktywna_bron)
-    wojtek.aktywna_bron = wez_i_zaladuj_giwere("glock 17")
+    wojtek.aktywna_bron = wez_i_zaladuj_giwere("fiveseven")
     assert wojtek.aktywna_bron.zamontuj_dodatek(items.DodatekDoBroni(przedmioty_jako_rekord.luskacz_dodatkow("laser")))
     assert wojtek.aktywna_bron.szyny_montazowe[0] == "nie"
     assert not strzelanie.strzal(wojtek, gong, 5)
     assert wojtek.aktywna_bron.szyny_montazowe[1].aktywacja()
     assert not strzelanie.strzal(wojtek, gong, 5)
     assert wojtek.aktywna_bron.zamontuj_dodatek(items.Celownik(przedmioty_jako_rekord.luskacz_celownikow("perfekcyjne")))
-#    assert strzelanie.strzal(wojtek, gong, 5)
-    return 17
+    assert not strzelanie.strzal(wojtek, gong, 5)
+    assert wojtek.aktywna_bron.zamontuj_dodatek(items.Celownik(przedmioty_jako_rekord.luskacz_celownikow("micro")))
+    wojtek.aktywna_bron.zloz_sie_do_strzalu()
+    assert strzelanie.strzal(wojtek, gong, 5)
+
+    return 19
 
 
 @test_runner
@@ -512,5 +516,5 @@ ilosc_testow_pass += test_broni_strzeleckiej_specjalne_magi()
 ilosc_testow_pass += test_broni_strzeleckiej_z_Celownikami()
 ilosc_testow_pass += test_zasad_specjalnych_i_dodatkow_do_broni()
 print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \n"
-      "Jest to " + str(ilosc_testow_pass/139 * 100) + "% testów.")
+      "Jest to " + str(ilosc_testow_pass/150 * 100) + "% testów.")
 #unittest.main()

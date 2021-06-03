@@ -482,27 +482,6 @@ class BronStrzelecka(Bron): #pełne pokrycie
         self.__przygotuj_miejsca_do_zamontowania()
 
 
-
-    def __nastaw_kare_za_nierostawienie(self):
-        self.kara_za_nierostawienie = -1
-        if "kobyła" in self.zasady_specjalne:
-            self.kara_za_nierostawienie = -10
-        if "ciężka" in self.zasady_specjalne:
-            self.kara_za_nierostawienie = -4
-        if "poręczna" in self.zasady_specjalne:
-            self.kara_za_nierostawienie = 0
-
-    def rostaw_bron(self):
-        self.rostawiona = True
-        return self.czas_rostawienia
-
-    def odrzut(self, opetator):
-        redukcja = self.odrzut_aktualny + opetator.mod_sila
-        if redukcja < 0:
-            return redukcja
-        else:
-            return 0
-
     def test_obrazen_z_egzekucja(self, cel, premia, dystans):
         if "potezna" in self.zasady_specjalne:
             premia = premia * 2
@@ -512,60 +491,6 @@ class BronStrzelecka(Bron): #pełne pokrycie
         if tryb in ("samoczynny", "serie"):
             dodatkowe = dodatkowe + self.__dodatkowy_odrzut_ognia_samoczynnego(tryb)
         return super(BronStrzelecka, self).test_trafienia(operator, cel, dodatkowe, zasieg)
-
-    def __dodatkowy_odrzut_ognia_samoczynnego(self, tryb):
-        dodatkowa_redukcja = 0
-        if "stabilny ostrzał" in self.zasady_specjalne:
-            for i in self.zasady_specjalne:
-                if "stabilny ostrzał" in i:
-                    dodatkowa_redukcja = int(i[-1])
-        if tryb == "serie":
-            if dodatkowa_redukcja < int(self.odrzut_aktualny/2):
-                return 0
-            else:
-                return int(int(self.odrzut_aktualny)/2 + dodatkowa_redukcja)
-        if tryb == "samoczynny":
-            if dodatkowa_redukcja < int(self.odrzut_aktualny):
-                return 0
-            else:
-                return int(self.odrzut_aktualny) + dodatkowa_redukcja
-
-    def __interpretuj_zasady_bazujace_na_amunicji(self, zasięg): #nie przetestowana
-        premia = 0
-        if "snajperka" in self.zasady_specjalne:
-            if self.aktualny_magazynek.amunicja.typ_amunicji == "wyborowa":
-                premia = premia + 1
-            if self.aktualny_magazynek.amunicja.typ_amunicji == "wybitnie wyborowa":
-                premia = premia + 1
-        if "duzy kaliber" in self.zasady_specjalne:
-            if self.aktualny_magazynek.amunicja.typ_amunicji == "wyborowa":
-                premia = premia + 1
-            if self.aktualny_magazynek.amunicja.typ_amunicji == "wybitnie wyborowa":
-                premia = premia + 1
-        if "strzelba" in self.zasady_specjalne:
-            if self.aktualny_magazynek.amunicja.typ_amunicji == "podstawowa":
-                if zasięg <= 15:
-                    premia = premia + 3
-                if zasięg <= 5:
-                    premia = premia + 2
-        return premia
-
-    def __specjalne_kary_za_odleglosc(self, operator, odleglosc):
-        if self.zlozony_do_strzalu & (self.celownik.zasieg_minimalny < odleglosc):
-            kara = odleglosc / self.celownik.przyrost_zasiegu
-            kara = kara * 2 - self.celownik.premia
-            if "pistolet" in self.zasady_specjalne:
-                if self.celownik.typ == "mechaniczne":
-                    kara = odleglosc / (self.celownik.przyrost_zasiegu - 5)
-                    kara = kara * 4 - self.celownik.premia
-                    return kara
-                kara = odleglosc / self.celownik.przyrost_zasiegu
-                kara = kara * 2 - self.celownik.premia
-            return kara
-        else:
-            kara = odleglosc / operator.zwroc_naturalny_przyrost_zasiegu()
-            kara = kara * 5
-            return kara
 
     def aktualna_premia(self, operator, odleglosc):
         if operator.w_ruchu < -1:
@@ -720,6 +645,80 @@ class BronStrzelecka(Bron): #pełne pokrycie
 
     def __zamontuj_magazynek_staly(self):
         self.wymienny_magazynek = False
+
+    def __dodatkowy_odrzut_ognia_samoczynnego(self, tryb):
+        dodatkowa_redukcja = 0
+        if "stabilny ostrzał" in self.zasady_specjalne:
+            for i in self.zasady_specjalne:
+                if "stabilny ostrzał" in i:
+                    dodatkowa_redukcja = int(i[-1])
+        if tryb == "serie":
+            if dodatkowa_redukcja < int(self.odrzut_aktualny/2):
+                return 0
+            else:
+                return int(int(self.odrzut_aktualny)/2 + dodatkowa_redukcja)
+        if tryb == "samoczynny":
+            if dodatkowa_redukcja < int(self.odrzut_aktualny):
+                return 0
+            else:
+                return int(self.odrzut_aktualny) + dodatkowa_redukcja
+
+    def __interpretuj_zasady_bazujace_na_amunicji(self, zasięg): #nie przetestowana
+        premia = 0
+        if "snajperka" in self.zasady_specjalne:
+            if self.aktualny_magazynek.amunicja.typ_amunicji == "wyborowa":
+                premia = premia + 1
+            if self.aktualny_magazynek.amunicja.typ_amunicji == "wybitnie wyborowa":
+                premia = premia + 1
+        if "duzy kaliber" in self.zasady_specjalne:
+            if self.aktualny_magazynek.amunicja.typ_amunicji == "wyborowa":
+                premia = premia + 1
+            if self.aktualny_magazynek.amunicja.typ_amunicji == "wybitnie wyborowa":
+                premia = premia + 1
+        if "strzelba" in self.zasady_specjalne:
+            if self.aktualny_magazynek.amunicja.typ_amunicji == "podstawowa":
+                if zasięg <= 15:
+                    premia = premia + 3
+                if zasięg <= 5:
+                    premia = premia + 2
+        return premia
+
+    def __specjalne_kary_za_odleglosc(self, operator, odleglosc):
+        if self.zlozony_do_strzalu & (self.celownik.zasieg_minimalny < odleglosc):
+            kara = odleglosc // self.celownik.przyrost_zasiegu
+            kara = kara * 2 - self.celownik.premia
+            if "pistolet" in self.zasady_specjalne:
+                if self.celownik.typ == "mechaniczne":
+                    kara = odleglosc / (self.celownik.przyrost_zasiegu - 5)
+                    kara = kara * 4 - self.celownik.premia
+                    return kara
+                kara = int(odleglosc / self.celownik.przyrost_zasiegu)
+                kara = kara * 2 - self.celownik.premia
+            return kara
+        else:
+            kara = odleglosc // operator.zwroc_naturalny_przyrost_zasiegu()
+            kara = kara * 5
+            return kara
+
+    def __nastaw_kare_za_nierostawienie(self):
+        self.kara_za_nierostawienie = -1
+        if "kobyła" in self.zasady_specjalne:
+            self.kara_za_nierostawienie = -10
+        if "ciężka" in self.zasady_specjalne:
+            self.kara_za_nierostawienie = -4
+        if "poręczna" in self.zasady_specjalne:
+            self.kara_za_nierostawienie = 0
+
+    def rostaw_bron(self):
+        self.rostawiona = True
+        return self.czas_rostawienia
+
+    def odrzut(self, opetator):
+        redukcja = self.odrzut_aktualny + opetator.mod_sila
+        if redukcja < 0:
+            return redukcja
+        else:
+            return 0
 
 
 # TODo zasady specjalne broni.
