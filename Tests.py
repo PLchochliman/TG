@@ -42,6 +42,27 @@ def wez_i_zmien_celownik(giwera, nazwa_celownika):
     return giwera.zmien_celownik(items.Celownik(przedmioty_jako_rekord.luskacz_celownikow(nazwa_celownika)))
 
 
+def postac_co_z_pistoletu_i_karabinu_rzuca_6():
+    wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
+    wojtek.podnies_umiejetnosc_specjalizacji("bron boczna", "wprawa")
+    wojtek.podnies_umiejetnosc_specjalizacji("bron boczna", "wprawa")
+    wojtek.podnies_umiejetnosc_specjalizacji("bron boczna", "wprawa")
+    wojtek.podnies_umiejetnosc_specjalizacji("bron boczna", "wprawa")
+    wojtek.podnies_umiejetnosc_specjalizacji("bron boczna", "wprawa")
+    wojtek.podnies_umiejetnosc_specjalizacji("bron boczna", "wprawa")
+    wojtek.podnies_umiejetnosc_specjalizacji("karabiny", "wprawa")
+    wojtek.podnies_umiejetnosc_specjalizacji("karabiny", "wprawa")
+    wojtek.podnies_umiejetnosc_specjalizacji("karabiny", "wprawa")
+    wojtek.podnies_umiejetnosc_specjalizacji("karabiny", "wprawa")
+    wojtek.podnies_umiejetnosc_specjalizacji("karabiny", "wprawa")
+    wojtek.podnies_umiejetnosc_specjalizacji("karabiny", "wprawa")
+    return wojtek
+
+
+def gong_o_uniku_10():
+    return hero.Postac(8, 7, 7, ["bron boczna", "karabiny", "bron krotka"], "gong")
+
+
 def test_runner(test):
     def parser():
         try:
@@ -49,7 +70,7 @@ def test_runner(test):
         except AssertionError as inst:
             print(type(inst))
             print(inst.args)
-            print(str(inst.with_traceback()))
+#            print(str(inst.with_traceback()))
             print(test.__name__)
             return 0
     return parser
@@ -140,6 +161,7 @@ def test_uniku(): #testy mortal.py
     assert wojtek.zmien_oslone(12) == 0
     assert wojtek.aktualny_unik() == 12
     return 7
+
 
 @test_runner
 def test_umiejetnosci_i_aktywacji(): # test mortal.py
@@ -277,6 +299,7 @@ def test_Broni_strzelcekiej_magazynki_zaciaganie_amunicja_czterotakt():
     assert Swinia.rostaw_bron() == 0
     return 24
 
+
 @test_runner
 def test_broni_strzeleckiej_specjalne_magi():
     mk23 = przedmioty_jako_rekord.luskacz_broni("mk23")
@@ -293,6 +316,12 @@ def test_broni_strzeleckiej_specjalne_magi():
 
     return 1
 
+
+@test_runner
+def test_broni_strzeleckiej_z_Celownikami():
+    giwera = wez_i_zaladuj_giwere("AKM")
+    assert not wez_i_zmien_celownik(giwera, "aimpoint")
+    return 1
 
 @test_runner
 def test_broni_bialej():
@@ -424,32 +453,24 @@ def test_mechanik_walki():
     return 10
 
 
-# by specialisation, his toHit roll is constant (if you have 1 dice, and if smaller than highest score, you can test
-# constant roll.
+
 @test_runner
 def test_mechanik_i_zasad_specjalnych():
+    wojtek = postac_co_z_pistoletu_i_karabinu_rzuca_6()
     kalach = wez_i_zaladuj_giwere("AKM")
-    wojtek = hero.Postac(8, 8, 8, ["bron boczna", "karabiny", "bron krotka"])
     wojtek.aktywna_bron = kalach
-    wojtek.podnies_umiejetnosc_specjalizacji("bron boczna", "wprawa")
-    wojtek.podnies_umiejetnosc_specjalizacji("bron boczna", "wprawa")
-    wojtek.podnies_umiejetnosc_specjalizacji("bron boczna", "wprawa")
-    wojtek.podnies_umiejetnosc_specjalizacji("bron boczna", "wprawa")
-    wojtek.podnies_umiejetnosc_specjalizacji("bron boczna", "wprawa")
-    wojtek.podnies_umiejetnosc_specjalizacji("bron boczna", "wprawa")
-    wojtek.podnies_umiejetnosc_specjalizacji("karabiny", "wprawa")
-    wojtek.podnies_umiejetnosc_specjalizacji("karabiny", "wprawa")
-    wojtek.podnies_umiejetnosc_specjalizacji("karabiny", "wprawa")
-    wojtek.podnies_umiejetnosc_specjalizacji("karabiny", "wprawa")
-    wojtek.podnies_umiejetnosc_specjalizacji("karabiny", "wprawa")
-    wojtek.podnies_umiejetnosc_specjalizacji("karabiny", "wprawa")
-    assert not wez_i_zmien_celownik(wojtek.aktywna_bron, "aimpoint")
     wojtek.aktywna_bron.dokup_szyny(wojtek)
     assert wez_i_zmien_celownik(wojtek.aktywna_bron, "aimpoint")
-    gong = hero.Postac(8, 7, 7, ["bron boczna", "karabiny", "bron krotka"], "gong")
+    gong = gong_o_uniku_10()
     strzelanie = mechanics.Strzelanie()
     wojtek.aktywna_bron.rostaw_bron()
     assert strzelanie.strzal(wojtek, gong, 5)   #sprawdzona wprawa i podstawowe liczenie z AK
+    assert strzelanie.strzal(wojtek, gong, 5)
+    wojtek.aktywna_bron = wez_i_zaladuj_giwere("SR25")
+    wojtek.aktywna_bron.zamontuj_dodatek(items.DodatekDoBroni(przedmioty_jako_rekord.luskacz_dodatkow("dwójnóg")))
+    assert not strzelanie.strzal(wojtek, gong, 5)
+    print("nie trafia jak powinien")
+    wojtek.aktywna_bron.szyny_montazowe[1].aktywacja()
     assert strzelanie.strzal(wojtek, gong, 5)
     return 3
 
@@ -463,6 +484,7 @@ def test_akcji():
     return 3
 
 
+#citizien for, film o Snowdenie
 ilosc_testow_pass = 0
 ilosc_testow_pass = test_luskania_danych_z_excela()
 ilosc_testow_pass += test_systemu()
@@ -479,7 +501,8 @@ ilosc_testow_pass += test_mechanik_walki()
 ilosc_testow_pass += test_amunicji_i_magazynkow()
 ilosc_testow_pass += test_akcji()
 ilosc_testow_pass += test_broni_strzeleckiej_specjalne_magi()
+ilosc_testow_pass += test_broni_strzeleckiej_z_Celownikami()
 ilosc_testow_pass += test_mechanik_i_zasad_specjalnych()
 print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \n"
-      "Jest to " + str(ilosc_testow_pass/133 * 100) + "% testów.")
+      "Jest to " + str(ilosc_testow_pass/134 * 100) + "% testów.")
 #unittest.main()

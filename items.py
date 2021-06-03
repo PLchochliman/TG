@@ -52,11 +52,11 @@ class DodatekDoBroni(Przedmiot):
         self.uzywany = False
 
     def __montuj(self, szyny):
-        if "tylko dól" in self.specjalne:
+        if "tylko dół" in self.specjalne:
             if szyny[1] == "tak":
                 szyny[1] = self
                 return True
-        for slot in range(len(szyny), 0, -1):
+        for slot in range(len(szyny) -1, 0, -1):
             if szyny[slot] == "tak":
                 szyny[slot] = self
                 return True
@@ -76,17 +76,17 @@ class DodatekDoBroni(Przedmiot):
                 return True
         return False
 
-    def dzialanie(self, bron, akcja):
+    def dzialanie(self, bron):
         if self.aktywny:
             if self.wymaga_zlozenia:
                 if bron.zlozony_do_strzalu:
                     if self.efekt == "premia":
                         return self.premia
                     if self.efekt == "odrzut":
-                        if bron.aktualny_odrzut + self.premia > 0:
-                            return self.premia - bron.aktualny_odrzut
+                        if bron.odrzut_aktualny + self.premia > 0:
+                            return self.premia - bron.odrzut_aktualny
                         else:
-                            return self.premia
+                            return - bron.odrzut_aktualny
         return 0
 
     def aktywacja(self):
@@ -97,6 +97,7 @@ class DodatekDoBroni(Przedmiot):
         if self.wymaga_zlozenia == True:
             self.aktywowany = False
         return True
+
 
 class Celownik(DodatekDoBroni):
     przyrost_zasiegu = 0
@@ -519,6 +520,13 @@ class BronStrzelecka(Bron): #pełne pokrycie
     def zamontuj_dodatek(self, dodatek):
         return dodatek.zaloz(self)
 
+    def __aplikuj_premie_za_dodatki(self):
+        wynik = 0
+        for i in self.szyny_montazowe:
+            if not isinstance(i, (str, list)):
+                wynik = wynik + i.dzialanie(self)
+        return wynik
+
     def zdejmij_dodatek(self, nazwa_dodatku):
         for i in range(0, len(self.szyny_montazowe)):
             if self.szyny_montazowe[i].nazwa == nazwa_dodatku:
@@ -641,6 +649,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
         if self.rostawiona:
             if self.kara_za_nierostawienie == 0:
                 premia = premia + 1
+        premia = premia + self.__aplikuj_premie_za_dodatki()
         return premia
 
     def zloz_sie_do_strzalu(self):
