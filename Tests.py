@@ -457,8 +457,7 @@ def test_mechanik_walki():
 @test_runner
 def test_zasad_specjalnych_i_dodatkow_do_broni():
     wojtek = postac_co_z_pistoletu_i_karabinu_rzuca_6()
-    kalach = wez_i_zaladuj_giwere("AKM")
-    wojtek.aktywna_bron = kalach
+    wojtek.aktywna_bron = wez_i_zaladuj_giwere("AKM")
     wojtek.aktywna_bron.dokup_szyny(wojtek)
     assert wez_i_zmien_celownik(wojtek.aktywna_bron, "aimpoint")
     gong = gong_o_uniku_10()
@@ -473,7 +472,15 @@ def test_zasad_specjalnych_i_dodatkow_do_broni():
     assert strzelanie.strzal(wojtek, gong, 5)
     assert wojtek.aktywna_bron.szyny_montazowe[1].nazwa == "dwójnóg"
     assert wojtek.aktywna_bron.szyny_montazowe[1].zdejmij(wojtek.aktywna_bron)
-    return 8
+    wojtek.aktywna_bron = wez_i_zaladuj_giwere("glock 17")
+    assert wojtek.aktywna_bron.zamontuj_dodatek(items.DodatekDoBroni(przedmioty_jako_rekord.luskacz_dodatkow("laser")))
+    assert wojtek.aktywna_bron.szyny_montazowe[0] == "nie"
+    assert not strzelanie.strzal(wojtek, gong, 5)
+    assert wojtek.aktywna_bron.szyny_montazowe[1].aktywacja()
+    assert not strzelanie.strzal(wojtek, gong, 5)
+    assert wojtek.aktywna_bron.zamontuj_dodatek(items.Celownik(przedmioty_jako_rekord.luskacz_celownikow("perfekcyjne")))
+#    assert strzelanie.strzal(wojtek, gong, 5)
+    return 17
 
 
 @test_runner

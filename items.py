@@ -482,60 +482,6 @@ class BronStrzelecka(Bron): #pełne pokrycie
         self.__przygotuj_miejsca_do_zamontowania()
 
 
-    def aplikuj_ruch(self):
-        self.zlozony_do_strzalu = False
-        for przedmiot in range(0, len(self.szyny_montazowe)):
-            if self.szyny_montazowe is not str:
-                self.szyny_montazowe[przedmiot].efekt_ruchu
-
-    def __przygotuj_miejsca_do_zamontowania(self):
-        dozwolone_dodatki = str(self.statystyki_podstawowe[11])
-        if dozwolone_dodatki.startswith('0/'):
-            for i in range(0, int(dozwolone_dodatki[2])):
-                self.szyny_montazowe[i] = "wykup"
-            for i in range(0, len(self.szyny_montazowe)):
-                if not self.szyny_montazowe[i]:
-                    self.szyny_montazowe[i] = "nie"
-        elif dozwolone_dodatki == "dolna":
-            self.szyny_montazowe = ["nie", "tak", "nie", "nie"]
-            return True
-        elif dozwolone_dodatki in ("nie", "0"):
-            self.szyny_montazowe = ["nie", "nie", "nie", "nie"]
-        else:
-            for i in range(0, int(dozwolone_dodatki[0])):
-                self.szyny_montazowe[i] = "tak"
-            if dozwolone_dodatki.endswith("L]"):
-                self.szyny_montazowe.append("tak")
-        return True
-
-    def dokup_szyny(self, operator):
-        if operator.pieniadze < 300:
-            Bot.output("Nie masz dość forsy")
-            return False
-        operator.pieniadze =operator.pieniadze - 300            #zafiksowana cena szyn dodatkowych
-        for i in range(0, len(self.szyny_montazowe)):
-            if self.szyny_montazowe[i] == "wykup":
-                self.szyny_montazowe[i] = "tak"
-        return True
-
-    def zamontuj_dodatek(self, dodatek):
-        return dodatek.zaloz(self)
-
-    def __aplikuj_premie_za_dodatki(self):
-        wynik = 0
-        for i in self.szyny_montazowe:
-            if not isinstance(i, (str, list)):
-                wynik = wynik + i.dzialanie(self)
-        return wynik
-
-    def zdejmij_dodatek(self, nazwa_dodatku):
-        for i in range(0, len(self.szyny_montazowe)):
-            if self.szyny_montazowe[i].nazwa == nazwa_dodatku:
-                self.szyny_montazowe[i].zdejmij(self)
-
-
-    def __zamontuj_magazynek_staly(self):
-        self.wymienny_magazynek = False
 
     def __nastaw_kare_za_nierostawienie(self):
         self.kara_za_nierostawienie = -1
@@ -556,9 +502,6 @@ class BronStrzelecka(Bron): #pełne pokrycie
             return redukcja
         else:
             return 0
-
-    def rzut_na_obrazenia(self):
-        return Bot.roll_dice_from_text(self.kosc_obrazen)
 
     def test_obrazen_z_egzekucja(self, cel, premia, dystans):
         if "potezna" in self.zasady_specjalne:
@@ -627,6 +570,7 @@ class BronStrzelecka(Bron): #pełne pokrycie
     def aktualna_premia(self, operator, odleglosc):
         if operator.w_ruchu < -1:
             self.zlozony_do_strzalu = False
+            self.__aplikuj_ruch()
         super(BronStrzelecka, self).aktualna_premia(operator, odleglosc)
         if odleglosc > self.aktualny_magazynek.amunicja.maks_zasieg_amunicji:
             raise Exception('cel jest po za zasiegiem.')
@@ -690,6 +634,71 @@ class BronStrzelecka(Bron): #pełne pokrycie
         self.odrzut_aktualny = magazynek.amunicja.odrzut
         return odloz
 
+    def rzut_na_awarie(self):
+        kosc_rzutu = 10
+        if "bezawaryjna" in self.zasady_specjalne:
+            kosc_rzutu = 100
+        result = Bot.roll_dice(kosc_rzutu)
+        if result == 1:
+            self.naboj_w_komorze = False
+            kosc_rzutu = 10
+            if "niezniszczalna" in self.zasady_specjalne:
+                kosc_rzutu = 100
+            result = Bot.roll_dice(kosc_rzutu)
+            if result == 1:
+                self.awaria = True
+
+    def __aplikuj_ruch(self):
+        self.zlozony_do_strzalu = False
+        for przedmiot in range(0, len(self.szyny_montazowe)):
+            if self.szyny_montazowe is not str:
+                self.szyny_montazowe[przedmiot].efekt_ruchu()
+
+    def __przygotuj_miejsca_do_zamontowania(self):
+        dozwolone_dodatki = str(self.statystyki_podstawowe[11])
+        if dozwolone_dodatki.startswith('0/'):
+            for i in range(0, int(dozwolone_dodatki[2])):
+                self.szyny_montazowe[i] = "wykup"
+            for i in range(0, len(self.szyny_montazowe)):
+                if not self.szyny_montazowe[i]:
+                    self.szyny_montazowe[i] = "nie"
+        elif dozwolone_dodatki == "dolna":
+            self.szyny_montazowe = ["nie", "tak", "nie", "nie"]
+            return True
+        elif dozwolone_dodatki in ("nie", "0"):
+            self.szyny_montazowe = ["nie", "nie", "nie", "nie"]
+        else:
+            for i in range(0, int(dozwolone_dodatki[0])):
+                self.szyny_montazowe[i] = "tak"
+            if dozwolone_dodatki.endswith("L]"):
+                self.szyny_montazowe.append("tak")
+        return True
+
+    def dokup_szyny(self, operator):
+        if operator.pieniadze < 300:
+            Bot.output("Nie masz dość forsy")
+            return False
+        operator.pieniadze =operator.pieniadze - 300            #zafiksowana cena szyn dodatkowych
+        for i in range(0, len(self.szyny_montazowe)):
+            if self.szyny_montazowe[i] == "wykup":
+                self.szyny_montazowe[i] = "tak"
+        return True
+
+    def zamontuj_dodatek(self, dodatek):
+        return dodatek.zaloz(self)
+
+    def zdejmij_dodatek(self, nazwa_dodatku):
+        for i in range(0, len(self.szyny_montazowe)):
+            if self.szyny_montazowe[i].nazwa == nazwa_dodatku:
+                self.szyny_montazowe[i].zdejmij(self)
+
+    def __aplikuj_premie_za_dodatki(self):
+        wynik = 0
+        for i in self.szyny_montazowe:
+            if not isinstance(i, (str, list)):
+                wynik = wynik + i.dzialanie(self)
+        return wynik
+
     def zaciagnij_naboj(self):
         try:
             if self.aktualny_magazynek.amunicja.nazwa_naboju == self.statystyki_podstawowe[8]:
@@ -709,21 +718,11 @@ class BronStrzelecka(Bron): #pełne pokrycie
                 return False
             raise AttributeError
 
-    def rzut_na_awarie(self):
-        kosc_rzutu = 10
-        if "bezawaryjna" in self.zasady_specjalne:
-            kosc_rzutu = 100
-        result = Bot.roll_dice(kosc_rzutu)
-        if result == 1:
-            self.naboj_w_komorze = False
-            kosc_rzutu = 10
-            if "niezniszczalna" in self.zasady_specjalne:
-                kosc_rzutu = 100
-            result = Bot.roll_dice(kosc_rzutu)
-            if result == 1:
-                self.awaria = True
+    def __zamontuj_magazynek_staly(self):
+        self.wymienny_magazynek = False
 
-# TODo zasady specjalne broni, możliwość wpływu specjalizacji.
+
+# TODo zasady specjalne broni.
 class BronBiala(Bron):
 
     def __init__(self, bron):
