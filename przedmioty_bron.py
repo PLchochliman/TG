@@ -1,27 +1,12 @@
 
 import Bot as Bot
 import constans as constants
-
-
-class Przedmiot():
-    wartosc = 0
-    waga = 0
-    nazwa = ""
-
-    def __init__(self, wartosc, masa):
-        self.wartosc = wartosc
-        self.masa = masa
-        self.nazwa = ""
-
-    def zwroc_mase(self):
-        return self.masa
-
-    def zwroc_wartosc(self):
-        return self.wartosc
+import przedmioty_podstawa as przedmioty_podstawa
 
 
 
-class DodatekDoBroni(Przedmiot):
+
+class DodatekDoBroni(przedmioty_podstawa.Przedmiot):
     premia = 0
     efekt = ""
     aktywowany = False
@@ -388,7 +373,7 @@ class Magazynek():
         return False
 
 
-class Bron(Przedmiot):
+class Bron(przedmioty_podstawa.Przedmiot):
     rodzaj_testu = ""
     kosc_obrazen = ""
     premia = 0
@@ -430,7 +415,7 @@ class Bron(Przedmiot):
             self.zasady_specjalne[i] = self.zasady_specjalne[i].strip()
 
 
-# TODO zasady specjalne broni, czas dobycia broni
+# TODO zasady specjalne broni, czas dobycia broni, modyfikacje luf i  ich zakończeń
 class BronStrzelecka(Bron):
 
 
