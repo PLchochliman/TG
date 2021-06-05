@@ -1,5 +1,5 @@
 import hero
-import items as items
+import przedmioty_bron as items
 import Bot as Bot
 
 

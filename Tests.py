@@ -3,7 +3,7 @@ import constans as constants
 import Bot as Bot
 import excelDigger as excelDigger
 import hero as hero
-import items as items
+import przedmioty_bron as items
 import mechanics as mechanics
 import items_read_from_excel as raw_items
 import items_read_from_SQL as SQL
@@ -435,7 +435,6 @@ def test_mechanik_walki():
     x = x + strzelanie.strzal(wojtek, beben, 50)
     print(wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow)
     assert wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow == 11
-    #TODO KURAW COŚ SIĘ SPIERDOLI
     scout = wez_i_zaladuj_giwere("steyr scout")
     scout.naboj_w_komorze = False
     wojtek.aktywna_bron = scout
@@ -481,9 +480,7 @@ def test_zasad_specjalnych_i_dodatkow_do_broni():
     assert wojtek.aktywna_bron.zamontuj_dodatek(items.Celownik(przedmioty_jako_rekord.luskacz_celownikow("perfekcyjne")))
     assert not strzelanie.strzal(wojtek, gong, 5)
     assert wojtek.aktywna_bron.zamontuj_dodatek(items.Celownik(przedmioty_jako_rekord.luskacz_celownikow("micro")))
-    wojtek.aktywna_bron.zloz_sie_do_strzalu()
     assert strzelanie.strzal(wojtek, gong, 5)
-
     return 19
 
 

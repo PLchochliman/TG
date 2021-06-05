@@ -430,8 +430,9 @@ class Bron(Przedmiot):
             self.zasady_specjalne[i] = self.zasady_specjalne[i].strip()
 
 
-# TODO specjalna amunicja, zasady specjalne broni, możliwość wpływu specjalizacji.
-class BronStrzelecka(Bron): #pełne pokrycie
+# TODO zasady specjalne broni, czas dobycia broni
+class BronStrzelecka(Bron):
+
 
     statystyki_podstawowe: list = []
     statystyki_celownika: list = []

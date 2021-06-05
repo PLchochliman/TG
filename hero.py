@@ -2,7 +2,7 @@ import mortal as mortal
 import Bot as Bot
 import excelDigger as excelDigger
 import constans as constans
-import items as items
+import przedmioty_bron as items
 #import specialisations as specialisations
 
 """starting creating real playable character"""
@@ -69,7 +69,6 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
                 else:
                     self.umiejetnosci[constans.UmiejetnasciDoInt[umiejetnascWyciagnieta]][2] = \
                         self.umiejetnosci[constans.UmiejetnasciDoInt[umiejetnascWyciagnieta]][2] + 1
-
 
     #rozwiązuje problem zawodu, dyscypliny naukowej.
     def dobierz_zawod(self, typDoprecyzowania):
@@ -252,9 +251,6 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
             return wynik
         return super(Postac, self).rzut_na_umiejetnasc(testowana_umiejetnasc,
                                                        self.handling_specialisations_about_skills(testowana_umiejetnasc))
-
-
-    #Specialisations should be under hero
 
     def handling_specialisations_before_hit(self):
         return 0
