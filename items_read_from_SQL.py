@@ -13,7 +13,7 @@ class Przedmioty():
 
         auth = FilesMenagment.OtworzPlik(
             "LogiDoBazy.env")  # to this file enter name of database, and password in second line
-        #SQL_creator.log_and_load_database(auth)    #to update just uncomment this line
+        SQL_creator.log_and_load_database(auth)    #to update just uncomment this line
         conn = SQL.establish_connection_with_base("tg", auth)
         self.cursor = conn.cursor()
 
