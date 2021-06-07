@@ -13,7 +13,7 @@ class Przedmioty():
 
         auth = FilesMenagment.OtworzPlik(
             "LogiDoBazy.env")  # to this file enter name of database, and password in second line
-        SQL_creator.log_and_load_database(auth)    #to update just uncomment this line
+        #SQL_creator.log_and_load_database(auth)    #to update just uncomment this line
         conn = SQL.establish_connection_with_base("tg", auth)
         self.cursor = conn.cursor()
 
@@ -65,5 +65,8 @@ class Przedmioty():
 
     def wyszukaj_przedmiot_i_zwroc_po_wszystkim(self, nazwa):
         nazwa = nazwa.replace("\'", "\'\'")
-        for tabela in ['bron', 'bronbiala', 'granaty', 'celowniki', 'amunicja', 'dodatki']:
+        nazwy_tabel = ['bron', 'bronbiala', 'granaty', 'celowniki', 'amunicja', 'dodatki', 'szpej', 'plyty_balistyczne',
+                       'tarcze', 'apteczki', 'radia_i_komunikacja', 'jedzenie', 'zestawy_dajace_premie', 'drobnica',
+                       'gotowe_zestawy', 'mundury']
+        for tabela in nazwy_tabel:
             return SQL.get_item_from_table(nazwa, tabela, self.cursor)

@@ -382,7 +382,7 @@ class Bron(przedmioty_podstawa.Przedmiot):
     zasady_specjalne = []
 
     def __init__(self, rodzaj_testu, kosc_obrazen, premia, penetracja, zasieg_maksymalny, masa=3, cena=0):
-        super(Bron, self).__init__(masa, cena)
+        super(Bron, self).__init__(cena, masa)
         self.rodzaj_testu = rodzaj_testu
         self.kosc_obrazen = kosc_obrazen
         self.premia = premia

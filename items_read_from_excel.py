@@ -10,8 +10,11 @@ class Przedmioty(): #pełne pokrycie
 
     def __init__(self):
         self.przetwornik = \
-            Excel.Loader('TabelaBroni.xlsx', ['bron', 'bronbiala', 'granaty', 'celowniki', 'amunicja', 'dodatki'],
-                                        ['O300', 'I19', 'I10', 'I28', 'I42', 'H5'])
+            Excel.Loader('TabelaBroni.xlsx', ['bron', 'bronbiala', 'granaty', 'celowniki', 'amunicja', 'dodatki',
+                         'szpej', 'plyty_balistyczne', 'tarcze', 'apteczki', 'radia_i_komunikacja', 'jedzenie',
+                         'zestawy_dajace_premie', 'drobnica', 'gotowe_zestawy', 'mundury'],
+                         ['O232', 'I20', 'I10', 'I25', 'I36', 'H5', 'I40', 'G9', 'G4', 'G11', 'H10', 'F7', 'D6', 'D37',
+                         'D6', 'F8'])
         self.dane = self.przetwornik.zwroc()
         self.przetwornik.wyczysc()
 
