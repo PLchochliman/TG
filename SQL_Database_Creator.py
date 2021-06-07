@@ -16,14 +16,12 @@ def log_and_load_database(auth):
 
     conn = SQL.establish_connection_with_base("tg", auth)
     cursor = conn.cursor()
-    print("Database created and connected successfully........")
 
-    #SQL.table_creator("bron", ["Nazwa varchar(128)", "Premia int"], cursor)
-    nazwy_tabel = ['bron', 'bronbiala', 'granaty', 'celowniki', 'amunicja', 'dodatki',
-                                                    'szpej', 'plyty_balistyczne', 'tarcze', 'apteczki',
-                                                    'radia_i_komunikacja', 'jedzenie',  'zestawy_dajace_premie',
-                                                    'drobnica', 'gotowe_zestawy']
-    zasieg_danych = ['O232', 'I20', 'I10', 'I25', 'I36', 'H5', 'I40', 'G9', 'G4', 'G11', 'H10', 'F7', 'D6', 'D37', 'D6']
+    nazwy_tabel = ['bron', 'bronbiala', 'granaty', 'celowniki', 'amunicja', 'dodatki', 'szpej', 'plyty_balistyczne',
+                   'tarcze', 'apteczki', 'radia_i_komunikacja', 'jedzenie',  'zestawy_dajace_premie', 'drobnica',
+                   'gotowe_zestawy', 'mundury']
+    zasieg_danych = ['O232', 'I20', 'I10', 'I25', 'I36', 'H5', 'I40', 'G9', 'G4', 'G11', 'H10', 'F7', 'D6', 'D37',
+                     'D6', 'F8']
 
     przetwornik = excel.Loader('TabelaBroni.xlsx', nazwy_tabel, zasieg_danych)
     dane = przetwornik.zwroc()
