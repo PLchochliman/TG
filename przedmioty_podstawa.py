@@ -32,3 +32,20 @@ class Przedmiot():
 
     def zwroc_wartosc(self):
         return self.wartosc
+
+class Zakladalny(Przedmiot):
+    zajmowany_slot = ""
+
+    def __init__(self, wartosc, masa, slot):
+        super(Zakladalny, self).__init__(wartosc, masa)
+        self.obrob_sloty(slot)
+
+    def zaloz(self, operator):
+        return True
+
+    def obrob_sloty(self, wejscie):
+        wejscie = wejscie.split(",")
+        if isinstance(wejscie, list):
+            for i in range(0, len(wejscie)):
+                wejscie[i] = wejscie[i].strip(" ")
+        self.zajmowany_slot = wejscie

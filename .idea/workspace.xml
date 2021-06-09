@@ -6,8 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TabelaBroni.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constans.py" beforeDir="false" afterPath="$PROJECT_DIR$/constans.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/przedmioty_bron.py" beforeDir="false" afterPath="$PROJECT_DIR$/przedmioty_bron.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/przedmioty_ochronne.py" beforeDir="false" afterPath="$PROJECT_DIR$/przedmioty_ochronne.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/przedmioty_podstawa.py" beforeDir="false" afterPath="$PROJECT_DIR$/przedmioty_podstawa.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,13 +196,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00159" summary="scopes under WIP">
-      <created>1621843926149</created>
-      <option name="number" value="00159" />
-      <option name="presentableId" value="LOCAL-00159" />
-      <option name="project" value="LOCAL" />
-      <updated>1621843926149</updated>
     </task>
     <task id="LOCAL-00160" summary="scopes are fixed, and finnaly has their own class.">
       <created>1621845215564</created>
@@ -537,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623054625169</updated>
     </task>
-    <option name="localTasksCounter" value="208" />
+    <task id="LOCAL-00208" summary="preparing camoflauge rules.">
+      <created>1623225545060</created>
+      <option name="number" value="00208" />
+      <option name="presentableId" value="LOCAL-00208" />
+      <option name="project" value="LOCAL" />
+      <updated>1623225545060</updated>
+    </task>
+    <option name="localTasksCounter" value="209" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -553,7 +556,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="implementing,and getting data from SQL ready" />
     <MESSAGE value="SQL support ready" />
     <MESSAGE value="SQL handling into game - ready for rechange from aktual base menagment" />
     <MESSAGE value="finally All with new database is working" />
@@ -578,7 +580,8 @@
     <MESSAGE value="preparing for vests, and equipment" />
     <MESSAGE value="prepared uniforms, to be read." />
     <MESSAGE value="converting for prices, and weight ready." />
-    <option name="LAST_COMMIT_MESSAGE" value="converting for prices, and weight ready." />
+    <MESSAGE value="preparing camoflauge rules." />
+    <option name="LAST_COMMIT_MESSAGE" value="preparing camoflauge rules." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -605,27 +608,27 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/przedmioty_bron.py</url>
-          <line>523</line>
+          <line>522</line>
           <option name="timeStamp" value="144" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/przedmioty_bron.py</url>
-          <line>493</line>
+          <line>492</line>
           <option name="timeStamp" value="146" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/przedmioty_bron.py</url>
-          <line>413</line>
+          <line>412</line>
           <option name="timeStamp" value="147" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/przedmioty_bron.py</url>
-          <line>414</line>
+          <line>413</line>
           <option name="timeStamp" value="148" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/przedmioty_bron.py</url>
-          <line>418</line>
+          <line>417</line>
           <option name="timeStamp" value="149" />
         </line-breakpoint>
       </breakpoints>

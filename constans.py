@@ -35,11 +35,14 @@ specjalizacje = specjalizacje[0]
 """
 returns specialisation if exists, or False if does not exists.
 """
+
+
 def wyszukajSpecjalizacje(specjalizacja):
     for i in specjalizacje:
         if i[0] == specjalizacja:
             return i
     return False
+
 
 UmiejetnasciDoInt = {
     "obsluga broni": 1,

@@ -4,8 +4,6 @@ import constans as constants
 import przedmioty_podstawa as przedmioty_podstawa
 
 
-
-
 class DodatekDoBroni(przedmioty_podstawa.Przedmiot):
     premia = 0
     efekt = ""
@@ -184,6 +182,7 @@ class Amunicja:
         cel.rana(self.rzut_na_obrazenia(0) + premia, self.penetracja)
         return True
     #obrazenia=kosc_obrazen
+
     def rzut_na_obrazenia(self, obrazenia):
         if obrazenia == 0:
             return Bot.roll_dice_from_text(self.kosc_obrazen)
@@ -256,7 +255,7 @@ class Magazynek():
     """
     cheks if magazine WHICH YOU BUY is special for purposes of avaibility of feeding another gun
     """
-    #TODO NIE MA:typów taśm, podziału na pistoletowe, łudeczek, ani obsługi zintegrowqanych magazynkóW!!!
+    #TODO NIE MA:typów taśm!!
     def __zaladuj_rodzine_i_typ(self, bron, typ):
         podstawowy_jest_specjalny = False
         for i in bron.zasady_specjalne:
