@@ -1,12 +1,22 @@
 import przedmioty_podstawa as przedmioty_podstawa
-
+import Bot as Bot
 
 class Ubranie(przedmioty_podstawa.Przedmiot):
-    kolor = ""
+    kamuflaz = ""
 
     def __init__(self, czysta_dana):
-        self.kolor = "nico"
+        super(Ubranie, self).__init__(czysta_dana[-1], czysta_dana[-2])
+        self.kamuflaz = "nico"
 
+    def wybierz_kamuflaz(self, wejscie):
+        if wejscie in ("zimowy", "pustynny", "leśny", "miejski"):
+            self.kamuflaz = wejscie
+            return True
+        else:
+            Bot.output("Jeśli chciałeś komuflaż, to powinneś wybrać spośród: \n zimowy, pustynny, leśny, miejski "
+                       "\nJeśli chciałeś w innym kolorze, zignoruj tą wiadomość")
+            self.kamuflaz = wejscie
+            return False
 
 class ElementSzpeju(przedmioty_podstawa.Przedmioty):
     kamuflaz = ""
@@ -43,5 +53,3 @@ class ElementSzpeju(przedmioty_podstawa.Przedmioty):
             for i in range(0, len(wejscie)):
                 wejscie[i] = wejscie[i].strip(" ")
         self.zajmowany_slot = wejscie
-
-

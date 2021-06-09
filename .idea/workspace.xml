@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/items_read_from_SQL.py" beforeDir="false" afterPath="$PROJECT_DIR$/items_read_from_SQL.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/items_read_from_excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/items_read_from_excel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/przedmioty_bron.py" beforeDir="false" afterPath="$PROJECT_DIR$/przedmioty_bron.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/przedmioty_podstawa.py" beforeDir="false" afterPath="$PROJECT_DIR$/przedmioty_podstawa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TabelaBroni.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/przedmioty_ochronne.py" beforeDir="false" afterPath="$PROJECT_DIR$/przedmioty_ochronne.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,13 +193,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00158" summary="Celowniki w toku (już jako dodatki">
-      <created>1621809609621</created>
-      <option name="number" value="00158" />
-      <option name="presentableId" value="LOCAL-00158" />
-      <option name="project" value="LOCAL" />
-      <updated>1621809609621</updated>
     </task>
     <task id="LOCAL-00159" summary="scopes under WIP">
       <created>1621843926149</created>
@@ -539,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623048924420</updated>
     </task>
-    <option name="localTasksCounter" value="207" />
+    <task id="LOCAL-00207" summary="converting for prices, and weight ready.">
+      <created>1623054625153</created>
+      <option name="number" value="00207" />
+      <option name="presentableId" value="LOCAL-00207" />
+      <option name="project" value="LOCAL" />
+      <updated>1623054625169</updated>
+    </task>
+    <option name="localTasksCounter" value="208" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -555,7 +553,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="almoust taking record from base" />
     <MESSAGE value="implementing,and getting data from SQL ready" />
     <MESSAGE value="SQL support ready" />
     <MESSAGE value="SQL handling into game - ready for rechange from aktual base menagment" />
@@ -580,7 +577,8 @@
     <MESSAGE value="preparing for vests" />
     <MESSAGE value="preparing for vests, and equipment" />
     <MESSAGE value="prepared uniforms, to be read." />
-    <option name="LAST_COMMIT_MESSAGE" value="prepared uniforms, to be read." />
+    <MESSAGE value="converting for prices, and weight ready." />
+    <option name="LAST_COMMIT_MESSAGE" value="converting for prices, and weight ready." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
