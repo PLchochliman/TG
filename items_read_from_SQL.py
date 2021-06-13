@@ -9,11 +9,12 @@ class Przedmioty():
     loads the guns, and accesories to TG from file
     """
 
-    def __init__(self):
+    def __init__(self, update=False):
 
         auth = FilesMenagment.OtworzPlik(
             "LogiDoBazy.env")  # to this file enter name of database, and password in second line
-        #SQL_creator.log_and_load_database(auth)    #to update just uncomment this line
+        if update:
+            SQL_creator.log_and_load_database(auth)    #to update just uncomment this line
         conn = SQL.establish_connection_with_base("tg", auth)
         self.cursor = conn.cursor()
 
@@ -69,4 +70,7 @@ class Przedmioty():
                        'tarcze', 'apteczki', 'radia_i_komunikacja', 'jedzenie', 'zestawy_dajace_premie', 'drobnica',
                        'gotowe_zestawy', 'mundury']
         for tabela in nazwy_tabel:
-            return SQL.get_item_from_table(nazwa, tabela, self.cursor)
+            rekord =  SQL.get_item_from_table(nazwa, tabela, self.cursor)
+            if rekord != None:
+                return rekord
+        return False

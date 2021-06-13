@@ -7,9 +7,10 @@ import przedmioty_bron as items
 import mechanics as mechanics
 import items_read_from_excel as raw_items
 import items_read_from_SQL as SQL
+import przedmioty_ochronne as przedmioty_ochronne
 
-#przedmioty_jako_rekord = raw_items.Przedmioty()
-przedmioty_jako_rekord = SQL.Przedmioty()
+#  przedmioty_jako_rekord = raw_items.Przedmioty()
+przedmioty_jako_rekord = SQL.Przedmioty(False)  # change to True to update base
 
 def sprawdz_jak_cel_oberwal(cel):
     if cel.lekka_rana == 0:
@@ -485,6 +486,16 @@ def test_zasad_specjalnych_i_dodatkow_do_broni():
 
 
 @test_runner
+def test_szpeju():
+    rekord = przedmioty_jako_rekord.wyszukaj_przedmiot_i_zwroc_po_wszystkim("plate carrier")
+    kamza = przedmioty_ochronne.ElementSzpeju(rekord)
+    wojtek = postac_co_z_pistoletu_i_karabinu_rzuca_6()
+    assert kamza.zaloz(wojtek)
+    assert wojtek.miejsce_na_ciele[constants.miejsce_na_ciele["klata"]].nazwa == "plate carrier"
+    return 2
+
+
+@test_runner
 def test_akcji():
     akcja = mechanics.Akcje()
     assert akcja.przesun_faze(15)
@@ -512,12 +523,13 @@ ilosc_testow_pass += test_akcji()
 ilosc_testow_pass += test_broni_strzeleckiej_specjalne_magi()
 ilosc_testow_pass += test_broni_strzeleckiej_z_Celownikami()
 ilosc_testow_pass += test_zasad_specjalnych_i_dodatkow_do_broni()
+ilosc_testow_pass += test_szpeju()
 print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \n"
-      "Jest to " + str(ilosc_testow_pass/150 * 100) + "% testów.")
+      "Jest to " + str(ilosc_testow_pass/152 * 100) + "% testów.")
 #unittest.main()
 c = 5
 b = c
 a = c
-c += 3
+c = c + 3
 print(a)
 print(b)
