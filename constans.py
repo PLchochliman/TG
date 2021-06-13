@@ -5,6 +5,23 @@ wszelkie przeliczanie tego systemu, które jest potrzebne więcej niż 1 raz.
 fully tested
 """
 
+"""
+here translates slot for proper place
+"""
+miejsce_na_ciele = {
+    'mundur': 0,
+    'klata': 1,
+    'plecy': 2,
+    'glowa': 3,
+    'twarz': 4,
+    'udo': 5,
+    'ochraniacze': 6,
+    'ramie': 7,
+    'ramie2': 8,
+    'uszy': 9
+}
+
+
 
 """
 all about Hardness of body.

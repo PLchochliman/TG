@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TabelaBroni.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/przedmioty_podstawa.py" beforeDir="false" afterPath="$PROJECT_DIR$/przedmioty_podstawa.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,13 +191,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00161" summary="fixed penalties for pistols.">
-      <created>1621849289808</created>
-      <option name="number" value="00161" />
-      <option name="presentableId" value="LOCAL-00161" />
-      <option name="project" value="LOCAL" />
-      <updated>1621849289808</updated>
     </task>
     <task id="LOCAL-00162" summary="fixed penalties for pistols.">
       <created>1621849750516</created>
@@ -537,7 +528,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623273505060</updated>
     </task>
-    <option name="localTasksCounter" value="210" />
+    <task id="LOCAL-00210" summary="some minor fixes">
+      <created>1623564245822</created>
+      <option name="number" value="00210" />
+      <option name="presentableId" value="LOCAL-00210" />
+      <option name="project" value="LOCAL" />
+      <updated>1623564245822</updated>
+    </task>
+    <option name="localTasksCounter" value="211" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -553,7 +551,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="SQL handling into game - ready for rechange from aktual base menagment" />
     <MESSAGE value="finally All with new database is working" />
     <MESSAGE value="implemented montage of accessories on gun." />
     <MESSAGE value="added returning of modifier." />
@@ -578,7 +575,8 @@
     <MESSAGE value="converting for prices, and weight ready." />
     <MESSAGE value="preparing camoflauge rules." />
     <MESSAGE value="refactoring and editing the equipment." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring and editing the equipment." />
+    <MESSAGE value="some minor fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="some minor fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -22,7 +22,8 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
         self.punktyUmiejetnasci = pu + pu / 10 * self.mod_intelekt
         self.pieniadze = kasa
         self.specjalizacje = []
-        self.wyposazenie_zalozone = ["", "", "", "", "", "", "", ""] #  states for Head, torso (tactical vest), belt, leg panel1, legpanel2, backpack, backpackslot1, backpackslot2
+        self.wyposazenie_zalozone = ["", "", "", "", "", "", "", "", "", ""] # mundur, klata, plecy, glowa, twarz, udo, ochraniacze, ramie, ramie2, uszy,
+        # #states for Head, torso (tactical vest), belt, leg panel1, legpanel2, backpack, backpackslot1, backpackslot2
         if specjalizacje:
             self.przypisz_specjalizacje(specjalizacje[0])
             self.przypisz_specjalizacje(specjalizacje[1])
