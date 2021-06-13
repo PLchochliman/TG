@@ -18,7 +18,8 @@ miejsce_na_ciele = {
     'ochraniacze': 6,
     'ramie': 7,
     'ramie2': 8,
-    'uszy': 9
+    'uszy': 9,
+    'pas': 10
 }
 
 

@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TabelaBroni.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/items_read_from_SQL.py" beforeDir="false" afterPath="$PROJECT_DIR$/items_read_from_SQL.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constans.py" beforeDir="false" afterPath="$PROJECT_DIR$/constans.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/hero.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/przedmioty_podstawa.py" beforeDir="false" afterPath="$PROJECT_DIR$/przedmioty_podstawa.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -195,13 +195,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00165" summary="przygotowanie pod dodatki.">
-      <created>1621929825024</created>
-      <option name="number" value="00165" />
-      <option name="presentableId" value="LOCAL-00165" />
-      <option name="project" value="LOCAL" />
-      <updated>1621929825024</updated>
     </task>
     <task id="LOCAL-00166" summary="przygotowanie pod dodatki.">
       <created>1621933513097</created>
@@ -539,7 +532,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623566634984</updated>
     </task>
-    <option name="localTasksCounter" value="214" />
+    <task id="LOCAL-00214" summary="Done some testing, and finaly update base is not as primitive, as it was.">
+      <created>1623621409701</created>
+      <option name="number" value="00214" />
+      <option name="presentableId" value="LOCAL-00214" />
+      <option name="project" value="LOCAL" />
+      <updated>1623621409706</updated>
+    </task>
+    <option name="localTasksCounter" value="215" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -555,7 +555,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added returning of modifier." />
     <MESSAGE value="disasembly of addon added." />
     <MESSAGE value="move effect taken into count" />
     <MESSAGE value="szyny montażowe naprawione" />
@@ -580,7 +579,8 @@
     <MESSAGE value="some minor fixes" />
     <MESSAGE value="preparing for taking equipment." />
     <MESSAGE value="preparing equipment." />
-    <option name="LAST_COMMIT_MESSAGE" value="preparing equipment." />
+    <MESSAGE value="Done some testing, and finaly update base is not as primitive, as it was." />
+    <option name="LAST_COMMIT_MESSAGE" value="Done some testing, and finaly update base is not as primitive, as it was." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -629,6 +629,31 @@
           <url>file://$PROJECT_DIR$/przedmioty_bron.py</url>
           <line>417</line>
           <option name="timeStamp" value="149" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Tests.py</url>
+          <line>496</line>
+          <option name="timeStamp" value="150" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/przedmioty_podstawa.py</url>
+          <line>73</line>
+          <option name="timeStamp" value="151" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/przedmioty_podstawa.py</url>
+          <line>72</line>
+          <option name="timeStamp" value="152" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/przedmioty_podstawa.py</url>
+          <line>70</line>
+          <option name="timeStamp" value="153" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/przedmioty_podstawa.py</url>
+          <line>71</line>
+          <option name="timeStamp" value="154" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

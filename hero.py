@@ -22,7 +22,7 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
         self.punktyUmiejetnasci = pu + pu / 10 * self.mod_intelekt
         self.pieniadze = kasa
         self.specjalizacje = []
-        self.miejsce_na_ciele = ["", "", "", "", "", "", "", "", "", ""]
+        self.miejsce_na_ciele = ["", "", "", "", "", "", "", "", "", "", ""]
         # mundur, klata, plecy, glowa, twarz, udo, ochraniacze, ramie, ramie2, uszy
         if specjalizacje:
             self.przypisz_specjalizacje(specjalizacje[0])

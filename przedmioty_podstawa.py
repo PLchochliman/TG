@@ -50,11 +50,11 @@ class Zakladalny(Przedmiot):
 
     def zdejmij(self, operator):
         if isinstance(self.zajmowany_slot, str):
-            operator.miejsce_na_ciele[constans.miejsce_na_ciele(self.zajmowany_slot)] = ""
+            operator.miejsce_na_ciele[constans.miejsce_na_ciele[self.zajmowany_slot]] = ""
             return True
         else:
             for slot in self.zajmowany_slot:
-                operator.miejsce_na_ciele[constans.miejsce_na_ciele(slot)] = ""
+                operator.miejsce_na_ciele[constans.miejsce_na_ciele[slot]] = ""
             return True
 
     def zaloz(self, operator):
