@@ -1,4 +1,4 @@
-
+import constans as constans
 
 def przerob_stringa_do_int(zmienna, zmiana):
     if isinstance(zmienna, str):
@@ -49,7 +49,19 @@ class Zakladalny(Przedmiot):
         self.zajmowany_slot = wejscie
 
     def zdejmij(self, operator):
-        return True
+        if isinstance(self.zajmowany_slot, str):
+            operator.miejsce_na_ciele[constans.miejsce_na_ciele(self.zajmowany_slot)] = ""
+            return True
+        else:
+            for slot in self.zajmowany_slot:
+                operator.miejsce_na_ciele[constans.miejsce_na_ciele(slot)] = ""
+            return True
 
     def zaloz(self, operator):
-        return True
+        if isinstance(self.zajmowany_slot, str):
+            operator.miejsce_na_ciele[constans.miejsce_na_ciele(self.zajmowany_slot)] = self
+            return True
+        else:
+            for slot in self.zajmowany_slot:
+                operator.miejsce_na_ciele[constans.miejsce_na_ciele(slot)] = self
+            return True
