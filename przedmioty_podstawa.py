@@ -49,3 +49,6 @@ class Zakladalny(Przedmiot):
             for i in range(0, len(wejscie)):
                 wejscie[i] = wejscie[i].strip(" ")
         self.zajmowany_slot = wejscie
+
+    def zdejmij(self, operator):
+        return True

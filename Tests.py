@@ -515,3 +515,9 @@ ilosc_testow_pass += test_zasad_specjalnych_i_dodatkow_do_broni()
 print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \n"
       "Jest to " + str(ilosc_testow_pass/150 * 100) + "% testów.")
 #unittest.main()
+c = 5
+b = c
+a = c
+c += 3
+print(a)
+print(b)

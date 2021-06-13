@@ -22,8 +22,7 @@ class Ubranie(przedmioty_podstawa.Zakladalny):
 
 class ElementSzpeju(przedmioty_podstawa.Zakladalny):
     kamuflaz = ""
-    magazynki_karabinowe = []
-    magazynki_pistoletowe = []
+    magazynki = []
     granaty = []
     apteczka = []
     maksymalna_pojemnosc = 0
@@ -42,7 +41,8 @@ class ElementSzpeju(przedmioty_podstawa.Zakladalny):
         self.redukcja = czysta_dana[3]
         self.maksymalna_pojemnosc = czysta_dana[4]
         self.mnoznik_cen_plyt = czysta_dana[6]
-        magazynki_karabinowe = []
-        magazynki_pistoletowe = []
-        granaty = []
-        apteczka = []
+        self.magazynki = []
+        self.granaty = []
+        self.apteczka = []
+
+

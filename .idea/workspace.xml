@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constans.py" beforeDir="false" afterPath="$PROJECT_DIR$/constans.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/przedmioty_bron.py" beforeDir="false" afterPath="$PROJECT_DIR$/przedmioty_bron.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/przedmioty_ochronne.py" beforeDir="false" afterPath="$PROJECT_DIR$/przedmioty_ochronne.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/przedmioty_podstawa.py" beforeDir="false" afterPath="$PROJECT_DIR$/przedmioty_podstawa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TabelaBroni.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,13 +193,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00160" summary="scopes are fixed, and finnaly has their own class.">
-      <created>1621845215564</created>
-      <option name="number" value="00160" />
-      <option name="presentableId" value="LOCAL-00160" />
-      <option name="project" value="LOCAL" />
-      <updated>1621845215565</updated>
     </task>
     <task id="LOCAL-00161" summary="fixed penalties for pistols.">
       <created>1621849289808</created>
@@ -540,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623225545060</updated>
     </task>
-    <option name="localTasksCounter" value="209" />
+    <task id="LOCAL-00209" summary="refactoring and editing the equipment.">
+      <created>1623273505045</created>
+      <option name="number" value="00209" />
+      <option name="presentableId" value="LOCAL-00209" />
+      <option name="project" value="LOCAL" />
+      <updated>1623273505060</updated>
+    </task>
+    <option name="localTasksCounter" value="210" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -556,7 +553,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="SQL support ready" />
     <MESSAGE value="SQL handling into game - ready for rechange from aktual base menagment" />
     <MESSAGE value="finally All with new database is working" />
     <MESSAGE value="implemented montage of accessories on gun." />
@@ -581,7 +577,8 @@
     <MESSAGE value="prepared uniforms, to be read." />
     <MESSAGE value="converting for prices, and weight ready." />
     <MESSAGE value="preparing camoflauge rules." />
-    <option name="LAST_COMMIT_MESSAGE" value="preparing camoflauge rules." />
+    <MESSAGE value="refactoring and editing the equipment." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring and editing the equipment." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
