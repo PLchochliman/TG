@@ -59,9 +59,17 @@ class Zakladalny(Przedmiot):
 
     def zaloz(self, operator):
         if isinstance(self.zajmowany_slot, str):
-            operator.miejsce_na_ciele[constans.miejsce_na_ciele(self.zajmowany_slot)] = self
-            return True
+            if operator.miejsce_na_ciele[constans.miejsce_na_ciele(self.zajmowany_slot)] != "":
+                operator.miejsce_na_ciele[constans.miejsce_na_ciele(self.zajmowany_slot)] = self
+                return True
+            return False
         else:
+            wolne_sloty = True
             for slot in self.zajmowany_slot:
-                operator.miejsce_na_ciele[constans.miejsce_na_ciele(slot)] = self
-            return True
+                if operator.miejsce_na_ciele[constans.miejsce_na_ciele(slot)] != "":
+                    wolne_sloty = False
+            if wolne_sloty:
+                for slot in self.zajmowany_slot:
+                    operator.miejsce_na_ciele[constans.miejsce_na_ciele(slot)] = self
+                return True
+            return False

@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
-      <change beforePath="$PROJECT_DIR$/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/hero.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/przedmioty_podstawa.py" beforeDir="false" afterPath="$PROJECT_DIR$/przedmioty_podstawa.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,13 +191,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00163" summary="added minimum range.">
-      <created>1621850105423</created>
-      <option name="number" value="00163" />
-      <option name="presentableId" value="LOCAL-00163" />
-      <option name="project" value="LOCAL" />
-      <updated>1621850105423</updated>
     </task>
     <task id="LOCAL-00164" summary="przygotowanie pod dodatki.">
       <created>1621929367300</created>
@@ -535,7 +528,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623565240003</updated>
     </task>
-    <option name="localTasksCounter" value="212" />
+    <task id="LOCAL-00212" summary="preparing equipment.">
+      <created>1623565902006</created>
+      <option name="number" value="00212" />
+      <option name="presentableId" value="LOCAL-00212" />
+      <option name="project" value="LOCAL" />
+      <updated>1623565902006</updated>
+    </task>
+    <option name="localTasksCounter" value="213" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -551,7 +551,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="implemented montage of accessories on gun." />
     <MESSAGE value="added returning of modifier." />
     <MESSAGE value="disasembly of addon added." />
     <MESSAGE value="move effect taken into count" />
@@ -576,7 +575,8 @@
     <MESSAGE value="refactoring and editing the equipment." />
     <MESSAGE value="some minor fixes" />
     <MESSAGE value="preparing for taking equipment." />
-    <option name="LAST_COMMIT_MESSAGE" value="preparing for taking equipment." />
+    <MESSAGE value="preparing equipment." />
+    <option name="LAST_COMMIT_MESSAGE" value="preparing equipment." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
