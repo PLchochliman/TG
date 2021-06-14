@@ -491,14 +491,15 @@ def test_szpeju():
     kamza = przedmioty_ochronne.ElementSzpeju(rekord)
     wojtek = postac_co_z_pistoletu_i_karabinu_rzuca_6()
     assert kamza.zaloz(wojtek)
-    assert wojtek.miejsce_na_ciele[constants.miejsce_na_ciele["klata"]].nazwa == "plate carrier"
+    assert wojtek.element_szpeju[constants.miejsce_na_ciele["klata"]].nazwa == "plate carrier"
     rekord = przedmioty_jako_rekord.wyszukaj_przedmiot_i_zwroc_po_wszystkim("skarab")
     kamza = przedmioty_ochronne.ElementSzpeju(rekord)
     assert not kamza.zaloz(wojtek)
-    assert wojtek.miejsce_na_ciele[constants.miejsce_na_ciele["klata"]].zdejmij(wojtek)
+    assert wojtek.element_szpeju[constants.miejsce_na_ciele["klata"]].zdejmij(wojtek)
     assert kamza.zaloz(wojtek)
-    assert wojtek.miejsce_na_ciele[constants.miejsce_na_ciele["pas"]].nazwa == "skarab"
-    return 6
+    assert wojtek.element_szpeju[constants.miejsce_na_ciele["pas"]].nazwa == "skarab"
+    assert wojtek.element_szpeju[constants.miejsce_na_ciele["klata"]].maksymakny_unik == 15
+    return 7
 
 
 @test_runner
@@ -531,6 +532,6 @@ ilosc_testow_pass += test_broni_strzeleckiej_z_Celownikami()
 ilosc_testow_pass += test_zasad_specjalnych_i_dodatkow_do_broni()
 ilosc_testow_pass += test_szpeju()
 print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \n"
-      "Jest to " + str(ilosc_testow_pass/156 * 100) + "% testów.")
+      "Jest to " + str(ilosc_testow_pass/157 * 100) + "% testów.")
 #unittest.main()
 

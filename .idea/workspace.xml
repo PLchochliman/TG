@@ -7,7 +7,6 @@
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constans.py" beforeDir="false" afterPath="$PROJECT_DIR$/constans.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/hero.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/przedmioty_podstawa.py" beforeDir="false" afterPath="$PROJECT_DIR$/przedmioty_podstawa.py" afterDir="false" />
     </list>
@@ -195,13 +194,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00166" summary="przygotowanie pod dodatki.">
-      <created>1621933513097</created>
-      <option name="number" value="00166" />
-      <option name="presentableId" value="LOCAL-00166" />
-      <option name="project" value="LOCAL" />
-      <updated>1621933513097</updated>
     </task>
     <task id="LOCAL-00167" summary="przygotowanie pod dodatki.">
       <created>1621935868912</created>
@@ -539,7 +531,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623621409706</updated>
     </task>
-    <option name="localTasksCounter" value="215" />
+    <task id="LOCAL-00215" summary="more tests and some minor fixes.">
+      <created>1623625907752</created>
+      <option name="number" value="00215" />
+      <option name="presentableId" value="LOCAL-00215" />
+      <option name="project" value="LOCAL" />
+      <updated>1623625907752</updated>
+    </task>
+    <option name="localTasksCounter" value="216" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -555,7 +554,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="disasembly of addon added." />
     <MESSAGE value="move effect taken into count" />
     <MESSAGE value="szyny montażowe naprawione" />
     <MESSAGE value="magazines fixed." />
@@ -580,7 +578,8 @@
     <MESSAGE value="preparing for taking equipment." />
     <MESSAGE value="preparing equipment." />
     <MESSAGE value="Done some testing, and finaly update base is not as primitive, as it was." />
-    <option name="LAST_COMMIT_MESSAGE" value="Done some testing, and finaly update base is not as primitive, as it was." />
+    <MESSAGE value="more tests and some minor fixes." />
+    <option name="LAST_COMMIT_MESSAGE" value="more tests and some minor fixes." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

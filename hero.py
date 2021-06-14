@@ -12,7 +12,7 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
     #obsluga_specek = specialisations.Specialisations()
     punktyUmiejetnasci = 0
     pieniadze = 0
-    miejsce_na_ciele = []
+    element_szpeju = []
     zalozony_mundur = None
     specjalizacje = []
     aktywna_bron = []
@@ -22,7 +22,7 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
         self.punktyUmiejetnasci = pu + pu / 10 * self.mod_intelekt
         self.pieniadze = kasa
         self.specjalizacje = []
-        self.miejsce_na_ciele = ["", "", "", "", "", "", "", "", "", "", ""]
+        self.element_szpeju = ["", "", "", "", "", "", "", "", "", "", ""]
         # mundur, klata, plecy, glowa, twarz, udo, ochraniacze, ramie, ramie2, uszy
         if specjalizacje:
             self.przypisz_specjalizacje(specjalizacje[0])
