@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/hero.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/przedmioty_podstawa.py" beforeDir="false" afterPath="$PROJECT_DIR$/przedmioty_podstawa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/przedmioty_bron.py" beforeDir="false" afterPath="$PROJECT_DIR$/przedmioty_bron.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/przedmioty_ochronne.py" beforeDir="false" afterPath="$PROJECT_DIR$/przedmioty_ochronne.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,13 +193,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00167" summary="przygotowanie pod dodatki.">
-      <created>1621935868912</created>
-      <option name="number" value="00167" />
-      <option name="presentableId" value="LOCAL-00167" />
-      <option name="project" value="LOCAL" />
-      <updated>1621935868912</updated>
     </task>
     <task id="LOCAL-00168" summary="przygotowanie pod dodatki.">
       <created>1621936210078</created>
@@ -538,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623625907752</updated>
     </task>
-    <option name="localTasksCounter" value="216" />
+    <task id="LOCAL-00216" summary="new tests little refactor">
+      <created>1623658738429</created>
+      <option name="number" value="00216" />
+      <option name="presentableId" value="LOCAL-00216" />
+      <option name="project" value="LOCAL" />
+      <updated>1623658738429</updated>
+    </task>
+    <option name="localTasksCounter" value="217" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -554,7 +553,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="move effect taken into count" />
     <MESSAGE value="szyny montażowe naprawione" />
     <MESSAGE value="magazines fixed." />
     <MESSAGE value="tests fixed, but bug found...." />
@@ -579,7 +577,8 @@
     <MESSAGE value="preparing equipment." />
     <MESSAGE value="Done some testing, and finaly update base is not as primitive, as it was." />
     <MESSAGE value="more tests and some minor fixes." />
-    <option name="LAST_COMMIT_MESSAGE" value="more tests and some minor fixes." />
+    <MESSAGE value="new tests little refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="new tests little refactor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -628,11 +627,6 @@
           <url>file://$PROJECT_DIR$/przedmioty_bron.py</url>
           <line>417</line>
           <option name="timeStamp" value="149" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Tests.py</url>
-          <line>496</line>
-          <option name="timeStamp" value="150" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/przedmioty_podstawa.py</url>

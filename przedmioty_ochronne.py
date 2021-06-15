@@ -45,4 +45,10 @@ class ElementSzpeju(przedmioty_podstawa.Zakladalny):
         self.granaty = []
         self.apteczka = []
 
+    def wyciagnij_magazynek(self, bron):
+        for magazynek in self.magazynki:
+            if magazynek.amunicja.typ_amunicji == bron.aktualny_magazynek.amunicja.typ_amunicji:
+                return True
+        return True
+
 

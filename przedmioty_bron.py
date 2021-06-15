@@ -320,7 +320,7 @@ class Magazynek():
     it's all about loading magazine with ammo.
     """
     def zaladuj_magazynek(self, paczka_amunicji):
-        if self.amunicja == []:
+        if not self.amunicja:
             if paczka_amunicji.ilosc_amunicji > self.maksymalna_pojemnosc:
                 paczka_amunicji.ilosc_amunicji = paczka_amunicji.ilosc_amunicji - \
                                                  (self.maksymalna_pojemnosc - self.stan_nabojow)
