@@ -710,3 +710,7 @@ class BronBiala(Bron):
                 raise Exception('walczysz lepiej od wroga, ale wciąż nie jesteś w stanie go trafić')
         else:
             raise Exception('przeciwnik lepiej walczy')
+        
+class granat(Bron):
+    def __init__(self, czysta_dana):
+        super(granat, self).__init__("obsluga broni", czysta_dana[5], czysta_dana[3], czysta_dana[6], czysta_dana[1])

@@ -1,5 +1,6 @@
 import przedmioty_podstawa as przedmioty_podstawa
 import przedmioty_bron as przedmioty_bron
+import przedmioty_inne as przedmioty_inne
 import Bot as Bot
 
 
@@ -85,9 +86,9 @@ class ElementSzpeju(przedmioty_podstawa.Zakladalny):
         if isinstance(przedmiot, przedmioty_bron.Magazynek):
             if self.aktualne_oblozenie + 0.5 < self.maksymalna_pojemnosc:
                 self.aktualne_oblozenie += 0.5
-        if isinstance(przedmiot, przedmioty_bron.Magazynek):
-            if self.aktualne_oblozenie + 0.5 < self.maksymalna_pojemnosc:
-                self.aktualne_oblozenie += 0.5
+        if isinstance(przedmiot, przedmioty_inne.Apteczka):
+            if self.aktualne_oblozenie + 1 < self.maksymalna_pojemnosc:
+                self.aktualne_oblozenie += 1
         if isinstance(przedmiot, przedmioty_bron.Magazynek):
             if self.aktualne_oblozenie + 0.5 < self.maksymalna_pojemnosc:
                 self.aktualne_oblozenie += 0.5
