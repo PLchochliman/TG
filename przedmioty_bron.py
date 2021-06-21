@@ -16,7 +16,7 @@ class DodatekDoBroni(przedmioty_podstawa.Przedmiot):
     uzywany = False
 
     def __init__(self, czysta_dana):
-        self.nazwa = czysta_dana[0]
+        super(DodatekDoBroni, self).__init__(czysta_dana[0], czysta_dana[-2],  czysta_dana[-1],)
         self.efekt = czysta_dana[1]
         self.premia = czysta_dana[2]
         if "tak" in czysta_dana[3]:
@@ -30,8 +30,6 @@ class DodatekDoBroni(przedmioty_podstawa.Przedmiot):
         else:
             self.wymaga_zlozenia = False
         self.specjalne = czysta_dana[5]
-        self.masa = czysta_dana[6]
-        self.cena = czysta_dana[7]
         self.uzywany = False
 
     def __montuj(self, szyny):
@@ -103,7 +101,6 @@ class Celownik(DodatekDoBroni):
         self.typ = czysta_dana[5]
         self.czas_do_zlozenia = czysta_dana[6]
 
-
     def zaloz(self, bron):
         if self.typ == "mechaniczne":
             bron.celownik = self
@@ -127,6 +124,7 @@ class Celownik(DodatekDoBroni):
             return True
         bron.szyny_montazowe[0] = "tak"
         return True
+
 
 """
 it's all about the ammunition for the gun.
@@ -162,26 +160,16 @@ class Amunicja:
         self.specjalne = amunicja[7].split(",")
         self.__dostosuj_specjalna_amunicje()
 
-    """
-    zadawanie obrażenia
-    Gumowe kule do implementacji
-    Kość obrażeń zmniejszona o połowę, po zadaniu Out of action, nie staje się Out of Action a Obezwładniony. 
-    Po 30 minutach wstaje i regeneruje wszystkie rany z kulowych kul jakby nigdy nic. Po zadaniu lekkiej, rzuć na 
-    obezwładnienie. rzuć na D6. Jeśli rzut jest równy/wyższy 6, obezwładnia. Jeżeli ma poważną ranę, i zadasz mu lekką
-     ranę, obezwładnia natychmiastowo. Nie ma penetracji. Domyślnie poddźwiękowa. Zasięg skuteczny to 50m. nie do 
-     połączona z czymkolwiek, nawet jeśli zasady drugiej amunicji mówi co innego..
-    """
     def zadaj_obrazenia(self, cel, premia, zasieg):
         # TODO może przerobić na zwrot do broni i egzekucję obrażeń w broni?
         if self.typ_amunicji == "grzybkująca":
             cel.rana(self.rzut_na_obrazenia(0) + premia, self.penetracja)
             cel.rana(self.rzut_na_obrazenia("d6") + premia, self.penetracja)
-            return True
+            return True  # TODO gumowe kule do zrobienia
         if self.typ_amunicji == "wyborowa":
             premia = premia * 4
         cel.rana(self.rzut_na_obrazenia(0) + premia, self.penetracja)
         return True
-    #obrazenia=kosc_obrazen
 
     def rzut_na_obrazenia(self, obrazenia):
         if obrazenia == 0:
@@ -228,7 +216,7 @@ class Amunicja:
             self.cena = self.cena * 2
             self.specjalne.append("wytłumiona")
         elif self.typ_amunicji == "gumowe kule":
-            self.cena = self.cena * 2   # w tym momencie nie ma możliwości implementacji w tym wydaniu.
+            self.cena = self.cena * 2
             self.specjalne.append("wytłumiona")
         elif self.typ_amunicji == "9mm++":
             self.cena = self.cena * 7.5
@@ -381,7 +369,7 @@ class Bron(przedmioty_podstawa.Przedmiot):
     zasady_specjalne = []
 
     def __init__(self, rodzaj_testu, kosc_obrazen, premia, penetracja, zasieg_maksymalny, masa=3, cena=0):
-        super(Bron, self).__init__(cena, masa)
+        super(Bron, self).__init__(cena, masa, cena)
         self.rodzaj_testu = rodzaj_testu
         self.kosc_obrazen = kosc_obrazen
         self.premia = premia
@@ -416,8 +404,6 @@ class Bron(przedmioty_podstawa.Przedmiot):
 
 # TODO zasady specjalne broni, czas dobycia broni, modyfikacje luf i  ich zakończeń
 class BronStrzelecka(Bron):
-
-
     statystyki_podstawowe: list = []
     statystyki_celownika: list = []
     zasieg_przyrost = 0
@@ -465,7 +451,6 @@ class BronStrzelecka(Bron):
         self.celownik = celownik
         self.szyny_montazowe = [[], [], [], []]
         self.__przygotuj_miejsca_do_zamontowania()
-
 
     def test_obrazen_z_egzekucja(self, cel, premia, dystans):
         if "potezna" in self.zasady_specjalne:

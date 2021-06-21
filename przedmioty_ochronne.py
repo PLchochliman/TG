@@ -37,9 +37,8 @@ class ElementSzpeju(przedmioty_podstawa.Zakladalny):
 
     # handlery do strzelb nie są obsługiwane
     def __init__(self, czysta_dana):
-        super(ElementSzpeju, self).__init__(czysta_dana[-1], czysta_dana[-2], czysta_dana[5])
+        super(ElementSzpeju, self).__init__(czysta_dana[0], czysta_dana[-2],  czysta_dana[-1], czysta_dana[5])
         self.kamuflaz = "nico"
-        self.nazwa = czysta_dana[0]
         self.specjalne = czysta_dana[1]
         self.maksymakny_unik = czysta_dana[2]
         self.redukcja = czysta_dana[3]
@@ -55,21 +54,20 @@ class ElementSzpeju(przedmioty_podstawa.Zakladalny):
     def __nastaw_pojemnosc(self):
         if isinstance(self.maksymalna_pojemnosc, str):
             self.przedmioty_pod_reka = True
-            typ = self.maksymalna_pojemnosc.endswith()
             mnoznik = 0
-            if typ == self.maksymalna_pojemnosc.endswith("a"):
+            if self.maksymalna_pojemnosc.endswith("a"):
                 mnoznik = 1
                 self.maksymalna_pojemnosc = int(self.maksymalna_pojemnosc[0:-1])
                 self.przedmioty_pod_reka = True
-            elif typ == self.maksymalna_pojemnosc.endswith("g"):
+            elif self.maksymalna_pojemnosc.endswith("g"):
                 mnoznik = 0.5
                 self.maksymalna_pojemnosc = int(self.maksymalna_pojemnosc[0:-1])
                 self.przedmioty_pod_reka = True
-            elif typ == self.maksymalna_pojemnosc.endswith("12'G"):
+            elif self.maksymalna_pojemnosc.endswith("12'G"):
                 mnoznik = 0.1
                 self.maksymalna_pojemnosc = int(self.maksymalna_pojemnosc[0:-4])
                 self.przedmioty_pod_reka = True
-            elif typ == self.maksymalna_pojemnosc.endswith("k"):
+            elif self.maksymalna_pojemnosc.endswith("k"):
                 mnoznik = 0.5
                 self.maksymalna_pojemnosc = int(self.maksymalna_pojemnosc[0:-1])
                 self.przedmioty_pod_reka = True
@@ -87,6 +85,13 @@ class ElementSzpeju(przedmioty_podstawa.Zakladalny):
         if isinstance(przedmiot, przedmioty_bron.Magazynek):
             if self.aktualne_oblozenie + 0.5 < self.maksymalna_pojemnosc:
                 self.aktualne_oblozenie += 0.5
+        if isinstance(przedmiot, przedmioty_bron.Magazynek):
+            if self.aktualne_oblozenie + 0.5 < self.maksymalna_pojemnosc:
+                self.aktualne_oblozenie += 0.5
+        if isinstance(przedmiot, przedmioty_bron.Magazynek):
+            if self.aktualne_oblozenie + 0.5 < self.maksymalna_pojemnosc:
+                self.aktualne_oblozenie += 0.5
+
         return False
 
 

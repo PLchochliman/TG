@@ -22,10 +22,10 @@ class Przedmiot():
     waga = 0
     nazwa = ""
 
-    def __init__(self, wartosc, masa):
+    def __init__(self, nazwa, masa, wartosc):
         self.wartosc = przerob_stringa_do_int(wartosc, "$")
         self.masa = przerob_stringa_do_float(masa, "kg")
-        self.nazwa = ""
+        self.nazwa = nazwa
 
     def zwroc_mase(self):
         return self.masa
@@ -37,8 +37,8 @@ class Przedmiot():
 class Zakladalny(Przedmiot):
     zajmowany_slot = ""
 
-    def __init__(self, wartosc, masa, slot):
-        super(Zakladalny, self).__init__(wartosc, masa)
+    def __init__(self, nazwa, masa, wartosc, slot):
+        super(Zakladalny, self).__init__(nazwa, masa, wartosc)
         self.obrob_sloty(slot)
 
     def obrob_sloty(self, wejscie):
