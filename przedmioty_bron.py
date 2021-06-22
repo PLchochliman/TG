@@ -369,7 +369,7 @@ class Bron(przedmioty_podstawa.Przedmiot):
     zasady_specjalne = []
 
     def __init__(self, rodzaj_testu, kosc_obrazen, premia, penetracja, zasieg_maksymalny, masa=3, cena=0):
-        super(Bron, self).__init__(cena, masa, cena)
+        super(Bron, self).__init__("", masa, cena)
         self.rodzaj_testu = rodzaj_testu
         self.kosc_obrazen = kosc_obrazen
         self.premia = premia
@@ -710,7 +710,15 @@ class BronBiala(Bron):
                 raise Exception('walczysz lepiej od wroga, ale wciąż nie jesteś w stanie go trafić')
         else:
             raise Exception('przeciwnik lepiej walczy')
-        
+
+
 class granat(Bron):
+    promien = 0
+    przyrost_zasiegu = 0
+
     def __init__(self, czysta_dana):
-        super(granat, self).__init__("obsluga broni", czysta_dana[5], czysta_dana[3], czysta_dana[6], czysta_dana[1])
+        super(granat, self).__init__("Sprawność fizyczna", czysta_dana[5], czysta_dana[3], czysta_dana[6],
+                                     0, czysta_dana[-2], czysta_dana[-1])
+        self.nazwa = czysta_dana[0]
+        self.promien = czysta_dana[1]
+        self.przyrost_zasiegu = czysta_dana[5]
