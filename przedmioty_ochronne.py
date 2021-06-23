@@ -27,6 +27,7 @@ class ElementSzpeju(przedmioty_podstawa.Zakladalny):
     magazynki = []
     granaty = []
     apteczka = []
+    przedmioty = []
     maksymalna_pojemnosc = 0
     aktualne_oblozenie = 0
     specjalne = []
@@ -45,9 +46,7 @@ class ElementSzpeju(przedmioty_podstawa.Zakladalny):
         self.redukcja = czysta_dana[3]
         self.maksymalna_pojemnosc = czysta_dana[4]
         self.mnoznik_cen_plyt = czysta_dana[6]
-        self.magazynki = []
-        self.granaty = []
-        self.apteczka = []
+        self.przedmioty = []
         self.aktualne_oblozenie = 0
         self.przedmioty_pod_reka = False
         self.__nastaw_pojemnosc()
@@ -76,23 +75,29 @@ class ElementSzpeju(przedmioty_podstawa.Zakladalny):
             self.maksymalna_pojemnosc = float(self.maksymalna_pojemnosc * mnoznik)
 
     def wyciagnij_magazynek(self, bron):
-        for magazynek in self.magazynki:
-            if magazynek.amunicja.typ_amunicji == bron.aktualny_magazynek.amunicja.typ_amunicji:
-                if magazynek.stan_nabojow > 0:
-                    return magazynek
+        for magazynek in self.przedmioty:
+            if isinstance(magazynek, przedmioty_bron.Magazynek):
+                if magazynek.amunicja.typ_amunicji == bron.aktualny_magazynek.amunicja.typ_amunicji:
+                    if magazynek.stan_nabojow > 0:
+                        return magazynek
         return False
 
     def schowaj_przedmiot(self, przedmiot):
         if isinstance(przedmiot, przedmioty_bron.Magazynek):
             if self.aktualne_oblozenie + 0.5 < self.maksymalna_pojemnosc:
                 self.aktualne_oblozenie += 0.5
+                self.przedmioty.append(przedmiot)
+                return True
         if isinstance(przedmiot, przedmioty_inne.Apteczka):
             if self.aktualne_oblozenie + 1 < self.maksymalna_pojemnosc:
                 self.aktualne_oblozenie += 1
-        if isinstance(przedmiot, przedmioty_bron.Magazynek):
+                self.przedmioty.append(przedmiot)
+                return True
+        if isinstance(przedmiot, przedmioty_bron.Granat):
             if self.aktualne_oblozenie + 0.5 < self.maksymalna_pojemnosc:
                 self.aktualne_oblozenie += 0.5
-
+                self.przedmioty.append(przedmiot)
+                return True
         return False
 
 
