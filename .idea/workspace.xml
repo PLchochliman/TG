@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TabelaBroni.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/przedmioty_bron.py" beforeDir="false" afterPath="$PROJECT_DIR$/przedmioty_bron.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/przedmioty_ochronne.py" beforeDir="false" afterPath="$PROJECT_DIR$/przedmioty_ochronne.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,27 +192,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00172" summary="drobny rename">
-      <created>1622131236796</created>
-      <option name="number" value="00172" />
-      <option name="presentableId" value="LOCAL-00172" />
-      <option name="project" value="LOCAL" />
-      <updated>1622131236798</updated>
-    </task>
-    <task id="LOCAL-00173" summary="succesfull refactor of desintagrating from itesms, picking records from excel.">
-      <created>1622189089928</created>
-      <option name="number" value="00173" />
-      <option name="presentableId" value="LOCAL-00173" />
-      <option name="project" value="LOCAL" />
-      <updated>1622189089930</updated>
-    </task>
-    <task id="LOCAL-00174" summary="preparing addons.">
-      <created>1622249465466</created>
-      <option name="number" value="00174" />
-      <option name="presentableId" value="LOCAL-00174" />
-      <option name="project" value="LOCAL" />
-      <updated>1622249465466</updated>
     </task>
     <task id="LOCAL-00175" summary="preparing existance of SQL database">
       <created>1622288987056</created>
@@ -537,7 +515,28 @@
       <option name="project" value="LOCAL" />
       <updated>1624400001521</updated>
     </task>
-    <option name="localTasksCounter" value="221" />
+    <task id="LOCAL-00221" summary="Roll to hit for granades Done.">
+      <created>1624429748497</created>
+      <option name="number" value="00221" />
+      <option name="presentableId" value="LOCAL-00221" />
+      <option name="project" value="LOCAL" />
+      <updated>1624429748498</updated>
+    </task>
+    <task id="LOCAL-00222" summary="fixed some bad ideas">
+      <created>1624429966224</created>
+      <option name="number" value="00222" />
+      <option name="presentableId" value="LOCAL-00222" />
+      <option name="project" value="LOCAL" />
+      <updated>1624429966224</updated>
+    </task>
+    <task id="LOCAL-00223" summary="fixed items handling.">
+      <created>1624431775020</created>
+      <option name="number" value="00223" />
+      <option name="presentableId" value="LOCAL-00223" />
+      <option name="project" value="LOCAL" />
+      <updated>1624431775021</updated>
+    </task>
+    <option name="localTasksCounter" value="224" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -553,9 +552,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test runner fixed" />
-    <MESSAGE value="finally provided proper handling of addons to gun." />
-    <MESSAGE value="little refactor" />
     <MESSAGE value="fixed dissasembly of addons to gun" />
     <MESSAGE value="added quite a lot of tests, and refactoring class Bron." />
     <MESSAGE value="added  tests." />
@@ -578,7 +574,10 @@
     <MESSAGE value="implementing capacity" />
     <MESSAGE value="some cosmetics refactor, also sterted adding first aid kits." />
     <MESSAGE value="prepared proper places for granedes, but still they are not handled properly." />
-    <option name="LAST_COMMIT_MESSAGE" value="prepared proper places for granedes, but still they are not handled properly." />
+    <MESSAGE value="Roll to hit for granades Done." />
+    <MESSAGE value="fixed some bad ideas" />
+    <MESSAGE value="fixed items handling." />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed items handling." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

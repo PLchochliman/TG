@@ -71,7 +71,6 @@ class ElementSzpeju(przedmioty_podstawa.Zakladalny):
                 mnoznik = 0.5
                 self.maksymalna_pojemnosc = int(self.maksymalna_pojemnosc[0:-1])
                 self.przedmioty_pod_reka = True
-
             self.maksymalna_pojemnosc = float(self.maksymalna_pojemnosc * mnoznik)
 
     def wyciagnij_magazynek(self, bron):
@@ -79,25 +78,37 @@ class ElementSzpeju(przedmioty_podstawa.Zakladalny):
             if isinstance(magazynek, przedmioty_bron.Magazynek):
                 if magazynek.amunicja.typ_amunicji == bron.aktualny_magazynek.amunicja.typ_amunicji:
                     if magazynek.stan_nabojow > 0:
+                        self.sprawdz_oblozenie_przedmiotu(magazynek)
                         return magazynek
         return False
 
+    def wyciagnij_przedmiot(self, nazwa_przedmiotu):
+        for przedmiot in self.przedmioty:
+            if przedmiot.nazwa == nazwa_przedmiotu:
+                self.sprawdz_oblozenie_przedmiotu(przedmiot)
+                return przedmiot
+
     def schowaj_przedmiot(self, przedmiot):
-        if isinstance(przedmiot, przedmioty_bron.Magazynek):
-            if self.aktualne_oblozenie + 0.5 < self.maksymalna_pojemnosc:
-                self.aktualne_oblozenie += 0.5
-                self.przedmioty.append(przedmiot)
-                return True
-        if isinstance(przedmiot, przedmioty_inne.Apteczka):
-            if self.aktualne_oblozenie + 1 < self.maksymalna_pojemnosc:
-                self.aktualne_oblozenie += 1
-                self.przedmioty.append(przedmiot)
-                return True
-        if isinstance(przedmiot, przedmioty_bron.Granat):
-            if self.aktualne_oblozenie + 0.5 < self.maksymalna_pojemnosc:
-                self.aktualne_oblozenie += 0.5
-                self.przedmioty.append(przedmiot)
-                return True
+        oblozenie_przedmiotu = self.sprawdz_oblozenie_przedmiotu(przedmiot)
+        if oblozenie_przedmiotu > 0:
+            self.aktualne_oblozenie += oblozenie_przedmiotu
+            self.przedmioty.append(przedmiot)
+            return True
         return False
 
+    @staticmethod
+    def sprawdz_oblozenie_przedmiotu(przedmiot):
+        if isinstance(przedmiot, przedmioty_bron.Magazynek):
+            return 0.5
+        if isinstance(przedmiot, przedmioty_inne.Apteczka):
+            return 1
+        if isinstance(przedmiot, przedmioty_bron.Granat):
+            return 0.5
+        else:
+            return 0
 
+    def __usun_przedmiot(self, przedmiot):
+        return True
+
+    def __dodaj_przedmiot(self, przedmiot):
+        return True
