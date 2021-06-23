@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/przedmioty_ochronne.py" beforeDir="false" afterPath="$PROJECT_DIR$/przedmioty_ochronne.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -192,13 +191,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00175" summary="preparing existance of SQL database">
-      <created>1622288987056</created>
-      <option name="number" value="00175" />
-      <option name="presentableId" value="LOCAL-00175" />
-      <option name="project" value="LOCAL" />
-      <updated>1622288987057</updated>
     </task>
     <task id="LOCAL-00176" summary="preparing existance of SQL database">
       <created>1622293166195</created>
@@ -536,7 +528,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624431775021</updated>
     </task>
-    <option name="localTasksCounter" value="224" />
+    <task id="LOCAL-00224" summary="preparing proper handling of items in vests.">
+      <created>1624434879075</created>
+      <option name="number" value="00224" />
+      <option name="presentableId" value="LOCAL-00224" />
+      <option name="project" value="LOCAL" />
+      <updated>1624434879076</updated>
+    </task>
+    <option name="localTasksCounter" value="225" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -552,7 +551,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed dissasembly of addons to gun" />
     <MESSAGE value="added quite a lot of tests, and refactoring class Bron." />
     <MESSAGE value="added  tests." />
     <MESSAGE value="quite a lot of simple fixes." />
@@ -577,7 +575,8 @@
     <MESSAGE value="Roll to hit for granades Done." />
     <MESSAGE value="fixed some bad ideas" />
     <MESSAGE value="fixed items handling." />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed items handling." />
+    <MESSAGE value="preparing proper handling of items in vests." />
+    <option name="LAST_COMMIT_MESSAGE" value="preparing proper handling of items in vests." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

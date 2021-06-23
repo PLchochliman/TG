@@ -78,22 +78,20 @@ class ElementSzpeju(przedmioty_podstawa.Zakladalny):
             if isinstance(magazynek, przedmioty_bron.Magazynek):
                 if magazynek.amunicja.typ_amunicji == bron.aktualny_magazynek.amunicja.typ_amunicji:
                     if magazynek.stan_nabojow > 0:
-                        self.sprawdz_oblozenie_przedmiotu(magazynek)
+                        self.__usun_przedmiot(magazynek)
                         return magazynek
         return False
 
     def wyciagnij_przedmiot(self, nazwa_przedmiotu):
         for przedmiot in self.przedmioty:
             if przedmiot.nazwa == nazwa_przedmiotu:
-                self.sprawdz_oblozenie_przedmiotu(przedmiot)
+                self.__usun_przedmiot(przedmiot)
                 return przedmiot
 
     def schowaj_przedmiot(self, przedmiot):
         oblozenie_przedmiotu = self.sprawdz_oblozenie_przedmiotu(przedmiot)
         if oblozenie_przedmiotu > 0:
-            self.aktualne_oblozenie += oblozenie_przedmiotu
-            self.przedmioty.append(przedmiot)
-            return True
+            return self.__dodaj_przedmiot(przedmiot)
         return False
 
     @staticmethod
@@ -108,7 +106,11 @@ class ElementSzpeju(przedmioty_podstawa.Zakladalny):
             return 0
 
     def __usun_przedmiot(self, przedmiot):
+        self.przedmioty.remove(przedmiot)
+        self.aktualne_oblozenie = self.aktualne_oblozenie - self.sprawdz_oblozenie_przedmiotu(przedmiot)
         return True
 
     def __dodaj_przedmiot(self, przedmiot):
+        self.przedmioty.append(przedmiot)
+        self.aktualne_oblozenie += self.sprawdz_oblozenie_przedmiotu(przedmiot)
         return True
