@@ -724,18 +724,14 @@ class Granat(Bron):  # tyczy się granatów ręcznych. granatniki będą rozwią
         self.promien = czysta_dana[1]
         self.przyrost_zasiegu = czysta_dana[5]
 
-    def test_trafienia(self, operator, cel, dodatkowe, zasieg=0):
+    def test_trafienia(self, operator, cel, dodatkowe, zasieg=0):  # does not deal damage by itself.
         wynik = operator.rzut_na_umiejetnasc(self.rodzaj_testu) + self.aktualna_premia(operator, zasieg)\
                 + dodatkowe  # because of trowing granades is based on area atacking, instead of normal target.
-        Bot.output("Rzuciłeś na zasięg " +str(wynik * self.przyrost_zasiegu) + " metrów \n")
+        Bot.output("Rzuciłeś na zasięg " + str(wynik * self.przyrost_zasiegu) + " metrów \n")
 
     def test_obrazen_z_egzekucja(self, cel, premia=0):
         cel.rana(self.rzut_na_obrazenia() + premia, self.penetracja)
 
     def aktualna_premia(self, operator, zasieg):
-        if self.zasieg_maksymalny > 0:
-            if zasieg <= self.zasieg_maksymalny:
-                return int(zasieg / self.przyrost_zasiegu)
-            else:
-                raise Exception('cel jest po za zasiegiem.')
-        return int(zasieg / self.przyrost_zasiegu) * 5
+        # actually awaits for specialisation
+        return 0
