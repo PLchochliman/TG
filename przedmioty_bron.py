@@ -712,13 +712,30 @@ class BronBiala(Bron):
             raise Exception('przeciwnik lepiej walczy')
 
 
-class granat(Bron):
+class Granat(Bron):  # tyczy się granatów ręcznych. granatniki będą rozwiązane w amunicji i broni strzeleckiej.
+    # Równierz nie zrobione to że wybuchają później.
     promien = 0
     przyrost_zasiegu = 0
 
     def __init__(self, czysta_dana):
-        super(granat, self).__init__("Sprawność fizyczna", czysta_dana[5], czysta_dana[3], czysta_dana[6],
+        super(Granat, self).__init__("Sprawność fizyczna", czysta_dana[5], czysta_dana[3], czysta_dana[6],
                                      0, czysta_dana[-2], czysta_dana[-1])
         self.nazwa = czysta_dana[0]
         self.promien = czysta_dana[1]
         self.przyrost_zasiegu = czysta_dana[5]
+
+    def test_trafienia(self, operator, cel, dodatkowe, zasieg=0):
+        wynik = operator.rzut_na_umiejetnasc(self.rodzaj_testu) + self.aktualna_premia(operator, zasieg)\
+                + dodatkowe  # because of trowing granades is based on area atacking, instead of normal target.
+        Bot.output("Rzuciłeś na zasięg " +str(wynik * self.przyrost_zasiegu) + " metrów \n")
+
+    def test_obrazen_z_egzekucja(self, cel, premia=0):
+        cel.rana(self.rzut_na_obrazenia() + premia, self.penetracja)
+
+    def aktualna_premia(self, operator, zasieg):
+        if self.zasieg_maksymalny > 0:
+            if zasieg <= self.zasieg_maksymalny:
+                return int(zasieg / self.przyrost_zasiegu)
+            else:
+                raise Exception('cel jest po za zasiegiem.')
+        return int(zasieg / self.przyrost_zasiegu) * 5
