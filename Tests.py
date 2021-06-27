@@ -12,17 +12,12 @@ import przedmioty_ochronne as przedmioty_ochronne
 #  przedmioty_jako_rekord = raw_items.Przedmioty()
 przedmioty_jako_rekord = SQL.Przedmioty(False)  # change to True to update base
 
-def sprawdz_jak_cel_oberwal(cel):
-    if cel.lekka_rana == 0:
-        if cel.drasniecia == 0:
-            if cel.powazna_rana == 0:
-                assert cel.powazna_rana == 0
-            else:
-                assert cel.powazna_rana == 1
-        else:
-            assert cel.drasniecia > 0
-    else:
-        assert cel.lekka_rana > 0
+def sprawdz_czy_cel_oberwal(cel):
+    for rana in cel.rany:
+        if not isinstance(rana, list):
+            if rana > 0:
+                return 1
+
 
 
 def wez_i_zaladuj_giwere(nazwa_giwery):
@@ -507,6 +502,23 @@ def test_szpeju():
 
 
 @test_runner
+def test_obrywania_w_kamze():
+    strzelanie = mechanics.Strzelanie()
+    rekord = przedmioty_jako_rekord.wyszukaj_przedmiot_i_zwroc_po_wszystkim("plate carrier")
+    kamza = przedmioty_ochronne.ElementSzpeju(rekord)
+    wojtek = postac_co_z_pistoletu_i_karabinu_rzuca_6()
+    gong = gong_o_uniku_10()
+    kamza.zaloz(gong)
+    wojtek.aktywna_bron = wez_i_zaladuj_giwere("MP5A3")
+    rekord = przedmioty_jako_rekord.wyszukaj_przedmiot_i_zwroc_po_wszystkim("klasa 3 miękkie")
+    assert gong.element_szpeju[constants.miejsce_na_ciele["klata"]].kup_i_wloz_plyte_do_kamizelki(gong, rekord)
+    assert strzelanie.strzal(wojtek, gong, 10)
+    assert not sprawdz_czy_cel_oberwal(gong)
+    return 2
+
+
+
+@test_runner
 def test_akcji():
     akcja = mechanics.Akcje()
     assert akcja.przesun_faze(15)
@@ -535,6 +547,8 @@ ilosc_testow_pass += test_broni_strzeleckiej_specjalne_magi()
 ilosc_testow_pass += test_broni_strzeleckiej_z_Celownikami()
 ilosc_testow_pass += test_zasad_specjalnych_i_dodatkow_do_broni()
 ilosc_testow_pass += test_szpeju()
+ilosc_testow_pass += test_obrywania_w_kamze()
+
 print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \n"
       "Jest to " + str(ilosc_testow_pass/160 * 100) + "% testów.")
 #unittest.main()

@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
-      <change beforePath="$PROJECT_DIR$/mortal_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortal_base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mortal_hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortal_hero.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,13 +192,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00186" summary="finally All with new database is working">
-      <created>1622450752608</created>
-      <option name="number" value="00186" />
-      <option name="presentableId" value="LOCAL-00186" />
-      <option name="project" value="LOCAL" />
-      <updated>1622450752608</updated>
     </task>
     <task id="LOCAL-00187" summary="implemented montage of accessories on gun.">
       <created>1622486623071</created>
@@ -536,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624781429337</updated>
     </task>
-    <option name="localTasksCounter" value="235" />
+    <task id="LOCAL-00235" summary="base for reduction implemented">
+      <created>1624782423360</created>
+      <option name="number" value="00235" />
+      <option name="presentableId" value="LOCAL-00235" />
+      <option name="project" value="LOCAL" />
+      <updated>1624782423360</updated>
+    </task>
+    <option name="localTasksCounter" value="236" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -552,7 +552,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="preparing camoflauge rules." />
     <MESSAGE value="refactoring and editing the equipment." />
     <MESSAGE value="some minor fixes" />
     <MESSAGE value="preparing for taking equipment." />
@@ -577,7 +576,8 @@
     <MESSAGE value="better Exceptions handling (not as general, as it was before)." />
     <MESSAGE value="little but important refactor" />
     <MESSAGE value="started some testing, but still not fully implemented." />
-    <option name="LAST_COMMIT_MESSAGE" value="started some testing, but still not fully implemented." />
+    <MESSAGE value="base for reduction implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="base for reduction implemented" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
