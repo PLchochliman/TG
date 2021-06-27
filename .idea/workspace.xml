@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami" />
+    <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TabelaBroni.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/przedmioty_ochronne.py" beforeDir="false" afterPath="$PROJECT_DIR$/przedmioty_ochronne.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,7 +34,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/mortal.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/mortal_base.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1nRUOVBnL3Vcu7KX4JqKwWORNYV" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -189,13 +194,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00184" summary="SQL handling into game - ready for rechange from aktual base menagment">
-      <created>1622442620718</created>
-      <option name="number" value="00184" />
-      <option name="presentableId" value="LOCAL-00184" />
-      <option name="project" value="LOCAL" />
-      <updated>1622442620718</updated>
     </task>
     <task id="LOCAL-00185" summary="finally All with new database is working">
       <created>1622450672987</created>
@@ -533,7 +531,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624780536193</updated>
     </task>
-    <option name="localTasksCounter" value="233" />
+    <task id="LOCAL-00233" summary="little but important refactor">
+      <created>1624780822892</created>
+      <option name="number" value="00233" />
+      <option name="presentableId" value="LOCAL-00233" />
+      <option name="project" value="LOCAL" />
+      <updated>1624780822892</updated>
+    </task>
+    <option name="localTasksCounter" value="234" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -549,7 +554,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="prepared uniforms, to be read." />
     <MESSAGE value="converting for prices, and weight ready." />
     <MESSAGE value="preparing camoflauge rules." />
     <MESSAGE value="refactoring and editing the equipment." />
@@ -574,7 +578,8 @@
     <MESSAGE value="added possibility of buy every item." />
     <MESSAGE value="preparing for finally moving to something bigger, and user use." />
     <MESSAGE value="better Exceptions handling (not as general, as it was before)." />
-    <option name="LAST_COMMIT_MESSAGE" value="better Exceptions handling (not as general, as it was before)." />
+    <MESSAGE value="little but important refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="little but important refactor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -62,12 +62,12 @@ class ElementSzpeju(przedmioty_podstawa.Zakladalny):
             if not plyta.rozne_rozmiary:
                 Bot.output("nie pasuje!")
                 return False
-            if plyta.kup(operator):
+            if plyta.zaplac(operator):
                 self.plyta_balistyczna = plyta
                 return True
         else:
             if plyta.specjalne == self.nazwa:
-                if plyta.kup(operator):
+                if plyta.zaplac(operator):
                     self.plyta_balistyczna = plyta
                     return True
         return False

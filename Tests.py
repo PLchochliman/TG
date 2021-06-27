@@ -499,8 +499,11 @@ def test_szpeju():
     assert kamza.zaloz(wojtek)
     assert wojtek.element_szpeju[constants.miejsce_na_ciele["pas"]].nazwa == "skarab"
     assert wojtek.element_szpeju[constants.miejsce_na_ciele["klata"]].maksymakny_unik == 15
-
-    return 7
+    rekord = przedmioty_jako_rekord.wyszukaj_przedmiot_i_zwroc_po_wszystkim("klasa 3 miękkie")
+    assert wojtek.pieniadze == 9000
+    assert wojtek.element_szpeju[constants.miejsce_na_ciele["klata"]].kup_i_wloz_plyte_do_kamizelki(wojtek, rekord)
+    assert wojtek.pieniadze == 8450
+    return 10
 
 
 @test_runner
@@ -533,6 +536,6 @@ ilosc_testow_pass += test_broni_strzeleckiej_z_Celownikami()
 ilosc_testow_pass += test_zasad_specjalnych_i_dodatkow_do_broni()
 ilosc_testow_pass += test_szpeju()
 print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \n"
-      "Jest to " + str(ilosc_testow_pass/157 * 100) + "% testów.")
+      "Jest to " + str(ilosc_testow_pass/160 * 100) + "% testów.")
 #unittest.main()
 
