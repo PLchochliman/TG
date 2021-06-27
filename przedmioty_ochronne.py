@@ -7,20 +7,25 @@ import constans as constans
 
 class Ubranie(przedmioty_podstawa.Zakladalny):
     kamuflaz = ""
+    premia_do_uniku = 0
+    specjalne = ""
 
     def __init__(self, czysta_dana):
         super(Ubranie, self).__init__(czysta_dana[-1], czysta_dana[-2], "cialo")
+        self.premia_do_uniku = czysta_dana[1]
         self.kamuflaz = "nico"
+        self.specjalne = czysta_dana[3]
 
     def wybierz_kamuflaz(self, wejscie):
-        if wejscie in ("zimowy", "pustynny", "leśny", "miejski"):
-            self.kamuflaz = wejscie
-            return True
-        else:
-            Bot.output("Jeśli chciałeś komuflaż, to powinneś wybrać spośród: \n zimowy, pustynny, leśny, miejski "
-                       "\nJeśli chciałeś w innym kolorze, zignoruj tą wiadomość")
-            self.kamuflaz = wejscie
-            return False
+        if "kamuflaż" in self.specjalne:
+            if wejscie in ("zimowy", "pustynny", "leśny", "miejski"):
+                self.kamuflaz = wejscie
+                return True
+            else:
+                Bot.output("Jeśli chciałeś komuflaż, to powinneś wybrać spośród: \n zimowy, pustynny, leśny, miejski "
+                           "\nJeśli chciałeś w innym kolorze, zignoruj tą wiadomość")
+                self.kamuflaz = wejscie
+                return False
 
 
 class ElementSzpeju(przedmioty_podstawa.Zakladalny):

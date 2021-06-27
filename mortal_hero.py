@@ -45,6 +45,15 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
                     lista_elementow_zaaplikowanych.append(element.nazwa)
         return rzut_na_obrazenia
 
+    def aktualny_unik(self):
+        premia_do_uniku_z_dodatkow = 0
+        for element in self.element_szpeju:
+            try:
+                premia_do_uniku_z_dodatkow += element.premia_do_uniku
+            except AttributeError:
+                continue
+        return self.unik + self.oslona + premia_do_uniku_z_dodatkow
+
     #przypisuje 1 specjalizacje
     def przypisz_specjalizacje(self, specjalizacja):
         self.specjalizacje.append(constans.wyszukajSpecjalizacje(specjalizacja))
