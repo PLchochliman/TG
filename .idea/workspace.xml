@@ -192,13 +192,6 @@
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
     </task>
-    <task id="LOCAL-00179" summary="crating tables in SQL completed.">
-      <created>1622405948465</created>
-      <option name="number" value="00179" />
-      <option name="presentableId" value="LOCAL-00179" />
-      <option name="project" value="LOCAL" />
-      <updated>1622405948465</updated>
-    </task>
     <task id="LOCAL-00180" summary="getting data from SQL ready">
       <created>1622417051665</created>
       <option name="number" value="00180" />
@@ -535,7 +528,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624775328209</updated>
     </task>
-    <option name="localTasksCounter" value="228" />
+    <task id="LOCAL-00228" summary="minor bug fix">
+      <created>1624775376946</created>
+      <option name="number" value="00228" />
+      <option name="presentableId" value="LOCAL-00228" />
+      <option name="project" value="LOCAL" />
+      <updated>1624775376946</updated>
+    </task>
+    <option name="localTasksCounter" value="229" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -551,7 +551,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor, due to features in the future." />
     <MESSAGE value="prepared data, for futher development." />
     <MESSAGE value="preparing for vests" />
     <MESSAGE value="preparing for vests, and equipment" />
@@ -576,7 +575,8 @@
     <MESSAGE value="pdone some mechanics, about items into, and out of vest." />
     <MESSAGE value="balistic plates added" />
     <MESSAGE value="added using  of balistic plates" />
-    <option name="LAST_COMMIT_MESSAGE" value="added using  of balistic plates" />
+    <MESSAGE value="minor bug fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor bug fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

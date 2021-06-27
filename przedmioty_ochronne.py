@@ -52,6 +52,10 @@ class ElementSzpeju(przedmioty_podstawa.Zakladalny):
         self.przedmioty_pod_reka = False
         self.__nastaw_pojemnosc()
         self.__nastaw_mnoznik_plyt()
+        if self.mnoznik_cen_plyt:
+            self.plyta_balistyczna = PlytyBalistyczne(["brak", "tak", "brak", 0, "", 0, 0])
+            # added foo balistic plates
+
 
     def __nastaw_mnoznik_plyt(self):
         if self.mnoznik_cen_plyt == "dedykowana":
@@ -133,7 +137,7 @@ class ElementSzpeju(przedmioty_podstawa.Zakladalny):
         return True
 
 
-class PlytyBalistyczne(przedmioty_podstawa.Przedmiot):
+class PlytyBalistyczne(przedmioty_podstawa.Przedmiot):  # TODO miękka podkładka still not implemented
     rozne_rozmiary = False
     ochrona = "brak"
     wytrzymalosc = 1
