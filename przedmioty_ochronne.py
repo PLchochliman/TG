@@ -56,6 +56,27 @@ class ElementSzpeju(przedmioty_podstawa.Zakladalny):
             self.plyta_balistyczna = PlytyBalistyczne(["brak", "tak", "brak", 0, "", 0, 0])
             # added foo balistic plates
 
+    def kup_i_wloz_plyte_do_kamizelki(self, operator, plyta_jako_rekord):
+        plyta = PlytyBalistyczne(plyta_jako_rekord)
+        if isinstance(self.mnoznik_cen_plyt, (int, float)):
+            if not plyta.rozne_rozmiary:
+                Bot.output("nie pasuje!")
+                return False
+            if operator.pieniadze >= plyta.wartosc * self.mnoznik_cen_plyt:
+                self.plyta_balistyczna = plyta
+                operator.pieniadze -= plyta.wartosc * self.mnoznik_cen_plyt
+                return True
+            else:
+                Bot.output("nie stać Cię!")
+                return False
+        else:
+            if plyta.specjalne == self.nazwa:
+                if operator.pieniadze >= plyta.wartosc:
+                    self.plyta_balistyczna = plyta
+                    operator.pieniadze -= plyta.wartosc
+                    return True
+                Bot.output("nie stać Cię!")
+                return False
 
     def __nastaw_mnoznik_plyt(self):
         if self.mnoznik_cen_plyt == "dedykowana":

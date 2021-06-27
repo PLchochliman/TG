@@ -1,4 +1,5 @@
 import constans as constans
+import Bot as Bot
 
 def przerob_stringa_do_int(zmienna, zmiana):
     if isinstance(zmienna, str):
@@ -32,6 +33,13 @@ class Przedmiot():
 
     def zwroc_wartosc(self):
         return self.wartosc
+
+    def kup(self, operator):
+        if operator.pieniadze >= self.wartosc:
+            operator.pieniadze -= self.wartosc
+            return self
+        Bot.outpur("nie stać Cię na " + self.nazwa + " brakuje Ci " + str(-1 * operator.pieniadze - self.wartosc) + "$")
+        return False
 
 
 class Zakladalny(Przedmiot):
