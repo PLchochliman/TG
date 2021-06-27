@@ -34,11 +34,18 @@ class Przedmiot():
     def zwroc_wartosc(self):
         return self.wartosc
 
-    def kup(self, operator):
+    def zaplac(self, operator):
+        if operator.pieniadze >= self.wartosc:
+            operator.pieniadze -= self.wartosc
+            return True
+        Bot.output("nie stać Cię na " + self.nazwa + " brakuje Ci " + str(-1 * operator.pieniadze - self.wartosc) + "$")
+        return False
+
+    def zaplac_i_otrzymaj(self, operator):
         if operator.pieniadze >= self.wartosc:
             operator.pieniadze -= self.wartosc
             return self
-        Bot.outpur("nie stać Cię na " + self.nazwa + " brakuje Ci " + str(-1 * operator.pieniadze - self.wartosc) + "$")
+        Bot.output("nie stać Cię na " + self.nazwa + " brakuje Ci " + str(-1 * operator.pieniadze - self.wartosc) + "$")
         return False
 
 

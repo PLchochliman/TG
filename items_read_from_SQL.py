@@ -74,3 +74,14 @@ class Przedmioty():
             if rekord != None:
                 return rekord
         return False
+
+    def wyszukaj_przedmiot_i_zwroc_po_wszystkim_z_nazwa_tabeli(self, nazwa):
+        nazwa = nazwa.replace("\'", "\'\'")
+        nazwy_tabel = ['bron', 'bronbiala', 'granaty', 'celowniki', 'amunicja', 'dodatki', 'szpej', 'plyty_balistyczne',
+                       'tarcze', 'apteczki', 'radia_i_komunikacja', 'jedzenie', 'zestawy_dajace_premie', 'drobnica',
+                       'gotowe_zestawy', 'mundury']
+        for tabela in nazwy_tabel:
+            rekord =  SQL.get_item_from_table(nazwa, tabela, self.cursor)
+            if rekord != None:
+                return [rekord, tabela]
+        return False

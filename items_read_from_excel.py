@@ -80,3 +80,10 @@ class Przedmioty(): #pełne pokrycie
                 if rekord[0] == nazwa:
                     return rekord
         return False
+
+    def wyszukaj_przedmiot_i_zwroc_po_wszystkim_z_nazwa_tabeli(self, nazwa):
+        for tabela in self.dane:
+            for rekord in tabela:
+                if rekord[0] == nazwa:
+                    return [rekord, tabela]
+        return False

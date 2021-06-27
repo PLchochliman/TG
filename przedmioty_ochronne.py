@@ -71,12 +71,8 @@ class ElementSzpeju(przedmioty_podstawa.Zakladalny):
                 return False
         else:
             if plyta.specjalne == self.nazwa:
-                if operator.pieniadze >= plyta.wartosc:
-                    self.plyta_balistyczna = plyta
-                    operator.pieniadze -= plyta.wartosc
-                    return True
-                Bot.output("nie stać Cię!")
-                return False
+                self.plyta_balistyczna = plyta.kup(operator)
+
 
     def __nastaw_mnoznik_plyt(self):
         if self.mnoznik_cen_plyt == "dedykowana":
