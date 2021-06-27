@@ -150,12 +150,13 @@ class PlytyBalistyczne(przedmioty_podstawa.Przedmiot):
         self.specjalne = czysta_dana[4]
 
     def przyjmij_uderzenie(self, bron):
-        if bron.aktualny_magazynek.amunicja.penetracja > self.ochrona:
-            self.wytrzymalosc = 0
-            return False
-        elif bron.aktualny_magazynek.amunicja.penetracja == self.ochrona:
-            self.wytrzymalosc -= 1
-            return True
-        else:
-            return True
+        if self.wytrzymalosc > 0:
+            if bron.aktualny_magazynek.amunicja.penetracja > self.ochrona:
+                self.wytrzymalosc = 0
+                return False
+            elif bron.aktualny_magazynek.amunicja.penetracja == self.ochrona:
+                self.wytrzymalosc -= 1
+                return True
+            else:
+                return True
 

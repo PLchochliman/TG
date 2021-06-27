@@ -192,13 +192,6 @@
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
     </task>
-    <task id="LOCAL-00178" summary="refactot due to needs of rebuilding database.">
-      <created>1622390849455</created>
-      <option name="number" value="00178" />
-      <option name="presentableId" value="LOCAL-00178" />
-      <option name="project" value="LOCAL" />
-      <updated>1622390849455</updated>
-    </task>
     <task id="LOCAL-00179" summary="crating tables in SQL completed.">
       <created>1622405948465</created>
       <option name="number" value="00179" />
@@ -535,7 +528,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624773807336</updated>
     </task>
-    <option name="localTasksCounter" value="227" />
+    <task id="LOCAL-00227" summary="added using  of balistic plates">
+      <created>1624775328209</created>
+      <option name="number" value="00227" />
+      <option name="presentableId" value="LOCAL-00227" />
+      <option name="project" value="LOCAL" />
+      <updated>1624775328209</updated>
+    </task>
+    <option name="localTasksCounter" value="228" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -551,7 +551,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="quite a lot of simple fixes." />
     <MESSAGE value="refactor, due to features in the future." />
     <MESSAGE value="prepared data, for futher development." />
     <MESSAGE value="preparing for vests" />
@@ -576,7 +575,8 @@
     <MESSAGE value="preparing proper handling of items in vests." />
     <MESSAGE value="pdone some mechanics, about items into, and out of vest." />
     <MESSAGE value="balistic plates added" />
-    <option name="LAST_COMMIT_MESSAGE" value="balistic plates added" />
+    <MESSAGE value="added using  of balistic plates" />
+    <option name="LAST_COMMIT_MESSAGE" value="added using  of balistic plates" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
