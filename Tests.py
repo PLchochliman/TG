@@ -514,7 +514,11 @@ def test_obrywania_w_kamze():
     assert gong.element_szpeju[constants.miejsce_na_ciele["klata"]].kup_i_wloz_plyte_do_kamizelki(gong, rekord)
     assert strzelanie.strzal(wojtek, gong, 10)
     assert not sprawdz_czy_cel_oberwal(gong)
-    return 2
+    wojtek.aktywna_bron = wez_i_zaladuj_giwere("SCAR-L")
+    wez_i_zmien_celownik(wojtek.aktywna_bron, "aimpoint")
+    assert strzelanie.strzal(wojtek, gong, 10)
+    assert sprawdz_czy_cel_oberwal(gong)
+    return 5
 
 
 
@@ -550,6 +554,6 @@ ilosc_testow_pass += test_szpeju()
 ilosc_testow_pass += test_obrywania_w_kamze()
 
 print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \n"
-      "Jest to " + str(ilosc_testow_pass/160 * 100) + "% testów.")
+      "Jest to " + str(ilosc_testow_pass/165 * 100) + "% testów.")
 #unittest.main()
 

@@ -209,7 +209,16 @@ penetracja = {
     "c": 4,
     "a": 5,
     "lp": 6,
-    "cp": 7
+    "cp": 7,
+    "brak": 0,
+    "minimalna": 1,
+    "lekka": 2,
+    "średnia": 3,
+    "srednia": 3,
+    "ciężka": 4,
+    "ciezka": 4,
+    "absolutna": 5,
+
 }
 
 

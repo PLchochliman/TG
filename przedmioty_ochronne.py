@@ -2,6 +2,7 @@ import przedmioty_podstawa as przedmioty_podstawa
 import przedmioty_bron as przedmioty_bron
 import przedmioty_inne as przedmioty_inne
 import Bot as Bot
+import constans as constans
 
 
 class Ubranie(przedmioty_podstawa.Zakladalny):
@@ -170,10 +171,11 @@ class PlytyBalistyczne(przedmioty_podstawa.Przedmiot):  # TODO miękka podkładk
 
     def przyjmij_uderzenie(self, penetracja):
         if self.wytrzymalosc > 0:
-            if penetracja > self.ochrona:
+            ochrona = constans.penetracja[self.ochrona]
+            if penetracja > ochrona:
                 self.wytrzymalosc = 0
                 return False
-            elif penetracja == self.ochrona:
+            elif penetracja == ochrona:
                 self.wytrzymalosc -= 1
                 return True
             else:
