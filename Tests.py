@@ -1,8 +1,8 @@
-import mortal as mortal
+import mortal_base as mortal
 import constans as constants
 import Bot as Bot
 import excelDigger as excelDigger
-import hero as hero
+import mortal_hero as hero
 import przedmioty_bron as items
 import mechanics as mechanics
 import items_read_from_excel as raw_items
@@ -113,7 +113,7 @@ def test_luskania_danych_z_excela():
 
 
 @test_runner
-def test_ran_kar_smierci(): #testy mortal.py
+def test_ran_kar_smierci(): #testy mortal_base.py
     wojtek = mortal.IstotaZywa(8, 8, 8, "Wojtek")
     assert wojtek.w_ruchu == 0
     wojtek.zaplanuj_akcje("krok")
@@ -153,7 +153,7 @@ def test_ran_kar_smierci(): #testy mortal.py
 
 
 @test_runner
-def test_uniku(): #testy mortal.py
+def test_uniku(): #testy mortal_base.py
     wojtek = mortal.IstotaZywa(8, 8, 8, "Wojtek")
     assert wojtek.aktualny_unik() == 12
     assert wojtek.zmien_oslone(2) == 2
@@ -165,7 +165,7 @@ def test_uniku(): #testy mortal.py
 
 
 @test_runner
-def test_umiejetnosci_i_aktywacji(): # test mortal.py
+def test_umiejetnosci_i_aktywacji(): # test mortal_base.py
     wojtek = mortal.IstotaZywa(8, 8, 8, "Wojtek")
     assert wojtek.aktywacja(2)
     assert wojtek.umiejetnosci[3][3] == 1
@@ -499,6 +499,7 @@ def test_szpeju():
     assert kamza.zaloz(wojtek)
     assert wojtek.element_szpeju[constants.miejsce_na_ciele["pas"]].nazwa == "skarab"
     assert wojtek.element_szpeju[constants.miejsce_na_ciele["klata"]].maksymakny_unik == 15
+
     return 7
 
 

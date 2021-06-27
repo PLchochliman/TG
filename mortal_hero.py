@@ -1,4 +1,4 @@
-import mortal as mortal
+import mortal_base as mortal
 import Bot as Bot
 import excelDigger as excelDigger
 import constans as constans

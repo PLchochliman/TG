@@ -1,4 +1,4 @@
-import hero
+import mortal_hero
 import przedmioty_bron as items
 import Bot as Bot
 import exceptions as exceptions
