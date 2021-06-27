@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TabelaBroni.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/przedmioty_ochronne.py" beforeDir="false" afterPath="$PROJECT_DIR$/przedmioty_ochronne.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -193,13 +191,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00177" summary="finally creating database and tables properly">
-      <created>1622379123158</created>
-      <option name="number" value="00177" />
-      <option name="presentableId" value="LOCAL-00177" />
-      <option name="project" value="LOCAL" />
-      <updated>1622379123159</updated>
     </task>
     <task id="LOCAL-00178" summary="refactot due to needs of rebuilding database.">
       <created>1622390849455</created>
@@ -537,7 +528,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624436506620</updated>
     </task>
-    <option name="localTasksCounter" value="226" />
+    <task id="LOCAL-00226" summary="balistic plates added">
+      <created>1624773807336</created>
+      <option name="number" value="00226" />
+      <option name="presentableId" value="LOCAL-00226" />
+      <option name="project" value="LOCAL" />
+      <updated>1624773807336</updated>
+    </task>
+    <option name="localTasksCounter" value="227" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -553,7 +551,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added  tests." />
     <MESSAGE value="quite a lot of simple fixes." />
     <MESSAGE value="refactor, due to features in the future." />
     <MESSAGE value="prepared data, for futher development." />
@@ -578,7 +575,8 @@
     <MESSAGE value="fixed items handling." />
     <MESSAGE value="preparing proper handling of items in vests." />
     <MESSAGE value="pdone some mechanics, about items into, and out of vest." />
-    <option name="LAST_COMMIT_MESSAGE" value="pdone some mechanics, about items into, and out of vest." />
+    <MESSAGE value="balistic plates added" />
+    <option name="LAST_COMMIT_MESSAGE" value="balistic plates added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
