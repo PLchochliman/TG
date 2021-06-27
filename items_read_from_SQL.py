@@ -81,7 +81,7 @@ class Przedmioty():
                        'tarcze', 'apteczki', 'radia_i_komunikacja', 'jedzenie', 'zestawy_dajace_premie', 'drobnica',
                        'gotowe_zestawy', 'mundury']
         for tabela in nazwy_tabel:
-            rekord =  SQL.get_item_from_table(nazwa, tabela, self.cursor)
-            if rekord != None:
+            rekord = SQL.get_item_from_table(nazwa, tabela, self.cursor)
+            if rekord:
                 return [rekord, tabela]
         return False

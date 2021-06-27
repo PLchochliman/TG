@@ -11,7 +11,7 @@ class Ubranie(przedmioty_podstawa.Zakladalny):
     specjalne = ""
 
     def __init__(self, czysta_dana):
-        super(Ubranie, self).__init__(czysta_dana[-1], czysta_dana[-2], "cialo")
+        super(Ubranie, self).__init__(czysta_dana[0], czysta_dana[-2], czysta_dana[-1], "cialo")
         self.premia_do_uniku = czysta_dana[1]
         self.kamuflaz = "nico"
         self.specjalne = czysta_dana[3]

@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
-      <change beforePath="$PROJECT_DIR$/mortal_hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortal_hero.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TabelaBroni.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/items_read_from_SQL.py" beforeDir="false" afterPath="$PROJECT_DIR$/items_read_from_SQL.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/przedmioty_ochronne.py" beforeDir="false" afterPath="$PROJECT_DIR$/przedmioty_ochronne.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -192,13 +195,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00189" summary="disasembly of addon added.">
-      <created>1622530957565</created>
-      <option name="number" value="00189" />
-      <option name="presentableId" value="LOCAL-00189" />
-      <option name="project" value="LOCAL" />
-      <updated>1622530957565</updated>
     </task>
     <task id="LOCAL-00190" summary="move effect taken into count">
       <created>1622576547226</created>
@@ -536,7 +532,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624785374491</updated>
     </task>
-    <option name="localTasksCounter" value="238" />
+    <task id="LOCAL-00238" summary="preparing uniforms">
+      <created>1624791157449</created>
+      <option name="number" value="00238" />
+      <option name="presentableId" value="LOCAL-00238" />
+      <option name="project" value="LOCAL" />
+      <updated>1624791157449</updated>
+    </task>
+    <option name="localTasksCounter" value="239" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -552,7 +555,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="some minor fixes" />
     <MESSAGE value="preparing for taking equipment." />
     <MESSAGE value="preparing equipment." />
     <MESSAGE value="Done some testing, and finaly update base is not as primitive, as it was." />
@@ -577,7 +579,8 @@
     <MESSAGE value="started some testing, but still not fully implemented." />
     <MESSAGE value="base for reduction implemented" />
     <MESSAGE value="vests are completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="vests are completed" />
+    <MESSAGE value="preparing uniforms" />
+    <option name="LAST_COMMIT_MESSAGE" value="preparing uniforms" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -502,7 +502,7 @@ def test_szpeju():
 
 
 @test_runner
-def test_obrywania_w_kamze():
+def test_obrywania_w_kamze_i_mundurow():
     strzelanie = mechanics.Strzelanie()
     rekord = przedmioty_jako_rekord.wyszukaj_przedmiot_i_zwroc_po_wszystkim("plate carrier")
     kamza = przedmioty_ochronne.ElementSzpeju(rekord)
@@ -515,10 +515,14 @@ def test_obrywania_w_kamze():
     assert strzelanie.strzal(wojtek, gong, 10)
     assert not sprawdz_czy_cel_oberwal(gong)
     wojtek.aktywna_bron = wez_i_zaladuj_giwere("SCAR-L")
+    assert not strzelanie.strzal(wojtek, gong, 10)
     wez_i_zmien_celownik(wojtek.aktywna_bron, "aimpoint")
     assert strzelanie.strzal(wojtek, gong, 10)
     assert sprawdz_czy_cel_oberwal(gong)
-    return 5
+    rekord = przedmioty_jako_rekord.wyszukaj_przedmiot_i_zwroc_po_wszystkim("kontraktowy")
+    gong.element_szpeju[constants.miejsce_na_ciele["mundur"]] = przedmioty_ochronne.Ubranie(rekord)
+    assert not strzelanie.strzal(wojtek, gong, 10)
+    return 7
 
 
 
@@ -551,9 +555,9 @@ ilosc_testow_pass += test_broni_strzeleckiej_specjalne_magi()
 ilosc_testow_pass += test_broni_strzeleckiej_z_Celownikami()
 ilosc_testow_pass += test_zasad_specjalnych_i_dodatkow_do_broni()
 ilosc_testow_pass += test_szpeju()
-ilosc_testow_pass += test_obrywania_w_kamze()
+ilosc_testow_pass += test_obrywania_w_kamze_i_mundurow()
 
 print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \n"
-      "Jest to " + str(ilosc_testow_pass/165 * 100) + "% testów.")
+      "Jest to " + str(ilosc_testow_pass/166 * 100) + "% testów.")
 #unittest.main()
 
