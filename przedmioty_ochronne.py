@@ -62,17 +62,15 @@ class ElementSzpeju(przedmioty_podstawa.Zakladalny):
             if not plyta.rozne_rozmiary:
                 Bot.output("nie pasuje!")
                 return False
-            if operator.pieniadze >= plyta.wartosc * self.mnoznik_cen_plyt:
+            if plyta.kup(operator):
                 self.plyta_balistyczna = plyta
-                operator.pieniadze -= plyta.wartosc * self.mnoznik_cen_plyt
                 return True
-            else:
-                Bot.output("nie stać Cię!")
-                return False
         else:
             if plyta.specjalne == self.nazwa:
-                self.plyta_balistyczna = plyta.kup(operator)
-
+                if plyta.kup(operator):
+                    self.plyta_balistyczna = plyta
+                    return True
+        return False
 
     def __nastaw_mnoznik_plyt(self):
         if self.mnoznik_cen_plyt == "dedykowana":
@@ -80,7 +78,7 @@ class ElementSzpeju(przedmioty_podstawa.Zakladalny):
         try:
             i = float(self.maksymalna_pojemnosc)
             self.mnoznik_cen_plyt = i
-        except Exception:
+        except ValueError:
             return False
 
     def __nastaw_pojemnosc(self):

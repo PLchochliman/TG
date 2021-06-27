@@ -1,0 +1,2 @@
+class Pudlo(Exception):
+    pass

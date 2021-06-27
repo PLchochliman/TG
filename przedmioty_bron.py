@@ -1,4 +1,4 @@
-
+import exceptions as exceptions
 import Bot as Bot
 import constans as constants
 import przedmioty_podstawa as przedmioty_podstawa
@@ -387,12 +387,12 @@ class Bron(przedmioty_podstawa.Przedmiot):
         if wynik >= 0:
             return wynik
         else:
-            raise Exception('chybiles!')
+            raise exceptions.Pudlo('chybiles!')
 
     def aktualna_premia(self, operator, zasieg):
         if zasieg <= self.zasieg_maksymalny:
             return 0 #self.premia - zasieg
-        raise Exception('cel jest po za zasiegiem.')
+        raise exceptions.Pudlo('cel jest po za zasiegiem.')
 
     def penetracja_to_int(self, penetracja):
         return constants.penetracja[penetracja]
@@ -441,7 +441,7 @@ class BronStrzelecka(Bron):
                 self.__zamontuj_magazynek_staly()
         try:
             self.szybkostrzelnosc = int(bron[2])
-        except Exception:
+        except ValueError:
             self.szybkostrzelnosc = bron[2]
         self.walka_wrecz = BronBiala(['kolba', 0, 0, 0, 0, 'd2', 'x', 'obuchowa', '$0,00'])
         self.__nastaw_kare_za_nierostawienie()
@@ -468,7 +468,7 @@ class BronStrzelecka(Bron):
             self.__aplikuj_ruch()
         super(BronStrzelecka, self).aktualna_premia(operator, odleglosc)
         if odleglosc > self.aktualny_magazynek.amunicja.maks_zasieg_amunicji:
-            raise Exception('cel jest po za zasiegiem.')
+            raise exceptions.Pudlo('cel jest po za zasiegiem.')
         kara_za_zasieg = self.__specjalne_kary_za_odleglosc(operator, odleglosc)
         if 1 < self.zasieg_minimalny < 5:
             kara_za_zasieg = kara_za_zasieg * self.zasieg_minimalny
@@ -707,9 +707,9 @@ class BronBiala(Bron):
                 self.test_obrazen_z_egzekucja(cel)
                 return True
             else:
-                raise Exception('walczysz lepiej od wroga, ale wciąż nie jesteś w stanie go trafić')
+                raise exceptions.Pudlo('walczysz lepiej od wroga, ale wciąż nie jesteś w stanie go trafić')
         else:
-            raise Exception('przeciwnik lepiej walczy')
+            raise exceptions.Pudlo('przeciwnik lepiej walczy')
 
 
 class Granat(Bron):  # tyczy się granatów ręcznych. granatniki będą rozwiązane w amunicji i broni strzeleckiej.

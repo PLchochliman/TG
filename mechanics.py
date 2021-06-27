@@ -1,6 +1,7 @@
 import hero
 import przedmioty_bron as items
 import Bot as Bot
+import exceptions as exceptions
 
 
 class Akcje():
@@ -36,7 +37,7 @@ class Akcje():
             if wrog == "brak":
                 return False
             return self.strzelanie.strzal(postac, self.__rozpoznaj_cel(wrog), self.__zasieg())
-        except Exception:
+        except exceptions.Pudlo:
             Bot.output("nie ma takiego celu!!! GMie popraw. wpisz brak, jeśli sytuacja się zmieniła i nie"
                        " chcesz oddawać tego strzału")
             wrog = Bot.gm_input_for_bot()
@@ -49,7 +50,7 @@ class Akcje():
         for postac in self.postacie:
             if postac.imie == imie:
                 return postac
-        raise Exception("nie ma takiego celu")
+        raise exceptions.Pudlo("nie ma takiego celu")
 
     def przesun_faze(self, faza=1):
         if faza > 5:
@@ -87,7 +88,7 @@ class WalkaWrecz():
             wynik = operator.rzut_na_umiejetnasc("walka wrecz")
             odpowiedz = cel.rzut_na_umiejetnasc("walka wrecz")
             if bron.zasieg_maksymalny < zasieg:
-                raise Exception("nie dosięgnąłeś bronią wroga")
+                raise exceptions.Pudlo("nie dosięgnąłeś bronią wroga")
             if bron.zasieg_maksymalny < 2:
                 print(operator.aktywna_bron.premia)
                 wynik = wynik + int(operator.aktywna_bron.premia) #TODO KURWA!!!
@@ -100,10 +101,10 @@ class WalkaWrecz():
                     bron.test_obrazen_z_egzekucja(cel)
                     return True
                 else:
-                    raise Exception('walczysz lepiej od wroga, ale wciąż nie jesteś w stanie go trafić')
+                    raise exceptions.Pudlo('walczysz lepiej od wroga, ale wciąż nie jesteś w stanie go trafić')
             else:
-                raise Exception('przeciwnik lepiej walczy')
-        except Exception as inst:
+                raise exceptions.Pudlo('przeciwnik lepiej walczy')
+        except exceptions.Pudlo as inst:
             powod = inst.args[0]
             Bot.output('Na celu nie zrobilo to zadnego wrazenia bo ' + powod)
            # raise inst
