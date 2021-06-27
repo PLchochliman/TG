@@ -124,9 +124,9 @@ class ElementSzpeju(przedmioty_podstawa.Zakladalny):
             return self.__dodaj_przedmiot(przedmiot)
         return False
 
-    def przyjmij_obrazenia(self, bron, rzut_na_obrazenia):
+    def przyjmij_obrazenia(self, penetracja, rzut_na_obrazenia):
         if self.mnoznik_cen_plyt:
-            if self.plyta_balistyczna.przyjmij_uderzenie(bron):
+            if self.plyta_balistyczna.przyjmij_uderzenie(penetracja):
                 return rzut_na_obrazenia - self.redukcja
             return rzut_na_obrazenia
 
@@ -168,12 +168,12 @@ class PlytyBalistyczne(przedmioty_podstawa.Przedmiot):  # TODO miękka podkładk
         self.wytrzymalosc = czysta_dana[3]
         self.specjalne = czysta_dana[4]
 
-    def przyjmij_uderzenie(self, bron):
+    def przyjmij_uderzenie(self, penetracja):
         if self.wytrzymalosc > 0:
-            if bron.aktualny_magazynek.amunicja.penetracja > self.ochrona:
+            if penetracja > self.ochrona:
                 self.wytrzymalosc = 0
                 return False
-            elif bron.aktualny_magazynek.amunicja.penetracja == self.ochrona:
+            elif penetracja == self.ochrona:
                 self.wytrzymalosc -= 1
                 return True
             else:

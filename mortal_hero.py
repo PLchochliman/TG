@@ -2,7 +2,8 @@ import mortal_base as mortal
 import Bot as Bot
 import excelDigger as excelDigger
 import constans as constans
-import przedmioty_bron as items
+import przedmioty_bron as przedmioty_bron
+import przedmioty_ochronne as przedmioty_ochronne
 #import specialisations as specialisations
 
 """starting creating real playable character"""
@@ -32,6 +33,17 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
         else:
             self.wybierz_specjalizacje()
             self.nastaw_koszt_umiejetnasci_recznie()
+
+    def redukuj_obrazenia(self, rzut_na_obrazenia, penetracja):
+        lista_elementow_zaaplikowanych = []
+        for element in self.element_szpeju:
+            if isinstance(element, przedmioty_ochronne.ElementSzpeju):
+                if element.nazwa in lista_elementow_zaaplikowanych:
+                    continue
+                if element.redukcja:
+                    rzut_na_obrazenia = element.przyjmij_obrazenia(penetracja, rzut_na_obrazenia)
+                    lista_elementow_zaaplikowanych.append(element.nazwa)
+        return rzut_na_obrazenia
 
     #przypisuje 1 specjalizacje
     def przypisz_specjalizacje(self, specjalizacja):

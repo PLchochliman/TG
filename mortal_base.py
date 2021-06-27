@@ -119,41 +119,45 @@ class IstotaZywa: #pełne pokrycie
             self.rany[2] = 0
             self.allokuj(11)
 
+    def redukuj_obrazenia(self, rzut_na_obrazenia, penetracja):
+        if penetracja <= self.typ_ochrony:
+            rzut_na_obrazenia = rzut_na_obrazenia - self.redukcja_obrazen
+        return rzut_na_obrazenia
+
     """
     rana
     when it comes to take a wound, but in normal way. You've just been hit, by enemy. 
     then it will resolve damage by you taken.
     """
-    def rana(self, rzutNaObrazenia, penetracja=0):
-        if penetracja <= self.typ_ochrony:
-            rzutNaObrazenia = rzutNaObrazenia - self.redukcja_obrazen
-        if rzutNaObrazenia <= 1:
+    def rana(self, rzut_na_obrazenia, penetracja=0):
+        rzut_na_obrazenia = self.redukuj_obrazenia(rzut_na_obrazenia, penetracja)
+        if rzut_na_obrazenia <= 1:
             self.allokuj(1)
             Bot.output(self.imie + " ledwo zostal drasniety")
             return True
-        elif rzutNaObrazenia == 2:
+        elif rzut_na_obrazenia == 2:
             self.allokuj(2)
             Bot.output(self.imie + " odczul")
             return True
-        elif rzutNaObrazenia < 6:
+        elif rzut_na_obrazenia < 6:
             self.allokuj(2)
-            self.allokuj(rzutNaObrazenia)
+            self.allokuj(rzut_na_obrazenia)
             Bot.output(self.imie + " odczul")
             return True
-        elif rzutNaObrazenia == 6:
+        elif rzut_na_obrazenia == 6:
             self.allokuj(6)
             Bot.output(self.imie + " wyraznie odczul")
             return True
-        elif rzutNaObrazenia < 11:
+        elif rzut_na_obrazenia < 11:
             self.allokuj(6)
             Bot.output(self.imie + " wyraznie odczul")
-            self.allokuj(rzutNaObrazenia)
+            self.allokuj(rzut_na_obrazenia)
             return True
-        elif rzutNaObrazenia < 15:
+        elif rzut_na_obrazenia < 15:
             self.allokuj(11)
             Bot.output(self.imie + " padl na ziemie")
             return True
-        elif rzutNaObrazenia >= 15:
+        elif rzut_na_obrazenia >= 15:
             self.allokuj(15)
             Bot.output(self.imie + " ulegl dezintegracji")
             return
