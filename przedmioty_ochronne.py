@@ -36,6 +36,7 @@ class ElementSzpeju(przedmioty_podstawa.Zakladalny):
     mnoznik_cen_plyt = ""
     typ = ""
     przedmioty_pod_reka = False
+    plyta_balistyczna = []
 
     # handlery do strzelb nie są obsługiwane
     def __init__(self, czysta_dana):
@@ -50,6 +51,16 @@ class ElementSzpeju(przedmioty_podstawa.Zakladalny):
         self.aktualne_oblozenie = 0
         self.przedmioty_pod_reka = False
         self.__nastaw_pojemnosc()
+        self.__nastaw_mnoznik_plyt()
+
+    def __nastaw_mnoznik_plyt(self):
+        if self.mnoznik_cen_plyt == "dedykowana":
+            return True
+        try:
+            i = float(self.maksymalna_pojemnosc)
+            self.mnoznik_cen_plyt = i
+        except Exception:
+            return False
 
     def __nastaw_pojemnosc(self):
         if isinstance(self.maksymalna_pojemnosc, str):
@@ -114,3 +125,22 @@ class ElementSzpeju(przedmioty_podstawa.Zakladalny):
         self.przedmioty.append(przedmiot)
         self.aktualne_oblozenie += self.sprawdz_oblozenie_przedmiotu(przedmiot)
         return True
+
+
+class PlytyBalistyczne(przedmioty_podstawa.Przedmiot):
+    rozne_rozmiary = False
+    ochrona = "brak"
+    wytrzymalosc = 1
+    specjalne = ""
+
+    def __init__(self, czysta_dana):
+        super(PlytyBalistyczne, self).__init__(czysta_dana[0], czysta_dana[-2], czysta_dana[-1])
+        if czysta_dana[1] == "tak":
+            self.rozne_rozmiary = True
+        else:
+            self.rozne_rozmiary = False
+        self.ochrona = czysta_dana[2]
+        self.wytrzymalosc = czysta_dana[3]
+        self.specjalne = czysta_dana[4]
+
+
