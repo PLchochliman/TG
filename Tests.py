@@ -34,6 +34,14 @@ def wez_i_zaladuj_giwere(nazwa_giwery):
     return giwera
 
 
+def dokup_i_zaladuj_magazynek(giwera):
+    mag = items.Magazynek(giwera)
+    ammo = przedmioty_jako_rekord.luskacz_amunicji(giwera.statystyki_podstawowe[8])
+    ammo = items.Amunicja(ammo)
+    mag.zaladuj_magazynek(ammo)
+    return mag
+
+
 def wez_i_zmien_celownik(giwera, nazwa_celownika):
     return giwera.zmien_celownik(items.Celownik(przedmioty_jako_rekord.luskacz_celownikow(nazwa_celownika)))
 
@@ -498,11 +506,16 @@ def test_szpeju():
     assert wojtek.pieniadze == 9000
     assert wojtek.element_szpeju[constants.miejsce_na_ciele["klata"]].kup_i_wloz_plyte_do_kamizelki(wojtek, rekord)
     assert wojtek.pieniadze == 8450
-    return 10
+    wojtek.aktywna_bron = wez_i_zaladuj_giwere("SCAR-L")
+    mag = dokup_i_zaladuj_magazynek(wojtek.aktywna_bron)
+    assert wojtek.element_szpeju[constants.miejsce_na_ciele["klata"]].schowaj_przedmiot(mag)
+    assert wojtek.aktywna_bron.zmien_magazynek(wojtek.element_szpeju[constants.miejsce_na_ciele["klata"]]
+                                               .wyciagnij_magazynek(wojtek.aktywna_bron))
+    return 12
 
 
 @test_runner
-def test_obrywania_w_kamze_i_mundurow():
+def test_obrywania_w_kamze_i_mundurze():
     strzelanie = mechanics.Strzelanie()
     rekord = przedmioty_jako_rekord.wyszukaj_przedmiot_i_zwroc_po_wszystkim("plate carrier")
     kamza = przedmioty_ochronne.ElementSzpeju(rekord)
@@ -555,9 +568,9 @@ ilosc_testow_pass += test_broni_strzeleckiej_specjalne_magi()
 ilosc_testow_pass += test_broni_strzeleckiej_z_Celownikami()
 ilosc_testow_pass += test_zasad_specjalnych_i_dodatkow_do_broni()
 ilosc_testow_pass += test_szpeju()
-ilosc_testow_pass += test_obrywania_w_kamze_i_mundurow()
+ilosc_testow_pass += test_obrywania_w_kamze_i_mundurze()
 
 print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \n"
-      "Jest to " + str(ilosc_testow_pass/166 * 100) + "% testów.")
+      "Jest to " + str(ilosc_testow_pass/167 * 100) + "% testów.")
 #unittest.main()
 
