@@ -54,7 +54,7 @@ class ElementSzpeju(przedmioty_podstawa.Zakladalny):
         self.maksymalna_pojemnosc = czysta_dana[4]
         self.mnoznik_cen_plyt = czysta_dana[6]
         self.przedmioty = []
-        self.aktualne_oblozenie = 0
+        self.aktualne_oblozenie = 0.0
         self.przedmioty_pod_reka = False
         self.__nastaw_pojemnosc()
         self.__nastaw_mnoznik_plyt()
@@ -125,7 +125,7 @@ class ElementSzpeju(przedmioty_podstawa.Zakladalny):
                 return przedmiot
 
     def schowaj_przedmiot(self, przedmiot):
-        oblozenie_przedmiotu = self.sprawdz_oblozenie_przedmiotu(przedmiot)
+        oblozenie_przedmiotu = self.__sprawdz_oblozenie_przedmiotu(przedmiot)
         if oblozenie_przedmiotu > 0:
             return self.__dodaj_przedmiot(przedmiot)
         return False
@@ -137,7 +137,7 @@ class ElementSzpeju(przedmioty_podstawa.Zakladalny):
             return rzut_na_obrazenia
 
     @staticmethod
-    def sprawdz_oblozenie_przedmiotu(przedmiot):
+    def __sprawdz_oblozenie_przedmiotu(przedmiot):
         if isinstance(przedmiot, przedmioty_bron.Magazynek):
             return 0.5
         if isinstance(przedmiot, przedmioty_inne.Apteczka):
@@ -149,13 +149,15 @@ class ElementSzpeju(przedmioty_podstawa.Zakladalny):
 
     def __usun_przedmiot(self, przedmiot):
         self.przedmioty.remove(przedmiot)
-        self.aktualne_oblozenie = self.aktualne_oblozenie - self.sprawdz_oblozenie_przedmiotu(przedmiot)
+        self.aktualne_oblozenie = self.aktualne_oblozenie - self.__sprawdz_oblozenie_przedmiotu(przedmiot)
         return True
 
     def __dodaj_przedmiot(self, przedmiot):
-        self.przedmioty.append(przedmiot)
-        self.aktualne_oblozenie += self.sprawdz_oblozenie_przedmiotu(przedmiot)
-        return True
+        if self.aktualne_oblozenie + self.__sprawdz_oblozenie_przedmiotu(przedmiot) <= self.maksymalna_pojemnosc:
+            self.przedmioty.append(przedmiot)
+            self.aktualne_oblozenie += self.__sprawdz_oblozenie_przedmiotu(przedmiot)
+            return True
+        return False
 
 
 class PlytyBalistyczne(przedmioty_podstawa.Przedmiot):  # TODO miękka podkładka still not implemented
