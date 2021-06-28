@@ -590,6 +590,6 @@ ilosc_testow_pass += test_szpeju()
 ilosc_testow_pass += test_obrywania_w_kamze_i_mundurze()
 
 print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \n"
-      "Jest to " + str(ilosc_testow_pass/171 * 186) + "% testów.")
+      "Jest to " + str(ilosc_testow_pass/186 * 100) + "% testów.")
 #unittest.main()
 
