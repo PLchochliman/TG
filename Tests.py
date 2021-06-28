@@ -511,7 +511,13 @@ def test_szpeju():
     assert wojtek.element_szpeju[constants.miejsce_na_ciele["klata"]].schowaj_przedmiot(mag)
     assert wojtek.aktywna_bron.zmien_magazynek(wojtek.element_szpeju[constants.miejsce_na_ciele["klata"]]
                                                .wyciagnij_magazynek(wojtek.aktywna_bron))
-    return 12
+
+    mag = dokup_i_zaladuj_magazynek(wojtek.aktywna_bron)
+    assert wojtek.element_szpeju[constants.miejsce_na_ciele["klata"]].schowaj_przedmiot(mag)
+    wojtek.aktywna_bron = wez_i_zaladuj_giwere("M4A1")
+    assert wojtek.aktywna_bron.zmien_magazynek(wojtek.element_szpeju[constants.miejsce_na_ciele["klata"]]
+                                               .wyciagnij_magazynek(wojtek.aktywna_bron))
+    return 14
 
 
 @test_runner
@@ -571,6 +577,6 @@ ilosc_testow_pass += test_szpeju()
 ilosc_testow_pass += test_obrywania_w_kamze_i_mundurze()
 
 print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \n"
-      "Jest to " + str(ilosc_testow_pass/167 * 100) + "% testów.")
+      "Jest to " + str(ilosc_testow_pass/171 * 100) + "% testów.")
 #unittest.main()
 
