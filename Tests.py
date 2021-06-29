@@ -28,6 +28,8 @@ def wez_i_zaladuj_giwere(nazwa_giwery):
     ammo = przedmioty_jako_rekord.luskacz_amunicji(giwera.statystyki_podstawowe[8])
     ammo = items.Amunicja(ammo)
     mag.zaladuj_magazynek(ammo)
+    if not giwera.aktualny_magazynek.stan_nabojow:
+        giwera.aktualny_magazynek.zaladuj_magazynek(ammo)
     giwera.zmien_magazynek(mag)
     giwera.zaciagnij_naboj()
     giwera.zloz_sie_do_strzalu()
@@ -453,7 +455,13 @@ def test_mechanik_walki():
     assert wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow == 6
     wojtek.aktywna_bron.awaria = True
     assert not strzelanie.strzal(wojtek, beben, 50, "serie")
-    return 10
+    wojtek = postac_co_z_pistoletu_i_karabinu_rzuca_6()
+    wojtek.aktywna_bron = wez_i_zaladuj_giwere("SPAS 12")
+    beben = gong_o_uniku_10()
+    assert not strzelanie.strzal(wojtek, beben, 50, "pojedynczy")
+    assert strzelanie.strzal(wojtek, beben, 5, "pojedynczy")
+    assert not strzelanie.strzal(wojtek, beben, 50, "pojedynczy")
+    return 13
 
 
 
@@ -590,6 +598,6 @@ ilosc_testow_pass += test_szpeju()
 ilosc_testow_pass += test_obrywania_w_kamze_i_mundurze()
 
 print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \n"
-      "Jest to " + str(ilosc_testow_pass/186 * 100) + "% testów.")
+      "Jest to " + str(ilosc_testow_pass/189 * 100) + "% testów.")
 #unittest.main()
 

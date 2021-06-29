@@ -434,7 +434,7 @@ class BronStrzelecka(Bron):
         if magazynek == "":
             self.aktualny_magazynek = Magazynek(self)
             self.wymienny_magazynek = True
-        self.zasady_specjalne = bron[7].split(",")
+        self.zasady_specjalne = [zasada for zasada in bron[7].split(", ")]
         self.oczysc_zasady_specjalne()
         for i in self.zasady_specjalne:
             if i in ("podwójny magazynek rurowy", "magazynek rurowy", "łódeczki"):

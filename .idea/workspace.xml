@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/exceptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mechanics.py" beforeDir="false" afterPath="$PROJECT_DIR$/mechanics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mortal_hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortal_hero.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/przedmioty_bron.py" beforeDir="false" afterPath="$PROJECT_DIR$/przedmioty_bron.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -195,13 +193,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00195" summary="test runner fixed">
-      <created>1622639655084</created>
-      <option name="number" value="00195" />
-      <option name="presentableId" value="LOCAL-00195" />
-      <option name="project" value="LOCAL" />
-      <updated>1622639655084</updated>
     </task>
     <task id="LOCAL-00196" summary="finally provided proper handling of addons to gun.">
       <created>1622701638432</created>
@@ -539,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624864321359</updated>
     </task>
-    <option name="localTasksCounter" value="244" />
+    <task id="LOCAL-00244" summary="did some refactor.">
+      <created>1624949273562</created>
+      <option name="number" value="00244" />
+      <option name="presentableId" value="LOCAL-00244" />
+      <option name="project" value="LOCAL" />
+      <updated>1624949273562</updated>
+    </task>
+    <option name="localTasksCounter" value="245" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -555,7 +553,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="new tests little refactor" />
     <MESSAGE value="preparing something for reloading purposes." />
     <MESSAGE value="implementing capacity" />
     <MESSAGE value="some cosmetics refactor, also sterted adding first aid kits." />
@@ -580,7 +577,8 @@
     <MESSAGE value="Added more tests about reloading." />
     <MESSAGE value="Added more tests about reloading. and vests" />
     <MESSAGE value="minor bug fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor bug fix" />
+    <MESSAGE value="did some refactor." />
+    <option name="LAST_COMMIT_MESSAGE" value="did some refactor." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -604,6 +602,46 @@
           <url>file://F:/Pulpit/projektNOPyBartoszBiniek/projektNOPyBartoszBiniek/main.py</url>
           <line>17</line>
           <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/przedmioty_bron.py</url>
+          <line>651</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/przedmioty_bron.py</url>
+          <line>652</line>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/przedmioty_bron.py</url>
+          <line>653</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/przedmioty_bron.py</url>
+          <line>654</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/przedmioty_bron.py</url>
+          <line>655</line>
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/przedmioty_bron.py</url>
+          <line>656</line>
+          <option name="timeStamp" value="89" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/przedmioty_bron.py</url>
+          <line>478</line>
+          <option name="timeStamp" value="90" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/przedmioty_bron.py</url>
+          <line>650</line>
+          <option name="timeStamp" value="93" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
