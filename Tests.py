@@ -130,7 +130,7 @@ def test_ran_kar_smierci(): #testy mortal_base.py
     wojtek.zaplanuj_akcje("bieg")
     wojtek.akcja()
     assert wojtek.w_ruchu == -10
-    wojtek.zaplanuj_akcje("kurwa sram")
+    wojtek.zaplanuj_akcje("sram")
     wojtek.akcja()
     assert wojtek.w_ruchu == 0
     wojtek.rana(10, 0)
@@ -455,14 +455,7 @@ def test_mechanik_walki():
     assert wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow == 6
     wojtek.aktywna_bron.awaria = True
     assert not strzelanie.strzal(wojtek, beben, 50, "serie")
-    wojtek = postac_co_z_pistoletu_i_karabinu_rzuca_6()
-    wojtek.aktywna_bron = wez_i_zaladuj_giwere("SPAS 12")
-    beben = gong_o_uniku_10()
-    assert not strzelanie.strzal(wojtek, beben, 50, "pojedynczy")
-    assert strzelanie.strzal(wojtek, beben, 5, "pojedynczy")
-    assert not strzelanie.strzal(wojtek, beben, 50, "pojedynczy")
-    return 13
-
+    return 10
 
 
 @test_runner
@@ -493,7 +486,13 @@ def test_zasad_specjalnych_i_dodatkow_do_broni():
     assert not strzelanie.strzal(wojtek, gong, 5)
     assert wojtek.aktywna_bron.zamontuj_dodatek(items.Celownik(przedmioty_jako_rekord.luskacz_celownikow("micro")))
     assert strzelanie.strzal(wojtek, gong, 5)
-    return 19
+    wojtek = postac_co_z_pistoletu_i_karabinu_rzuca_6()
+    wojtek.aktywna_bron = wez_i_zaladuj_giwere("SPAS 12")
+    beben = gong_o_uniku_10()
+    assert not strzelanie.strzal(wojtek, beben, 50, "pojedynczy")
+    assert strzelanie.strzal(wojtek, beben, 5, "pojedynczy")
+    assert not strzelanie.strzal(wojtek, beben, 50, "pojedynczy")
+    return 22
 
 
 @test_runner
@@ -575,7 +574,7 @@ def test_akcji():
     return 3
 
 
-#citizien for, film o Snowdenie
+# citizien for, film o Snowdenie
 ilosc_testow_pass = 0
 ilosc_testow_pass = test_luskania_danych_z_excela()
 ilosc_testow_pass += test_systemu()
@@ -599,5 +598,4 @@ ilosc_testow_pass += test_obrywania_w_kamze_i_mundurze()
 
 print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \n"
       "Jest to " + str(ilosc_testow_pass/189 * 100) + "% testów.")
-#unittest.main()
-
+#  unittest.main()

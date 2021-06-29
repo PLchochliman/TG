@@ -86,7 +86,14 @@ UmiejetnasciDoInt = {
     "zawod Rusznikarz": 21,
     "zawod Kowal": 22,
     "zawod Mechanik": 23,
-    "zawod Kucharz": 24
+    "zawod Kucharz": 24,
+    "dyscyplina naukowa medycyna": 18,
+    "dyscyplina naukowa informatyka": 19,
+    "dyscyplina naukowa humanistyka": 20,
+    "zawod rusznikarz": 21,
+    "zawod kowal": 22,
+    "zawod mechanik": 23,
+    "zawod kucharz": 24
 }
 
 Umiejetnosci = {
