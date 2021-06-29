@@ -277,6 +277,9 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
     def handling_specialisations_before_hit(self):
         return 0
 
+    def handling_specialisations_reducing_recoil(self, tryb):
+        return 0
+
     def handling_specialisations_about_ammo_consuption(self, result):
         return 0
 

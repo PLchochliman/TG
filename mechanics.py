@@ -124,7 +124,7 @@ class Strzelanie():
     """
     def __sprawdzenie_czy_mozna_strzelac(self, operator, tryb):
         if not operator.aktywna_bron.naboj_w_komorze:
-            raise Exception("brak naboju w komorze.\nPo nacisnieciu spustu nic sie nie stalo.")
+            raise exceptions.NieWystrzelono("brak naboju w komorze.\nPo nacisnieciu spustu nic sie nie stalo.")
         if tryb in ("samoczynny", "serie"):
             if operator.aktywna_bron.szybkostrzelnosc in ("sa", "ba", "bu"):
                 tryb = "pojedynczy"
@@ -147,9 +147,10 @@ class Strzelanie():
     def strzal(self, operator, cel, zasieg, tryb="pojedynczy"):
         try:
             if operator.aktywna_bron.awaria:
-                raise Exception("BRON MA AWARIE")
+                raise exceptions.NieWystrzelono("BRON MA AWARIE")
             if tryb not in ("pojedynczy", "pelne skupienie", "samoczynny", "serie"):
-                raise Exception("nie ma takiego trybu. Dostępne tryby to: pojedynczy, pelne skupienie, samoczynny, serie")
+                raise exceptions.NieWystrzelono("nie ma takiego trybu. Dostępne tryby to: "
+                                                "pojedynczy, pelne skupienie, samoczynny, serie")
             tryb = self.__sprawdzenie_czy_mozna_strzelac(operator, tryb)
             ilosc_trafien = self.__zuzycie(operator.aktywna_bron, tryb)
             dodatkowe = operator.handling_specialisations_before_hit()
@@ -172,16 +173,20 @@ class Strzelanie():
             else:
                 self.__zadaj_obrazenia(cel, operator.aktywna_bron, zasieg, 0, wynik)
                 return True
-        except Exception as inst:
+        except exceptions.Pudlo as inst:
             powod = inst.args[0]
             Bot.output(cel.imie + " nie oberwal bo " + powod)
+            return False
+        except exceptions.NieWystrzelono as inst:
+            powod = inst.args[0]
+            Bot.output(cel.imie + " nie wystrzelil bo " + powod)
             return False
     """
     liczy zuzycie naboi i od razu aplikuje
     """
     def __zuzycie(self, bron, tryb):
-        if bron.naboj_w_komorze == False:
-            raise Exception("NIE MA NABOJU W KOMORZE")
+        if not bron.naboj_w_komorze:
+            raise exceptions.NieWystrzelono("NIE MA NABOJU W KOMORZE")
         wystrzelone_naboje = 0
         if tryb in ("samoczynny"):
             wystrzelone_naboje = self.__zuzyj_naboje(bron, int(bron.szybkostrzelnosc))

@@ -458,8 +458,9 @@ class BronStrzelecka(Bron):
         self.aktualny_magazynek.amunicja.zadaj_obrazenia(cel, premia, dystans)
 
     def test_trafienia(self, operator, cel, tryb, dodatkowe, zasieg):
-        if tryb in ("samoczynny", "serie"):
-            dodatkowe = dodatkowe + self.__dodatkowy_odrzut_ognia_samoczynnego(tryb)
+        dodatkowe = self.__dodatkowy_odrzut_ognia_samoczynnego(operator, tryb)
+        dodatkowe += self.__zasady_dodatkowe_zalezne_od_trybu(operator, tryb)
+
         return super(BronStrzelecka, self).test_trafienia(operator, cel, dodatkowe, zasieg)
 
     def aktualna_premia(self, operator, odleglosc):
@@ -476,14 +477,6 @@ class BronStrzelecka(Bron):
         premia = premia + int(self.odrzut(operator))
         premia = premia - int(kara_za_zasieg)
         premia = premia + self.__interpretuj_zasady_bazujace_na_amunicji(odleglosc)
-        if "celna" in self.zasady_specjalne:
-            if operator.umiejetnosci[constants.UmiejetnasciDoInt["strzelectwo"]][0] > 2:
-                premia = premia + 1
-        if "wybitnie celna" in self.zasady_specjalne:
-            if operator.umiejetnosci[constants.UmiejetnasciDoInt["strzelectwo"]][0] > 2:
-                premia = premia + 1
-            if operator.umiejetnosci[constants.UmiejetnasciDoInt["strzelectwo"]][0] > 4:
-                premia = premia + 1
         if not self.rostawiona:
             premia = premia + self.kara_za_nierostawienie
         if self.rostawiona:
@@ -616,34 +609,44 @@ class BronStrzelecka(Bron):
     def __zamontuj_magazynek_staly(self):
         self.wymienny_magazynek = False
 
-    def __dodatkowy_odrzut_ognia_samoczynnego(self, tryb):
-        dodatkowa_redukcja = 0
-        if "stabilny ostrzał" in self.zasady_specjalne:
-            for i in self.zasady_specjalne:
-                if "stabilny ostrzał" in i:
-                    dodatkowa_redukcja = int(i[-1])
-        if tryb == "serie":
-            if dodatkowa_redukcja < int(self.odrzut_aktualny/2):
-                return 0
-            else:
+    def __dodatkowy_odrzut_ognia_samoczynnego(self, operator, tryb):
+        if tryb in ("serie", "samoczynny"):
+            dodatkowa_redukcja = 0 + operator.handling_specialisations_reducing_recoil(tryb)
+            if "stabilny ostrzał" in self.zasady_specjalne:
+                for i in self.zasady_specjalne:
+                    if "stabilny ostrzał" in i:
+                        dodatkowa_redukcja = int(i[-1])
+            if tryb == "serie":
+                if dodatkowa_redukcja < int(self.odrzut_aktualny/2):
+                    return 0
                 return int(int(self.odrzut_aktualny)/2 + dodatkowa_redukcja)
-        if tryb == "samoczynny":
-            if dodatkowa_redukcja < int(self.odrzut_aktualny):
-                return 0
-            else:
-                return int(self.odrzut_aktualny) + dodatkowa_redukcja
+            if tryb == "samoczynny":
+                if dodatkowa_redukcja < int(self.odrzut_aktualny):
+                    return 0
+                else:
+                    return int(self.odrzut_aktualny) + dodatkowa_redukcja
+        return 0
 
-    def __interpretuj_zasady_bazujace_na_amunicji(self, zasięg): #nie przetestowana
+    def __zasady_dodatkowe_zalezne_od_trybu(self, operator, tryb):
+        premia = 0
+        if "pojedyncze" in tryb:
+            if "celna" in self.zasady_specjalne:
+                if operator.umiejetnosci[constants.UmiejetnasciDoInt["strzelectwo"]][0] > 2:
+                    premia += 1
+            if "wybitnie celna" in self.zasady_specjalne:
+                if operator.umiejetnosci[constants.UmiejetnasciDoInt["strzelectwo"]][0] > 2:
+                    premia += 1
+                if operator.umiejetnosci[constants.UmiejetnasciDoInt["strzelectwo"]][0] > 4:
+                    premia += 1
+        return premia
+
+    def __interpretuj_zasady_bazujace_na_amunicji(self, zasięg):  # nie przetestowana
         premia = 0
         if "snajperka" in self.zasady_specjalne:
-            if self.aktualny_magazynek.amunicja.typ_amunicji == "wyborowa":
-                premia = premia + 1
-            if self.aktualny_magazynek.amunicja.typ_amunicji == "wybitnie wyborowa":
+            if "wyborowa" in self.aktualny_magazynek.amunicja.typ_amunicji:
                 premia = premia + 1
         if "duzy kaliber" in self.zasady_specjalne:
-            if self.aktualny_magazynek.amunicja.typ_amunicji == "wyborowa":
-                premia = premia + 1
-            if self.aktualny_magazynek.amunicja.typ_amunicji == "wybitnie wyborowa":
+            if "wyborowa" in self.aktualny_magazynek.amunicja.typ_amunicji:
                 premia = premia + 1
         if "strzelba" in self.zasady_specjalne:
             if self.aktualny_magazynek.amunicja.typ_amunicji == "podstawowa":
