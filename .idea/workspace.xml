@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constans.py" beforeDir="false" afterPath="$PROJECT_DIR$/constans.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/przedmioty_inne.py" beforeDir="false" afterPath="$PROJECT_DIR$/przedmioty_inne.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -194,13 +192,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00197" summary="little refactor">
-      <created>1622712399047</created>
-      <option name="number" value="00197" />
-      <option name="presentableId" value="LOCAL-00197" />
-      <option name="project" value="LOCAL" />
-      <updated>1622712399048</updated>
     </task>
     <task id="LOCAL-00198" summary="fixed dissasembly of addons to gun">
       <created>1622720488257</created>
@@ -538,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624953905950</updated>
     </task>
-    <option name="localTasksCounter" value="246" />
+    <task id="LOCAL-00246" summary="finally did something for healing.">
+      <created>1624974055897</created>
+      <option name="number" value="00246" />
+      <option name="presentableId" value="LOCAL-00246" />
+      <option name="project" value="LOCAL" />
+      <updated>1624974055897</updated>
+    </task>
+    <option name="localTasksCounter" value="247" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -554,7 +552,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="implementing capacity" />
     <MESSAGE value="some cosmetics refactor, also sterted adding first aid kits." />
     <MESSAGE value="prepared proper places for granedes, but still they are not handled properly." />
     <MESSAGE value="Roll to hit for granades Done." />
@@ -579,7 +576,8 @@
     <MESSAGE value="minor bug fix" />
     <MESSAGE value="did some refactor." />
     <MESSAGE value="repaired special for shotguns." />
-    <option name="LAST_COMMIT_MESSAGE" value="repaired special for shotguns." />
+    <MESSAGE value="finally did something for healing." />
+    <option name="LAST_COMMIT_MESSAGE" value="finally did something for healing." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

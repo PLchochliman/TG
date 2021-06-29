@@ -15,15 +15,15 @@ class Apteczka(przedmioty_podstawa.Przedmiot):
         self.ilosc_ladunkow = czysta_dana[4]
 
     def wylecz(self, operator, cel, umiejetnasc="dyscyplina naukowa Medycyna"):
-        wynik = operator.rzut_na_umiejetnasc(umiejetnasc)
+        wynik = operator.rzut_na_umiejetnasc(umiejetnasc) + self.premia
         self.ilosc_ladunkow -= 1
         if umiejetnasc in ("survival"):
             wynik = wynik - 5
         rana_do_efektu = {"drasniecie": 5,
-                          "lekka rana": 5,
-                          "rana konczyny": 5,
+                          "lekka rana": 10,
+                          "rana konczyny": 10,
                           "powazna rana": 15,
-                          "krytyczna rana": 15
+                          "krytyczna rana": 20
                           }
         wynik = self.__ktora_rana_zaleczona(wynik)
         efekt = rana_do_efektu[wynik]
