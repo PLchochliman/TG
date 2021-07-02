@@ -8,6 +8,8 @@ import mechanics as mechanics
 import items_read_from_excel as raw_items
 import items_read_from_SQL as SQL
 import przedmioty_ochronne as przedmioty_ochronne
+import przedmioty_inne as przedmioty_inne
+
 
 #  przedmioty_jako_rekord = raw_items.Przedmioty()
 przedmioty_jako_rekord = SQL.Przedmioty(False)  # change to True to update base
@@ -306,7 +308,7 @@ def test_Broni_strzelcekiej_magazynki_zaciaganie_amunicja_czterotakt():
     return 24
 
 
-@test_runner
+@test_runner #  TODO DOKONCZYC O INNE MAGI i TAŚMY!!!!!!!!!!!
 def test_broni_strzeleckiej_specjalne_magi():
     mk23 = przedmioty_jako_rekord.luskacz_broni("mk23")
     MK23 = items.BronStrzelecka(mk23)
@@ -564,6 +566,14 @@ def test_obrywania_w_kamze_i_mundurze():
     return 7
 
 
+@test_runner
+def test_apteczek_i_leczenia():
+    wojtek = postac_co_z_pistoletu_i_karabinu_rzuca_6()
+    gong = gong_o_uniku_10()
+    gong.rana(6, 4)
+    apteczka = przedmioty_inne.Apteczka(przedmioty_jako_rekord.wyszukaj_przedmiot_i_zwroc_po_wszystkim("operatorska"))
+    assert apteczka.wylecz(wojtek, gong)
+    return 2
 
 @test_runner
 def test_akcji():
@@ -595,7 +605,8 @@ ilosc_testow_pass += test_broni_strzeleckiej_z_Celownikami()
 ilosc_testow_pass += test_zasad_specjalnych_i_dodatkow_do_broni()
 ilosc_testow_pass += test_szpeju()
 ilosc_testow_pass += test_obrywania_w_kamze_i_mundurze()
+ilosc_testow_pass += test_apteczek_i_leczenia()
 
 print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \n"
-      "Jest to " + str(ilosc_testow_pass/189 * 100) + "% testów.")
+      "Jest to " + str(ilosc_testow_pass/191 * 100) + "% testów.")
 #  unittest.main()

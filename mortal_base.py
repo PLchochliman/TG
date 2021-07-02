@@ -231,7 +231,7 @@ class IstotaZywa: #pełne pokrycie
     def wylecz(self, typ_rany):
 
         if typ_rany in ("drasniecie", "lekka rana", "powazna rana", "krytyczna rana", "rana konczyny"):
-            if self.rany[constans.RanaToInt(typ_rany)] == 4:
+            if self.rany[constans.RanaToInt[typ_rany]] == 4:
                 for i in range(0, len(self.rany[4])):
                     if self.rany[4][i] > 0:
                         self.rany[4][i] = self.rany[4][i] -1
@@ -240,8 +240,8 @@ class IstotaZywa: #pełne pokrycie
 
                 Bot.output(self.imie + " nie ma rany kończyny do wyleczenia.\n")
                 return False
-            if self.rany[constans.RanaToInt(typ_rany)] > 0:
-                self.rany[constans.RanaToInt(typ_rany)] = self.rany[constans.RanaToInt(typ_rany)] - 1
+            if self.rany[constans.RanaToInt[typ_rany]] > 0:
+                self.rany[constans.RanaToInt[typ_rany]] = self.rany[constans.RanaToInt[typ_rany]] - 1
                 Bot.output("Wyleczono " + self.imie + typ_rany)
                 return True
             Bot.output(self.imie + " nie ma " + typ_rany + " do wyleczenia!\n")
