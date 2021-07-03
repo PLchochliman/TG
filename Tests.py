@@ -318,11 +318,17 @@ def test_broni_strzeleckiej_specjalne_magi():
     ACP = items.Amunicja(ACP)
     mag = items.Magazynek(MK23)
     mag.zaladuj_magazynek(ACP)
-    powiekszaony_mag = items.Magazynek(MK23, "powiekszone magazynki")
-    powiekszaony_mag.zaladuj_magazynek(ACP)
-    assert powiekszaony_mag.stan_nabojow == 18
-
-    return 1
+    powiekszony_mag = items.Magazynek(MK23, "powiekszony magazynek")
+    powiekszony_mag.zaladuj_magazynek(ACP)
+    assert powiekszony_mag.stan_nabojow == 18
+    powiekszony_mag = items.Magazynek(MK23, "bębnowy magazynek")
+    assert powiekszony_mag.maksymalna_pojemnosc == 50
+    m4ka = wez_i_zaladuj_giwere("M4A1")
+    powiekszony_mag = items.Magazynek(m4ka, "powiekszony magazynek")
+    assert powiekszony_mag.maksymalna_pojemnosc == 45
+    powiekszony_mag = items.Magazynek(m4ka, "bębnowy magazynek")
+    assert powiekszony_mag.maksymalna_pojemnosc == 100
+    return 4
 
 
 @test_runner
@@ -608,5 +614,5 @@ ilosc_testow_pass += test_obrywania_w_kamze_i_mundurze()
 ilosc_testow_pass += test_apteczek_i_leczenia()
 
 print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \n"
-      "Jest to " + str(ilosc_testow_pass/191 * 100) + "% testów.")
+      "Jest to " + str(ilosc_testow_pass/194 * 100) + "% testów.")
 #  unittest.main()

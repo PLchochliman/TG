@@ -239,6 +239,7 @@ class Magazynek():
         self.typ_magazynka = ""
         self.maksymalna_pojemnosc = bron.statystyki_podstawowe[9]
         self.__zaladuj_rodzine_i_typ(bron, typ)
+        typ = ""
 
     """
     cheks if magazine WHICH YOU BUY is special for purposes of avaibility of feeding another gun
@@ -268,17 +269,17 @@ class Magazynek():
                     self.typ_magazynka = typ
                     self.maksymalna_pojemnosc = 30
                     return True
-        if typ == "powiększone magazynki":
+        if typ in ("powiększony magazynek", "powiekszony magazynek"):
             if podstawowy_jest_specjalny:
                 if self.typ_magazynka in ("bębnowy magazynek"):
                     self.typ_magazynka = typ
                     self.maksymalna_pojemnosc = 45
                     return True
-        else:
-            self.typ_magazynka = typ
-            self.maksymalna_pojemnosc = int(self.maksymalna_pojemnosc * 1.5)
+            else:
+                self.typ_magazynka = typ
+                self.maksymalna_pojemnosc = int(self.maksymalna_pojemnosc * 1.5)
             return True
-        if typ == "bębnowy magazynek":
+        if typ in ("bębnowy magazynek", "bebnowy magazynek"):
             for i in bron.zasady_specjalne:
                 if i in ("pistolet", "pistolet maszynowy"):
                     self.typ_magazynka = typ
@@ -291,6 +292,7 @@ class Magazynek():
             self.typ_magazynka = typ
             self.maksymalna_pojemnosc = 100
             return True
+        return False
 
     """
     cheks if magazine is special for purposes of avaibility of feeding another gun, to be checked after reload
