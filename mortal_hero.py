@@ -300,9 +300,11 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
                     if zasada_broni in specjalizacja[4]:
                         if specjalizacja[2] > check:
                             result[result.index(check)] = specjalizacja[2]
+                            check = specjalizacja[2]
                 if self.aktywna_bron.aktualny_magazynek.amunicja.charakterystyka_naboju in specjalizacja[4]:
-                    if specjalizacja[2] > check:
+                    if specjalizacja[2] >= check:
                         result[result.index(check)] = specjalizacja[2]
+                        break
         wyjscie = 0
         for i in result:
             wyjscie += i

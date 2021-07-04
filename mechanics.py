@@ -143,7 +143,7 @@ class Strzelanie():
         implements shooting procedure from TG.
         """
 # oraz nie daje możliwości do strzelania 2 wrogów naRaz.
-# nie sprawdza równierz kar za różne zasięgi.
+#  kary za zasieg sa juz w broni
     def strzal(self, operator, cel, zasieg, tryb="pojedynczy"):
         try:
             if operator.aktywna_bron.awaria:
@@ -157,7 +157,8 @@ class Strzelanie():
             if tryb == "pelne skupienie":
                 dodatkowe = Bot.roll_dice_from_text("3d6")
                 zasieg = zasieg/2
-            wynik = self.__test_trafienia(operator, cel, tryb, dodatkowe, zasieg) #failuje juz z wyjatku testu trafienia
+            wynik = self.__test_trafienia(operator, cel, tryb, dodatkowe, zasieg)
+            # failuje juz z wyjatku testu trafienia
             if wynik > 0:
                 if tryb in ("pojedynczy", "pelne skupienie"):
                     if wynik > 10:
@@ -188,7 +189,7 @@ class Strzelanie():
         if not bron.naboj_w_komorze:
             raise exceptions.NieWystrzelono("NIE MA NABOJU W KOMORZE")
         wystrzelone_naboje = 0
-        if tryb in ("samoczynny"):
+        if tryb in "samoczynny":
             wystrzelone_naboje = self.__zuzyj_naboje(bron, int(bron.szybkostrzelnosc))
         if tryb in "serie":
             wystrzelone_naboje = self.__zuzyj_naboje(bron, 3)
@@ -200,7 +201,8 @@ class Strzelanie():
             self.__zuzyj_naboje(bron, 1)
         return wystrzelone_naboje
 
-    def __zuzyj_naboje(self, bron, maksymalne):
+    @staticmethod
+    def __zuzyj_naboje(bron, maksymalne):
         if maksymalne > bron.aktualny_magazynek.stan_nabojow:
             maksymalne = bron.aktualny_magazynek.stan_nabojow + 1
             bron.aktualny_magazynek.stan_nabojow = 0

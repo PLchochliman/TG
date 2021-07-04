@@ -244,7 +244,6 @@ class Magazynek():
     """
     cheks if magazine WHICH YOU BUY is special for purposes of avaibility of feeding another gun
     """
-    #TODO NIE MA:typów taśm!!
     def __zaladuj_rodzine_i_typ(self, bron, typ):
         podstawowy_jest_specjalny = False
         for i in bron.zasady_specjalne:
@@ -259,6 +258,7 @@ class Magazynek():
                     self.typ_magazynka = "taśma"
                     if typ == "":
                         typ = i
+                        break
         if self.rodzina == "":
             self.rodzina = bron.statystyki_podstawowe[0]
         if typ == "":
@@ -294,9 +294,10 @@ class Magazynek():
             return True
         if typ in ("powiększona taśma", "powiekszona tasma"):
             for i in bron.zasady_specjalne:
-                if i == "taśma":
+                if i in ("taśma", "tasma"):
                     self.maksymalna_pojemnosc = 200
-                    self.typ_magazynka = typ
+                    self.typ_magazynka = "powiekszona tasma"
+                    print("mag_to_powieszona_Taśma")
                     return True
         return False
 
@@ -370,13 +371,13 @@ class Magazynek():
     #roznica względem TG - tutaj się zrywa podczas strzelanie nierostawionego.
     def __setattr__(self, name, value):
         if name == 'stan_nabojow':
-            if self.typ_magazynka == "powiekszona taśma":
+            if self.typ_magazynka in ("powiększona taśma", "powiekszona tasma"):
                 wynik = Bot.roll_dice(6)
                 if wynik >= 6:
                     Bot.output("Jeżeli nie jesteś stacjonarny, to właśnie wypadła Ci taśma...")
                 else:
                     Bot.output("Jeżeli nie jesteś stacjonarny, to czujesz ruch pudełka z taśmą...")
-        super(Magazynek, self).__setattr__(name, value)
+        return super(Magazynek, self).__setattr__(name, value)
 
 
 class Bron(przedmioty_podstawa.Przedmiot):

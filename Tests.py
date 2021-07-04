@@ -6,6 +6,7 @@ import mortal_hero as hero
 import przedmioty_bron as items
 import mechanics as mechanics
 import items_read_from_excel as raw_items
+import time as time
 import items_read_from_SQL as SQL
 import przedmioty_ochronne as przedmioty_ochronne
 import przedmioty_inne as przedmioty_inne
@@ -287,7 +288,7 @@ def test_Broni_strzelcekiej_magazynki_zaciaganie_amunicja_czterotakt():
     assert wojtek.aktywna_bron.zmien_magazynek(mag)
     saw = przedmioty_jako_rekord.luskacz_broni("m249 saw")
     SAW = items.BronStrzelecka(saw)
-    stal = items.Magazynek(SAW)
+    stal = items.Magazynek(SAW, "powiekszona tasma")
     stal.zaladuj_magazynek(NATO)
     mag = items.Magazynek(M4KA)
     mag.zaladuj_magazynek(NATO)
@@ -469,7 +470,13 @@ def test_mechanik_walki():
     assert wojtek.aktywna_bron.aktualny_magazynek.stan_nabojow == 6
     wojtek.aktywna_bron.awaria = True
     assert not strzelanie.strzal(wojtek, beben, 50, "serie")
-    return 10
+    wojtek.aktywna_bron = wez_i_zaladuj_giwere("M240B")
+    mag = items.Magazynek(wojtek.aktywna_bron, "powiekszona tasma")
+    mag.zaladuj_magazynek(items.Amunicja(przedmioty_jako_rekord.luskacz_amunicji("7,62 nato")))
+    assert wojtek.aktywna_bron.zmien_magazynek(mag)
+    wojtek.aktywna_bron.aktualny_magazynek = mag
+    strzelanie.strzal(wojtek, beben, 5, "serie")
+    return 11
 
 
 @test_runner
@@ -609,7 +616,6 @@ ilosc_testow_pass += test_jezykow()
 ilosc_testow_pass += test_przedmiotow()
 ilosc_testow_pass += test_Broni_strzelcekiej_magazynki_zaciaganie_amunicja_czterotakt()
 ilosc_testow_pass += test_broni_bialej()
-ilosc_testow_pass += test_mechanik_walki()
 ilosc_testow_pass += test_amunicji_i_magazynkow()
 ilosc_testow_pass += test_akcji()
 ilosc_testow_pass += test_broni_strzeleckiej_specjalne_magi()
@@ -618,7 +624,8 @@ ilosc_testow_pass += test_zasad_specjalnych_i_dodatkow_do_broni()
 ilosc_testow_pass += test_szpeju()
 ilosc_testow_pass += test_obrywania_w_kamze_i_mundurze()
 ilosc_testow_pass += test_apteczek_i_leczenia()
+ilosc_testow_pass += test_mechanik_walki()
 
 print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \n"
-      "Jest to " + str(ilosc_testow_pass/196 * 100) + "% testów.")
+      "Jest to " + str(ilosc_testow_pass/197 * 100) + "% testów.")
 #  unittest.main()
