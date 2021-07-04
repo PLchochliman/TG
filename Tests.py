@@ -308,7 +308,7 @@ def test_Broni_strzelcekiej_magazynki_zaciaganie_amunicja_czterotakt():
     return 24
 
 
-@test_runner #  TODO DOKONCZYC O INNE MAGI i TAŚMY!!!!!!!!!!!
+@test_runner
 def test_broni_strzeleckiej_specjalne_magi():
     mk23 = przedmioty_jako_rekord.luskacz_broni("mk23")
     MK23 = items.BronStrzelecka(mk23)
@@ -328,7 +328,13 @@ def test_broni_strzeleckiej_specjalne_magi():
     assert powiekszony_mag.maksymalna_pojemnosc == 45
     powiekszony_mag = items.Magazynek(m4ka, "bębnowy magazynek")
     assert powiekszony_mag.maksymalna_pojemnosc == 100
-    return 4
+    AA12 = wez_i_zaladuj_giwere("AA12")
+    powiekszony_mag = items.Magazynek(AA12, "bębnowy magazynek")
+    assert powiekszony_mag.maksymalna_pojemnosc == 32
+    mgie = wez_i_zaladuj_giwere("PK/PKS")
+    powiekszony_mag = items.Magazynek(mgie, "powiększona taśma")
+    assert powiekszony_mag.maksymalna_pojemnosc == 200
+    return 6
 
 
 @test_runner
@@ -614,5 +620,5 @@ ilosc_testow_pass += test_obrywania_w_kamze_i_mundurze()
 ilosc_testow_pass += test_apteczek_i_leczenia()
 
 print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \n"
-      "Jest to " + str(ilosc_testow_pass/194 * 100) + "% testów.")
+      "Jest to " + str(ilosc_testow_pass/196 * 100) + "% testów.")
 #  unittest.main()

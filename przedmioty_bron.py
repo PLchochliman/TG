@@ -292,6 +292,12 @@ class Magazynek():
             self.typ_magazynka = typ
             self.maksymalna_pojemnosc = 100
             return True
+        if typ in ("powiększona taśma", "powiekszona tasma"):
+            for i in bron.zasady_specjalne:
+                if i == "taśma":
+                    self.maksymalna_pojemnosc = 200
+                    self.typ_magazynka = typ
+                    return True
         return False
 
     """
@@ -360,6 +366,17 @@ class Magazynek():
             self.stan_nabojow = 0
             return True
         return False
+
+    #roznica względem TG - tutaj się zrywa podczas strzelanie nierostawionego.
+    def __setattr__(self, name, value):
+        if name == 'stan_nabojow':
+            if self.typ_magazynka == "powiekszona taśma":
+                wynik = Bot.roll_dice(6)
+                if wynik >= 6:
+                    Bot.output("Jeżeli nie jesteś stacjonarny, to właśnie wypadła Ci taśma...")
+                else:
+                    Bot.output("Jeżeli nie jesteś stacjonarny, to czujesz ruch pudełka z taśmą...")
+        super(Magazynek, self).__setattr__(name, value)
 
 
 class Bron(przedmioty_podstawa.Przedmiot):
