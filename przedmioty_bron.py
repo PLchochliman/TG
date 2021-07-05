@@ -256,6 +256,7 @@ class Magazynek():
                     typ = i
                 if i == "taśma i stanagi":
                     self.typ_magazynka = "taśma"
+                    self.rodzina = "ar"
                     if typ == "":
                         typ = i
                         break
@@ -299,6 +300,8 @@ class Magazynek():
                     self.typ_magazynka = "powiekszona tasma"
                     print("mag_to_powieszona_Taśma")
                     return True
+        Bot.output("wybrano zły magazynek - wybierz spośród: \n"
+                   " podstawowy, powiększony magazynek,  bębnowy magazynek, powiększona taśma, ")
         return False
 
     """
@@ -368,15 +371,17 @@ class Magazynek():
             return True
         return False
 
-    #roznica względem TG - tutaj się zrywa podczas strzelanie nierostawionego.
+    # roznica względem TG - tutaj powiekszona taśma się zrywa podczas strzelanie nierostawionego.
     def __setattr__(self, name, value):
         if name == 'stan_nabojow':
-            if self.typ_magazynka in ("powiększona taśma", "powiekszona tasma"):
-                wynik = Bot.roll_dice(6)
-                if wynik >= 6:
-                    Bot.output("Jeżeli nie jesteś stacjonarny, to właśnie wypadła Ci taśma...")
-                else:
-                    Bot.output("Jeżeli nie jesteś stacjonarny, to czujesz ruch pudełka z taśmą...")
+            if value < self.stan_nabojow:
+                if self.typ_magazynka in ("powiększona taśma", "powiekszona tasma"):
+                    wynik = Bot.roll_dice(6)
+                    if wynik >= 6:
+                        Bot.output("Jeżeli nie jesteś stacjonarny, to właśnie wypadła Ci taśma...")
+                    else:
+                        Bot.output("Jeżeli nie jesteś stacjonarny, to czujesz ruch pudełka z taśmą...")
+                        print(value)
         return super(Magazynek, self).__setattr__(name, value)
 
 

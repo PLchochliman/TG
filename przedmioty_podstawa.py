@@ -6,6 +6,8 @@ def przerob_stringa_do_int(zmienna, zmiana):
         zmienna = zmienna.replace(zmiana, "")
         zmienna = zmienna.replace(" ", "")
         zmienna = zmienna.replace(",", ".")
+        if zmienna == "-":
+            return 0
     zmienna = float(zmienna)
     return int(zmienna)
 
