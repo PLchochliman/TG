@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/przedmioty_bron.py" beforeDir="false" afterPath="$PROJECT_DIR$/przedmioty_bron.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/przedmioty_podstawa.py" beforeDir="false" afterPath="$PROJECT_DIR$/przedmioty_podstawa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TabelaBroni.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mortal_hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortal_hero.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,13 +194,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00203" summary="prepared data, for futher development.">
-      <created>1622880592769</created>
-      <option name="number" value="00203" />
-      <option name="presentableId" value="LOCAL-00203" />
-      <option name="project" value="LOCAL" />
-      <updated>1622880592770</updated>
     </task>
     <task id="LOCAL-00204" summary="preparing for vests">
       <created>1622976020730</created>
@@ -537,7 +531,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625436067077</updated>
     </task>
-    <option name="localTasksCounter" value="252" />
+    <task id="LOCAL-00252" summary="fixed little bug">
+      <created>1625461893593</created>
+      <option name="number" value="00252" />
+      <option name="presentableId" value="LOCAL-00252" />
+      <option name="project" value="LOCAL" />
+      <updated>1625461893593</updated>
+    </task>
+    <option name="localTasksCounter" value="253" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -553,7 +554,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="preparing proper handling of items in vests." />
     <MESSAGE value="pdone some mechanics, about items into, and out of vest." />
     <MESSAGE value="balistic plates added" />
     <MESSAGE value="added using  of balistic plates" />
@@ -578,7 +578,8 @@
     <MESSAGE value="extended magazines finally tested" />
     <MESSAGE value="first magic method implemented...." />
     <MESSAGE value="first magic method fully implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="first magic method fully implemented" />
+    <MESSAGE value="fixed little bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed little bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -602,16 +603,6 @@
           <url>file://F:/Pulpit/projektNOPyBartoszBiniek/projektNOPyBartoszBiniek/main.py</url>
           <line>17</line>
           <option name="timeStamp" value="83" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/przedmioty_bron.py</url>
-          <line>380</line>
-          <option name="timeStamp" value="88" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/przedmioty_bron.py</url>
-          <line>383</line>
-          <option name="timeStamp" value="89" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

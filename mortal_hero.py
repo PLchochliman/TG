@@ -313,4 +313,15 @@ class Postac(mortal.IstotaZywa): #pełne pokrycie, nie skończone
     def __bron_boczna(self):
         return 0
 
+    def otrzymaj_kase(self, kasa):
+        self.pieniadze += kasa
+        Bot.output(self.imie + " otrzymał " + str(kasa) + "$. \nPosiada teraz " + str(self.pieniadze) + "$.")
+        return True
 
+    def wydaj_kase(self, kasa):
+        if self.pieniadze - kasa < 0:
+            Bot.output("Nie stac Cię!!!!")
+            return False
+        self.pieniadze -= kasa
+        Bot.output(self.imie + " wydał " + str(kasa) + "$. \nPosiada teraz " + str(self.pieniadze) + "$.")
+        return True

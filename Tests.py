@@ -629,3 +629,20 @@ ilosc_testow_pass += test_mechanik_walki()
 print("Z wynikiem pozytywynym przeszło " + str(ilosc_testow_pass) + " testow \n"
       "Jest to " + str(ilosc_testow_pass/197 * 100) + "% testów.")
 #  unittest.main()
+"""
+czego brak:
+Możliwości obsługi przez użytkownika przez Bota
+czytania kart postaci Konrada
+Umiejętności specjalizacji (bez predyspozycji i wprawy)
+Mundurów (kamuflaży nie ma, i dodam opcję kamufluj, jak zrobię jakieś środowisko)
+Obsługi testów leczenia
+Porządnych testów zasad specjalnych.
+Części zasad specjalnych
+Radia i laptopy
+Ogólne przedmioty
+Funkcja zwracająca obiekty
+końcówki luf, zmiany luf.
+
+
+
+"""
