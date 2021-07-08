@@ -34,7 +34,7 @@ async def on_message(message):
             else:  # If there is it gets the filename from message.attachments
                 split_v1 = str(message.attachments).split("filename='")[1]
                 filename = str(split_v1).split("' ")[0]
-                if filename.endswith(".ods"):  # Checks if it is a .csv file
+                if filename.endswith(".ods"):
                     await message.attachments[0].save(fp="postacie/{}".format(filename))
             await message.channel.send('ładuje')
         except Exception:
@@ -48,6 +48,6 @@ async def on_message(message):
         except IOError:
             await message.channel.send('Nie mam takiego pliku')
         except Exception:
-            await message.channel.send('coś nie pykło')
+            await message.channel.send('coś ogólnego nie pykło')
 
 client.run(TOKEN[0])
