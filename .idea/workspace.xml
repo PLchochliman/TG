@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b253808f-e5ba-4644-93b1-5b797bf01f81" name="Default Changelist" comment="kara za ruch z testami">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TabelaBroni.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TabelaBroni.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mortal_hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/mortal_hero.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -194,13 +192,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611352369453</updated>
-    </task>
-    <task id="LOCAL-00204" summary="preparing for vests">
-      <created>1622976020730</created>
-      <option name="number" value="00204" />
-      <option name="presentableId" value="LOCAL-00204" />
-      <option name="project" value="LOCAL" />
-      <updated>1622976020730</updated>
     </task>
     <task id="LOCAL-00205" summary="preparing for vests, and equipment">
       <created>1623002549923</created>
@@ -538,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625461893593</updated>
     </task>
-    <option name="localTasksCounter" value="253" />
+    <task id="LOCAL-00253" summary="wydawanie i dostawanie kasy">
+      <created>1625638620256</created>
+      <option name="number" value="00253" />
+      <option name="presentableId" value="LOCAL-00253" />
+      <option name="project" value="LOCAL" />
+      <updated>1625638620256</updated>
+    </task>
+    <option name="localTasksCounter" value="254" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -554,7 +552,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="pdone some mechanics, about items into, and out of vest." />
     <MESSAGE value="balistic plates added" />
     <MESSAGE value="added using  of balistic plates" />
     <MESSAGE value="added possibility of buy every item." />
@@ -579,7 +576,8 @@
     <MESSAGE value="first magic method implemented...." />
     <MESSAGE value="first magic method fully implemented" />
     <MESSAGE value="fixed little bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed little bug" />
+    <MESSAGE value="wydawanie i dostawanie kasy" />
+    <option name="LAST_COMMIT_MESSAGE" value="wydawanie i dostawanie kasy" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -23,9 +23,9 @@ async def on_message(message):
     if message.author == client.user:
         return
     if "/" or "\\" or "DROP" in message.content:
-        await message.channel.send('Wypierdalaj hakerze')
+        await message.channel.send('hakerze won')
     if message.content.startswith('$dzialaj'):
-        await message.channel.send('Kurwa dzialam')
+        await message.channel.send('dzialam')
     if message.content.startswith('$postac'):
         try:
             if str(message.attachments) == "[]":  # Checks if there is an attachment on the message
