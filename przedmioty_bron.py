@@ -372,7 +372,7 @@ class Magazynek():
         return False
 
     # roznica względem TG - tutaj powiekszona taśma się zrywa podczas strzelanie nierostawionego.
-    def __setattr__(self, name, value):
+    def __setattr__(self, name, value): #this is not optimum way - I just wanted to got deeper into magic methods
         if name == 'stan_nabojow':
             if value < self.stan_nabojow:
                 if self.typ_magazynka in ("powiększona taśma", "powiekszona tasma"):
