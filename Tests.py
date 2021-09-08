@@ -592,6 +592,7 @@ def test_apteczek_i_leczenia():
     gong.rana(6, 4)
     apteczka = przedmioty_inne.Apteczka(przedmioty_jako_rekord.wyszukaj_przedmiot_i_zwroc_po_wszystkim("operatorska"))
     assert apteczka.wylecz(wojtek, gong)
+    assert gong.rany[2] == 0
     return 2
 
 @test_runner

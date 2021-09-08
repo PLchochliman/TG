@@ -43,7 +43,7 @@ async def on_message(message):
         try:
             name_of_file = message.content.split()
             name_of_file = name_of_file[1]
-            with open('./postacie/'+ name_of_file, 'rb') as fp:
+            with open('./postacie/' + name_of_file, 'rb') as fp:
                 await message.channel.send(file=discord.File(fp, name_of_file))
         except IOError:
             await message.channel.send('Nie mam takiego pliku')
