@@ -582,6 +582,14 @@ def test_obrywania_w_kamze_i_mundurze():
     rekord = przedmioty_jako_rekord.wyszukaj_przedmiot_i_zwroc_po_wszystkim("kontraktowy")
     gong.element_szpeju[constants.miejsce_na_ciele["mundur"]] = przedmioty_ochronne.Ubranie(rekord)
     assert not strzelanie.strzal(wojtek, gong, 10)
+    gong.element_szpeju[constants.miejsce_na_ciele["mundur"]] = []
+
+    assert strzelanie.strzal(wojtek, gong, 10)  # test płyt balistycznych
+    assert strzelanie.strzal(wojtek, gong, 10)
+    assert strzelanie.strzal(wojtek, gong, 10)
+    assert strzelanie.strzal(wojtek, gong, 10)
+    assert sprawdz_czy_cel_oberwal(gong)
+    assert gong.element_szpeju[constants.miejsce_na_ciele["klata"]].plyta_balistyczna.wytrzymalosc == 0
     return 7
 
 
